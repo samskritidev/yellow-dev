@@ -461,11 +461,8 @@
     <base-section class="bg-white">
       <div class="flex flex-col mx-auto md:flex-row my-6 md:my-10 w-full max-w-1000 items-center">
         <div class="w-full pb-16 md:pb-0 md:w-2/5">
-          <i class="block mx-auto" class="w-full">
+          <i class="block mx-auto w-full" >
             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 76.15 64.54" style="enable-background:new 0 0 76.15 64.54;" xml:space="preserve">
-              <style type="text/css">
-
-              </style>
               <g>
                 <g>
                   <path class="st0" d="M73.48,23.86l-4.74,5.37c-0.55-5.36-2.51-10.57-5.67-14.93C58.26,7.68,51.15,3.32,43.04,2.03
@@ -514,7 +511,7 @@
           <arrow-link-button class="rfs-text-base text-teal font-medium" title="migration" href="/products/migration/">Migration</arrow-link-button>
         </div>
         <div class="w-full pb-16 md:pb-0 flex items-center md:w-2/5">
-          <i class="block" style="max-height: 400px" class="w-full">
+          <i class="block w-full" style="max-height: 400px" >
             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 93.98 92" style="enable-background:new 0 0 93.98 92;" xml:space="preserve">
               <g>
                 <path class="st1" d="M46.61,24.58c-12,0-21.76,9.76-21.76,21.76S34.61,68.1,46.61,68.1s21.76-9.76,21.76-21.76
@@ -567,7 +564,7 @@
 
       <div class="flex flex-col mx-auto md:flex-row mb-6 md:mb-20 w-full max-w-1000 items-center">
         <div class="w-full pb-16 md:pb-0 flex items-center md:w-2/5">
-          <i class="block mx-auto" class="w-full">
+          <i class="block mx-auto w-full" >
             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 76.35 70.06" style="enable-background:new 0 0 76.35 70.06;" xml:space="preserve">
               <g>
                 <g>
