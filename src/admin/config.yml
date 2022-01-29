@@ -1,5 +1,6 @@
 backend:
   name: github
+  proxy_url: http://localhost:8081/api/v1
   repo: vishwaroopa/yellow
 local_backend: true
 media_folder: static/uploads
