@@ -926,8 +926,7 @@
         Hooper,
         Slide,
         Navigation as HooperNavigation,
-        Pagination as HooperPagination,
-        Rating as StarRating
+        Pagination as HooperPagination
     } from "hooper";
     import ArrowLinkButton from '../components/buttons/arrowLinkButton.vue';
 
