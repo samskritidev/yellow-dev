@@ -3,13 +3,11 @@
     "",
     "\\src",
     "\\src\\admin",
-    "\\src\\assets\\images",
-    "\\src\\assets\\images\\icons",
     "\\src\\pages",
     "\\src\\pages\\solutions",
     "\\src\\templates",
     "\\static"
   ],
-  "SelectedNode": "\\src\\pages\\Index.vue",
+  "SelectedNode": "\\package.json",
   "PreviewInSolutionExplorer": false
 }

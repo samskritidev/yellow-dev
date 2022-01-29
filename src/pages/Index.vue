@@ -561,7 +561,7 @@
                                 2222222
                             </h4>
                             <h4 class="leading-tight mb-0" :class="'text-black' || 'text-black'">
-                            <star-rating></star-rating>
+                           
                             </h4>
                         </div>
                         </div>
@@ -919,7 +919,6 @@
 </template>
 <script>
     import IconArrowRight from "~/components/icons/IconArrowRight.vue";
-    var StarRating = require('vue-dynamic-star-rating');
     import BaseSection from "../components/BaseSection.vue";
     import Carousel from "../components/Carousel.vue";
     import {
@@ -973,8 +972,7 @@
             Hooper,
             Slide,
             HooperNavigation,
-            HooperPagination,
-            StarRating
+            HooperPagination
         },
         data() {
             return {
