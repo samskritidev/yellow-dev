@@ -1,14 +1,17 @@
 bannerLeft:
   url: /press-releases/yellowbrick-data-raises-75m-in-series-c1-sees-adoption-of-its-cloud-data-warehouse-accelerating/
   eyebrow: Press Release
-  title: Yellowbrick Data Raises $75m in Series C1
+  title: Yellowbrick Data Raises $75M in Series C1, Sees Adoption of Its Cloud
+    Data Warehouse Accelerating
   image: /uploads/Yellowbrick_NewsImage8.jpg
   eyebrowColor: text-yellow1
   titleColor: text-white
 bannerRight:
   eyebrow: Download Now
-  title: GigaOm Radar for Data Warehouses Report
-  url: https://www.yellowbrick.com/go/gigaom-radar-for-data-warehouses/
+  title: GigaOm Radar for Data Warehouses Report to see why GigaOm says that
+    Yellowbrick is emerging as a strong competitor to more established solutions
+    in the areas of cost, performance, and flexibility.
+  url: go/gigaom-radar-for-data-warehouses/
   image: /uploads/Yellowbrick_NewsImage7.jpg
   eyebrowColor: text-yellow1
   titleColor: text-white
