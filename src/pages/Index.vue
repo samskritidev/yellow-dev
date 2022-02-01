@@ -417,6 +417,11 @@
         margin-top:5px;
         margin-bottom:0px;
     }
+    @media only screen and (max-width: 600px) {
+        .announcement-box .a {
+            margin: 0px;
+        }
+    }
 </style>
 <template>
     <Layout>
@@ -560,7 +565,7 @@
                 </h4>
 
             <div class="w-full flex flex-col md:flex-row announcement-box">
-                <a :href="$page.home.bannerLeft.url" class="banner-left flex flex-col w-full md:w-1/2 relative md:border-white">
+                <a href="/go/economic-benefits-of-yellowbrick/" class="banner-left flex flex-col w-full md:w-1/2 relative md:border-white">
                     <div class="flex flex-col w-full h-full justify-content-center announcement-box__card bmw-group">
                         <div class="max-w-xl w-full h-full">
                             <h4 class="leading-tight mb-0 w-full" :class="'text-black' || 'text-black'">
@@ -575,7 +580,7 @@
                             </div>
                     </div>
                 </a>
-                <a :href="$page.home.bannerRight.url" class="banner-right flex flex-col w-full md:w-1/2 relative md:border-white">
+                <a :href="$page.home.bannerLeft.url" class="banner-right flex flex-col w-full md:w-1/2 relative md:border-white">
                     <div class="flex flex-col w-full h-full justify-center md:align-center announcement-box__card bmw-group">
                         <div class="bg-container"></div>
                         <div class="max-w-xl w-full h-full">
