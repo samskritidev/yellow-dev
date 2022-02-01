@@ -8,7 +8,7 @@ date: 2022-01-31T18:30:00.000Z
 coverImage: /uploads/world-image-yellowbrick-data-partners-with-nippon-subsidiary-ni-c.png
 featured: false
 ---
-<!--\[if gte mso 9]><xml>
+<!--\\[if gte mso 9]><xml>
  <w:WordDocument>
   <w:View>Normal</w:View>
   <w:Zoom>0</w:Zoom>
@@ -48,9 +48,9 @@ featured: false
    <m:intLim m:val="subSup"/>
    <m:naryLim m:val="undOvr"/>
   </m:mathPr></w:WordDocument>
-</xml><!\[endif]-->
+</xml><!\\[endif]-->
 
-<!--\[if gte mso 9]><xml>
+<!--\\[if gte mso 9]><xml>
  <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="false"
   DefSemiHidden="false" DefQFormat="false" DefPriority="99"
   LatentStyleCount="376">
@@ -629,9 +629,9 @@ featured: false
   <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
    Name="Smart Link"/>
  </w:LatentStyles>
-</xml><!\[endif]-->
+</xml><!\\[endif]-->
 
-<!--\[if gte mso 10]>
+<!--\\[if gte mso 10]>
 <style>
  /* Style Definitions */
  table.MsoNormalTable
@@ -649,11 +649,9 @@ featured: false
 	font-family:"Arial",sans-serif;
 	mso-ansi-language:EN;}
 </style>
-<!\[endif]-->
+<!\\[endif]-->
 
 <!--StartFragment-->
-
-*Fresh off its $75M Series C1 funding Yellowbrick underscores its commitment to global customers across industries with NI+C partnership*
 
 **MOUNTAIN VIEW Calif.—February 2, 2022—** Yellowbrick Data, the leader in Distributed Data Cloud architecture for data warehousing, today announced a strategic partnership with Nippon Information and Communication Corporation (NI+C). The partnership advances Yellowbrick’s global expansion strategy by offering simplicity of the cloud experience, across private and public deployments or at the edge, for mission-critical applications to Japanese markets.
 
@@ -665,8 +663,6 @@ Yellowbrick continues to deliver on its commitment to give the world’s largest
 
 **About Nippon Information and Communication Corporation (NI+C)**
 
-
-
 [NI+C](https://www.niandc.co.jp/english/message/) provides computer hardware and software solutions, including management-related solutions for customers in various fields like systems development, products & services, and network services. Focused on large-scale customer database systems, IT infrastructure, and applications, NI+C serves the telecommunications, transportation, retail, and banking industries. The company has a track record of results with demand forecasting in these industries using data analysis, analysis of consumer trends, and the development of business intelligence (BI) solutions. NI+C was founded by NTT and IBM Japan in 1985 and has developed as a systems integrator, taking full advantage of the revolution in information-communication technology.
 
 **About Yellowbrick Data**
@@ -675,8 +671,6 @@ Yellowbrick is revolutionizing the world of data analytics with the world’s mo
 
 **Follow Yellowbrick**
 
-
-
 Website: [yellowbrick.com](https://cts.businesswire.com/ct/CT?id=smartlink&url=https%3A%2F%2Fwww.yellowbrick.com%2F&esheet=52515196&newsitemid=20211026005391&lan=en-US&anchor=yellowbrick.com&index=14&md5=785ccaafa90789bdc09c9d5f4494c16a)
 
 Twitter: [@YellowbrickData](https://cts.businesswire.com/ct/CT?id=smartlink&url=https%3A%2F%2Ftwitter.com%2FYellowbrickData&esheet=52515196&newsitemid=20211026005391&lan=en-US&anchor=%40YellowbrickData&index=15&md5=ed3740a2ccb358ce9dbf0b6c5652afe9)
@@ -684,8 +678,6 @@ Twitter: [@YellowbrickData](https://cts.businesswire.com/ct/CT?id=smartlink&url=
 LinkedIn: [linkedin.com/company/yellowbrickdata](https://cts.businesswire.com/ct/CT?id=smartlink&url=http%3A%2F%2Flinkedin.com%2Fcompany%2Fyellowbrickdata&esheet=52515196&newsitemid=20211026005391&lan=en-US&anchor=linkedin.com%2Fcompany%2Fyellowbrickdata&index=16&md5=ceee336516e0beb635f05a077f8ef78d)
 
 **Media Contact**
-
-
 
 Glen Zimmerman
 
