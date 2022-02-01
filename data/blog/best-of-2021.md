@@ -1,5 +1,5 @@
 ---
-title: Best of 2021
+title: Best of 2022
 author: Jeff Spicer, CMO
 description: Yellowbrick’s customer testimonials. Our customers are succeeding with us.
 date: 2021-12-02T22:38:37.105Z
