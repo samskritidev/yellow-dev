@@ -8,7 +8,7 @@ date: 2022-01-31T18:30:00.000Z
 coverImage: /uploads/world-image-yellowbrick-data-partners-with-nippon-subsidiary-ni-c.png
 featured: false
 ---
-<!--\\[if gte mso 9]><xml>
+<!--\\\[if gte mso 9]><xml>
  <w:WordDocument>
   <w:View>Normal</w:View>
   <w:Zoom>0</w:Zoom>
@@ -48,9 +48,9 @@ featured: false
    <m:intLim m:val="subSup"/>
    <m:naryLim m:val="undOvr"/>
   </m:mathPr></w:WordDocument>
-</xml><!\\[endif]-->
+</xml><!\\\[endif]-->
 
-<!--\\[if gte mso 9]><xml>
+<!--\\\[if gte mso 9]><xml>
  <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="false"
   DefSemiHidden="false" DefQFormat="false" DefPriority="99"
   LatentStyleCount="376">
@@ -629,9 +629,9 @@ featured: false
   <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
    Name="Smart Link"/>
  </w:LatentStyles>
-</xml><!\\[endif]-->
+</xml><!\\\[endif]-->
 
-<!--\\[if gte mso 10]>
+<!--\\\[if gte mso 10]>
 <style>
  /* Style Definitions */
  table.MsoNormalTable
@@ -649,7 +649,7 @@ featured: false
 	font-family:"Arial",sans-serif;
 	mso-ansi-language:EN;}
 </style>
-<!\\[endif]-->
+<!\\\[endif]-->
 
 <!--StartFragment-->
 
@@ -668,19 +668,5 @@ Yellowbrick continues to deliver on its commitment to give the world’s largest
 **About Yellowbrick Data**
 
 Yellowbrick is revolutionizing the world of data analytics with the world’s most flexible cloud native data warehouse. Organizations of all sizes rely on Yellowbrick to get answers to their hardest business questions, power their decision-making, and get real-time insights at a fraction of the cost of alternatives. Yellowbrick offers superior price/performance for every business use-case, along with the unique ability to run analytic workloads in public or private clouds, at the network edge, or any combination--with the choice of usage based pricing or predictable fixed cost subscription. Learn more at [](https://cts.businesswire.com/ct/CT?id=smartlink&url=https%3A%2F%2Fwww.yellowbrick.com%2F&esheet=52519573&newsitemid=20211103005038&lan=en-US&anchor=yellowbrick.com&index=1&md5=8fc08c9c0f6a9888a1add9c7c9e75115) [yellowbrick.com](https://cts.businesswire.com/ct/CT?id=smartlink&url=https%3A%2F%2Fwww.yellowbrick.com%2F&esheet=52519573&newsitemid=20211103005038&lan=en-US&anchor=yellowbrick.com&index=1&md5=8fc08c9c0f6a9888a1add9c7c9e75115).
-
-**Follow Yellowbrick**
-
-Website: [yellowbrick.com](https://cts.businesswire.com/ct/CT?id=smartlink&url=https%3A%2F%2Fwww.yellowbrick.com%2F&esheet=52515196&newsitemid=20211026005391&lan=en-US&anchor=yellowbrick.com&index=14&md5=785ccaafa90789bdc09c9d5f4494c16a)
-
-Twitter: [@YellowbrickData](https://cts.businesswire.com/ct/CT?id=smartlink&url=https%3A%2F%2Ftwitter.com%2FYellowbrickData&esheet=52515196&newsitemid=20211026005391&lan=en-US&anchor=%40YellowbrickData&index=15&md5=ed3740a2ccb358ce9dbf0b6c5652afe9)
-
-LinkedIn: [linkedin.com/company/yellowbrickdata](https://cts.businesswire.com/ct/CT?id=smartlink&url=http%3A%2F%2Flinkedin.com%2Fcompany%2Fyellowbrickdata&esheet=52515196&newsitemid=20211026005391&lan=en-US&anchor=linkedin.com%2Fcompany%2Fyellowbrickdata&index=16&md5=ceee336516e0beb635f05a077f8ef78d)
-
-**Media Contact**
-
-Glen Zimmerman
-
-[Glen.Zimmerman@yellowbrick.com](mailto:Glen.Zimmerman@yellowbrick.com)
 
 <!--EndFragment-->
