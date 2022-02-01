@@ -1,12 +1,12 @@
 ---
-title: Best of 2022
-author: Jeff Spicer, CMO
-description: Yellowbrick’s customer testimonials. Our customers are succeeding with us.
-date: 2021-12-02T22:38:37.105Z
-coverImage: /uploads/Yellowbrick-BlogImage10.jpg
-categories:
-  - product
-featured: true
+title: Yellowbrick Data Partners With Nippon Subsidiary NI+C to Unlock Data
+  Value for Enterprises, Expanding Global Footprint
+author: Yellowbrick
+description: "Fresh off its $75M Series C1 funding Yellowbrick underscores its
+  commitment to global customers across industries with NI+C partnership "
+date: 2022-01-31T18:30:00.000Z
+coverImage: /uploads/world-image-yellowbrick-data-partners-with-nippon-subsidiary-ni-c.png
+featured: false
 ---
 <!--\\\[if gte mso 9]><xml>
  <w:WordDocument>
@@ -653,28 +653,20 @@ featured: true
 
 <!--StartFragment-->
 
-A year ago, most of us were more than ready to bid 2020 good riddance, and we welcomed 2021 with open arms. How could any year bring with it more trials and unwelcome surprises than 2020, we reasoned. Well, for the most part we were right! And now, as we look back on 2021, there are some great things that we as a company can highlight—areas where we helped our customers succeed and areas where we advanced, too.
+**MOUNTAIN VIEW Calif.—February 2, 2022—** Yellowbrick Data, the leader in Distributed Data Cloud architecture for data warehousing, today announced a strategic partnership with Nippon Information and Communication Corporation (NI+C). The partnership advances Yellowbrick’s global expansion strategy by offering simplicity of the cloud experience, across private and public deployments or at the edge, for mission-critical applications to Japanese markets.
 
-**Our customers are succeeding with Yellowbrick.**
+“Nippon Information and Communication Corporation is very pleased to partner with Yellowbrick in Japan to provide our customers with a new technology option for data fabric deployment,” said Takeshi Naito, executive officer and general manager of Value Integration Headquarters at NI+C. “As many companies strive to become more data-driven, the Yellowbrick platform, a true hybrid DWH, is a great technology that can meet both on-premises and cloud requirements. With this contract, we expect to be able to meet more needs through the collaboration of the engineers of both companies, along with our deep industry and business knowledge and experience.”
 
-Nothing is more important to Yellowbrick than helping our customers get the highest value possible from their data, at incredible speed and at incredible scale. In 2021, we welcomed scores of new customers to our ranks, and as always, we spent quality time onboarding and ensuring that Yellowbrick exceeded their expectations. It’s not good enough for us to replace a legacy technology and improve a company’s analytics performance by 2x or 3x. Rather, we spend time working with our customers to understand how Yellowbrick can help them use analytics to transform their business. It’s no wonder our net retention is 136 percent and our net promoter score is 87—something almost unheard of in the cloud software industry. If you’re interested in what our customers have to say about us, check out these excepts from Gartner Peer Insights:
+Yellowbrick continues to deliver on its commitment to give the world’s largest enterprises the most modern data warehouse in the industry. Its own Distributed Data Cloud architecture offers on-demand elastic cloud architecture, eliminates concentration risk and mitigates the often-unforeseen risks from vendor lock-in. We do this through the adoption of open source, open standards compatibility with both traditional on-premises and modern cloud-based ecosystems and by separating data storage from processing to increase deployment options. Enterprises like NI+C that serve the telecommunications, transportation, and banking industries in Japan rely heavily on the Yellowbrick Data Warehouse to power critical business outcomes, facilitate data sharing and replication, and maximize the flexibility of multi-tenant billing.
 
-\*The Yellowbrick platform is the best performing warehouse environment I have ever used. When we first began running benchmarks, we thought perhaps that something was not working because our queries that previously ran for hours and double digit minutes on our old platform now ran in seconds on Yellowbrick. It is a technical marvel. –**Vice President and Principal Consultant, Finance Industry***
+"Yellowbrick continues to win and serve large companies in financial services, hedge funds, and insurance,” said Allen Holmes, vice president of Business Development & Partner Alliances. “By partnering with NI+C, we not only expand our global footprint, we also further diversify our reach across industries in this key region. Yellowbrick’s hybrid cloud approach and NI+C’s enviable reputation as a communications provider represent a powerful combination to meet the needs of local enterprises and help Japanese organizations fully realize the value of their data.”
 
-\*A lightning fast data warehouse with a great power of scalability and flexibility. It empowered my company to make a quick analysis on a rapidly changing massive amount of data. Many users can run multiple complex queries at the same time without lock-in or delay issues. **–BI Engineer, Healthcare Industry***
+**About Nippon Information and Communication Corporation (NI+C)**
 
-\*It's sometimes hard to articulate the improvements in overall query runtimes that we've seen on YB. And, with fine-tuning, you can make queries run even faster. There is no doubt in my mind that YB provides the best performance, dollar-for-dollar, in the industry. –**Senior Database Administrator, Finance Industry***
+[NI+C](https://www.niandc.co.jp/english/message/) provides computer hardware and software solutions, including management-related solutions for customers in various fields like systems development, products & services, and network services. Focused on large-scale customer database systems, IT infrastructure, and applications, NI+C serves the telecommunications, transportation, retail, and banking industries. The company has a track record of results with demand forecasting in these industries using data analysis, analysis of consumer trends, and the development of business intelligence (BI) solutions. NI+C was founded by NTT and IBM Japan in 1985 and has developed as a systems integrator, taking full advantage of the revolution in information-communication technology.
 
-**They like us. They *really* like us.**
+**About Yellowbrick Data**
 
-We had a few “aw shucks” moments in 2021 with awards coming our way and analysts noticing our innovative technology and how we’re shifting the conversation around data warehousing to incorporate the benefits of cloud native and edge computing. In 2021, DBTA named us in its top 100 list, Intellyx bestowed “Digital Innovator of 2021” on us, and CRN called us one of the coolest big data systems of 2021. We debuted in the Forrester Wave in 2021, and GigaOm’s Radar Report for Data Warehouses listed us as only one of two Outperformer data warehouses. We’d like to thank all of those who made this year possible.
-
-**Investors continue to invest in Yellowbrick.**
-
-In Q4 of 2021, we announced a Series C1 funding round that added three new investors, including institutional investor Citadel, which is also a recent new customer of Yellowbrick. Josh Woods, head of options, ETF, CES, and research technology for Citadel Securities, said this about Yellowbrick: “We believe Yellowbrick’s data warehouse technology leaps ahead of anything on the market after seeing firsthand what it can do for our analytics. We’re thrilled to invest in what will be the new standard in data warehousing and analytics.” Some of our existing investors, including Third Point Ventures, Menlo Ventures, Next47, DFJ Growth, Threshold Ventures, GV, and IVP, also participated.
-
-Finally, in 2021 we hosted our first virtual summit, to which we welcomed more 1,000 attendees. And of course, we became the first vendor to announce a truly cloud native data warehouse.
-
-Thanks again to our many amazing customers. This year would not have been so awesome if we weren’t helping to make you more successful. Best wishes in 2022!
+Yellowbrick is revolutionizing the world of data analytics with the world’s most flexible cloud native data warehouse. Organizations of all sizes rely on Yellowbrick to get answers to their hardest business questions, power their decision-making, and get real-time insights at a fraction of the cost of alternatives. Yellowbrick offers superior price/performance for every business use-case, along with the unique ability to run analytic workloads in public or private clouds, at the network edge, or any combination--with the choice of usage based pricing or predictable fixed cost subscription. Learn more at [](https://cts.businesswire.com/ct/CT?id=smartlink&url=https%3A%2F%2Fwww.yellowbrick.com%2F&esheet=52519573&newsitemid=20211103005038&lan=en-US&anchor=yellowbrick.com&index=1&md5=8fc08c9c0f6a9888a1add9c7c9e75115) [yellowbrick.com](https://cts.businesswire.com/ct/CT?id=smartlink&url=https%3A%2F%2Fwww.yellowbrick.com%2F&esheet=52519573&newsitemid=20211103005038&lan=en-US&anchor=yellowbrick.com&index=1&md5=8fc08c9c0f6a9888a1add9c7c9e75115).
 
 <!--EndFragment-->
