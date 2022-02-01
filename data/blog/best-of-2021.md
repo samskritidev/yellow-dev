@@ -1,14 +1,14 @@
 ---
 title: Best of 2021
 author: Jeff Spicer, CMO
-description: "Yellowbrick’s customer testimonials. Our customers are succeeding with us. "
+description: Yellowbrick’s customer testimonials. Our customers are succeeding with us.
 date: 2021-12-02T22:38:37.105Z
 coverImage: /uploads/Yellowbrick-BlogImage10.jpg
 categories:
   - product
 featured: true
 ---
-<!--\[if gte mso 9]><xml>
+<!--\\[if gte mso 9]><xml>
  <w:WordDocument>
   <w:View>Normal</w:View>
   <w:Zoom>0</w:Zoom>
@@ -48,9 +48,9 @@ featured: true
    <m:intLim m:val="subSup"/>
    <m:naryLim m:val="undOvr"/>
   </m:mathPr></w:WordDocument>
-</xml><!\[endif]-->
+</xml><!\\[endif]-->
 
-<!--\[if gte mso 9]><xml>
+<!--\\[if gte mso 9]><xml>
  <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="false"
   DefSemiHidden="false" DefQFormat="false" DefPriority="99"
   LatentStyleCount="376">
@@ -629,9 +629,9 @@ featured: true
   <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
    Name="Smart Link"/>
  </w:LatentStyles>
-</xml><!\[endif]-->
+</xml><!\\[endif]-->
 
-<!--\[if gte mso 10]>
+<!--\\[if gte mso 10]>
 <style>
  /* Style Definitions */
  table.MsoNormalTable
@@ -649,21 +649,21 @@ featured: true
 	font-family:"Arial",sans-serif;
 	mso-ansi-language:EN;}
 </style>
-<!\[endif]-->
+<!\\[endif]-->
 
 <!--StartFragment-->
 
-A year ago, most of us were more than ready to bid 2020 good riddance, and we welcomed 2021 with open arms. How could any year bring with it more trials and unwelcome surprises than 2020, we reasoned. Well, for the most part we were right! And now, as we look back on 2021, there are some great things that we as a company can highlight—areas where we helped our customers succeed and areas where we advanced, too.
+A year ago, most of us were more than ready to bid 2020 good riddance, and we welcomed 2021 with open arms. How could any year bring with it more trials and unwelcome surprises than 2020, we reasoned. Well, for the most part we were right! And now, as we look back on 2021, there are some great things that we as a company can highlight—areas where we helped our customers succeed and areas where we advanced, too...
 
 **Our customers are succeeding with Yellowbrick.**
 
 Nothing is more important to Yellowbrick than helping our customers get the highest value possible from their data, at incredible speed and at incredible scale. In 2021, we welcomed scores of new customers to our ranks, and as always, we spent quality time onboarding and ensuring that Yellowbrick exceeded their expectations. It’s not good enough for us to replace a legacy technology and improve a company’s analytics performance by 2x or 3x. Rather, we spend time working with our customers to understand how Yellowbrick can help them use analytics to transform their business. It’s no wonder our net retention is 136 percent and our net promoter score is 87—something almost unheard of in the cloud software industry. If you’re interested in what our customers have to say about us, check out these excepts from Gartner Peer Insights:
 
-*The Yellowbrick platform is the best performing warehouse environment I have ever used. When we first began running benchmarks, we thought perhaps that something was not working because our queries that previously ran for hours and double digit minutes on our old platform now ran in seconds on Yellowbrick. It is a technical marvel. –**Vice President and Principal Consultant, Finance Industry***
+\*The Yellowbrick platform is the best performing warehouse environment I have ever used. When we first began running benchmarks, we thought perhaps that something was not working because our queries that previously ran for hours and double digit minutes on our old platform now ran in seconds on Yellowbrick. It is a technical marvel. –**Vice President and Principal Consultant, Finance Industry***
 
-*A lightning fast data warehouse with a great power of scalability and flexibility. It empowered my company to make a quick analysis on a rapidly changing massive amount of data. Many users can run multiple complex queries at the same time without lock-in or delay issues. **–BI Engineer, Healthcare Industry***
+\*A lightning fast data warehouse with a great power of scalability and flexibility. It empowered my company to make a quick analysis on a rapidly changing massive amount of data. Many users can run multiple complex queries at the same time without lock-in or delay issues. **–BI Engineer, Healthcare Industry***
 
-*It's sometimes hard to articulate the improvements in overall query runtimes that we've seen on YB. And, with fine-tuning, you can make queries run even faster. There is no doubt in my mind that YB provides the best performance, dollar-for-dollar, in the industry. –**Senior Database Administrator, Finance Industry***
+\*It's sometimes hard to articulate the improvements in overall query runtimes that we've seen on YB. And, with fine-tuning, you can make queries run even faster. There is no doubt in my mind that YB provides the best performance, dollar-for-dollar, in the industry. –**Senior Database Administrator, Finance Industry***
 
 **They like us. They *really* like us.**
 
