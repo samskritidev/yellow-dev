@@ -1,5 +1,6 @@
 backend:
   name: github
+  branch: main
   repo: samskritidev/yellow-dev
 media_folder: static/uploads
 public_folder: /uploads
