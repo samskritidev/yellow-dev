@@ -421,7 +421,7 @@
             <br />
             <div class="flex flex-col w-full md:max-w-1200 mx-auto">
                 <div class="z-50 relative lg:w-2/3">
-                    <hooper ref="carousel" @slide="updateCarousel" :autoPlay="true" :playSpeed="5000">
+                    <hooper ref="carousel" @slide="updateCarousel" :autoPlay="true" :playSpeed="500000">
                         <slide>
                             <div class="flex flex-col px-12 pt-12 bg-transparent">
                                 <div class="flex items-center justify-center">
@@ -532,7 +532,7 @@
                                 </div>                               
                             </div>
                         </slide>
-                        <hooper-pagination slot="hooper-addons"></hooper-pagination>
+                        
                     </hooper>
                     <br />
                     <div class="z-10">
@@ -550,7 +550,7 @@
         
         <base-section>
             <div class="mx-auto">
-                <h4 class="rfs-text-4xl max-w-screen-md text-center mx-auto font-bold">
+                <h4 class="rfs-text-4xl mb-16 max-w-screen-md text-center mx-auto font-bold">
                     What's New
                 </h4>
             </div>
