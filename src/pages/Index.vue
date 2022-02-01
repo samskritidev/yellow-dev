@@ -555,62 +555,7 @@
                 </h4>
             </div>
 
-            <div class="w-full flex flex-col md:flex-row announcement-box">
-                <a :href="$page.home.bannerLeft.url" class="banner-left flex flex-col w-full md:w-1/2 relative md:border-r-4 md:border-white">
-                    <div class="flex flex-col w-full h-full justify-content-center announcement-box__card bmw-group">
-                        <div class="max-w-xl w-full h-full">
-                            <h4 class="leading-tight mb-0 w-full" :class="'text-black' || 'text-black'">
-                                <img class=" w-full" src="/uploads/images/blocks.png" />
-                            </h4>
-                            <div class="p-3">
-                                <h5 class="leading-tight mb-0" style="text-transform:uppercase;font-weight:600" :class="'text-black' || 'text-black'">
-                                    ESG Report
-                                </h5>
-                                <br />
-                                <p class="font-normal"> Yellowbrick delivers improved and predictable performance and cost with improved operational simplicity and deployment.</p>
-                                </div>
-                            </div>
-                    </div>
-                </a>
-                <a :href="$page.home.bannerRight.url" class="banner-right flex flex-col w-full md:w-1/2 relative md:border-l-4 md:border-white">
-                    <div class="flex flex-col w-full h-full justify-center md:align-center announcement-box__card bmw-group">
-                        <div class="bg-container"></div>
-                        <div class="max-w-xl w-full h-full">
-                            <h4 class="leading-tight mb-0 w-full" :class="'text-black' || 'text-black'">
-                                <img class=" w-full" src="/uploads/images/blocks.png" />
-                            </h4>
-                            <div class="p-3">
-                                <h5 class="leading-tight mb-0" style="text-transform:uppercase;font-weight:600" :class="'text-black' || 'text-black'">
-                                    {{ $page.home.bannerLeft.eyebrow }}
-                                </h5>
-                                <br />
-                                <p class="font-normal">
-                                    {{ $page.home.bannerLeft.title }}
-                                </p>
-                            </div>
-                            </div>
-                        </div>
-                </a>
-                <a :href="$page.home.bannerRight.url" class="banner-right flex flex-col w-full md:w-1/2 relative md:border-l-4 md:border-white">
-                    <div class="flex flex-col w-full h-full justify-center md:align-center announcement-box__card bmw-group">
-                        <div class="bg-container"></div>
-                        <div class="max-w-xl w-full h-full">
-                            <h4 class="leading-tight mb-0 w-full" :class="'text-black' || 'text-black'">
-                                <img class=" w-full" src="/uploads/images/blocks.png" />
-                            </h4>
-                            <div class="p-3">
-                                <h5 class="leading-tight mb-0 text-black" style="text-transform:uppercase;font-weight:600">
-                                    {{ $page.home.bannerRight.eyebrow }}
-                                </h5>
-                                <br />
-                                <p class="font-normal" >
-                                    {{ $page.home.bannerRight.title }}
-                                </p>
-                                </div>
-                            </div>
-                        </div>
-                </a>
-            </div>
+            
         </base-section>
         <base-section class="hidden">
             <div class="mx-auto">
