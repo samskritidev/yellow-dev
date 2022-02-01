@@ -80,7 +80,7 @@
         background-image: url(/uploads/images/answers-bg.jpg);
     }
     .announcement-box a {
-        BORDER: 1PX SOLID #80808000;
+
         MARGIN: 20PX;
         box-shadow: 1px 1px 10px 1px rgb(0 0 255 / 14%);
     }
@@ -217,10 +217,12 @@
         background-color: #4285f4;
         transition: 300ms;
     }
-
+    .quote1 {
+        font-size: 1.25rem;
+    }
     .hooper-pagination {
         position: absolute;
-        bottom: 0;
+        bottom: -30px;
         right: 50%;
         transform: translateX(50%);
         display: flex;
@@ -351,8 +353,8 @@
 
     .hooper-slide__image {
         max-height: 90px;
-        height: 100%;
-      
+        margin-top: 5px;
+        max-width: 190px;
     }
 
     .hooper-track {
@@ -411,20 +413,24 @@
     .st1 {
         fill: #FDBF14;
     }
+    .hooper .rfs-text-base {
+        margin-top:5px;
+        margin-bottom:0px;
+    }
 </style>
 <template>
     <Layout>
         <base-section :classNames="'hero flex pt-24 pb-12 md:py-12 md:pt-40 md:pb-20 px-6 xl:px-0'">
-            <div class="w-full lg:w-1/2 z-10">
+            <div class="w-full lg:w-2/3 z-10">
                 <h3 class="rfs-text-3xl text-white mb-0 sub-title text-yellow1">Run your data anywhere across private cloud, public cloud, on premise, and at the edge, in a single management view.</h3>
             </div>
             <br />
             <div class="flex flex-col w-full md:max-w-1200 mx-auto">
                 <div class="z-50 relative lg:w-2/3">
-                    <hooper ref="carousel" @slide="updateCarousel" :autoPlay="true" :playSpeed="500000">
+                    <hooper ref="carousel" @slide="updateCarousel" :autoPlay="true" :playSpeed="50000">
                         <slide>
                             <div class="flex flex-col px-12 pt-12 bg-transparent">
-                                <div class="flex items-center justify-center">
+                                <div class="flex">
                                     <div class="w-100" style="padding-right: 20px;">
                                         <img src="/uploads/images/customers/white/bmw.png" class="hooper-slide__image mr-auto" />
                                     </div>
@@ -432,29 +438,28 @@
                                         <p class="rfs-text-lg mb-1 quote1">
                                             “We are confident that Yellowbrick’s ability to quickly
                                             analyze large amounts of data and offer new insights will help
-                                            us deliver on our goals.”<br /><span class="rfs-text-base text-yellow1 font-bold">
+                                            us deliver on our goals.”</p><p class="rfs-text-base text-yellow1 font-bold">
                                                 Ian Smith, CEO, BMW Group Financial Services North
                                                 America
-                                            </span>
-                                        </p>
+                                            </p>
                                     </div>
                                 </div>
                             </div>
                         </slide>
                         <slide>
                             <div class="flex flex-col px-12 pt-12 bg-transparent">
-                                <div class="flex items-center justify-center">
+                                <div class="flex">
                                     <div class="w-100" style="padding-right: 20px;">
-                                        <img src="/uploads/images/customers/white/melco.png" class="hooper-slide__image" />
+                                        <img src="/uploads/images/customers/white/melco-new.png" class="hooper-slide__image" />
                                     </div>
                                     <div class="w-4/5">
                                         <p class="rfs-text-lg mb-1 quote1">
                                             “Yellowbrick allows us to tailor meaningful solutions for our
                                             clients and analyze preferences and behaviors across millions
-                                            of data points in real time.”<br /><span class="rfs-text-base text-yellow1 font-bold">
-    Jonathan Ozark, EVP Chief Strategy and Analytics
-    Officer, Melco Resorts & Entertainment
-</span>
+                                            of data points in real time.”
+                                        </p><p class="rfs-text-base text-yellow1 font-bold">
+                                            Jonathan Ozark, EVP Chief Strategy and Analytics
+                                            Officer, Melco Resorts & Entertainment
                                         </p>
                                     </div>
                                 </div>                              
@@ -462,7 +467,7 @@
                         </slide>
                         <slide>
                             <div class="flex flex-col px-12 pt-12 bg-transparent">
-                                <div class="flex items-center justify-center">
+                                <div class="flex">
                                     <div class="w-100" style="padding-right: 20px;">
                                         <img src="/uploads/images/customers/white/teoco.png" class="hooper-slide__image" />
                                     </div>
@@ -470,15 +475,16 @@
                                         <p class="rfs-text-lg mb-1 quote1">
                                             “The power of Yellowbrick, combined with our deep knowledge of
                                             the data and proprietary algorithms, will produce insights
-                                            that were impossible before.”<br /><span class="rfs-text-base text-yellow1 font-bold">Atul Jain, Chairman & CEO</span>
-                                        </p>
+                                            that were impossible before.”
+                                        </p><p class="rfs-text-base text-yellow1 font-bold">
+                                            Atul Jain, Chairman & CEO</p>
                                     </div>
                                     </div>
                             </div>
 </slide>
                         <slide>
                             <div class="flex flex-col px-12 pt-12 bg-transparent">
-                                <div class="flex items-center justify-center">
+                                <div class="flex">
                                     <div class="w-100" style="padding-right: 20px;">
                                         <img src="/uploads/images/customers/white/symphony.png" class="hooper-slide__image" />
                                     </div>
@@ -486,9 +492,9 @@
                                         <p class="rfs-text-lg mb-1 quote1">
                                             “Following extensive testing of data warehouses and
                                             Hadoop-based solutions, we found that Yellowbrick provided
-                                            superior performance.”<br /><span class="rfs-text-base text-yellow1 font-bold">
-    atthias Baumhof, CTO
-</span>
+                                            superior performance.”
+                                        </p><p class="rfs-text-base text-yellow1 font-bold">
+                                            Matthias Baumhof, CTO
                                         </p>
                                     </div>
                                 </div>
@@ -496,7 +502,7 @@
 </slide>
                         <slide>
                             <div class="flex flex-col px-12 pt-12 bg-transparent">
-                                <div class="flex items-center justify-center">
+                                <div class="flex">
                                     <div class="w-100" style="padding-right: 20px;">
                                         <img src="/uploads/images/customers/white/lexisnexis.png" class="hooper-slide__image" />
                                     </div>
@@ -505,9 +511,9 @@
                                             “It’s a big benefit to customers—and a big win for us—when we
                                             tell them they’ll get 10X more data accuracy and 2X
                                             performance gain. Our largest data set is about 60TB, which
-                                            Yellowbrick is handling with ease.”<br /><span class="rfs-text-base text-yellow1 font-bold">
-    Nigel Pratt, SVP Development
-</span>
+                                            Yellowbrick is handling with ease.”
+                                        </p><p class="rfs-text-base text-yellow1 font-bold">
+                                            Nigel Pratt, SVP Development
                                         </p>
                                     </div>
                                 </div>                              
@@ -515,7 +521,7 @@
                         </slide>
                         <slide>
                             <div class="flex flex-col px-12 pt-12 bg-transparent">
-                                <div class="flex items-center justify-center">
+                                <div class="flex">
                                     <div class="w-100" style="padding-right: 20px;">
                                         <img src="/uploads/images/customers/white/catalina.png" class="hooper-slide__image" />
                                     </div>
@@ -524,15 +530,15 @@
                                             “Catalina’s partnership with Yellowbrick has significantly enhanced the
                                             performance of our on-premises data platform, enabling our teams to more
                                             efficiently deliver actionable insights and new data-driven solutions to our
-                                            CPG, retail and agency partners.”<br /><span class="rfs-text-base text-yellow1 font-bold">
-    Michael Bailey, CTO, Catalina
-</span>
+                                            CPG, retail and agency partners.”
+                                        </p><p class="rfs-text-base text-yellow1 font-bold">
+                                            Michael Bailey, CTO, Catalina
                                         </p>
                                     </div>
                                 </div>                               
                             </div>
                         </slide>
-                        
+                        <hooper-pagination slot="hooper-addons"></hooper-pagination>
                     </hooper>
                     <br />
                     <div class="z-10">
@@ -549,13 +555,63 @@
 
         
         <base-section>
-            <div class="mx-auto">
-                <h4 class="rfs-text-4xl mb-16 max-w-screen-md text-center mx-auto font-bold">
-                    What's New
+                <h4 class="rfs-text-4xl mb-2 max-w-screen-md font-bold" style="padding-left:20px">
+                    In the News
                 </h4>
-            </div>
 
-            
+            <div class="w-full flex flex-col md:flex-row announcement-box">
+                <a :href="$page.home.bannerLeft.url" class="banner-left flex flex-col w-full md:w-1/2 relative md:border-white">
+                    <div class="flex flex-col w-full h-full justify-content-center announcement-box__card bmw-group">
+                        <div class="max-w-xl w-full h-full">
+                            <h4 class="leading-tight mb-0 w-full" :class="'text-black' || 'text-black'">
+                                <img class=" w-full" src="/uploads/images/whats-new/ESG.jpg" />
+                            </h4>
+                            <div class="p-3">
+                                <h5 class="leading-tight mb-0" style="text-transform:uppercase;font-weight:600" :class="'text-black' || 'text-black'">
+                                    ESG Report
+                                </h5>
+                                <p class="font-normal" style="margin-top:5px"> Yellowbrick delivers improved and predictable performance and cost with improved operational simplicity and deployment.</p>
+                                </div>
+                            </div>
+                    </div>
+                </a>
+                <a :href="$page.home.bannerRight.url" class="banner-right flex flex-col w-full md:w-1/2 relative md:border-white">
+                    <div class="flex flex-col w-full h-full justify-center md:align-center announcement-box__card bmw-group">
+                        <div class="bg-container"></div>
+                        <div class="max-w-xl w-full h-full">
+                            <h4 class="leading-tight mb-0 w-full" :class="'text-black' || 'text-black'">
+                                <img class=" w-full" src="/uploads/images/whats-new/Finance.jpg" />
+                            </h4>
+                            <div class="p-3">
+                                <h5 class="leading-tight mb-0" style="text-transform:uppercase;font-weight:600" :class="'text-black' || 'text-black'">
+                                    {{ $page.home.bannerLeft.eyebrow }}
+                                </h5>
+                                <p class="font-normal" style="margin-top:5px">
+                                    {{ $page.home.bannerLeft.title }}
+                                </p>
+                                </div>
+                            </div>
+                        </div>
+                </a>
+                <a :href="$page.home.bannerRight.url" class="banner-right flex flex-col w-full md:w-1/2 relative  md:border-white">
+                    <div class="flex flex-col w-full h-full justify-center md:align-center announcement-box__card bmw-group">
+                        <div class="bg-container"></div>
+                        <div class="max-w-xl w-full h-full">
+                            <h4 class="leading-tight mb-0 w-full" :class="'text-black' || 'text-black'">
+                                <img class=" w-full" src="/uploads/images/whats-new/AdobeStock.jpg" />
+                            </h4>
+                            <div class="p-3">
+                                <h5 class="leading-tight mb-0 text-black" style="text-transform:uppercase;font-weight:600">
+                                    {{ $page.home.bannerRight.eyebrow }}
+                                </h5>
+                                <p class="font-normal" style="margin-top:5px">
+                                    {{ $page.home.bannerRight.title }}
+                                </p>
+                                </div>
+                            </div>
+                        </div>
+                </a>
+            </div>
         </base-section>
         <base-section class="hidden">
             <div class="mx-auto">

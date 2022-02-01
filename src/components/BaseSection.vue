@@ -14,7 +14,7 @@ export default {
     },
     classNames: {
       type: [String],
-      default: "flex py-12 px-6 xl:px-0"
+      default: "flex py-6 px-6 xl:px-0"
     }
   },
 }
