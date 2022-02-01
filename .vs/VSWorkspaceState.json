@@ -4,10 +4,12 @@
     "\\src",
     "\\src\\admin",
     "\\src\\pages",
+    "\\src\\pages\\resources",
+    "\\src\\pages\\resources\\briefs",
     "\\src\\pages\\solutions",
     "\\src\\templates",
     "\\static"
   ],
-  "SelectedNode": "\\package.json",
+  "SelectedNode": "\\src\\pages\\Index.vue",
   "PreviewInSolutionExplorer": false
 }

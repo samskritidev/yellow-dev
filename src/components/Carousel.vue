@@ -34,20 +34,23 @@
   margin: 0;
   padding: 0;
 }
-.hooper-indicator:hover,
-.hooper-indicator.is-active {
-  background-color: #4285f4;
-}
-.hooper-indicator {
-  margin: 0 2px;
-  width: 12px;
-  height: 4px;
-  border-radius: 4px;
-  border: none;
-  padding: 0;
-  background-color: #fff;
-  cursor: pointer;
-}
+    .hooper-indicator:hover, .hooper-indicator.is-active {
+        background-color: #ffcd32;
+    }
+    .pt-12 {
+        padding: 25px;
+    }
+    .hooper-indicator {
+        height: 12px;
+        width: 12px;
+        border-radius: 50%;
+        display: inline-block;
+        margin: 0 4px;
+        border: none;
+        padding: 0;
+        background-color: white;
+        cursor: pointer;
+    }
 .hooper-pagination.is-vertical {
   bottom: auto;
   right: 0;
