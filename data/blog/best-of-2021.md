@@ -8,7 +8,7 @@ categories:
   - product
 featured: true
 ---
-<!--\\[if gte mso 9]><xml>
+<!--\\\[if gte mso 9]><xml>
  <w:WordDocument>
   <w:View>Normal</w:View>
   <w:Zoom>0</w:Zoom>
@@ -48,9 +48,9 @@ featured: true
    <m:intLim m:val="subSup"/>
    <m:naryLim m:val="undOvr"/>
   </m:mathPr></w:WordDocument>
-</xml><!\\[endif]-->
+</xml><!\\\[endif]-->
 
-<!--\\[if gte mso 9]><xml>
+<!--\\\[if gte mso 9]><xml>
  <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="false"
   DefSemiHidden="false" DefQFormat="false" DefPriority="99"
   LatentStyleCount="376">
@@ -629,9 +629,9 @@ featured: true
   <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
    Name="Smart Link"/>
  </w:LatentStyles>
-</xml><!\\[endif]-->
+</xml><!\\\[endif]-->
 
-<!--\\[if gte mso 10]>
+<!--\\\[if gte mso 10]>
 <style>
  /* Style Definitions */
  table.MsoNormalTable
@@ -649,11 +649,11 @@ featured: true
 	font-family:"Arial",sans-serif;
 	mso-ansi-language:EN;}
 </style>
-<!\\[endif]-->
+<!\\\[endif]-->
 
 <!--StartFragment-->
 
-A year ago, most of us were more than ready to bid 2020 good riddance, and we welcomed 2021 with open arms. How could any year bring with it more trials and unwelcome surprises than 2020, we reasoned. Well, for the most part we were right! And now, as we look back on 2021, there are some great things that we as a company can highlight—areas where we helped our customers succeed and areas where we advanced, too...
+A year ago, most of us were more than ready to bid 2020 good riddance, and we welcomed 2021 with open arms. How could any year bring with it more trials and unwelcome surprises than 2020, we reasoned. Well, for the most part we were right! And now, as we look back on 2021, there are some great things that we as a company can highlight—areas where we helped our customers succeed and areas where we advanced, too.
 
 **Our customers are succeeding with Yellowbrick.**
 
