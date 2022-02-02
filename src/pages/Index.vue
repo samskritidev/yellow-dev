@@ -504,7 +504,7 @@
                             <div class="flex flex-col px-12 pt-12 bg-transparent">
                                 <div class="md:flex">
                                     <div class="w-100" style="padding-right: 20px;">
-                                        <img src="/uploads/images/customers/white/symphony.png" class="hooper-slide__image" />
+                                        <img src="/uploads/images/customers/white/lexisnexis.png" class="hooper-slide__image" />
                                     </div>
                                     <div class="w-4/5">
                                         <p class="rfs-text-lg mb-1 quote1">
@@ -522,7 +522,7 @@
                             <div class="flex flex-col px-12 pt-12 bg-transparent">
                                 <div class="md:flex">
                                     <div class="w-100" style="padding-right: 20px;">
-                                        <img src="/uploads/images/customers/white/lexisnexis.png" class="hooper-slide__image" />
+                                        <img src="/uploads/images/customers/white/symphony.png" class="hooper-slide__image" />
                                     </div>
                                     <div class="w-4/5">
                                         <p class="rfs-text-lg mb-1 quote1">
@@ -575,7 +575,7 @@
         
         <base-section>
                 <h4 class="rfs-text-4xl mb-5 max-w-screen-md font-bold mt-0" style="padding-left:20px">
-                    In the News
+                    in the News
                 </h4>
 
             <div class="w-full flex flex-col md:flex-row announcement-box">
