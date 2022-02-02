@@ -30,7 +30,7 @@
     }
 
     .search-icon {
-        height: 15px;
+        height: 20px;
         width: auto;
     }
 
@@ -98,9 +98,9 @@
                                 </label>
                             </li>
                             <li id="search-box" class="flex list-none font-normal rfs-text-lg p-1 pl-6 cc:px-2 cc:py-1 relative">
-                                <span style="transform: rotate(-45deg);" class="inline-block cursor-pointer pb-2" @click="searchClick"><img src="~@/assets/images/icons/search-icon.svg" class="search-icon" /></span>
+                                <span style="transform: rotate(-45deg);" class="inline-block cursor-pointer pb-2" @click="searchClick"><img src="/uploads/icons/search-icon.svg" class="search-icon" /></span>
                                 <transition name="pusher">
-                                    <search-blog v-show="searchFocus" v-model="searchResults"  style="top:3px;right:28px;z-index:60;" />
+                                    <search-blog v-show="searchFocus" v-model="searchResults"  class="cc:absolute text-transparent"  style="top:3px;right:28px;z-index:60;" />
                                 </transition>
                             </li>
                         </ul>
@@ -254,7 +254,7 @@
     },
         data: () => ({
             categories: [],
-            searchResults: null,
+             searchResults: null,
       menu: [
         {
           label: 'Industries',
