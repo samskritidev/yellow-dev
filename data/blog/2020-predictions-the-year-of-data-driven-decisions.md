@@ -1,6 +1,7 @@
 ---
 title: "Yellowbrick 2020 predictions: The year of data-driven innovations"
 author: Yellowbrick
+authorImage: /uploads/CloudIcon.jpg
 description: Predictions for 2020 from Yellowbrick
 date: 2020-01-11
 coverImage: /uploads/blog/blog-elastic.jpg
