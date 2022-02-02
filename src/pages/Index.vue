@@ -8,6 +8,9 @@
     padding-right: 10px!important;
 }
 }
+    .hooper-slide {
+        width: 100%;
+    }
 .yellowbrickbtn button:hover {
     color:#000;
     background: #ffffff;    
