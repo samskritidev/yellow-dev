@@ -6,7 +6,7 @@
 <template>
   <div class="w-full max-w-1200 mx-auto flex flex-row justify-end items-center">
     <span v-if="value" class="rfs-text-2xl float-left w-1/4" v-text="`${value.length} results`" />
-    <input ref="input" class="w-3/4 text-xl font-light text-xl border border-gray-200 focus:outline-none focus:shadow focus:border-gray-400 rounded px-3 py-2 appearance-none leading-normal bg-white" placeholder="Search Blog" type="search" @input="search" @focus="search" @blur="search" @keydown.esc.enter="$refs.input.blur()" v-model="q" />
+    <input ref="input" class="w-3/4 text-xl text-black text-xl border border-gray-200 focus:outline-none focus:shadow focus:border-gray-400 rounded px-3 py-2 appearance-none leading-normal bg-white" placeholder="Search Blog" type="search" @input="search" @focus="search" @blur="search" @keydown.esc.enter="$refs.input.blur()" v-model="q" />
   </div>
 </template>
 

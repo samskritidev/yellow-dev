@@ -215,6 +215,7 @@
 </template>
 
 <script>
+    import Layout from '~/layouts/Blog.vue'
   import {
     Pager
   } from 'gridsome'
@@ -231,6 +232,7 @@
       }]
     },
     components: {
+      Layout,
       Pager,
       SearchBlog,
       BiWeeklyBanner
