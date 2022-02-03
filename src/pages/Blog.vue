@@ -242,7 +242,7 @@
                         <p class="rfs-text-base leading-tight" v-html="featuredBlog.description" />
                         <div class="flex flex-col md:flex-row md:w-1/2">
                             <div class="w-full md:w-1/4" style="margin-right:20px">
-                                <img :src="`${featuredBlog.authorImage}`" />
+                                <img src="/uploads/author.png" />
                             </div>
                             <div class="w-full md:w-2/3">
                                 <p class="featured-author font-bold" v-text="featuredBlog.author" />
@@ -292,7 +292,7 @@
                                     <h4 class="rfs-text-base text-black" v-html="edge.node.description" />
                                     <div class="flex flex-col md:flex-row md:w-1/2">
                                         <div class="w-full md:w-1/4" style="margin-right:20px">
-                                            <img :src="`${edge.node.authorImage}`" />
+                                            <img :src="`${edge.node.authorImage}`" @error="setAltImg" />
                                         </div>
                                         <div class="w-full md:w-2/3">
                                             <p class="featured-author font-bold" v-text="edge.node.author" />
@@ -426,6 +426,9 @@
       searchFocus: false,
       openNav: false,
         }),
+        setAltImg(event) {
+            event.target.src = "/uploads/author.png"
+        },
         methods: {
             toggleDrawer(open) {
                 this.showDrawer = open
@@ -495,7 +498,6 @@
     }
     path
     coverImage
-    authorImage
     }
     }
     }
@@ -513,7 +515,6 @@
     }
     path
     coverImage
-    authorImage
     }
     }
     }
@@ -537,7 +538,6 @@
     }
     path
     coverImage
-    authorImage
     }
     }
     }
