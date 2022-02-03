@@ -259,15 +259,37 @@
         {
           label: 'Industries',
           show: false,
-          subitems: [{
-              label: 'Data Lake Augmentation',
-              route: '/solutions/data-lake-augmentation/'
-            },
-            {
-              label: 'Data Warehouse Modernization',
-              route: '/solutions/data-warehouse-modernization/',
-              parent: true
-            },
+              subitems: [
+                  {
+                      label: 'Financial Services',
+                      route: '/solutions/financial-services/',
+                      indent: true
+                  },
+                  {
+                      label: 'Healthcare & Life Sciences',
+                      route: '/solutions/healthcare-life-sciences/',
+                      indent: true
+                  },
+                  {
+                      label: 'Insurance',
+                      route: '/solutions/insurance/',
+                      indent: true
+                  },
+                  {
+                      label: 'Retail',
+                      route: '/solutions/retail/',
+                      indent: true
+                  },
+                  {
+                      label: 'Federal',
+                      route: '/solutions/federal/',
+                      indent: true
+                  },
+                  {
+                      label: 'Telecommunications',
+                      route: '/solutions/telecom/',
+                      indent: true
+                  },
           ]
         },
         {

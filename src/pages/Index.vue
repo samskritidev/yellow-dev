@@ -564,9 +564,9 @@
                     <br />
                     <div class="z-10">
                         <div class="block sm:flex yellowbrickbtn">
-                            <button class="hover-text text-black px-10 rfs-text-lg bg-yellow1 mt-6" href="/why-yellowbrick/">
+                            <a href="/why-yellowbrick/"><button class="hover-text text-black px-10 rfs-text-lg bg-yellow1 mt-6">
                                 How Yellowbrick is Different
-                            </button>
+                            </button></a>
 
                         </div>
                     </div>
