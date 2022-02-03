@@ -1,13 +1,13 @@
 ---
 title: "Yellowbrick 2020 predictions: The year of data-driven innovations"
 author: Yellowbrick
+authorImage: /uploads/author.png
 description: Predictions for 2020 from Yellowbrick
 date: 2020-01-11
-coverImage: /uploads/author.png
-featured: false
-authorImage: /uploads/CloudIcon.jpg
+coverImage: /uploads/Yellowbrick_AprilSummitHeroImage.jpg
 categories:
   - use cases
+featured: false
 ---
 The story of data and analytics keeps evolving. As we look toward the ‘20s, the recognition of data as a company’s single most important resource is nothing new, though pundits debate where data is the new oil or the new water. Petabyte analytics have moved from the domain of fringe Internet companies to even moderate scale enterprises. Driven by widespread and easy-to-use technologies that store, access and analyze, “citizen data scientists” mine for insights within most companies, using tools like Python and R, battle-hardened SQL, but also next generation BI interfaces.
 
