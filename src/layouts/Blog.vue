@@ -3,6 +3,10 @@
         --bg-opacity: 1;
         background-color: black;
     }
+    .search_div {
+        top: 40px !important;
+        right: 180px !important;
+    }
     .bg-blackish {
         background-color: rgba(13, 23, 28, .97);
     }
@@ -42,77 +46,7 @@
 
 <template>
     <div>
-        <header id="topnav" class="fixed flex flex-row cc:flex-col z-50 items-center w-full bg-white">
-            <nav role="navigation" class="flex flex-col items-center space-between max-w-1400 mx-auto w-full px-5 py-3 cc:py-0">
-
-                <div class="flex items-center w-full space-between">
-
-                    <div role="navigation" class="text-white z-30 w-full flex flex-wrap justify-end xl:flex-no-wrap">
-                        <a href="/" class="mr-auto flex-auto self-start py-4" >
-                            <img  alt="Yellowbrick Blog Page" src="/uploads/logo.png" />
-                        </a>
-                        
-                        <div :class="[showDrawer ? 'bg-transparent-75' : 'hidden']" class="fixed cc:hidden z-40 inset-0 trans-bg-color" @click="toggleDrawer(false)" />
-                        <ul ref="drawer" :style="{ right: showDrawer ? '0px' : '-100%' }" style="transition: right 0.25s ease;" class="fixed z-100 cc:static cc:flex items-center inset-y-0 h-screen cc:h-auto bg-black cc:bg-transparent w-full cc:w-auto m-0 mobile-menu">
-                            <li class="cc:hidden flex justify-between p-2">
-                                <g-link to="/" class="p-2 pl-4">
-                                    <img alt="Yellowbrick Data Logo" src="/uploads/images/yb-logo-dark.svg" width="130" />
-                                </g-link>
-                                <div :class="{ hidden: !showDrawer }" class="p-2" @click="toggleDrawer(false)">
-                                    <button id="close"></button>
-                                </div>
-                            </li>
-
-                            <li  class="flex relative text-black trans-bg-color pl-0 text-base hover:text-yellow1 menu-item cc:px-3 lg:px-6">
-                                <label aria-haspopup="true" class="w-full relative">
-                                    <div class="flex flex-row items-center">
-                                        <span class="flex items-center cursor-pointer p-2 pl-6 cc:px-2 cc:py-2">Categories</span>
-                                        <span class="nav-arrow text-black" />
-                                    </div>
-                                    <transition name="slider">
-                                        <ul  style="display:none;" class="cc:absolute py-3 whitespace-no-wrap bg-yellow1 cc:mt-4 min-w-full cc:min-w-200 rounded-sm submenu" aria-label="submenu">
-                                            <li class="main-nav-link" v-for="category in this.categories" :key="category.id">
-                                                <g-link :to="category.path" aria-haspopup="true" class="flex px-8 py-2 cc:px-2 w-full"> {{ category.title }} </g-link>
-                                            </li>
-                                        </ul>
-                                    </transition>
-                                </label>
-                            </li>
-
-
-                            <li v-for="(item, x) in menu" :key="x" :id="`menu-${x}`" class="flex cc:px-3 lg:px-6 relative text-black trans-bg-color pl-0 text-base hover:text-yellow1 menu-item" :class="{'cc:pl-3 lg:pl-6' : x === 0, 'cc:pl-3 lg:pl-6' : x === Object.keys(menu).length - 2, 'cc:pl-3 lg:pl-6' : x !== 0 && x !== Object.keys(menu).length - 2}"
-                                @click="item.show = !item.show">
-                                <g-link v-if="item.route" :to="item.route" class="p-2 px-6 cc:px-2 cc:py-2">{{ item.label }}</g-link>
-                                <label v-else aria-haspopup="true" class="w-full relative">
-                                    <div class="flex flex-row items-center">
-                                        <span v-text="item.label" class="flex items-center cursor-pointer p-2 pl-6 cc:px-2 cc:py-2" />
-                                        <span class="nav-arrow text-black" />
-                                    </div>
-                                    <transition name="slider">
-                                        <ul v-show="item.show" class="cc:absolute py-3 whitespace-no-wrap bg-yellow1 cc:mt-4 min-w-full cc:min-w-200 rounded-sm submenu" aria-label="submenu">
-                                            <li v-for="(subitem, y) in item.subitems" :key="y" class="main-nav-link" :class="{'child' : subitem.indent, 'parent' : subitem.parent}">
-                                                <g-link :to="subitem.route" aria-haspopup="true" class="flex px-8 py-2 cc:px-2 w-full">{{ subitem.label }}</g-link>
-                                            </li>
-                                        </ul>
-                                    </transition>
-                                </label>
-                            </li>
-                            <li id="search-box" class="flex list-none font-normal rfs-text-lg p-1 pl-6 cc:px-2 cc:py-1 relative">
-                                <span style="transform: rotate(-45deg);" class="inline-block cursor-pointer pb-2" @click="searchClick"><img src="/uploads/icons/search-icon.svg" class="search-icon" /></span>
-                                <transition name="pusher">
-                                    <search-blog v-show="searchFocus" v-model="searchResults"  class="cc:absolute text-transparent"  style="top:3px;right:28px;z-index:60;" />
-                                </transition>
-                            </li>
-                        </ul>
-
-                    </div>
-                    <div class="cursor-pointer cc:hidden flex-1 flex items-center justify-end ml-8" @click="toggleDrawer(true)">
-                        <button id="hamburger" aria-label="Show the menu" />
-                    </div>
-
-                </div>
-            </nav>
-        </header>
+       
 
         <slot />
 
@@ -259,37 +193,15 @@
         {
           label: 'Industries',
           show: false,
-              subitems: [
-                  {
-                      label: 'Financial Services',
-                      route: '/solutions/financial-services/',
-                      indent: true
-                  },
-                  {
-                      label: 'Healthcare & Life Sciences',
-                      route: '/solutions/healthcare-life-sciences/',
-                      indent: true
-                  },
-                  {
-                      label: 'Insurance',
-                      route: '/solutions/insurance/',
-                      indent: true
-                  },
-                  {
-                      label: 'Retail',
-                      route: '/solutions/retail/',
-                      indent: true
-                  },
-                  {
-                      label: 'Federal',
-                      route: '/solutions/federal/',
-                      indent: true
-                  },
-                  {
-                      label: 'Telecommunications',
-                      route: '/solutions/telecom/',
-                      indent: true
-                  },
+          subitems: [{
+              label: 'Data Lake Augmentation',
+              route: '/solutions/data-lake-augmentation/'
+            },
+            {
+              label: 'Data Warehouse Modernization',
+              route: '/solutions/data-warehouse-modernization/',
+              parent: true
+            },
           ]
         },
         {
@@ -366,27 +278,7 @@
         if (open) disableBodyScroll(this.$refs.drawer)
         else clearAllBodyScrollLocks()
       },
-      searchClick() {
-        this.searchFocus = true
-        this.$nextTick(() => {
-          document.getElementById('search-box').focus()
-        })
-      },
-      clickAnywhere(e) {
-        this.menu.forEach((item, x) => {
-          if (!document.getElementById(`menu-${x}`).contains(e.target) && item.show) item.show = false
-        })
-        if (!document.getElementById('search-box').contains(e.target)) this.searchFocus = false
-      },
-      pressAnything(e) {
-        if (e.key === 'Escape') {
-          this.showDrawer = false
-          this.searchFocus = false
-          this.menu.forEach((item, x) => {
-            if (item.show) item.show = false
-          })
-        }
-      }
+
     }
   }</script>
 <page-query>
