@@ -277,7 +277,7 @@
                 <div class="flex flex-row flex-wrap -mx-6">
                     <div v-for="edge in searchResults ? searchResults : $page.allBlog.edges" :key="edge.node.id" class="flex flex-col w-full relative current-post p-6">
                         <div class="flex flex-col md:flex-row max-w-1200 w-full mx-auto relative">
-                            <div :to="featuredBlog.path" class="w-full md:w-1/3 main-box relative">
+                            <div :to="edge.node.path" class="w-full md:w-1/3 main-box relative">
                                 <div class="float-box text-white">
                                     <img :src="`${edge.node.coverImage}`" />
                                 </div>

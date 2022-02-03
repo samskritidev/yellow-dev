@@ -263,8 +263,6 @@
         if(!document)
           return;
         const path = 'https://www.yellowbrick.com' + document.location.pathname;
-        document.head.querySelector('meta[name="og:url"]').content = path;
-        document.head.querySelector('meta[name="twitter:url"]').content = path;
       }(document))
     },
     beforeDestroy() {
