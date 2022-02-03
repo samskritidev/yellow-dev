@@ -292,7 +292,7 @@
                                     <h4 class="rfs-text-base text-black" v-html="edge.node.description" />
                                     <div class="flex flex-col md:flex-row md:w-1/2">
                                         <div class="w-full md:w-1/4" style="margin-right:20px">
-                                            <img :src="`${edge.node.authorImage}`" @error="setAltImg" />
+                                            <img src="/uploads/author.png" />
                                         </div>
                                         <div class="w-full md:w-2/3">
                                             <p class="featured-author font-bold" v-text="edge.node.author" />
