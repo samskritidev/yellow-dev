@@ -242,7 +242,7 @@
                         <p class="rfs-text-base leading-tight" v-html="featuredBlog.description" />
                         <div class="flex flex-col md:flex-row md:w-1/2">
                             <div class="w-full md:w-1/4" style="margin-right:20px">
-                                <img src="/uploads/author.png" />
+                                <img :src="`${featuredBlog.authorImage}`" />
                             </div>
                             <div class="w-full md:w-2/3">
                                 <p class="featured-author font-bold" v-text="featuredBlog.author" />
@@ -279,7 +279,7 @@
                         <div class="flex flex-col md:flex-row max-w-1200 w-full mx-auto relative">
                             <div :to="featuredBlog.path" class="w-full md:w-1/3 main-box relative">
                                 <div class="float-box text-white">
-                                    <img :src="`${edge.node.authorImage}`" />
+                                    <img :src="`${edge.node.coverImage}`" />
                                 </div>
                             </div>
                             <div class="w-full md:w-2/3 main-box relative">
