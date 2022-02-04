@@ -1,6 +1,6 @@
 ---
 id: 50f01c6c-f552-4a54-8a11-f992f2d5886b
-name: tex
+name: Mark Cusack
 position: tex
 authorImage: /uploads/author.png
 authorAbout: te
