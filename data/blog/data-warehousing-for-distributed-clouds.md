@@ -1,6 +1,6 @@
 ---
 title: Data warehousing for distributed clouds
-author: Mark Cusack, CTO, Yellowbrick Data
+author: 1ba10835-21ac-4d72-9c45-e7a27169f4f9
 description: Data is becoming more distributed, and data warehouses will have to
   adapt. But how?
 date: 2021-04-06T19:04:54.035Z

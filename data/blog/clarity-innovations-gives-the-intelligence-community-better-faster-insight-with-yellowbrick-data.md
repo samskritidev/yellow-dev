@@ -1,7 +1,7 @@
 ---
 title: Clarity Innovations gives the intelligence community better, faster
   insight with Yellowbrick
-author: Joshua Miner
+author: roopa
 description: "The phenomenal performance Yellowbrick delivers enables Clarity
   Innovations to more effectively meet customer needs. Calder told us of one
   real-world scenario: “We were asked to pull back geographic information from
@@ -12,6 +12,7 @@ date: 2019-09-09
 coverImage: /uploads/Yellowbrick-BlogImage10.jpg
 categories:
   - customers
+featured: false
 ---
 
 <BaseWistia id="8ombnnb84k" />

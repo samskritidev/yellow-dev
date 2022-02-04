@@ -1,12 +1,14 @@
 ---
+authorAbout: test
 title: Best of 2022
-author: Jeff Spicer, CMO
+author: 50f01c6c-f552-4a54-8a11-f992f2d5886b
 description: Yellowbrick’s customer testimonials. Our customers are succeeding with us.
 date: 2021-12-02T22:38:37.105Z
 coverImage: /uploads/Yellowbrick-BlogImage10.jpg
 categories:
   - product
 featured: true
+authorImage: /uploads/allen-bw.jpg
 ---
 <!--\\\[if gte mso 9]><xml>
  <w:WordDocument>

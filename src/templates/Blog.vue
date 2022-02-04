@@ -118,7 +118,6 @@ export default {
     blog(id: $id) {
       title
       description
-      author
       content
       coverImage
       date(format: "MMMM D, YYYY")

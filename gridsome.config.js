@@ -23,7 +23,8 @@ module.exports = {
     {
       use: 'gridsome-plugin-netlify-cms',
       options: {
-        publicPath: '/admin'
+          publicPath: '/admin',
+          modulePath: './src/admin/index.js',
       }
     },
     {
@@ -44,6 +45,7 @@ module.exports = {
           '@gridsome/remark-prismjs'
         ],
         refs: {
+          author: 'Author',
           categories: {
             typeName: 'Category',
             route: '/blog/category/:id',
@@ -52,7 +54,19 @@ module.exports = {
           }
         }
       }
-    },
+      },
+      {
+          use: '@gridsome/vue-remark',
+          options: {
+              typeName: 'Author',
+              baseDir: './data/authors',
+              pathPrefix: '/authors',
+              template: './src/templates/Authors.vue',
+              plugins: [
+                  '@gridsome/remark-prismjs'
+              ]
+          }
+      },
     {
       use: '@gridsome/vue-remark',
       options: {
@@ -75,7 +89,14 @@ module.exports = {
           '@gridsome/remark-prismjs'
         ]
       }
-    },
+      },
+      {
+          use: '@gridsome/source-filesystem',
+          options: {
+              path: 'data/authors/*.md',
+              typeName: 'Author',
+          }
+      },
     {
       use: '@gridsome/source-filesystem',
       options: {

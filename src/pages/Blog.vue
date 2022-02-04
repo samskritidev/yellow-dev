@@ -3,7 +3,18 @@
         margin-top: 20px;
         margin-bottom: 20px;
     }
-
+    .featured_image {
+        min-height: 400px;
+        min-width: 390px;
+        object-fit: cover;
+    }
+    .featured_image1 {
+        min-height: 460px;
+        min-width: 520px;
+        object-fit: cover;
+    }
+    .main-box {
+    }
     .active.pagerLink {
         background-color: #ffcd32;
         border: 1px solid black;
@@ -26,7 +37,7 @@
     }
 
     .main-box {
-        padding-top: 30%;
+        padding-top: 40%;
         &:hover
 
     {
@@ -229,7 +240,7 @@
 
                 <div class="w-full md:w-1/2 main-box relative">
                     <div class="float-box">
-                        <img :src="`${featuredBlog.coverImage}`" />
+                        <img class="featured_image1" :src="`${featuredBlog.coverImage}`" />
                     </div>
                 </div>
                 <div class="w-full md:w-1/2 main-box relative">
@@ -239,13 +250,13 @@
                         </template>
                         <g-link :to="featuredBlog.path"><h2 class="rfs-text-4xl font-bold" style="line-height: 1.1;" v-html="featuredBlog.title" /></g-link>
 
-                        <p class="rfs-text-base leading-tight" v-html="featuredBlog.description" />
+                        <p class="rfs-text-base leading-tight">Yellowbricks customer testimonials. Our customers are succeeding with us.Yellowbricks customer testimonials. Our customers are succeeding with us.Yellowbricks customer testimonials. Our customers are succeding with.</p>
                         <div class="flex flex-col md:flex-row md:w-1/2">
                             <div class="w-full md:w-1/4" style="margin-right:20px">
-                                <img src="/uploads/author.png" />
+                                <img  :src="`${featuredBlog.coverImage}`" />
                             </div>
                             <div class="w-full md:w-2/3">
-                                <p class="featured-author font-bold" v-text="featuredBlog.author" />
+                                <p class="featured-author font-bold" v-text="featuredBlog.name" />
                                 <p v-text="featuredBlog.date" />
                             </div>
                         </div>
@@ -277,9 +288,9 @@
                 <div class="flex flex-row flex-wrap -mx-6">
                     <div v-for="edge in searchResults ? searchResults : $page.allBlog.edges" :key="edge.node.id" class="flex flex-col w-full relative current-post p-6">
                         <div class="flex flex-col md:flex-row max-w-1200 w-full mx-auto relative">
-                            <div :to="edge.node.path" class="w-full md:w-1/3 main-box relative">
+                            <div :to="edge.node.path" class="w-full md:w-2/5 main-box relative">
                                 <div class="float-box text-white">
-                                    <img :src="`${edge.node.coverImage}`" />
+                                    <img class="featured_image" :src="`${edge.node.coverImage}`" />
                                 </div>
                             </div>
                             <div class="w-full md:w-2/3 main-box relative">
@@ -289,13 +300,14 @@
                                         <a v-for="(category) in edge.node.categories" :key="category.id" v-text="category.title === 'yellowbrick and tpc-ds' ? 'Yellowbrick and TPC-DS' : category.title" :href="`/blog/category/${category.title}`" class="uppercase font-bold text-yellow1 leading-none mr-2 inline" />
                                     </template>
                                     <g-link :to="edge.node.path"><h4 class="rfs-text-4xl text-black font-bold" v-html="edge.node.title" /></g-link>
-                                    <h4 class="rfs-text-base text-black" v-html="edge.node.description" />
+                                    <p class="rfs-text-base leading-tight">Yellowbricks customer testimonials. Our customers are succeeding with us.Yellowbricks customer testimonials. Our customers are succeeding with us.Yellowbricks customer testimonials. Our customers are succeding with.</p>
+
                                     <div class="flex flex-col md:flex-row md:w-1/2">
                                         <div class="w-full md:w-1/4" style="margin-right:20px">
                                             <img src="/uploads/author.png" />
                                         </div>
                                         <div class="w-full md:w-2/3">
-                                            <p class="featured-author font-bold" v-text="edge.node.author" />
+                                            <p class="featured-author font-bold" v-text="edge.node.name" />
                                             <p v-text="edge.node.date" />
                                         </div>
                                     </div>
@@ -489,7 +501,7 @@
     node {
     id
     title
-    author
+
     description
     date(format: "MMMM D, YYYY")
     categories {
@@ -507,7 +519,7 @@
     id
     title
     description
-    author
+ 
     date(format: "MMMM D, YYYY")
     categories {
     id
@@ -529,7 +541,7 @@
     node {
     id
     title
-    author
+   
     description
     date(format: "MMMM D, YYYY")
     categories {
@@ -538,6 +550,7 @@
     }
     path
     coverImage
+    
     }
     }
     }

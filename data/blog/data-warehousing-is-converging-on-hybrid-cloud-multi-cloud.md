@@ -1,6 +1,6 @@
 ---
 title: Data warehousing is converging on hybrid cloud/multi-cloud
-author: Justin Kestelyn, Head of Product Marketing
+author: 44aee229-beb9-4bd5-9678-785e217a0778
 description: Yellowbrick brings a hybrid/multi-cloud approach to data analytics
   in the form of a modern MPP data warehouse that offers the freedom to deploy
   anywhere.

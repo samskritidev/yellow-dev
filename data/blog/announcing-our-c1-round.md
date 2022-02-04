@@ -1,6 +1,6 @@
 ---
 title: Announcing Our C1 Round!
-author: Jeff Spicer, Yellowbrick Chief Marketing Officer
+author: ravi
 description: We're thrilled to announce our C1 round of funding from three new
   investors, including institutional investor Citadel Securities, which is also
   a recent new customer of Yellowbrick.
