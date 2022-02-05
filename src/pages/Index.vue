@@ -619,8 +619,11 @@
                         <div class="bg-container"></div>
                         <div class="max-w-xl w-full h-full">
                             <h4 class="leading-tight mb-0 w-full" :class="'text-black' || 'text-black'">
-                                <img class=" w-full" src="/uploads/images/whats-new/Finance.jpg" />
+                                <img class=" w-full" src="/uploads/yellowbrick-data-partners.png" style="height:243px;" />
                             </h4>
+                            <div class="bg-container" :style="{
+                backgroundImage: `url(${$page.home.bannerRight.image.src})`,
+              }"></div>
                             <div class="p-3 px-5">
                                 <h5 class="leading-tight mb-0" style="text-transform:uppercase;font-weight:600" :class="'text-black' || 'text-black'">
                                     {{ $page.home.bannerLeft.eyebrow }}
