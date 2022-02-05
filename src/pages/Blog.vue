@@ -501,10 +501,6 @@
     node {
     id
     title
-    author {
-    name
-    authorImage
-    }
     description
     date(format: "MMMM D, YYYY")
     categories {
@@ -522,10 +518,6 @@
     id
     title
     description
-    author {
-    name
-    authorImage
-    }
     date(format: "MMMM D, YYYY")
     categories {
     id
@@ -556,10 +548,6 @@
     }
     path
     coverImage
-    author {
-    name
-    authorImage
-    }
     }
     }
     }
