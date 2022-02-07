@@ -112,7 +112,7 @@
 
     .announcement-box a {
         margin: 20px;
-        border: 1px solid #e5e5e5;
+        border: 0.5px solid #e5e5e5;
     }
 
     .announcement-box .arrow-only-white {
@@ -460,7 +460,7 @@
     <Layout>
         <base-section :classNames="'hero flex pt-24 pb-12 md:pt-20 md:pb-10 px-5 xl:px-0'">
             <div class="w-full lg:w-5/6 z-10">
-                <h3 class="rfs-text-4xl text-yellow1 sub-title mb-6 md:pt-16">Run your data anywhere across private cloud, public cloud, on premise, and at the edge, in a single management view.</h3>
+                <h3 class="rfs-text-4xl text-white sub-title mb-6 md:pt-16">Run your data anywhere across private cloud, public cloud, on premise, and at the edge, in a single management view.</h3>
             </div>
             <div class="flex flex-col w-full md:max-w-1200 mx-auto lg:pt-6">
                 <div class="z-10 relative lg:w-5/6">
