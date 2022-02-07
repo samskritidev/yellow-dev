@@ -112,7 +112,7 @@
 
     .announcement-box a {
         margin: 20px;
-        border: 1px solid #e5e5e5;
+        border: 0.5px solid #e5e5e5;
     }
 
     .announcement-box .arrow-only-white {
