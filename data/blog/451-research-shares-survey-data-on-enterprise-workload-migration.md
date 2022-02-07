@@ -1,6 +1,6 @@
 ---
 title: 451 Research shares survey data on enterprise workload migration
-author: Yellowbrick
+author: 1f5d5e99-3d0b-42ed-97aa-986473217b93
 description: The 451 Survey indicates that in 2020, **38% of organizations will
   adopt a hybrid cloud model** (hosting data on-premises and in the cloud).
   Companies adopting this model are doing so because of legacy technical debt,
@@ -12,6 +12,7 @@ coverImage: /uploads/Yellowbrick-BlogImage4.jpg
 categories:
   - research
   - migration
+featured: false
 ---
 
 451 Research curated a survey that highlights decisions, challenges and considerations when it comes to workload/application deployment and best execution venues. While heading to the public cloud is a popular option, it is only one choice of many.

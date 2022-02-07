@@ -37,7 +37,7 @@ collections:
       - {label: "ID", name: "id", widget: "id"}
       - {label: Author Name, name: name, widget: string}
       - {label: Position, name: position, widget: string}
-      - {label: Author Image, name: authorImage, widget: image, default: /uploads/author.png}
+      - {label: Author Image, name: authorImage, widget: image, default: /uploads/author.png, required: false}
       - {label: About Author, name: authorAbout, widget: markdown}
       - {label: Created Date, name: date, widget: date}
   -
