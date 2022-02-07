@@ -460,7 +460,11 @@
     <Layout>
         <base-section :classNames="'hero flex pt-24 pb-12 md:pt-20 md:pb-10 px-5 xl:px-0'">
             <div class="w-full lg:w-5/6 z-10">
+<<<<<<< HEAD
                 <h3 class="rfs-text-4xl sub-title text-yellow1 mb-6 md:pt-16">Run your data anywhere across private cloud, public cloud, on premise, and at the edge, in a single management view.</h3>
+=======
+                <h3 class="rfs-text-4xl sub-title mb-6 md:pt-16">Run your data anywhere across private cloud, public cloud, on premise, and at the edge, in a single management view.</h3>
+>>>>>>> 353ff41b6b891d211dcf50ac5d09d859a5e4483a
             </div>
             <div class="flex flex-col w-full md:max-w-1200 mx-auto lg:pt-6">
                 <div class="z-10 relative lg:w-5/6">
