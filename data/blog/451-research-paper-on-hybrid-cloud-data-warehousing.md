@@ -1,7 +1,7 @@
 ---
 title: "451 Research report: The strategic advantages of hybrid cloud data
   warehousing"
-author: Yellowbrick
+author: f6e3aea9-fc52-403d-8f5b-855a77624696
 description: To be truly data-driven, enterprises need to analyze their data
   wherever it resides – whether it’s on-premises or in the cloud.  And it’s not
   enough to have separate hybrid cloud and data analytics strategies running in
@@ -11,6 +11,7 @@ coverImage: /uploads/Yellowbrick-BlogImage2.jpg
 categories:
   - use cases
   - cloud
+featured: false
 ---
 Enterprises in every industry are faced with massively growing data (and even greater data needs), a shift of IT services and technology infrastructure to the cloud, and a business imperative to become data-driven.  
 

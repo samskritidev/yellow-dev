@@ -1,10 +1,13 @@
 ---
-title: "451 Research | Retailers stock up on the benefits of machine learning"
+title: 451 Research | Retailers stock up on the benefits of machine learning
+author: d7d83a7f-9bf1-4a73-89ce-498af277fac7
+description: test
 date: 2018-12-16
-coverImage: "/uploads/Yellowbrick-BlogImage3.jpg"
+coverImage: /uploads/Yellowbrick-BlogImage3.jpg
 categories:
   - use cases
   - research
+featured: false
 ---
 
 Retailers are leading the charge when it comes to innovation with AI and machine learning. In fact, a recent 451 Research report, “Retailers stock up on the benefits of machine learning,” discusses many ways that retailers are applying machine learning to business use case today.

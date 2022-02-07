@@ -1,6 +1,6 @@
 ---
 title: TPC-DS and the Yellowbrick query optimizer (TPC-DS Q03)
-author: Yellowbrick Query Optimizer Team
+author: f6e3aea9-fc52-403d-8f5b-855a77624696
 description: Query 3 looks like a straightforward task, but looks can be deceiving
 date: 2021-05-20T16:38:33.831Z
 coverImage: /uploads/Yellowbrick-BlogImage16.jpg

@@ -1,6 +1,6 @@
 ---
 title: Price/performance is the only thing that matters in data warehousing
-author: Thomas Kejser, Head of Query Planning Team
+author: f6e3aea9-fc52-403d-8f5b-855a77624696
 description: With data-driven decisions now demanding nearly immediate
   time-to-insight, data warehouse performance is critical, with competitive
   benchmarking now a bloodsport among vendors. The little known secret is that
@@ -10,6 +10,7 @@ date: 2020-11-23T21:25:56.860Z
 coverImage: /uploads/Yellowbrick-BlogImage2.jpg
 categories:
   - product
+featured: false
 ---
 With data-driven decisions now demanding nearly immediate time-to-insight, data warehouse performance is critical, with competitive benchmarking now a bloodsport among vendors. The little known secret is that scalable performance (query latency, concurrency, load/ingest speed) is always achievable -- if you can pay for it.
 

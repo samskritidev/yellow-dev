@@ -1,7 +1,7 @@
 <template>
     <Layout>
-        <h1 v-html="$page.customer.name" />
-        <div v-html="$page.customer.position" />
+        <h1 v-html="$page.author.name" />
+        <div v-html="$page.author.position" />
     </Layout>
 </template>
 

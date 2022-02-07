@@ -4,13 +4,13 @@
         margin-bottom: 20px;
     }
     .featured_image {
-        min-height: 220px;
-        min-width: 220px;
+        min-height: 400px;
+        min-width: 390px;
         object-fit: cover;
     }
     .featured_image1 {
-        min-height: 220px;
-        min-width: 220px;
+        min-height: 460px;
+        min-width: 520px;
         object-fit: cover;
     }
     .main-box {
@@ -37,7 +37,7 @@
     }
 
     .main-box {
-        padding-top: 25%;
+        padding-top: 40%;
         &:hover
 
     {
@@ -217,7 +217,12 @@
                                     </transition>
                                 </label>
                             </li>
-                         
+                            <li id="search-box" class="flex list-none font-normal rfs-text-lg p-1 pl-6 cc:px-2 cc:py-1 relative">
+                                <span style="transform: rotate(-45deg);" class="inline-block cursor-pointer pb-2" @click="searchClick"><img src="/uploads/icons/search-icon.svg" class="search-icon" /></span>
+                                <transition name="pusher">
+                                    <search-blog v-show="searchFocus" v-model="searchResults" class="cc:absolute text-transparent" style="top:3px;right:28px;z-index:60;" />
+                                </transition>
+                            </li>
                         </ul>
 
                     </div>
@@ -230,37 +235,123 @@
         </header>
         <section class="flex flex-col pb-2 pt-32 px-6 xl:px-0 bg-white">
         </section>
-        <section class="px-6 xl:px-0" id="current_post">
+        <section class="px-6 xl:px-0 bg-white pb-16" v-if="featuredBlog" style="border-bottom: 1px solid #0000002e;">
+            <div class="flex flex-col md:flex-row max-w-1200 w-full mx-auto relative">
+
+                <div class="w-full md:w-1/2 main-box relative">
+                    <div class="float-box">
+                        <img class="featured_image1" :src="`${featuredBlog.coverImage}`" />
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2 main-box relative">
+                    <div class="float-box text-black">
+                        <template v-if="featuredBlog.categories">
+                            <a v-for="(category) in featuredBlog.categories" :key="category.id" v-text="category.title === 'yellowbrick and tpc-ds' ? 'Yellowbrick and TPC-DS' : category.title" :href="`/blog/category/${category.title}`" class="uppercase font-bold text-yellow1 leading-none mr-2 inline" />
+                        </template>
+                        <g-link :to="featuredBlog.path"><h2 class="rfs-text-4xl font-bold" style="line-height: 1.1;" v-html="featuredBlog.title" /></g-link>
+
+                        <p class="rfs-text-base leading-tight">Yellowbricks customer testimonials. Our customers are succeeding with us.Yellowbricks customer testimonials. Our customers are succeeding with us.Yellowbricks customer testimonials. Our customers are succeding with.</p>
+                        <div class="flex flex-col md:flex-row md:w-1/2">
+                            <div class="w-full md:w-1/4" style="margin-right:20px">
+                                <img  :src="`${featuredBlog.coverImage}`" />
+                            </div>
+                            <div class="w-full md:w-2/3">
+                                <p class="featured-author font-bold" v-text="featuredBlog.name" />
+                                <p v-text="featuredBlog.date" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            </div>
+        </section>
+
+        <!-- <section class="px-6 xl:px-0 py-12">
+      <div class="max-w-1200 w-full mx-auto">
+        <h3>Current Posts</h3>
+        <div class="flex flex-col md:flex-row">
+          <g-link :to="edge.node.path" v-for="edge in $page.latestBlogs.edges" :key="edge.node.id" class="flex flex-col w-full md:w-1/2 relative current-post" :style="`background-image: url('${edge.node.coverImage}'); background-size: cover;`">
+            <div class="p-10 md:px-6 w-full md:w-3/4 lg:w-7/12">
+              <span class="block text-gray-200" v-text="edge.node.date" />
+              <h4 class="rfs-text-xl text-white leading-none" v-html="edge.node.title" />
+              <div class="arrow-only-white">Read post</div>
+            </div>
+          </g-link>
+        </div>
+      </div>
+    </section> -->
+
+        <section class="px-6 xl:px-0 py-12" id="current_post">
             <div class="max-w-1200 w-full mx-auto">
-                <h1 class="justify-center uppercase font-bold" style="text-align: center;">Our Authors</h1>
-                <p></p>
-                <p>Yellowbrick authors write compelling stories about cutting edge technologies &Aacute; trends, people, products, events, and topic that is valuable to our customers, employees and partners.</p>
-                <div class="flex flex-row flex-wrap -mx-6" style="border-top: 1px solid #80808047;">
-                    <div v-for="edge in searchResults ? searchResults : $page.allAuthor.edges" :key="edge.node.id" class="flex flex-col w-full relative current-post p-6">
+                <h1 class="text-yellow1 uppercase font-bold">Current Posts</h1>
+                <div class="flex flex-row flex-wrap -mx-6">
+                    <div v-for="edge in searchResults ? searchResults : $page.allBlog.edges" :key="edge.node.id" class="flex flex-col w-full relative current-post p-6">
                         <div class="flex flex-col md:flex-row max-w-1200 w-full mx-auto relative">
-                            <g-link :to="edge.node.path" class="w-full md:w-1/5 main-box relative">
+                            <div :to="edge.node.path" class="w-full md:w-2/5 main-box relative">
                                 <div class="float-box text-white">
-                                    <img class="featured_image" :src="`${edge.node.authorImage}`" />
+                                    <img class="featured_image" :src="`${edge.node.coverImage}`" />
                                 </div>
-                            </g-link>
+                            </div>
                             <div class="w-full md:w-2/3 main-box relative">
                                 <div class="float-box text-black">
                                     <!-- <h6 class="text-yellow2 hidden md:block">Data Warehouse Modernization</h6> -->
+                                    <template v-if="edge.node.categories">
+                                        <a v-for="(category) in edge.node.categories" :key="category.id" v-text="category.title === 'yellowbrick and tpc-ds' ? 'Yellowbrick and TPC-DS' : category.title" :href="`/blog/category/${category.title}`" class="uppercase font-bold text-yellow1 leading-none mr-2 inline" />
+                                    </template>
+                                    <g-link :to="edge.node.path"><h4 class="rfs-text-4xl text-black font-bold" v-html="edge.node.title" /></g-link>
+                                    <p class="rfs-text-base leading-tight">Yellowbricks customer testimonials. Our customers are succeeding with us.Yellowbricks customer testimonials. Our customers are succeeding with us.Yellowbricks customer testimonials. Our customers are succeding with.</p>
 
-                                    <g-link :to="edge.node.path"><h4 class="rfs-text-3xl text-yellow1 uppercase font-bold" v-html="edge.node.name" /></g-link>
-                                    <p class="featured-author font-bold" v-text="edge.node.position" />
-                                    <p class="rfs-text-base leading-tight" v-if="edge.node.authorAbout.length<498" v-html="edge.node.authorAbout"></p>
-                                    <p class="rfs-text-base leading-tight" v-else v-html="edge.node.authorAbout.substring(0,498)"></p>
+                                    <div class="flex flex-col md:flex-row md:w-1/2">
+                                        <div class="w-full md:w-1/4" style="margin-right:20px">
+                                            <img src="/uploads/author.png" />
+                                        </div>
+                                        <div class="w-full md:w-2/3">
+                                            <p class="featured-author font-bold" v-text="edge.node.name" />
+                                            <p v-text="edge.node.date" />
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
+
+                            <!-- <img src="/uploads/blog/abstract4.jpg" alt="abstract" class="self-start" /> -->
+
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- <section class="px-6 xl:px-0">
+      <div class="min-h-screen max-w-1200 w-full mx-auto">
+        <h3>Previous Posts</h3>
+        <div class="flex flex-wrap justify-start -mx-6">
+          <div class="zoomer flex w-full sm:w-1/2 lg:w-1/3" v-for="edge in searchResults ? searchResults : $page.allBlog.edges" :key="edge.node.id">
+            <div class="flex-col m-6 relative">
+              <g-link :to="edge.node.path">
+                <div class="text-sm font-normal self-end text-gray-700 py-1">{{ edge.node.date }}</div>
+                <img v-if="edge.node.coverImage" :src="edge.node.coverImage" :alt="edge.node.title" />
 
-        <Pager v-if="!searchResults" class="flex w-full mx-auto py-8 bg-white text-3xl justify-center" :info="$page.allAuthor.pageInfo" linkClass="pagerLink" />
+                <img src="/uploads/blog/modernize.jpg" alt="abstract" class="" />
+
+                <div class="self-end capitalize my-4 leading-none" v-if="edge.node.categories">
+                  <span v-for="category in edge.node.categories" :key="category.id" v-text="category.title.replace('-', ' ')" class="text-gray-800 leading-none" />
+                </div>
+                <div class="">
+                  <h6 class="">{{ edge.node.title }}</h6>
+
+                  <div class="rfs-text-sm">{{ edge.node.description }}</div>
+
+                </div>
+
+              </g-link>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+        <Pager v-if="!searchResults" class="flex w-full mx-auto py-8 bg-white text-3xl justify-center" :info="$page.allBlog.pageInfo" linkClass="pagerLink" />
 
     </Layout>
 </template>
@@ -404,8 +495,40 @@
 </script>
 
 <page-query>
-    query Author($page: Int) {
-    allAuthor (perPage: 12, page: $page, sortBy: "name", order: ASC) @paginate {
+    query Blog($page: Int) {
+    featuredBlog: allBlog(filter: { featured: { eq: true }}, limit: 1, sortBy: "date", order: DESC) {
+    edges {
+    node {
+    id
+    title
+    description
+    date(format: "MMMM D, YYYY")
+    categories {
+    id
+    title
+    }
+    path
+    coverImage
+    }
+    }
+    }
+    latestBlogs: allBlog(limit: 2, sortBy: "date", order: DESC) {
+    edges {
+    node {
+    id
+    title
+    description
+    date(format: "MMMM D, YYYY")
+    categories {
+    id
+    title
+    }
+    path
+    coverImage
+    }
+    }
+    }
+    allBlog(perPage: 12, page: $page, sortBy: "date", order: DESC) @paginate {
     pageInfo {
     totalPages
     currentPage
@@ -414,10 +537,25 @@
     }
     edges {
     node {
-    name
-    position
-    authorImage
-    authorAbout
+    id
+    title
+
+    description
+    date(format: "MMMM D, YYYY")
+    categories {
+    id
+    title
+    }
+    path
+    coverImage
+    }
+    }
+    }
+    allCategory {
+    edges {
+    node {
+    id
+    title
     path
     }
     }

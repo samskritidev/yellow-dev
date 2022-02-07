@@ -253,10 +253,10 @@
                         <p class="rfs-text-base leading-tight">Yellowbricks customer testimonials. Our customers are succeeding with us.Yellowbricks customer testimonials. Our customers are succeeding with us.Yellowbricks customer testimonials. Our customers are succeding with.</p>
                         <div class="flex flex-col md:flex-row md:w-1/2">
                             <div class="w-full md:w-1/4" style="margin-right:20px">
-                                <img  :src="`${featuredBlog.coverImage}`" />
+                                <img :src="`${featuredBlog.author.authorImage}`" />
                             </div>
                             <div class="w-full md:w-2/3">
-                                <p class="featured-author font-bold" v-text="featuredBlog.name" />
+                                <p class="featured-author font-bold" v-text="featuredBlog.author.name" />
                                 <p v-text="featuredBlog.date" />
                             </div>
                         </div>
@@ -304,10 +304,10 @@
 
                                     <div class="flex flex-col md:flex-row md:w-1/2">
                                         <div class="w-full md:w-1/4" style="margin-right:20px">
-                                            <img src="/uploads/author.png" />
+                                            <img  :src="`${edge.node.author.authorImage}`" />
                                         </div>
                                         <div class="w-full md:w-2/3">
-                                            <p class="featured-author font-bold" v-text="edge.node.name" />
+                                            <p class="featured-author font-bold" v-text="edge.node.author.name" />
                                             <p v-text="edge.node.date" />
                                         </div>
                                     </div>
@@ -502,13 +502,17 @@
     id
     title
     description
+    author {
+    name
+    authorImage
+    }
     date(format: "MMMM D, YYYY")
     categories {
     id
     title
     }
     path
-    coverImage
+    coverImage 
     }
     }
     }
@@ -518,6 +522,10 @@
     id
     title
     description
+    author {
+    name
+    authorImage
+    }
     date(format: "MMMM D, YYYY")
     categories {
     id
@@ -548,6 +556,10 @@
     }
     path
     coverImage
+    author {
+    name
+    authorImage
+    }
     }
     }
     }

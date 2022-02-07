@@ -32,6 +32,7 @@ collections:
     folder: data/authors
     create: true
     slug: "{{slug}}"
+    identifier_field: name
     fields:
       - {label: "ID", name: "id", widget: "id"}
       - {label: Author Name, name: name, widget: string}
