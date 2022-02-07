@@ -3,14 +3,27 @@
         margin-top: 20px;
         margin-bottom: 20px;
     }
+    .leading-none {
+        color: #497070;
+    }
     .featured_image {
-        min-height: 400px;
-        min-width: 390px;
+        min-height: 302px;
+        min-width: 330px;
+        max-height: 307px;
+        max-width: 320px;
+        -o-object-fit: cover;
         object-fit: cover;
     }
+    .rfs-text-base {
+        margin-bottom: 1rem
+    }
+    .rfs-text-4xl{
+     margin-top: 0.3rem; 
+        margin-bottom: 0.5rem;
+    }
     .featured_image1 {
-        min-height: 460px;
-        min-width: 520px;
+        min-height: 390px;
+        min-width: 530px;
         object-fit: cover;
     }
     .main-box {
@@ -37,7 +50,7 @@
     }
 
     .main-box {
-        padding-top: 40%;
+        padding-top: 25%;
         &:hover
 
     {
@@ -235,7 +248,7 @@
         </header>
         <section class="flex flex-col pb-2 pt-32 px-6 xl:px-0 bg-white">
         </section>
-        <section class="px-6 xl:px-0 bg-white pb-16" v-if="featuredBlog" style="border-bottom: 1px solid #0000002e;">
+        <section class="px-6 xl:px-0 bg-white pb-16" v-if="featuredBlog" style="border-bottom: 1px solid #0000002e; margin-top: 20px;">
             <div class="flex flex-col md:flex-row max-w-1200 w-full mx-auto relative">
 
                 <div class="w-full md:w-1/2 main-box relative">
@@ -252,10 +265,12 @@
                         <p class="rfs-text-base leading-tight" v-text="featuredBlog.description" />
                         <div class="flex flex-col md:flex-row md:w-1/2">
                             <div class="w-full md:w-1/4" style="margin-right:20px">
-                                <img :src="`${featuredBlog.author.authorImage}`" />
+                                <img :src="`${featuredBlog.author.authorImage}`" style=" border-radius: 50%; width: 70px; height: 70px" />
                             </div>
                             <div class="w-full md:w-2/3">
-                                <p class="featured-author font-bold" v-text="featuredBlog.author.name" />
+                                <g-link :to="featuredBlog.author.path">
+                                    <p class="featured-author font-bold" v-text="featuredBlog.author.name" />
+                                </g-link>
                                 <p v-text="featuredBlog.date" />
                             </div>
                         </div>
@@ -275,7 +290,7 @@
                                     <img class="featured_image" :src="`${edge.node.coverImage}`" />
                                 </div>
                             </div>
-                            <div class="w-full md:w-2/3 main-box relative">
+                            <div class="w-full md:w-4/5 main-box relative" style="border-radius: 5px; border: 1px solid rgba(128,128,128,0.25882); border-left: none;">
                                 <div class="float-box text-black">
                                     <template v-if="edge.node.categories">
                                         <a v-for="(category) in edge.node.categories" :key="category.id" v-text="category.title === 'yellowbrick and tpc-ds' ? 'Yellowbrick and TPC-DS' : category.title" :href="`/blog/category/${category.title}`" class="uppercase font-bold text-yellow1 leading-none mr-2 inline" />
@@ -284,13 +299,15 @@
                                     <p class="rfs-text-base leading-tight" v-html="edge.node.description" />
 
                                     <div class="flex flex-col md:flex-row md:w-1/2">
-                                        <div class="w-full md:w-1/4" style="margin-right:20px">
-                                            <img  :src="`${edge.node.author.authorImage}`" />
+                                        <div class="w-full md:w-1/5" style="margin-right:20px">
+                                            <img  :src="`${edge.node.author.authorImage}`" style=" border-radius: 50%; width: 70px; height: 70px" />
                                         </div>
                                         <div class="w-full md:w-2/3">
-                                            <p class="featured-author font-bold" v-text="edge.node.author.name" />
-                                            <p v-text="edge.node.date" />
-                                        </div>
+                                            <g-link :to="edge.node.author.path">
+                                                <p class="featured-author font-bold" v-text="edge.node.author.name" />
+                                            </g-link>
+                                                <p v-text="edge.node.date" />
+</div>
                                     </div>
                                 </div>
                             </div>
@@ -454,6 +471,7 @@
     author {
     name
     authorImage
+    path
     }
     date(format: "MMMM D, YYYY")
     categories {
@@ -474,6 +492,7 @@
     author {
     name
     authorImage
+    path
     }
     date(format: "MMMM D, YYYY")
     categories {
@@ -499,6 +518,7 @@
     author {
     name
     authorImage
+    path
     }
     description
     date(format: "MMMM D, YYYY")
@@ -511,6 +531,7 @@
     author {
     name
     authorImage
+    path
     }
     }
     }

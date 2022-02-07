@@ -3,14 +3,26 @@
     border-top: 5px solid #FFCD32;
     font-weight: 600;
   }
-
-  .main-box {
-    padding: 17.334% 50px;
-    display: block;
-    width: 100%;
-    height: 100%;
-
-    &:hover {
+    #topnav {
+        border-bottom: 1px solid black;
+    }
+    .accent-yellow:hover, .accent-yellow.active {
+        background-color: #FFCD32;
+        color: black;
+        padding: 5px 15px 5px 15px;
+        font-weight: 600;
+    }
+    .accent-yellow {
+        background-color: black;
+        color: white;
+        padding: 5px 15px 5px 15px;
+    }
+    .main-box {
+        padding: 1.334% 50px;
+        display: block;
+        width: 100%;
+        height: 100%;
+        &:hover {
       & .arrow-only {
         @apply text-teal;
 
@@ -80,55 +92,194 @@
 </style>
 
 <template>
-  <Layout>
+    <Layout>
+        <header id="topnav" class="fixed flex flex-row cc:flex-col z-50 items-center w-full bg-white">
+            <nav role="navigation" class="flex flex-col items-center space-between max-w-1400 mx-auto w-full px-5 py-3 cc:py-0">
 
-    <section class="bg-gray-light pt-12 px-6 xl:px-0">
-      <div class="flex flex-col max-w-1200 w-full mx-auto">
-        <ul class="m-0 py-8">
-          <li class="accent-yellow">
-            <g-link to="/blog/">All Posts</g-link>
-          </li>
-          <li class="accent-yellow" v-for="category in this.categories" :key="category.id" :class="{ 'active': $page.category.title === category.title }">
-            <g-link :to="category.path"> {{ category.title }} </g-link>
-          </li>
-        </ul>
-      </div>
-    </section>
+                <div class="flex items-center w-full space-between">
 
-    <section class="bg-gray-light px-6 xl:px-0">
-      <div class="max-w-1200 w-full mx-auto py-8">
-        <div class="flex flex-row flex-wrap -mx-6">
-          <g-link :to="edge.node.path" v-for="edge in $page.category.belongsTo.edges" :key="edge.node.id" class="flex flex-col w-full md:w-1/2 relative current-post p-6">
-            <div class="flex flex-col w-full h-full" :style="`background-image: url('${edge.node.coverImage}'); background-size: cover; background-position: right center`">
-              <div class="p-10 md:px-6 w-full md:w-3/4 lg:w-7/12">
-                <span class="block text-gray-200" v-text="edge.node.date" />
-                <h4 class="rfs-text-xl text-white leading-none" v-html="edge.node.title" />
-                <div class="arrow-only-white">Read Post</div>
-              </div>
+                    <div role="navigation" class="text-white z-30 w-full flex flex-wrap justify-end xl:flex-no-wrap">
+                        <a href="/" class="mr-auto flex-auto self-start py-4">
+                            <img alt="Yellowbrick Blog Page" src="/uploads/logo.png" />
+                        </a>
+
+                        <div :class="[showDrawer ? 'bg-transparent-75' : 'hidden']" class="fixed cc:hidden z-40 inset-0 trans-bg-color" @click="toggleDrawer(false)" />
+                        <ul ref="drawer" :style="{ right: showDrawer ? '0px' : '-100%' }" style="transition: right 0.25s ease;" class="fixed z-100 cc:static cc:flex items-center inset-y-0 h-screen cc:h-auto bg-black cc:bg-transparent w-full cc:w-auto m-0 mobile-menu">
+                            <li class="cc:hidden flex justify-between p-2">
+                                <g-link to="/" class="p-2 pl-4">
+                                    <img alt="Yellowbrick Data Logo" src="/uploads/images/yb-logo-dark.svg" width="130" />
+                                </g-link>
+                                <div :class="{ hidden: !showDrawer }" class="p-2" @click="toggleDrawer(false)">
+                                    <button id="close"></button>
+                                </div>
+                            </li>
+
+                            <li class="flex relative text-black trans-bg-color pl-0 text-base hover:text-yellow1 menu-item cc:px-3 lg:px-6">
+                                <label aria-haspopup="true" class="w-full relative">
+                                    <div class="flex flex-row items-center">
+                                        <span class="flex items-center cursor-pointer p-2 pl-6 cc:px-2 cc:py-2">Categories</span>
+                                        <span class="nav-arrow text-black" />
+                                    </div>
+                                    <transition name="slider">
+                                        <ul style="display:none;" class="cc:absolute py-3 whitespace-no-wrap bg-yellow1 cc:mt-4 min-w-full cc:min-w-200 rounded-sm submenu" aria-label="submenu">
+                                            <li class="main-nav-link" v-for="category in this.categories" :key="category.id">
+                                                <g-link :to="category.path" aria-haspopup="true" class="flex px-8 py-2 cc:px-2 w-full"> {{ category.title }} </g-link>
+                                            </li>
+                                        </ul>
+                                    </transition>
+                                </label>
+                            </li>
+
+
+                            <li v-for="(item, x) in menu" :key="x" :id="`menu-${x}`" class="flex cc:px-3 lg:px-6 relative text-black trans-bg-color pl-0 text-base hover:text-yellow1 menu-item" :class="{'cc:pl-3 lg:pl-6' : x === 0, 'cc:pl-3 lg:pl-6' : x === Object.keys(menu).length - 2, 'cc:pl-3 lg:pl-6' : x !== 0 && x !== Object.keys(menu).length - 2}"
+                                @click="item.show = !item.show">
+                                <g-link v-if="item.route" :to="item.route" class="p-2 px-6 cc:px-2 cc:py-2">{{ item.label }}</g-link>
+                                <label v-else aria-haspopup="true" class="w-full relative">
+                                    <div class="flex flex-row items-center">
+                                        <span v-text="item.label" class="flex items-center cursor-pointer p-2 pl-6 cc:px-2 cc:py-2" />
+                                        <span class="nav-arrow text-black" />
+                                    </div>
+                                    <transition name="slider">
+                                        <ul v-show="item.show" class="cc:absolute py-3 whitespace-no-wrap bg-yellow1 cc:mt-4 min-w-full cc:min-w-200 rounded-sm submenu" aria-label="submenu">
+                                            <li v-for="(subitem, y) in item.subitems" :key="y" class="main-nav-link" :class="{'child' : subitem.indent, 'parent' : subitem.parent}">
+                                                <g-link :to="subitem.route" aria-haspopup="true" class="flex px-8 py-2 cc:px-2 w-full">{{ subitem.label }}</g-link>
+                                            </li>
+                                        </ul>
+                                    </transition>
+                                </label>
+                            </li>
+                            <li id="search-box" class="flex list-none font-normal rfs-text-lg p-1 pl-6 cc:px-2 cc:py-1 relative">
+                                <span style="transform: rotate(-45deg);" class="inline-block cursor-pointer pb-2" @click="searchClick"><img src="/uploads/icons/search-icon.svg" class="search-icon" /></span>
+                                <transition name="pusher">
+                                    <search-blog v-show="searchFocus" v-model="searchResults" class="cc:absolute text-transparent" style="top:3px;right:28px;z-index:60;" />
+                                </transition>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div class="cursor-pointer cc:hidden flex-1 flex items-center justify-end ml-8" @click="toggleDrawer(true)">
+                        <button id="hamburger" aria-label="Show the menu" />
+                    </div>
+
+                </div>
+            </nav>
+        </header>
+        <section class="flex flex-col pb-2 pt-16 px-6 xl:px-0 bg-white">
+        </section>
+        <section class="pt-12 px-6 xl:px-0">
+            <div class="max-w-1000 w-full mx-auto">
+                <h1 class="w-full rfs-text-6xl leading-none uppercase text-black font-semibold" style="margin:auto;text-align:center" v-html="$page.category.title" />
+                <br /><p class="text-black pl-1">Lorem ipsum Lorem ipsumLorem ipsumLorem ipsumLorem  ipsumLorem ipsumLo  ipsumLorem ipsumLo  ipsumLorem ipsumLoipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum</p>
             </div>
-          </g-link>
-        </div>
-      </div>
-    </section>
-  </Layout>
+            <div class="flex flex-col max-w-1200 w-full mx-auto">
+                <ul class="m-0 py-8">
+                    <li class="accent-yellow">
+                        <g-link to="/blog/">All</g-link>
+                    </li>
+                    <li class="accent-yellow" v-for="category in this.categories" :key="category.id" :class="{ 'active': $page.category.title === category.title }">
+                        <g-link :to="category.path"> {{ category.title }} </g-link>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="px-6 xl:px-0 py-12" id="current_post">
+            <div class="max-w-1200 w-full mx-auto">
+                <div class="flex flex-row flex-wrap -mx-6">
+                    <div v-for="edge in searchResults ? searchResults : $page.category.belongsTo.edges" :key="edge.node.id" class="flex flex-col w-full relative current-post p-6">
+                        <div class="flex flex-col md:flex-row max-w-1200 w-full mx-auto relative">
+                            <div :to="edge.node.path" class="w-full md:w-2/5 main-box relative">
+                                <div class="float-box text-white">
+                                    <img class="featured_image" :src="`${edge.node.coverImage}`" />
+                                </div>
+                            </div>
+                            <div class="w-full md:w-2/3 main-box relative">
+                                <div class="float-box text-black">
+                                    <template v-if="edge.node.categories">
+                                        <a v-for="(category) in edge.node.categories" :key="category.id" v-text="category.title === 'yellowbrick and tpc-ds' ? 'Yellowbrick and TPC-DS' : category.title" :href="`/blog/category/${category.title}`" class="uppercase font-bold text-yellow1 leading-none mr-2 inline" />
+                                    </template>
+                                    <g-link :to="edge.node.path"><h4 class="rfs-text-4xl text-black font-bold" v-html="edge.node.title" /></g-link>
+                                    <p class="rfs-text-base leading-tight" v-html="edge.node.description" />
+
+                                    <div class="flex flex-col md:flex-row md:w-1/2">
+                                        <div class="w-full md:w-1/4" style="margin-right:20px">
+                                            <img :src="`${edge.node.author.authorImage}`" />
+                                        </div>
+                                        <div class="w-full md:w-2/3">
+                                            <p class="featured-author font-bold" v-text="edge.node.author.name" />
+                                            <p v-text="edge.node.date" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </Layout>
 </template>
 
 <script>
   export default {
-    mounted() {
-      if (this.$page?.allCategory?.edges?.length > 0) {
-        this.$page.allCategory.edges.forEach((category) => {
-          this.categories.push(category.node);
-        })
-        this.categories.sort(function(a, b) {
-          let optA = a.title.toUpperCase();
-          let optB = b.title.toUpperCase();
-          return (optA < optB) ? -1 : (optA > optB) ? 1 : 0;
-        });
-      }
-    },
+    
     data: () => ({
-      categories: []
+          categories: [],
+          searchResults: null,
+        menu: [
+            {
+                label: 'Industries',
+                show: false,
+                subitems: [
+                    {
+                        label: 'Financial Services',
+                        route: '/solutions/financial-services/',
+                        indent: true
+                    },
+                    {
+                        label: 'Healthcare & Life Sciences',
+                        route: '/solutions/healthcare-life-sciences/',
+                        indent: true
+                    },
+                    {
+                        label: 'Insurance',
+                        route: '/solutions/insurance/',
+                        indent: true
+                    },
+                    {
+                        label: 'Retail',
+                        route: '/solutions/retail/',
+                        indent: true
+                    },
+                    {
+                        label: 'Federal',
+                        route: '/solutions/federal/',
+                        indent: true
+                    },
+                    {
+                        label: 'Telecommunications',
+                        route: '/solutions/telecom/',
+                        indent: true
+                    },
+                ]
+            },
+            {
+                label: 'News',
+                route: '/newsroom/'
+            },
+            {
+                label: 'More',
+                show: false,
+                subitems: [{
+                    label: 'Coming Soon',
+                    route: '#'
+                },
+                ]
+            },
+        ],
+        showDrawer: false,
+        searchFocus: false,
+        openNav: false,
     }),
     metaInfo() {
       return {
@@ -139,37 +290,123 @@
           content: 'Find blogs related to this Topic.'
         }]
       }
-    }
+        },
+        mounted() {
+            if (this.$page?.featuredBlog?.edges?.length > 0) {
+                this.featuredBlog = this.$page.featuredBlog.edges[0].node;
+            }
+            if (this.$page?.allCategory?.edges?.length > 0) {
+                this.$page.allCategory.edges.forEach((category) => {
+                    this.categories.push(category.node);
+                })
+                this.categories.sort(function (a, b) {
+                    let optA = a.title.toUpperCase();
+                    let optB = b.title.toUpperCase();
+                    return (optA < optB) ? -1 : (optA > optB) ? 1 : 0;
+                });
+            }
+            // temp code to remove old service workers
+            self.addEventListener('install', function (e) {
+                self.skipWaiting();
+            });
+
+            self.addEventListener('activate', function (e) {
+                self.registration.unregister()
+                    .then(function () {
+                        return self.clients.matchAll();
+                    })
+                    .then(function (clients) {
+                        clients.forEach(client => client.navigate(client.url))
+                    });
+            });
+
+            //clearAllBodyScrollLocks()
+            document.addEventListener('click', this.clickAnywhere)
+            document.addEventListener('keydown', this.pressAnything)
+            document.addEventListener('scroll', this.scrollAnytime)
+
+            setTimeout(function (document) {
+                if (!document)
+                    return;
+                const path = 'https://www.yellowbrick.com' + document.location.pathname;
+            }(document))
+        },
+        beforeDestroy() {
+            document.removeEventListener('click', this.clickAnywhere)
+            document.removeEventListener('keydown', this.pressAnything)
+            document.removeEventListener('scroll', this.scrollAnytime)
+        },
+        methods: {
+            toggleDrawer(open) {
+                this.showDrawer = open
+                if (open) disableBodyScroll(this.$refs.drawer)
+                else clearAllBodyScrollLocks()
+            },
+            searchClick() {
+                this.searchFocus = true
+                this.$nextTick(() => {
+                    document.getElementById('search-box').focus()
+                })
+            },
+            clickAnywhere(e) {
+                var ignoreClickOnMeElement = document.getElementById('search-box');
+                var isClickInsideElement = ignoreClickOnMeElement.contains(e.target);
+                if (!isClickInsideElement) {
+                    document.getElementById("search_div").style.display = "none";
+                }
+                else {
+                    document.getElementById("search_div").style.display = "block";
+                }
+            },
+            pressAnything(e) {
+                if (e.key === 'Escape') {
+                    this.showDrawer = false
+                    this.searchFocus = false
+                    this.menu.forEach((item, x) => {
+                        if (item.show) item.show = false
+                    })
+                }
+            }
+        },
   }
 </script>
 
 <page-query>
-  query Category($id: ID!) {
-  category(id: $id) {
-  title
-  path
-  belongsTo {
-  edges {
-  node {
-  ...on Blog {
-  id
-  title
-  date(format: "DD MMM YYYY")
-  path
-  coverImage
-  }
-  }
-  }
-  }
-  }
-  allCategory {
-  edges {
-  node {
-  id
-  title
-  path
-  }
-  }
-  }
-  }
+    query Category($id: ID!) {
+    category(id: $id) {
+    title
+    path
+    belongsTo {
+    edges {
+    node {
+    ...on Blog {
+    id
+    title
+    date(format: "DD MMM YYYY")
+    path
+    description
+    coverImage
+    categories {
+    id
+    title
+    }
+    author {
+    name
+    authorImage
+    }
+    }
+    }
+    }
+    }
+    }
+    allCategory {
+    edges {
+    node {
+    id
+    title
+    path
+    }
+    }
+    }
+    }
 </page-query>
