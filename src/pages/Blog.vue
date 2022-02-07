@@ -249,8 +249,7 @@
                             <a v-for="(category) in featuredBlog.categories" :key="category.id" v-text="category.title === 'yellowbrick and tpc-ds' ? 'Yellowbrick and TPC-DS' : category.title" :href="`/blog/category/${category.title}`" class="uppercase font-bold text-yellow1 leading-none mr-2 inline" />
                         </template>
                         <g-link :to="featuredBlog.path"><h2 class="rfs-text-4xl font-bold" style="line-height: 1.1;" v-html="featuredBlog.title" /></g-link>
-
-                        <p class="rfs-text-base leading-tight">Yellowbricks customer testimonials. Our customers are succeeding with us.Yellowbricks customer testimonials. Our customers are succeeding with us.Yellowbricks customer testimonials. Our customers are succeding with.</p>
+                        <p class="rfs-text-base leading-tight" v-text="featuredBlog.description" />
                         <div class="flex flex-col md:flex-row md:w-1/2">
                             <div class="w-full md:w-1/4" style="margin-right:20px">
                                 <img :src="`${featuredBlog.author.authorImage}`" />
@@ -263,24 +262,7 @@
                     </div>
                 </div>
             </div>
-
-            </div>
         </section>
-
-        <!-- <section class="px-6 xl:px-0 py-12">
-      <div class="max-w-1200 w-full mx-auto">
-        <h3>Current Posts</h3>
-        <div class="flex flex-col md:flex-row">
-          <g-link :to="edge.node.path" v-for="edge in $page.latestBlogs.edges" :key="edge.node.id" class="flex flex-col w-full md:w-1/2 relative current-post" :style="`background-image: url('${edge.node.coverImage}'); background-size: cover;`">
-            <div class="p-10 md:px-6 w-full md:w-3/4 lg:w-7/12">
-              <span class="block text-gray-200" v-text="edge.node.date" />
-              <h4 class="rfs-text-xl text-white leading-none" v-html="edge.node.title" />
-              <div class="arrow-only-white">Read post</div>
-            </div>
-          </g-link>
-        </div>
-      </div>
-    </section> -->
 
         <section class="px-6 xl:px-0 py-12" id="current_post">
             <div class="max-w-1200 w-full mx-auto">
@@ -295,12 +277,11 @@
                             </div>
                             <div class="w-full md:w-2/3 main-box relative">
                                 <div class="float-box text-black">
-                                    <!-- <h6 class="text-yellow2 hidden md:block">Data Warehouse Modernization</h6> -->
                                     <template v-if="edge.node.categories">
                                         <a v-for="(category) in edge.node.categories" :key="category.id" v-text="category.title === 'yellowbrick and tpc-ds' ? 'Yellowbrick and TPC-DS' : category.title" :href="`/blog/category/${category.title}`" class="uppercase font-bold text-yellow1 leading-none mr-2 inline" />
                                     </template>
                                     <g-link :to="edge.node.path"><h4 class="rfs-text-4xl text-black font-bold" v-html="edge.node.title" /></g-link>
-                                    <p class="rfs-text-base leading-tight">Yellowbricks customer testimonials. Our customers are succeeding with us.Yellowbricks customer testimonials. Our customers are succeeding with us.Yellowbricks customer testimonials. Our customers are succeding with.</p>
+                                    <p class="rfs-text-base leading-tight" v-html="edge.node.description" />
 
                                     <div class="flex flex-col md:flex-row md:w-1/2">
                                         <div class="w-full md:w-1/4" style="margin-right:20px">
@@ -313,43 +294,11 @@
                                     </div>
                                 </div>
                             </div>
-
-                            <!-- <img src="/uploads/blog/abstract4.jpg" alt="abstract" class="self-start" /> -->
-
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-
-        <!-- <section class="px-6 xl:px-0">
-      <div class="min-h-screen max-w-1200 w-full mx-auto">
-        <h3>Previous Posts</h3>
-        <div class="flex flex-wrap justify-start -mx-6">
-          <div class="zoomer flex w-full sm:w-1/2 lg:w-1/3" v-for="edge in searchResults ? searchResults : $page.allBlog.edges" :key="edge.node.id">
-            <div class="flex-col m-6 relative">
-              <g-link :to="edge.node.path">
-                <div class="text-sm font-normal self-end text-gray-700 py-1">{{ edge.node.date }}</div>
-                <img v-if="edge.node.coverImage" :src="edge.node.coverImage" :alt="edge.node.title" />
-
-                <img src="/uploads/blog/modernize.jpg" alt="abstract" class="" />
-
-                <div class="self-end capitalize my-4 leading-none" v-if="edge.node.categories">
-                  <span v-for="category in edge.node.categories" :key="category.id" v-text="category.title.replace('-', ' ')" class="text-gray-800 leading-none" />
-                </div>
-                <div class="">
-                  <h6 class="">{{ edge.node.title }}</h6>
-
-                  <div class="rfs-text-sm">{{ edge.node.description }}</div>
-
-                </div>
-
-              </g-link>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section> -->
 
         <Pager v-if="!searchResults" class="flex w-full mx-auto py-8 bg-white text-3xl justify-center" :info="$page.allBlog.pageInfo" linkClass="pagerLink" />
 
@@ -512,7 +461,7 @@
     title
     }
     path
-    coverImage 
+    coverImage
     }
     }
     }
@@ -547,7 +496,10 @@
     node {
     id
     title
-
+    author {
+    name
+    authorImage
+    }
     description
     date(format: "MMMM D, YYYY")
     categories {

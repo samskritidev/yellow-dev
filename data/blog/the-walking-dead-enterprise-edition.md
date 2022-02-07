@@ -1,11 +1,13 @@
 ---
 title: "The Walking Dead: Enterprise Edition"
-description: Using Netezza? You can do better with Yellowbrick. Modernize your data warehouse with us now.
+author: 1f5d5e99-3d0b-42ed-97aa-986473217b93
+description: Using Netezza? You can do better with Yellowbrick. Modernize your
+  data warehouse with us now.
 date: 2020-06-09
 coverImage: /uploads/blog/abstract11.jpg
-author: Neil Carson, CEO
 categories:
   - use cases
+featured: false
 ---
   
 ##### This blog is from our CEO, Neil Carson
