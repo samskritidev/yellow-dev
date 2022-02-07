@@ -6,7 +6,7 @@ date: 2021-12-02T22:38:37.105Z
 coverImage: /uploads/Yellowbrick-BlogImage10.jpg
 categories:
   - product
-featured: true
+featured: false
 ---
 <!--\[if gte mso 9]><xml>
  <w:WordDocument>
