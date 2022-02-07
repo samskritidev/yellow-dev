@@ -13,7 +13,10 @@
     .hooper-slide {
         width: 100% !important;
     }
-
+    .slidebg-transparent {
+    background-color: #00000036;
+    border-radius: 10px;
+      }
     .yellowbrickbtn button:hover {
         color: #000;
         background: #ffffff;
@@ -456,14 +459,14 @@
 <template>
     <Layout>
         <base-section :classNames="'hero flex pt-24 pb-12 md:pt-20 md:pb-10 px-5 xl:px-0'">
-            <div class="w-full lg:w-2/3 z-10">
-                <h3 class="rfs-text-3xl text-white sub-title text-yellow1 mb-6 md:pt-16">Run your data anywhere across private cloud, public cloud, on premise, and at the edge, in a single management view.</h3>
+            <div class="w-full lg:w-5/6 z-10">
+                <h3 class="rfs-text-4xl text-white sub-title mb-6 md:pt-16">Run your data anywhere across private cloud, public cloud, on premise, and at the edge, in a single management view.</h3>
             </div>
             <div class="flex flex-col w-full md:max-w-1200 mx-auto lg:pt-6">
                 <div class="z-10 relative lg:w-5/6">
                     <hooper ref="carousel" @slide="updateCarousel" :autoPlay="true" :playSpeed="10000">
                         <slide>
-                            <div class="flex flex-col px-12 pt-12 bg-transparent">
+                            <div class="flex flex-col px-12 pt-12 slidebg-transparent">
                                 <div class="md:flex">
                                     <div class="w-100 sm:text-center" style="padding-right: 20px;">
                                         <img src="/uploads/images/customers/white/bmw.png" class="hooper-slide__image mr-auto" />
@@ -482,7 +485,7 @@
                             </div>
                         </slide>
                         <slide>
-                            <div class="flex flex-col px-12 pt-12 bg-transparent">
+                            <div class="flex flex-col px-12 pt-12 slidebg-transparent">
                                 <div class="md:flex">
                                     <div class="w-100" style="padding-right: 20px;">
                                         <img src="/uploads/images/customers/white/melco-new.png" class="hooper-slide__image" />
@@ -501,7 +504,7 @@
                             </div>
                         </slide>
                         <slide>
-                            <div class="flex flex-col px-12 pt-12 bg-transparent">
+                            <div class="flex flex-col px-12 pt-12 slidebg-transparent">
                                 <div class="md:flex">
                                     <div class="w-100" style="padding-right: 20px;">
                                         <img src="/uploads/images/customers/white/teoco.png" class="hooper-slide__image" />
@@ -519,7 +522,7 @@
                             </div>
                         </slide>
                         <slide>
-                            <div class="flex flex-col px-12 pt-12 bg-transparent">
+                            <div class="flex flex-col px-12 pt-12 slidebg-transparent">
                                 <div class="md:flex">
                                     <div class="w-100" style="padding-right: 20px;">
                                         <img src="/uploads/images/customers/white/lexisnexis.png" class="hooper-slide__image" />
@@ -537,7 +540,7 @@
                             </div>
                         </slide>
                         <slide>
-                            <div class="flex flex-col px-12 pt-12 bg-transparent">
+                            <div class="flex flex-col px-12 pt-12 slidebg-transparent">
                                 <div class="md:flex">
                                     <div class="w-100" style="padding-right: 20px;">
                                         <img src="/uploads/images/customers/white/symphony.png" class="hooper-slide__image" />
@@ -556,7 +559,7 @@
                             </div>
                         </slide>
                         <slide>
-                            <div class="flex flex-col px-12 pt-12 bg-transparent">
+                            <div class="flex flex-col px-12 pt-12 slidebg-transparent">
                                 <div class="md:flex">
                                     <div class="w-100" style="padding-right: 20px;">
                                         <img src="/uploads/images/customers/white/catalina.png" class="hooper-slide__image" />
@@ -599,7 +602,7 @@
             </h4>
 
             <div class="w-full flex flex-col md:flex-row announcement-box">
-                <a href="/go/economic-benefits-of-yellowbrick/" class="banner-left flex flex-col w-full md:w-1/3 relative md:border-white">
+                 <a href="/go/economic-benefits-of-yellowbrick/" class="banner-left flex flex-col w-full md:w-1/3 relative md:border-white">
                     <div class="flex flex-col w-full h-full justify-content-center announcement-box__card bmw-group">
                         <div class="max-w-xl w-full h-full">
                             <h4 class="leading-tight mb-0 w-full" :class="'text-black' || 'text-black'">
@@ -613,7 +616,7 @@
                             </div>
                         </div>
                     </div>
-                </a>
+                </a>               
                 <a :href="$page.home.bannerLeft.url" class="banner-right flex flex-col w-full md:w-1/3 relative md:border-white">
                     <div class="flex flex-col w-full h-full justify-center md:align-center announcement-box__card bmw-group">
                         <div class="bg-container"></div>
