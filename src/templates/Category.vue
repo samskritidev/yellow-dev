@@ -6,6 +6,7 @@
     #topnav {
         border-bottom: 1px solid black;
     }
+
     .accent-yellow:hover, .accent-yellow.active {
         background-color: #FFCD32;
         color: black;

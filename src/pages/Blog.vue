@@ -279,6 +279,7 @@
             </div>
         </section>
 
+
         <section class="px-6 xl:px-0 py-12" id="current_post">
             <div class="max-w-1200 w-full mx-auto">
                 <h1 class="text-yellow1 uppercase font-bold">Current Posts</h1>
