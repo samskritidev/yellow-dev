@@ -8,6 +8,10 @@
         min-width: 220px;
         object-fit: cover;
     }
+    .featured-author {
+        font-size: 1.4rem;
+        font-weight: 600;
+    }
     .featured_image1 {
         min-height: 220px;
         min-width: 220px;
@@ -217,7 +221,12 @@
                                     </transition>
                                 </label>
                             </li>
-                         
+                            <li id="search-box" class="flex list-none font-normal rfs-text-lg p-1 pl-6 cc:px-2 cc:py-1 relative">
+                                <span style="transform: rotate(-45deg);" class="inline-block cursor-pointer pb-2" @click="searchClick"><img src="/uploads/icons/search-icon.svg" class="search-icon" /></span>
+                                <transition name="pusher">
+                                    <search-blog v-show="searchFocus" v-model="searchResults" class="cc:absolute text-transparent" style="top:3px;right:28px;z-index:60;" />
+                                </transition>
+                            </li>
                         </ul>
 
                     </div>
@@ -234,7 +243,7 @@
             <div class="max-w-1200 w-full mx-auto">
                 <h1 class="justify-center uppercase font-bold" style="text-align: center;">Our Authors</h1>
                 <p></p>
-                <p>Yellowbrick authors write compelling stories about cutting edge technologies &Aacute; trends, people, products, events, and topic that is valuable to our customers, employees and partners.</p>
+                <p class="font-normal">Yellowbrick authors write compelling stories about cutting edge technologies &Aacute; trends, people, products, events, and topic that is valuable to our customers, employees and partners.</p>
                 <div class="flex flex-row flex-wrap -mx-6" style="border-top: 1px solid #80808047;">
                     <div v-for="edge in searchResults ? searchResults : $page.allAuthor.edges" :key="edge.node.id" class="flex flex-col w-full relative current-post p-6">
                         <div class="flex flex-col md:flex-row max-w-1200 w-full mx-auto relative">
@@ -248,9 +257,9 @@
                                     <!-- <h6 class="text-yellow2 hidden md:block">Data Warehouse Modernization</h6> -->
 
                                     <g-link :to="edge.node.path"><h4 class="rfs-text-3xl text-yellow1 uppercase font-bold" v-html="edge.node.name" /></g-link>
-                                    <p class="featured-author font-bold" v-text="edge.node.position" />
-                                    <p class="rfs-text-base leading-tight" v-if="edge.node.authorAbout.length<498" v-html="edge.node.authorAbout"></p>
-                                    <p class="rfs-text-base leading-tight" v-else v-html="edge.node.authorAbout.substring(0,498)"></p>
+                                    <p class="featured-author" v-text="edge.node.position" />
+                                    <p class="rfs-text-base leading-tight font-normal" v-if="edge.node.authorAbout.length<498" v-html="edge.node.authorAbout"></p>
+                                    <p class="rfs-text-base leading-tight font-normal" v-else v-html="edge.node.authorAbout.substring(0,498)"></p>
                                 </div>
                             </div>
                         </div>
@@ -270,7 +279,7 @@
     import {
         Pager
     } from 'gridsome'
-    import SearchBlog from '~/components/SearchBlog.vue'
+    import SearchBlog from '~/components/SearchAuthor.vue'
     import BiWeeklyBanner from '~/components/BiWeeklyBanner.vue'
 
     export default {
@@ -418,6 +427,15 @@
     position
     authorImage
     authorAbout
+    path
+    }
+    }
+    }
+    allCategory {
+    edges {
+    node {
+    id
+    title
     path
     }
     }

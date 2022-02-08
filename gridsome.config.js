@@ -41,9 +41,9 @@ module.exports = {
         baseDir: './data/blog',
         pathPrefix: '/blog',
         template: './src/templates/Blog.vue',
-        plugins: [
-          '@gridsome/remark-prismjs'
-        ],
+        //plugins: [
+        //  '@gridsome/remark-prismjs'
+        //],
         refs: {
           author: 'Author',
           categories: {

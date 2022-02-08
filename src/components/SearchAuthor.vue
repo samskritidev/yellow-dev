@@ -24,12 +24,12 @@ export default {
       doc: {
         id: 'node:id',
         field: [
-          'node:title',
-          'node:content'
+          'node:name',
+          'node:position'
         ]
       }
     })
-    this.index.add(this.$static.allBlog.edges)
+    this.index.add(this.$static.allAuthor.edges)
 
     document.onkeyup = (e) => {
       if (e.which === 191) this.$refs.input.focus()
@@ -48,26 +48,18 @@ export default {
 </script>
 
 <static-query>
-    query Blog {
-    allBlog {
+    query Author {
+    allAuthor {
     edges {
     node {
     id
-    title
+    name
     date(format: "MMMM D YYYY")
     path
-    coverImage
-    description
-    categories {
-    id
-    title
-    }
-    author {
+    authorAbout
     name
     authorImage
     path
-    }
-    content
     }
     }
     }

@@ -4,15 +4,31 @@
         margin-bottom: 20px;
     }
 
+    .leading-none {
+        color: #497070;
+    }
+
     .featured_image {
-        min-height: 400px;
-        min-width: 390px;
+        min-height: 302px;
+        min-width: 330px;
+        max-height: 307px;
+        max-width: 320px;
+        -o-object-fit: cover;
         object-fit: cover;
     }
 
+    .rfs-text-base {
+        margin-bottom: 1rem
+    }
+
+    .rfs-text-4xl {
+        margin-top: 0.8rem;
+        margin-bottom: 0.8rem;
+    }
+
     .featured_image1 {
-        min-height: 460px;
-        min-width: 520px;
+        min-height: 390px;
+        min-width: 530px;
         object-fit: cover;
     }
 
@@ -41,7 +57,7 @@
     }
 
     .main-box {
-        padding-top: 40%;
+        padding-top: 25%;
         &:hover
 
     {
@@ -239,16 +255,16 @@
         </header>
         <section class="flex flex-col pb-2 pt-32 px-6 xl:px-0 bg-white">
         </section>
-        <section class="px-6 xl:px-0 bg-white pb-16" style="border-bottom: 1px solid #0000002e;">
+        <section class="px-6 xl:px-0 bg-white pb-16" style="border-bottom: 1px solid #0000002e; margin-top: 50px;">
             <div class="flex flex-col md:flex-row max-w-1200 w-full mx-auto relative">
                 <div class="w-full md:w-1/1 main-box relative">
                     <div class="float-box">
-                        <div class="w-full md:w-1/1" >
+                        <div class="w-full md:w-1/1">
                             <img :src="`${$page.author.authorImage}`" style="margin: auto; max-width: 170px;" />
                             <h1 class="font-bold uppercase" v-html="$page.author.name" style="text-align:center" />
-                            <p class="font-bold" v-html="$page.author.position" style="text-align: center;" />
+                            <p class="" v-html="$page.author.position" style="text-align: center; margin-bottom: 1.5rem; font-weight: 600;" />
                         </div>
-                        <div v-html="$page.author.authorAbout" />
+                        <div class="font-normal" v-html="$page.author.authorAbout" />
                     </div>
                 </div>
             </div>
@@ -259,26 +275,28 @@
                 <div class="flex flex-row flex-wrap -mx-6">
                     <div v-for="edge in searchResults ? searchResults : $page.author.belongsTo.edges" :key="edge.node.id" class="flex flex-col w-full relative current-post p-6">
                         <div class="flex flex-col md:flex-row max-w-1200 w-full mx-auto relative">
-                            <div :to="edge.node.path" class="w-full md:w-2/5 main-box relative">
+                            <div :to="edge.node.path" class="w-full md:w-2/6 main-box relative">
                                 <div class="float-box text-white">
                                     <img class="featured_image" :src="`${edge.node.coverImage}`" />
                                 </div>
                             </div>
-                            <div class="w-full md:w-2/3 main-box relative">
+                            <div class="w-full md:w-2/3 main-box relative" style="border-radius: 5px; border: 1px solid rgba(128,128,128,0.25882); border-left: none;">
                                 <div class="float-box text-black">
                                     <template v-if="edge.node.categories">
                                         <a v-for="(category) in edge.node.categories" :key="category.id" v-text="category.title === 'yellowbrick and tpc-ds' ? 'Yellowbrick and TPC-DS' : category.title" :href="`/blog/category/${category.title}`" class="uppercase font-bold text-yellow1 leading-none mr-2 inline" />
                                     </template>
                                     <g-link :to="edge.node.path"><h4 class="rfs-text-4xl text-black font-bold" v-html="edge.node.title" /></g-link>
-                                    <p class="rfs-text-base leading-tight" v-html="edge.node.description" />
+                                    <p class="rfs-text-base leading-tight font-normal" v-html="edge.node.description" />
 
                                     <div class="flex flex-col md:flex-row md:w-1/2">
-                                        <div class="w-full md:w-1/4" style="margin-right:20px">
-                                            <img :src="`${edge.node.author.authorImage}`" />
+                                        <div class="w-full md:w-1/4" style="margin-right: 15px; width: 70px;">
+                                            <img :src="`${edge.node.author.authorImage}`" style=" border-radius: 50%; width: 70px; height: 70px" />
                                         </div>
                                         <div class="w-full md:w-2/3">
-                                            <p class="featured-author font-bold" v-text="edge.node.author.name" />
-                                            <p v-text="edge.node.date" />
+                                            <g-link :to="edge.node.author.path">
+                                                <p class="featured-author font-bold " v-text="edge.node.author.name" />
+                                            </g-link>
+                                            <p v-text="edge.node.date" class="font-normal" />
                                         </div>
                                     </div>
                                 </div>
@@ -289,6 +307,7 @@
             </div>
         </section>
 
+        <Pager v-if="!searchResults" class="flex w-full mx-auto py-8 bg-white text-3xl justify-center" :info="$page.author.belongsTo.pageInfo" linkClass="pagerLink" />
 
 
 
@@ -434,13 +453,19 @@
 </script>
 
 <page-query>
-    query Author($id: ID!) {
+    query Author($id: ID!,$page: Int) {
     author(id: $id) {
     name
     position
     authorAbout
     authorImage
-    belongsTo {
+    belongsTo (perPage: 12, page: $page, sortBy: "date", order: DESC) @paginate {
+    pageInfo {
+    totalPages
+    currentPage
+    isFirst
+    isLast
+    }
     edges {
     node {
     ...on Blog {

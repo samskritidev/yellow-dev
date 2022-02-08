@@ -11,18 +11,72 @@
         background-color: #FFCD32;
         color: black;
         padding: 5px 15px 5px 15px;
-        font-weight: 600;
+
     }
+    .rfs-text-4xl {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .leading-none {
+        color: #497070;
+    }
+
+    .featured_image {
+        min-height: 302px;
+        min-width: 330px;
+        max-height: 307px;
+        max-width: 320px;
+        -o-object-fit: cover;
+        object-fit: cover;
+    }
+
+    .rfs-text-base {
+        margin-bottom: 1rem
+    }
+
+    .rfs-text-4xl {
+        margin-top: 0.8rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .featured_image1 {
+        min-height: 390px;
+        min-width: 530px;
+        object-fit: cover;
+    }
+
+    .main-box {
+    }
+
+    .active.pagerLink {
+        background-color: #ffcd32;
+        border: 1px solid black;
+        font-weight: bold;
+        font-size: 25px;
+    }
+
+    .nav-arrow {
+        margin-right: -5px;
+    }
+
+    .pagerLink {
+        font-weight: bold;
+        color: black;
+        font-size: 25px;
+    }
+
+    .featured-author {
+        margin-bottom: 0.5rem;
+    }
+
     .accent-yellow {
         background-color: black;
         color: white;
         padding: 5px 15px 5px 15px;
     }
     .main-box {
-        padding: 1.334% 50px;
-        display: block;
-        width: 100%;
-        height: 100%;
+        padding: 1.334% 5px;
         &:hover {
       & .arrow-only {
         @apply text-teal;
@@ -167,17 +221,17 @@
         </header>
         <section class="flex flex-col pb-2 pt-16 px-6 xl:px-0 bg-white">
         </section>
-        <section class="pt-12 px-6 xl:px-0">
+        <section class="pt-12 px-6 xl:px-0" style="border-bottom: 1px solid #0000002e;">
             <div class="max-w-1000 w-full mx-auto">
-                <h1 class="w-full rfs-text-6xl leading-none uppercase text-black font-semibold" style="margin:auto;text-align:center" v-html="$page.category.title" />
-                <br /><p class="text-black pl-1">Lorem ipsum Lorem ipsumLorem ipsumLorem ipsumLorem  ipsumLorem ipsumLo  ipsumLorem ipsumLo  ipsumLorem ipsumLoipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum</p>
+                <h1 class="w-full rfs-text-6xl  font-black uppercase text-black font-semibold" style="margin:auto;text-align:center" v-html="$page.category.title" />
+                <br /><p class="text-black pl-1 font-normal">Lorem ipsum Lorem ipsumLorem ipsumLorem ipsumLorem  ipsumLorem ipsumLo  ipsumLorem ipsumLo  ipsumLorem ipsumLoipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum</p>
             </div>
             <div class="flex flex-col max-w-1200 w-full mx-auto">
                 <ul class="m-0 py-8">
                     <li class="accent-yellow">
                         <g-link to="/blog/">All</g-link>
                     </li>
-                    <li class="accent-yellow" v-for="category in this.categories" :key="category.id" :class="{ 'active': $page.category.title === category.title }">
+                    <li class="accent-yellow font-bold" v-for="category in this.categories" :key="category.id" :class="{ 'active': $page.category.title === category.title }">
                         <g-link :to="category.path"> {{ category.title }} </g-link>
                     </li>
                 </ul>
@@ -193,21 +247,23 @@
                                     <img class="featured_image" :src="`${edge.node.coverImage}`" />
                                 </div>
                             </div>
-                            <div class="w-full md:w-2/3 main-box relative">
+                            <div class="w-full md:w-4/5 main-box relative" style="border-radius: 5px; border: 1px solid rgba(128,128,128,0.25882); border-left: none;">
                                 <div class="float-box text-black">
                                     <template v-if="edge.node.categories">
                                         <a v-for="(category) in edge.node.categories" :key="category.id" v-text="category.title === 'yellowbrick and tpc-ds' ? 'Yellowbrick and TPC-DS' : category.title" :href="`/blog/category/${category.title}`" class="uppercase font-bold text-yellow1 leading-none mr-2 inline" />
                                     </template>
                                     <g-link :to="edge.node.path"><h4 class="rfs-text-4xl text-black font-bold" v-html="edge.node.title" /></g-link>
-                                    <p class="rfs-text-base leading-tight" v-html="edge.node.description" />
+                                    <p class="rfs-text-base leading-tight font-normal" v-html="edge.node.description" />
 
                                     <div class="flex flex-col md:flex-row md:w-1/2">
-                                        <div class="w-full md:w-1/4" style="margin-right:20px">
-                                            <img :src="`${edge.node.author.authorImage}`" />
+                                        <div class="w-full md:w-1/4" style="margin-right: 15px; width: 70px;">
+                                            <img :src="`${edge.node.author.authorImage}`" style=" border-radius: 50%; width: 70px; height: 70px" />
                                         </div>
                                         <div class="w-full md:w-2/3">
-                                            <p class="featured-author font-bold" v-text="edge.node.author.name" />
-                                            <p v-text="edge.node.date" />
+                                            <g-link :to="edge.node.author.path">
+                                                <p class="featured-author font-bold" v-text="edge.node.author.name" />
+                                            </g-link>
+                                            <p class="font-normal" v-text="edge.node.date" />
                                         </div>
                                     </div>
                                 </div>
@@ -217,13 +273,23 @@
                 </div>
             </div>
         </section>
+        <Pager v-if="!searchResults" class="flex w-full mx-auto py-8 bg-white text-3xl justify-center" :info="$page.category.belongsTo.pageInfo" linkClass="pagerLink" />
 
     </Layout>
 </template>
 
 <script>
+    import Layout from '~/layouts/Blog.vue'
+    import {
+        Pager
+    } from 'gridsome'
+    import SearchBlog from '~/components/SearchBlog.vue'
   export default {
-    
+        components: {
+          Layout,
+          Pager,
+            SearchBlog,
+        },
     data: () => ({
           categories: [],
           searchResults: null,
@@ -373,11 +439,17 @@
 </script>
 
 <page-query>
-    query Category($id: ID!) {
+    query Category($id: ID!,$page: Int) {
     category(id: $id) {
     title
     path
-    belongsTo {
+    belongsTo (perPage: 12, page: $page, sortBy: "date", order: DESC) @paginate {
+    pageInfo {
+    totalPages
+    currentPage
+    isFirst
+    isLast
+    }
     edges {
     node {
     ...on Blog {

@@ -3,6 +3,7 @@
         margin-top: 20px;
         margin-bottom: 20px;
     }
+  
     .leading-none {
         color: #497070;
     }
@@ -17,9 +18,9 @@
     .rfs-text-base {
         margin-bottom: 1rem
     }
-    .rfs-text-4xl{
-     margin-top: 0.3rem; 
-        margin-bottom: 0.5rem;
+    .rfs-text-4xl {
+        margin-top: 0.8rem;
+        margin-bottom: 0.8rem;
     }
     .featured_image1 {
         min-height: 390px;
@@ -262,16 +263,16 @@
                             <a v-for="(category) in featuredBlog.categories" :key="category.id" v-text="category.title === 'yellowbrick and tpc-ds' ? 'Yellowbrick and TPC-DS' : category.title" :href="`/blog/category/${category.title}`" class="uppercase font-bold text-yellow1 leading-none mr-2 inline" />
                         </template>
                         <g-link :to="featuredBlog.path"><h2 class="rfs-text-4xl font-bold" style="line-height: 1.1;" v-html="featuredBlog.title" /></g-link>
-                        <p class="rfs-text-base leading-tight" v-text="featuredBlog.description" />
+                        <p class="rfs-text-base leading-tight font-normal" v-text="featuredBlog.description" />
                         <div class="flex flex-col md:flex-row md:w-1/2">
-                            <div class="w-full md:w-1/4" style="margin-right:20px">
+                            <div class="w-full md:w-1/4" style=" margin-right: 15px; width: 70px;">
                                 <img :src="`${featuredBlog.author.authorImage}`" style=" border-radius: 50%; width: 70px; height: 70px" />
                             </div>
                             <div class="w-full md:w-2/3">
                                 <g-link :to="featuredBlog.author.path">
                                     <p class="featured-author font-bold" v-text="featuredBlog.author.name" />
                                 </g-link>
-                                <p v-text="featuredBlog.date" />
+                                <p v-text="featuredBlog.date" class="font-normal"/>
                             </div>
                         </div>
                     </div>
@@ -282,7 +283,7 @@
 
         <section class="px-6 xl:px-0 py-12" id="current_post">
             <div class="max-w-1200 w-full mx-auto">
-                <h1 class="text-yellow1 uppercase font-bold">Current Posts</h1>
+                <h1 class="text-yellow1 uppercase font-bold" style="margin-left:18px">Current Posts</h1>
                 <div class="flex flex-row flex-wrap -mx-6">
                     <div v-for="edge in searchResults ? searchResults : $page.allBlog.edges" :key="edge.node.id" class="flex flex-col w-full relative current-post p-6">
                         <div class="flex flex-col md:flex-row max-w-1200 w-full mx-auto relative">
@@ -297,17 +298,17 @@
                                         <a v-for="(category) in edge.node.categories" :key="category.id" v-text="category.title === 'yellowbrick and tpc-ds' ? 'Yellowbrick and TPC-DS' : category.title" :href="`/blog/category/${category.title}`" class="uppercase font-bold text-yellow1 leading-none mr-2 inline" />
                                     </template>
                                     <g-link :to="edge.node.path"><h4 class="rfs-text-4xl text-black font-bold" v-html="edge.node.title" /></g-link>
-                                    <p class="rfs-text-base leading-tight" v-html="edge.node.description" />
+                                    <p class="rfs-text-base leading-tight font-normal" v-html="edge.node.description" />
 
                                     <div class="flex flex-col md:flex-row md:w-1/2">
-                                        <div class="w-full md:w-1/5" style="margin-right:20px">
+                                        <div class="w-full md:w-1/5" style="margin-right: 15px; width: 70px;">
                                             <img  :src="`${edge.node.author.authorImage}`" style=" border-radius: 50%; width: 70px; height: 70px" />
                                         </div>
                                         <div class="w-full md:w-2/3">
                                             <g-link :to="edge.node.author.path">
                                                 <p class="featured-author font-bold" v-text="edge.node.author.name" />
                                             </g-link>
-                                                <p v-text="edge.node.date" />
+                                                <p v-text="edge.node.date" class="font-normal" />
 </div>
                                     </div>
                                 </div>
