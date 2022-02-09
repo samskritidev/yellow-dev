@@ -319,7 +319,7 @@
 
         <section class="px-6 xl:px-0 py-12" id="current_post">
             <div class="max-w-1200 w-full mx-auto">
-                <h1 class="text-yellow1 uppercase font-bold">Current Posts</h1>
+                <h1 class="text-yellow1 uppercase font-bold mb-6">Current Posts</h1>
                 <div class="flex flex-row flex-wrap -mx-6">
                     <div v-for="edge in searchResults ? searchResults : $page.allBlog.edges" :key="edge.node.id" class="flex flex-col w-full relative current-post pb-16 px-6">
                         <div class="flex flex-col md:flex-row max-w-1200 w-full mx-auto relative border">
