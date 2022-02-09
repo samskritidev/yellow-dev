@@ -142,11 +142,8 @@
                             <div class="w-full md:w-2/3 author_section flex flex-end" style="justify-content: flex-end;">
                                 <template>
                                     <div class="hello">
-                                        <p class="font-normal">SOCIAL SHARE</p>
-                                        <facebook  :url="currentUrl" title="Facebook" scale="2"></facebook>
-                                        <twitter  :url="currentUrl" title="Twitter" scale="2"></twitter>
-                                        <linkedin  :url="currentUrl" title="LinkedIn" scale="2"></linkedin>
-                                        <WhatsApp  :url="currentUrl" title="Whatsapp" scale="2"></WhatsApp>
+                                        <facebook :url="url" scale="3"></facebook>
+                                        
                                     </div>
                                 </template>
 
@@ -255,7 +252,7 @@
         data: () => ({
             searchResults: null,
             categories: [],
-            currentUrl: "",
+            url: "https://yellowbrick-dev1.netlify.app/blog/and-the-winner-of-the-cloud-data-warehouse-benchmark-war-is-nobody/",
             menu: [
                 {
                     label: 'Industries',
@@ -321,9 +318,6 @@
             Twitter,
             Linkedin,
             WhatsApp
-        },
-        created() {
-            this.currentUrl = window.location.href;
         },
         methods: {
             toggleDrawer(open) {
