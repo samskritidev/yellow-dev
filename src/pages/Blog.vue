@@ -1,17 +1,29 @@
 <style scoped>
+.titlename {
+    margin-bottom: 2px !important;
+    padding-bottom: 0 !important;
+}
+.categorieslist {
+    display: flex;
+}
     .rfs-text-4xl {
         margin-top: 20px;
         margin-bottom: 20px;
     }
-  
+  .hidden_test {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2; 
+        line-clamp: 2;
+        -webkit-box-orient: vertical;
+    }
     .leading-none {
         color: #497070;
     }
     .featured_image {
-        min-height: 302px;
-        min-width: 330px;
-        max-height: 307px;
-        max-width: 320px;
+        min-height: 302px;       
+        max-height: 307px;        
         -o-object-fit: cover;
         object-fit: cover;
     }
@@ -23,12 +35,10 @@
         margin-bottom: 0.8rem;
     }
     .featured_image1 {
-        min-height: 390px;
-        min-width: 530px;
+        min-height: 390px;        
         object-fit: cover;
     }
-    .main-box {
-    }
+    
     .active.pagerLink {
         background-color: #ffcd32;
         border: 1px solid black;
@@ -250,29 +260,31 @@
         <section class="flex flex-col pb-2 pt-32 px-6 xl:px-0 bg-white">
         </section>
         <section class="px-6 xl:px-0 bg-white pb-16" v-if="featuredBlog" style="border-bottom: 1px solid #0000002e; margin-top: 20px;">
-            <div class="flex flex-col md:flex-row max-w-1200 w-full mx-auto relative">
+            <div class="flex flex-col md:flex-row max-w-1200 mx-auto">
 
-                <div class="w-full md:w-1/2 main-box relative">
-                    <div class="float-box">
+                <div class="w-full md:w-1/2 md:mr-4">
+                    <div class="md:mr-12">
                         <img class="featured_image1" :src="`${featuredBlog.coverImage}`" />
                     </div>
                 </div>
-                <div class="w-full md:w-1/2 main-box relative">
-                    <div class="float-box text-black">
+                <div class="w-full md:w-1/2 p-2">
+                    <div class=" text-black">
                         <template v-if="featuredBlog.categories">
-                            <a v-for="(category) in featuredBlog.categories" :key="category.id" v-text="category.title === 'yellowbrick and tpc-ds' ? 'Yellowbrick and TPC-DS' : category.title" :href="`/blog/category/${category.title}`" class="uppercase font-bold text-yellow1 leading-none mr-2 inline" />
-                        </template>
-                        <g-link :to="featuredBlog.path"><h2 class="rfs-text-4xl font-bold" style="line-height: 1.1;" v-html="featuredBlog.title" /></g-link>
-                        <p class="rfs-text-base leading-tight font-normal" v-text="featuredBlog.description" />
-                        <div class="flex flex-col md:flex-row md:w-1/2">
-                            <div class="w-full md:w-1/4" style=" margin-right: 15px; width: 70px;">
-                                <img :src="`${featuredBlog.author.authorImage}`" style=" border-radius: 50%; width: 70px; height: 70px" />
+                            <div class="categorieslist">
+                            <a v-for="(category) in featuredBlog.categories" :key="category.id" v-text="category.title === 'yellowbrick and tpc-ds' ? 'Yellowbrick and TPC-DS' : category.title" :href="`/blog/category/${category.title}`" class="categorylist uppercase font-bold text-yellow1 leading-none block md:mb-12 md:mr-6" />
                             </div>
-                            <div class="w-full md:w-2/3">
+                        </template>
+                        <g-link :to="featuredBlog.path"><h2 class="rfs-text-4xl font-bold pb-0" style="line-height: 1.1;" v-html="featuredBlog.title" /></g-link>
+                        <p class="rfs-text-base leading-tight font-normal md:pb-6 block hidden_test" v-text="featuredBlog.description" />
+                        <div class="flex">
+                            <div class="w-1/6 mr-6">
+                                <img :src="`${featuredBlog.author.authorImage}`" style=" border-radius: 50%;" class="w-20"/>
+                            </div>
+                            <div class="md:w-2/3">
                                 <g-link :to="featuredBlog.author.path">
-                                    <p class="featured-author font-bold" v-text="featuredBlog.author.name" />
+                                    <p class="featured-author font-bold mt-2" v-text="featuredBlog.author.name" />
                                 </g-link>
-                                <p v-text="featuredBlog.date" class="font-normal"/>
+                                <p v-text="featuredBlog.date" class="font-normal mb-0"/>
                             </div>
                         </div>
                     </div>
@@ -283,33 +295,35 @@
 
         <section class="px-6 xl:px-0 py-12" id="current_post">
             <div class="max-w-1200 w-full mx-auto">
-                <h1 class="text-yellow1 uppercase font-bold" style="margin-left:18px">Current Posts</h1>
+                <h1 class="text-yellow1 uppercase font-bold">Current Posts</h1>
                 <div class="flex flex-row flex-wrap -mx-6">
-                    <div v-for="edge in searchResults ? searchResults : $page.allBlog.edges" :key="edge.node.id" class="flex flex-col w-full relative current-post p-6">
-                        <div class="flex flex-col md:flex-row max-w-1200 w-full mx-auto relative">
-                            <div :to="edge.node.path" class="w-full md:w-2/5 main-box relative">
-                                <div class="float-box text-white">
+                    <div v-for="edge in searchResults ? searchResults : $page.allBlog.edges" :key="edge.node.id" class="flex flex-col w-full relative current-post pb-16 px-6">
+                        <div class="flex flex-col md:flex-row max-w-1200 w-full mx-auto relative border">
+                            <div :to="edge.node.path" class="w-full md:w-2/5">
+                                <div class="text-white">
                                     <img class="featured_image" :src="`${edge.node.coverImage}`" />
                                 </div>
                             </div>
-                            <div class="w-full md:w-4/5 main-box relative" style="border-radius: 5px; border: 1px solid rgba(128,128,128,0.25882); border-left: none;">
-                                <div class="float-box text-black">
+                            <div class="w-full md:w-4/5 p-2">
+                                <div class="text-black md:pl-20 block">
                                     <template v-if="edge.node.categories">
-                                        <a v-for="(category) in edge.node.categories" :key="category.id" v-text="category.title === 'yellowbrick and tpc-ds' ? 'Yellowbrick and TPC-DS' : category.title" :href="`/blog/category/${category.title}`" class="uppercase font-bold text-yellow1 leading-none mr-2 inline" />
-                                    </template>
-                                    <g-link :to="edge.node.path"><h4 class="rfs-text-4xl text-black font-bold" v-html="edge.node.title" /></g-link>
-                                    <p class="rfs-text-base leading-tight font-normal" v-html="edge.node.description" />
-
-                                    <div class="flex flex-col md:flex-row md:w-1/2">
-                                        <div class="w-full md:w-1/5" style="margin-right: 15px; width: 70px;">
-                                            <img  :src="`${edge.node.author.authorImage}`" style=" border-radius: 50%; width: 70px; height: 70px" />
+                                        <div class="categorieslist">
+                                        <a v-for="(category) in edge.node.categories" :key="category.id" v-text="category.title === 'yellowbrick and tpc-ds' ? 'Yellowbrick and TPC-DS' : category.title" :href="`/blog/category/${category.title}`" class="uppercase font-bold text-yellow1 leading-none block md:mb-0 mr-4" />
                                         </div>
-                                        <div class="w-full md:w-2/3">
+                                    </template>
+                                    <g-link :to="edge.node.path"><h4 class="rfs-text-4xl text-black font-bold hidden_test titlename" v-html="edge.node.title" /></g-link>
+                                    <p class="rfs-text-base leading-tight font-normal md:pb-1 hidden_test" v-html="edge.node.description" />
+
+                                    <div class="flex">
+                                        <div class="w-1/6 mr-6" >
+                                            <img  :src="`${edge.node.author.authorImage}`" style="border-radius: 50%;" class="w-20"/>
+                                        </div>
+                                        <div class="md:w-2/3">
                                             <g-link :to="edge.node.author.path">
-                                                <p class="featured-author font-bold" v-text="edge.node.author.name" />
+                                                <p class="featured-author font-bold mt-2" v-text="edge.node.author.name" />
                                             </g-link>
-                                                <p v-text="edge.node.date" class="font-normal" />
-</div>
+                                            <p v-text="edge.node.date" class="font-normal mb-0" />
+                                        </div>
                                     </div>
                                 </div>
                             </div>
