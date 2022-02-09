@@ -3,7 +3,7 @@
         margin-bottom: 2px !important;
         padding-bottom: 0 !important;
     }
-    @media only screen and (max-width: 879px) {
+    @media only screen and (max-width: 640px) {
         #hamburger, #hamburger::after, #hamburger::before {
             background-color: black;
         }

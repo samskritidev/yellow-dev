@@ -23,6 +23,7 @@ collections:
       - {label: Description, name: description, widget: string}
       - {label: Publish Date, name: date, widget: date}
       - {label: Cover Image, name: coverImage, widget: image}
+      - {label: Thumbnail Image, name: thumbnailImage, widget: image}
       - {label: Categories, name: categories, widget: select, multiple: true, options: [{label: 'Cloud', value: 'cloud'}, {label: 'Migrations', value: 'migrations'}, {label: 'Partners', value: 'partners'}, {label: 'Product', value: 'product'}, {label: 'Research', value: 'research'}, {label: 'Security', value: 'security'}, {label: 'Use Cases', value: 'use cases'}, {label: 'Yellowbrick and TPC-DS', value: 'yellowbrick and tpc-ds'}]}
       - {label: Featured?, name: featured, widget: boolean }
       - {label: Body, name: body, widget: markdown}

@@ -7,6 +7,12 @@
         margin-bottom: 0px;
     }
 
+    .announcement-box a {
+        margin: 20px;
+        border: 0.5px solid #e5e5e5;
+    }
+
+
     .hero {
         background-size: cover;
         position: relative;
@@ -106,11 +112,12 @@
             </nav>
         </header>
         <section class="hero">
-            <template v-if="$page.blog.categories">
-                <span class="inline-block border-l-2 border-teal mx-4 text-yellow1"></span>
-                <a v-for="(category) in $page.blog.categories" :key="category.id" style="margin-top: 50px; margin-bottom: 30px;" v-text="category.title === 'yellowbrick and tpc-ds' ? 'Yellowbrick and TPC-DS' : category.title" :href="`/blog/category/${category.title}`" class="uppercase text-yellow1 leading-none max-w-1200 w-full mx-auto font-bold inline" />
-            </template>
-            <h1 style="margin-bottom: 30px" class="w-full rfs-text-6xl leading-none text-black font-semibold max-w-1200 w-full mx-auto" v-html="$page.blog.title" />
+            <div style="margin-top: 50px; margin-bottom: 30px;" class="uppercase text-yellow1 leading-none max-w-1200 w-full mx-auto font-bold inline">
+                <template v-if="$page.blog.categories">
+                    <g-link v-for="(category) in $page.blog.categories" style="margin-top: 50px; margin-bottom: 30px;" :to="category.path"><span :key="category.id" style="margin-top: 50px; margin-right: 50px; margin-bottom: 30px;" class="uppercase text-yellow1 leading-none max-w-1200 w-full mx-auto font-bold inline"> {{category.title}}</span></g-link>
+                </template>
+                <h1 style="margin-bottom: 30px; margin-top: 30px;" class="w-full rfs-text-6xl leading-none text-black font-semibold max-w-1200 w-full mx-auto" v-html="$page.blog.title" />
+            </div>
             <img :src="$page.blog.coverImage" />
         </section>
 
@@ -120,21 +127,48 @@
         <section class="bg-white pb-24 md:flex-row px-6 xl:px-0 blog">
             <div class="flex flex-col md:flex-row max-w-1200 w-full mx-auto">
                 <div class="w-full md:w-4/6 ">
-                    <div class="flex flex-col md:flex-row md:w-1/2">
+                    <div class="flex flex-col md:flex-row">
                         <div class="flex w-full max-w-1200 mx-auto mb-4  bg-transparent">
-                            <div class="w-full md:w-1/4" style="margin-right: 15px; width: 70px;">
+                            <div class="w-full md:w-2/4" style="margin-right: 15px; width: 70px;">
                                 <img :src="$page.blog.author.authorImage" style=" border-radius: 50%; width: 70px; height: 70px" />
                             </div>
-                            <div class="w-full md:w-2/3 author_section">
+                            <div class="w-full md:w-1/4 author_section">
                                 <g-link :to="$page.blog.author.path">
                                     <p class="featured-author uppercase font-bold" v-text="$page.blog.author.name" />
                                 </g-link>
                                 <p v-text="$page.blog.author.position" class="font-normal" />
                                 <p v-text="$page.blog.date" class="font-normal" />
                             </div>
+                            <div class="w-full md:w-2/3 author_section flex flex-end" style="justify-content: flex-end;">
+                                <template>
+                                    <div class="hello">
+                                        <p class="font-normal">SOCIAL SHARE</p>
+                                        <facebook  :url="currentUrl" title="Facebook" scale="2"></facebook>
+                                        <twitter  :url="currentUrl" title="Twitter" scale="2"></twitter>
+                                        <linkedin  :url="currentUrl" title="LinkedIn" scale="2"></linkedin>
+                                        <WhatsApp  :url="currentUrl" title="Whatsapp" scale="2"></WhatsApp>
+                                    </div>
+                                </template>
+
+                            </div>
                         </div>
                     </div>
-                    <VueRemarkContent />
+                    <VueRemarkContent class="font-normal" style="border-bottom: 3px solid #d6d6d6;margin-top:30px;margin-bottom:30px" />
+                    <h2 class="font-bold">Related Posts</h2>
+                    <template v-if="$page.latestBlogs.edges">
+                        <div class="w-full flex flex-col md:flex-row announcement-box">
+                            <g-link v-for="(author) in $page.latestBlogs.edges" :key="author.node.title" :to="author.node.path" class="banner-left flex flex-col w-full md:w-1/2 relative md:border-white">
+                                <div data-v-4bc9d7de="" class="flex flex-col w-full h-full justify-content-center announcement-box__card bmw-group">
+                                    <div data-v-4bc9d7de="" class="max-w-xl w-full h-full">
+                                        <h4 data-v-4bc9d7de="" class="leading-tight mb-0 w-full text-black"><img style=" height: 230px" :src="author.node.coverImage" class=" w-full"></h4><div class="p-3 px-5">
+                                            <h5 v-text="author.node.title" class="leading-tight mb-0 text-black" style=" font-weight: 600;" />
+                                            <p v-text="author.node.description" class="font-normal" style="margin-top: 5px;" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </g-link>
+                        </div>
+                    </template>
                 </div>
                 <div class="w-full md:w-2/6 " style="padding-left:50px">
                     <div>
@@ -145,16 +179,10 @@
                         </template>
                     </div>
                     <br />
-                    <div>
-                        <h4 class="capitalize">Get the latest Yellowbrick blogs</h4>
-                        <input type="text" name="subscribe" />
-                        <button type="submit" name="Subscribe" value="Subscribe" />
-                    </div>
                 </div>
-
+                
             </div>
-            <div class="flex flex-col md:flex-row max-w-1200 w-full mx-auto">
-
+            <div class="flex flex-col md:flex-row max-w-1200 w-full mx-auto" style="margin-top:30px;">
                 <span class="uppercase font-semibold" style="float: left; padding: 8px; float: left; font-size: 1.2rem; margin-right: 50px;">CATEGORIES</span>
                 <span class="main-nav-link" style="float:left" v-for="category in $page.allCategory.edges" :key="category.node.id">
                     <g-link :to="category.node.path" aria-haspopup="true" class="flex px-8 py-2 cc:px-2 w-full capitalize"> {{category.node.title }} </g-link>
@@ -165,9 +193,13 @@
 </template>
 
 <script>
+   import { Facebook, Twitter, Linkedin, WhatsApp } from 'vue-socialmedia-share';
     import SearchBlog from '~/components/SearchBlog.vue'
     import Layout from '~/layouts/Blog.vue'
     export default {
+        function(Vue, { head }) {
+            Vue.use(VueDisqus)
+        },
         metaInfo() {
             return {
                 title: this.$page.blog.title,
@@ -223,6 +255,7 @@
         data: () => ({
             searchResults: null,
             categories: [],
+            currentUrl: "",
             menu: [
                 {
                     label: 'Industries',
@@ -283,7 +316,14 @@
         },
         components: {
             SearchBlog,
-            Layout
+            Layout,
+            Facebook,
+            Twitter,
+            Linkedin,
+            WhatsApp
+        },
+        created() {
+            this.currentUrl = window.location.href;
         },
         methods: {
             toggleDrawer(open) {
@@ -343,6 +383,7 @@
     blog(id: $id) {
     title
     description
+    path
     content
     coverImage
     date(format: "MMMM D, YYYY")
@@ -355,6 +396,35 @@
     id
     title
     path
+    }
+    }
+    latestBlogs: allBlog(limit: 2, sortBy: "date", order: DESC) {
+    edges {
+    node {
+    id
+    title
+    description
+    date(format: "MMMM D, YYYY")
+    categories {
+    id
+    title
+    belongsTo {
+    edges {
+    node {
+    ...on Blog {
+    id
+    title
+    date
+    path
+    description
+    }
+    }
+    }
+    }
+    }
+    path
+    coverImage
+    }
     }
     }
     allAuthor {

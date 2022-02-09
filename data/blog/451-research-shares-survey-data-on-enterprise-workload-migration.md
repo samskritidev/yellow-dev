@@ -9,6 +9,7 @@ description: The 451 Survey indicates that in 2020, **38% of organizations will
   leverage PaaS and IaaS to manage their workloads.
 date: 2019-04-04
 coverImage: /uploads/Yellowbrick-BlogImage4.jpg
+thumbnailImage: /uploads/advanced-workload-management-release-5.png
 categories:
   - research
   - migration
