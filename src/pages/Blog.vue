@@ -1,68 +1,92 @@
 <style scoped>
-.titlename {
-    margin-bottom: 2px !important;
-    padding-bottom: 0 !important;
-}
-.categorieslist {
-    display: flex;
-}
-    .rfs-text-4xl {
-        margin-top: 20px;
-        margin-bottom: 20px;
+    .titlename {
+        margin-bottom: 2px !important;
+        padding-bottom: 0 !important;
     }
-  .hidden_test {
-        overflow: hidden;
-        text-overflow: ellipsis;
-        display: -webkit-box;
-        -webkit-line-clamp: 2; 
-        line-clamp: 2;
-        -webkit-box-orient: vertical;
-    }
-    .leading-none {
-        color: #497070;
-    }
-    .featured_image {
-        min-height: 302px;       
-        max-height: 307px;        
-        -o-object-fit: cover;
-        object-fit: cover;
-    }
-    .rfs-text-base {
-        margin-bottom: 1rem
-    }
-    .rfs-text-4xl {
-        margin-top: 0.8rem;
-        margin-bottom: 0.8rem;
-    }
-    .featured_image1 {
-        min-height: 390px;        
-        object-fit: cover;
-    }
-    
-    .active.pagerLink {
-        background-color: #ffcd32;
-        border: 1px solid black;
-        font-weight: bold;
-        font-size: 25px;
-    }
+    @media only screen and (max-width: 879px) {
+        #hamburger, #hamburger::after, #hamburger::before {
+            background-color: black;
+        }
 
-    .nav-arrow {
-        margin-right: -5px;
-    }
+        .mobile-menu span, .mobile-menu a {
+            color: white;
+        }
 
-    .pagerLink {
-        font-weight: bold;
-        color: black;
-        font-size: 25px;
-    }
+        .mobile-menu .nav-arrow:before, .mobile-menu .nav-arrow:after {
+            background-color: yellow;
+        }
 
-    .featured-author {
-        margin-bottom: 0.5rem;
+        .mobile-menu .main-nav-link.child a, .mobile-menu .main-nav-link a {
+            color: black;
+        }
     }
+        .categorieslist {
+            display: flex;
+        }
 
-    .main-box {
-        padding-top: 25%;
-        &:hover
+        .rfs-text-4xl {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .hidden_test {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+
+        .leading-none {
+            color: #497070;
+        }
+
+        .featured_image {
+            min-height: 302px;
+            max-height: 307px;
+            -o-object-fit: cover;
+            object-fit: cover;
+        }
+
+        .rfs-text-base {
+            margin-bottom: 1rem
+        }
+
+        .rfs-text-4xl {
+            margin-top: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .featured_image1 {
+            min-height: 390px;
+            object-fit: cover;
+        }
+
+        .active.pagerLink {
+            background-color: #ffcd32;
+            border: 1px solid black;
+            font-weight: bold;
+            font-size: 25px;
+        }
+
+        .nav-arrow {
+            margin-right: -5px;
+        }
+
+        .pagerLink {
+            font-weight: bold;
+            color: black;
+            font-size: 25px;
+        }
+
+        .featured-author {
+            margin-bottom: 0.5rem;
+        }
+
+        .main-box {
+            padding-top: 25%;
+            &:hover
 
     {
         & .arrow-only
@@ -196,7 +220,7 @@
                             <img alt="Yellowbrick Blog Page" src="/uploads/logo.png" />
                         </a>
 
-                        <div :class="[showDrawer ? 'bg-transparent-75' : 'hidden']" class="fixed cc:hidden z-40 inset-0 trans-bg-color" @click="toggleDrawer(false)" />
+                        <div :class="[showDrawer ? 'bg-transparent-75' : 'hidden']" class="fixed cc:hidden inset-0 trans-bg-color" @click="toggleDrawer(false)" />
                         <ul ref="drawer" :style="{ right: showDrawer ? '0px' : '-100%' }" style="transition: right 0.25s ease;" class="fixed z-100 cc:static cc:flex items-center inset-y-0 h-screen cc:h-auto bg-black cc:bg-transparent w-full cc:w-auto m-0 mobile-menu">
                             <li class="cc:hidden flex justify-between p-2">
                                 <g-link to="/" class="p-2 pl-4">
@@ -207,14 +231,14 @@
                                 </div>
                             </li>
 
-                            <li class="flex relative text-black trans-bg-color pl-0 text-base hover:text-yellow1 menu-item cc:px-3 lg:px-6">
+                            <li class="flex relative text-black trans-bg-color pl-0 text-base hover:text-yellow1 menu-item cc:px-3 lg:px-6" @click='toggle = !toggle'>
                                 <label aria-haspopup="true" class="w-full relative">
                                     <div class="flex flex-row items-center">
                                         <span class="flex items-center cursor-pointer p-2 pl-6 cc:px-2 cc:py-2">Categories</span>
                                         <span class="nav-arrow text-black" />
                                     </div>
                                     <transition name="slider">
-                                        <ul style="display:none;" class="cc:absolute py-3 whitespace-no-wrap bg-yellow1 cc:mt-4 min-w-full cc:min-w-200 rounded-sm submenu" aria-label="submenu">
+                                        <ul v-show='toggle' class="cc:absolute py-3 whitespace-no-wrap bg-yellow1 cc:mt-4 min-w-full cc:min-w-200 rounded-sm submenu" aria-label="submenu">
                                             <li class="main-nav-link" v-for="category in this.categories" :key="category.id">
                                                 <g-link :to="category.path" aria-haspopup="true" class="flex px-8 py-2 cc:px-2 w-full"> {{ category.title }} </g-link>
                                             </li>
@@ -271,20 +295,20 @@
                     <div class=" text-black">
                         <template v-if="featuredBlog.categories">
                             <div class="categorieslist">
-                            <a v-for="(category) in featuredBlog.categories" :key="category.id" v-text="category.title === 'yellowbrick and tpc-ds' ? 'Yellowbrick and TPC-DS' : category.title" :href="`/blog/category/${category.title}`" class="categorylist uppercase font-bold text-yellow1 leading-none block md:mb-12 md:mr-6" />
+                                <a v-for="(category) in featuredBlog.categories" :key="category.id" v-text="category.title === 'yellowbrick and tpc-ds' ? 'Yellowbrick and TPC-DS' : category.title" :href="`/blog/category/${category.title}`" class="categorylist uppercase font-bold text-yellow1 leading-none block md:mb-12 md:mr-6" />
                             </div>
                         </template>
                         <g-link :to="featuredBlog.path"><h2 class="rfs-text-4xl font-bold pb-0" style="line-height: 1.1;" v-html="featuredBlog.title" /></g-link>
                         <p class="rfs-text-base leading-tight font-normal md:pb-6 block hidden_test" v-text="featuredBlog.description" />
                         <div class="flex">
                             <div class="w-1/6 mr-6">
-                                <img :src="`${featuredBlog.author.authorImage}`" style=" border-radius: 50%;" class="w-20"/>
+                                <img :src="`${featuredBlog.author.authorImage}`" style=" border-radius: 50%;" class="w-20" />
                             </div>
                             <div class="md:w-2/3">
                                 <g-link :to="featuredBlog.author.path">
                                     <p class="featured-author font-bold mt-2" v-text="featuredBlog.author.name" />
                                 </g-link>
-                                <p v-text="featuredBlog.date" class="font-normal mb-0"/>
+                                <p v-text="featuredBlog.date" class="font-normal mb-0" />
                             </div>
                         </div>
                     </div>
@@ -308,15 +332,15 @@
                                 <div class="text-black md:pl-20 block">
                                     <template v-if="edge.node.categories">
                                         <div class="categorieslist">
-                                        <a v-for="(category) in edge.node.categories" :key="category.id" v-text="category.title === 'yellowbrick and tpc-ds' ? 'Yellowbrick and TPC-DS' : category.title" :href="`/blog/category/${category.title}`" class="uppercase font-bold text-yellow1 leading-none block md:mb-0 mr-4" />
+                                            <a v-for="(category) in edge.node.categories" :key="category.id" v-text="category.title === 'yellowbrick and tpc-ds' ? 'Yellowbrick and TPC-DS' : category.title" :href="`/blog/category/${category.title}`" class="uppercase font-bold text-yellow1 leading-none block md:mb-0 mr-4" />
                                         </div>
                                     </template>
                                     <g-link :to="edge.node.path"><h4 class="rfs-text-4xl text-black font-bold hidden_test titlename" v-html="edge.node.title" /></g-link>
                                     <p class="rfs-text-base leading-tight font-normal md:pb-1 hidden_test" v-html="edge.node.description" />
 
                                     <div class="flex">
-                                        <div class="w-1/6 mr-6" >
-                                            <img  :src="`${edge.node.author.authorImage}`" style="border-radius: 50%;" class="w-20"/>
+                                        <div class="w-1/6 mr-6">
+                                            <img :src="`${edge.node.author.authorImage}`" style="border-radius: 50%;" class="w-20" />
                                         </div>
                                         <div class="md:w-2/3">
                                             <g-link :to="edge.node.author.path">
@@ -339,6 +363,10 @@
 </template>
 
 <script>
+    import {
+        disableBodyScroll,
+        clearAllBodyScrollLocks
+    } from 'body-scroll-lock'
     import Layout from '~/layouts/Blog.vue'
     import {
         Pager
@@ -365,60 +393,61 @@
             searchResults: null,
             featuredBlog: null,
             categories: [],
+            toggle: false,
             menu: [
-        {
-          label: 'Industries',
-          show: false,
-              subitems: [
-                  {
-                      label: 'Financial Services',
-                      route: '/solutions/financial-services/',
-                      indent: true
-                  },
-                  {
-                      label: 'Healthcare & Life Sciences',
-                      route: '/solutions/healthcare-life-sciences/',
-                      indent: true
-                  },
-                  {
-                      label: 'Insurance',
-                      route: '/solutions/insurance/',
-                      indent: true
-                  },
-                  {
-                      label: 'Retail',
-                      route: '/solutions/retail/',
-                      indent: true
-                  },
-                  {
-                      label: 'Federal',
-                      route: '/solutions/federal/',
-                      indent: true
-                  },
-                  {
-                      label: 'Telecommunications',
-                      route: '/solutions/telecom/',
-                      indent: true
-                  },
-          ]
-        },
-        {
-          label: 'News',
-            route: '/newsroom/'
-        },
-        {
-          label: 'More',
-          show: false,
-          subitems: [{
-              label: 'Coming Soon',
-              route: '#'
-            },
-          ]
-        },
-      ],
-      showDrawer: false,
-      searchFocus: false,
-      openNav: false,
+                {
+                    label: 'Industries',
+                    show: false,
+                    subitems: [
+                        {
+                            label: 'Financial Services',
+                            route: '/solutions/financial-services/',
+                            indent: true
+                        },
+                        {
+                            label: 'Healthcare & Life Sciences',
+                            route: '/solutions/healthcare-life-sciences/',
+                            indent: true
+                        },
+                        {
+                            label: 'Insurance',
+                            route: '/solutions/insurance/',
+                            indent: true
+                        },
+                        {
+                            label: 'Retail',
+                            route: '/solutions/retail/',
+                            indent: true
+                        },
+                        {
+                            label: 'Federal',
+                            route: '/solutions/federal/',
+                            indent: true
+                        },
+                        {
+                            label: 'Telecommunications',
+                            route: '/solutions/telecom/',
+                            indent: true
+                        },
+                    ]
+                },
+                {
+                    label: 'News',
+                    route: '/newsroom/'
+                },
+                {
+                    label: 'More',
+                    show: false,
+                    subitems: [{
+                        label: 'Coming Soon',
+                        route: '#'
+                    },
+                    ]
+                },
+            ],
+            showDrawer: false,
+            searchFocus: false,
+            openNav: false,
         }),
         setAltImg(event) {
             event.target.src = "/uploads/author.png"
@@ -436,6 +465,9 @@
                 })
             },
             clickAnywhere(e) {
+                this.menu.forEach((item, x) => {
+                    if (!document.getElementById(`menu-${x}`).contains(e.target) && item.show) item.show = false
+                })
                 var ignoreClickOnMeElement = document.getElementById('search-box');
                 var isClickInsideElement = ignoreClickOnMeElement.contains(e.target);
                 if (!isClickInsideElement) {
@@ -456,6 +488,7 @@
             }
         },
         mounted() {
+            clearAllBodyScrollLocks()
             document.addEventListener('click', this.clickAnywhere)
             document.addEventListener('keydown', this.pressAnything)
             document.addEventListener('scroll', this.scrollAnytime)
