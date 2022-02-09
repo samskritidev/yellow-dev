@@ -236,7 +236,7 @@
                             <li class="flex relative text-black trans-bg-color pl-0 text-base hover:text-yellow1 menu-item cc:px-3 lg:px-6" @click='toggle = !toggle'>
                                 <label aria-haspopup="true" class="w-full relative">
                                     <div class="flex flex-row items-center">
-                                        <span class="flex items-center cursor-pointer p-2 pl-6 cc:px-2 cc:py-2">Categories</span>
+                                        <span class="flex items-center cursor-pointer p-2 pl-6 cc:px-2 cc:py-2 font-normal">Categories</span>
                                         <span class="nav-arrow text-black" />
                                     </div>
                                     <transition name="slider">
@@ -252,10 +252,10 @@
 
                             <li v-for="(item, x) in menu" :key="x" :id="`menu-${x}`" class="flex cc:px-3 lg:px-6 relative text-black trans-bg-color pl-0 text-base hover:text-yellow1 menu-item" :class="{'cc:pl-3 lg:pl-6' : x === 0, 'cc:pl-3 lg:pl-6' : x === Object.keys(menu).length - 2, 'cc:pl-3 lg:pl-6' : x !== 0 && x !== Object.keys(menu).length - 2}"
                                 @click="item.show = !item.show">
-                                <g-link v-if="item.route" :to="item.route" class="p-2 px-6 cc:px-2 cc:py-2">{{ item.label }}</g-link>
+                                <g-link v-if="item.route" :to="item.route" class="p-2 px-6 cc:px-2 cc:py-2 font-normal">{{ item.label }}</g-link>
                                 <label v-else aria-haspopup="true" class="w-full relative">
                                     <div class="flex flex-row items-center">
-                                        <span v-text="item.label" class="flex items-center cursor-pointer p-2 pl-6 cc:px-2 cc:py-2" />
+                                        <span v-text="item.label" class="flex items-center cursor-pointer p-2 pl-6 cc:px-2 cc:py-2 font-normal" />
                                         <span class="nav-arrow text-black" />
                                     </div>
                                     <transition name="slider">
