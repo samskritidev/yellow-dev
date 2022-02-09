@@ -143,10 +143,10 @@
                                 <template>
                                     <div class="hello">
                                         <p class="font-normal">SOCIAL SHARE</p>
-                                        <facebook style="padding-right: 15px;" :url="currentUrl" title="Facebook" scale="2"></facebook>
-                                        <twitter style="padding-right: 15px;" :url="currentUrl" title="Twitter" scale="2"></twitter>
-                                        <linkedin style="padding-right: 15px;" :url="currentUrl" title="LinkedIn" scale="2"></linkedin>
-                                        <WhatsApp style="padding-right: 15px;" :url="currentUrl" title="Whatsapp" scale="2"></WhatsApp>
+                                        <facebook  :url="currentUrl" title="Facebook" scale="2"></facebook>
+                                        <twitter  :url="currentUrl" title="Twitter" scale="2"></twitter>
+                                        <linkedin  :url="currentUrl" title="LinkedIn" scale="2"></linkedin>
+                                        <WhatsApp  :url="currentUrl" title="Whatsapp" scale="2"></WhatsApp>
                                     </div>
                                 </template>
 
