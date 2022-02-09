@@ -57,6 +57,7 @@ export default {
     date(format: "MMMM D YYYY")
     path
     coverImage
+    thumbnailImage
     description
     categories {
     id

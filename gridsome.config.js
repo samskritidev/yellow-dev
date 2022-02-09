@@ -42,16 +42,16 @@ module.exports = {
         pathPrefix: '/blog',
         template: './src/templates/Blog.vue',
         //plugins: [
-        //  '@gridsome/remark-prismjs'
-        //],
+         // '@gridsome/remark-prismjs'
+       // ],
         refs: {
-          author: 'Author',
-          categories: {
-            typeName: 'Category',
-            route: '/blog/category/:id',
-            template: './src/templates/Category.vue',
-            create: true
-          }
+            author: 'Author',
+            categories: {
+                typeName: 'Category',
+                route: '/blog/category/:id',
+                template: './src/templates/Category.vue',
+                create: true
+            },
         }
       }
       },

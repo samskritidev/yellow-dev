@@ -4,6 +4,7 @@ import DefaultLayout from '~/layouts/Default.vue'
 import Vuex from 'vuex'
 import VueScrollTo from 'vue-scrollto'
 import VuePluralize from 'vue-pluralize'
+import VueDisqus from 'vue-disqus'
 
 import 'typeface-source-sans-pro'
 import '~/css/main.css'
@@ -14,7 +15,7 @@ export default function(Vue, { router, head, isClient, appOptions }) {
   Vue.component('Layout', DefaultLayout)
   Vue.use(Vuex);
   Vue.use(VuePluralize);
-
+    Vue.use(VueDisqus);
   appOptions.store = new Vuex.Store({
     state:{
       filter:true,
