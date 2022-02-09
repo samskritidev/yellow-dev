@@ -3,7 +3,7 @@
         margin-bottom: 2px !important;
         padding-bottom: 0 !important;
     }
-    @media only screen and (max-width: 640px) {
+    @media only screen and (max-width: 880px) {
         #hamburger, #hamburger::after, #hamburger::before {
             background-color: black;
         }
@@ -295,13 +295,13 @@
                     <div class=" text-black">
                         <template v-if="featuredBlog.categories">
                             <div class="categorieslist">
-                                <a v-for="(category) in featuredBlog.categories" :key="category.id" v-text="category.title === 'yellowbrick and tpc-ds' ? 'Yellowbrick and TPC-DS' : category.title" :href="`/blog/category/${category.title}`" class="categorylist uppercase font-bold text-yellow1 leading-none block md:mb-12 md:mr-6" />
+                                <a v-for="(category) in featuredBlog.categories" :key="category.id" v-text="category.title === 'yellowbrick and tpc-ds' ? 'Yellowbrick and TPC-DS' : category.title" :href="`/blog/category/${category.title}`" class="categorylist uppercase font-bold text-yellow1 leading-none block md:mb-8 md:mr-6" />
                             </div>
                         </template>
                         <g-link :to="featuredBlog.path"><h2 class="rfs-text-4xl font-bold pb-0" style="line-height: 1.1;" v-html="featuredBlog.title" /></g-link>
                         <p class="rfs-text-base leading-tight font-normal md:pb-6 block hidden_test" v-text="featuredBlog.description" />
                         <div class="flex">
-                            <div class="w-1/6 mr-6">
+                            <div class="w-1/7 mr-6">
                                 <img :src="`${featuredBlog.author.authorImage}`" style=" border-radius: 50%;" class="w-20" />
                             </div>
                             <div class="md:w-2/3">
@@ -339,7 +339,7 @@
                                     <p class="rfs-text-base leading-tight font-normal md:pb-1 hidden_test" v-html="edge.node.description" />
 
                                     <div class="flex">
-                                        <div class="w-1/6 mr-6">
+                                        <div class="w-1/7 mr-6">
                                             <img :src="`${edge.node.author.authorImage}`" style="border-radius: 50%;" class="w-20" />
                                         </div>
                                         <div class="md:w-2/3">
