@@ -256,7 +256,7 @@
                                     <p class="rfs-text-base leading-tight font-normal" v-html="edge.node.description" />
 
                                     <div class="flex flex-col md:flex-row md:w-1/2">
-                                        <div class="w-full md:w-1/4" style="margin-right: 15px; width: 70px;">
+                                        <div v-if="edge.node.author.authorImage" class="w-full md:w-1/4" style="margin-right: 15px; width: 70px;">
                                             <img :src="`${edge.node.author.authorImage}`" style=" border-radius: 50%; width: 70px; height: 70px" />
                                         </div>
                                         <div class="w-full md:w-2/3">

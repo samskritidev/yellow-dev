@@ -1,6 +1,6 @@
 ---
 title: Succeeding with Telecom Analytics
-author: d7d83a7f-9bf1-4a73-89ce-498af277fac7
+author: 1f5d5e99-3d0b-42ed-97aa-986473217b93
 description: Succeeding with Telecom Analytics
 date: 2019-05-13
 coverImage: /uploads/Yellowbrick-BlogImage7.jpg
