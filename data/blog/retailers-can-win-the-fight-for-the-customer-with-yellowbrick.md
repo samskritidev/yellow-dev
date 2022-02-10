@@ -1,6 +1,6 @@
 ---
 title: Retailers can win the fight for the customer with Yellowbrick
-author: d7d83a7f-9bf1-4a73-89ce-498af277fac7
+author: 1f5d5e99-3d0b-42ed-97aa-986473217b93
 description: The Yellowbrick solution’s high-performance design gives retailers
   faster, higher quality insight, even as data volumes increase. This enables
   retailers to win the fight for the customer through a personalized experience

@@ -1,15 +1,15 @@
 {
   "ExpandedNodes": [
     "",
+    "\\data",
     "\\src",
     "\\src\\admin",
+    "\\src\\layouts",
     "\\src\\pages",
-    "\\src\\pages\\resources",
     "\\src\\pages\\resources\\briefs",
-    "\\src\\pages\\solutions",
     "\\src\\templates",
     "\\static"
   ],
-  "SelectedNode": "\\src\\pages\\Index.vue",
+  "SelectedNode": "\\src\\templates\\Blog.vue",
   "PreviewInSolutionExplorer": false
 }

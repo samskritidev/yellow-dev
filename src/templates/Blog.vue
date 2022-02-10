@@ -142,7 +142,6 @@
                             <div class="w-full md:w-2/3 author_section flex flex-end" style="justify-content: flex-end;">
                                 <template>
                                     <div class="hello">
-                                        <facebook :url="url" scale="3"></facebook>
                                         
                                     </div>
                                 </template>
