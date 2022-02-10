@@ -6,12 +6,95 @@
     .author_section p {
         margin-bottom: 0px;
     }
-
+    .main-nav-link a {
+        text-transform:capitalize;
+    }
+    .menu-item span, .menu-item a {
+        font-weight: normal;
+    }
     .announcement-box a {
         margin: 20px;
         border: 0.5px solid #e5e5e5;
     }
+    @media only screen and (max-width: 880px) {
+        #hamburger, #hamburger::after, #hamburger::before {
+            background-color: black;
+        }
 
+        .mobile-menu span, .mobile-menu a {
+            color: white;
+        }
+
+        .mobile-menu .nav-arrow:before, .mobile-menu .nav-arrow:after {
+            background-color: yellow;
+        }
+
+        .mobile-menu .main-nav-link.child a, .mobile-menu .main-nav-link a {
+            color: black;
+        }
+    }
+
+    .categorieslist {
+        display: flex;
+    }
+
+    .rfs-text-4xl {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .hidden_test {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        -webkit-box-orient: vertical;
+    }
+
+ 
+
+    .featured_image {
+        min-height: 302px;
+        max-height: 307px;
+        -o-object-fit: cover;
+        object-fit: cover;
+    }
+
+    .rfs-text-base {
+        margin-bottom: 1rem
+    }
+
+    .rfs-text-4xl {
+        margin-top: 0.8rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .featured_image1 {
+        min-height: 390px;
+        object-fit: cover;
+    }
+
+    .active.pagerLink {
+        background-color: #ffcd32;
+        border: 1px solid black;
+        font-weight: bold;
+        font-size: 25px;
+    }
+
+    .nav-arrow {
+        margin-right: -5px;
+    }
+
+    .pagerLink {
+        font-weight: bold;
+        color: black;
+        font-size: 25px;
+    }
+
+    .featured-author {
+        margin-bottom: 0.5rem;
+    }
 
     .hero {
         background-size: cover;
@@ -50,7 +133,7 @@
                             <img alt="Yellowbrick Blog Page" src="/uploads/logo.png" />
                         </a>
 
-                        <div :class="[showDrawer ? 'bg-transparent-75' : 'hidden']" class="fixed cc:hidden z-40 inset-0 trans-bg-color" @click="toggleDrawer(false)" />
+                        <div :class="[showDrawer ? 'bg-transparent-75' : 'hidden']" class="fixed cc:hidden inset-0 trans-bg-color" @click="toggleDrawer(false)" />
                         <ul ref="drawer" :style="{ right: showDrawer ? '0px' : '-100%' }" style="transition: right 0.25s ease;" class="fixed z-100 cc:static cc:flex items-center inset-y-0 h-screen cc:h-auto bg-black cc:bg-transparent w-full cc:w-auto m-0 mobile-menu">
                             <li class="cc:hidden flex justify-between p-2">
                                 <g-link to="/" class="p-2 pl-4">
@@ -61,14 +144,14 @@
                                 </div>
                             </li>
 
-                            <li class="flex relative text-black trans-bg-color pl-0 text-base hover:text-yellow1 menu-item cc:px-3 lg:px-6">
+                            <li @click='toggle = !toggle' class="flex relative text-black trans-bg-color pl-0 text-base hover:text-yellow1 menu-item cc:px-3 lg:px-6">
                                 <label aria-haspopup="true" class="w-full relative">
                                     <div class="flex flex-row items-center">
                                         <span class="flex items-center cursor-pointer p-2 pl-6 cc:px-2 cc:py-2">Categories</span>
                                         <span class="nav-arrow text-black" />
                                     </div>
                                     <transition name="slider">
-                                        <ul style="display:none;" class="cc:absolute py-3 whitespace-no-wrap bg-yellow1 cc:mt-4 min-w-full cc:min-w-200 rounded-sm submenu" aria-label="submenu">
+                                        <ul v-show='toggle' class="cc:absolute py-3 whitespace-no-wrap bg-yellow1 cc:mt-4 min-w-full cc:min-w-200 rounded-sm submenu" aria-label="submenu">
                                             <li class="main-nav-link" v-for="category in $page.allCategory.edges" :key="category.node.id">
                                                 <g-link :to="category.node.path" aria-haspopup="true" class="flex px-8 py-2 cc:px-2 w-full"> {{category.node.title }} </g-link>
                                             </li>
@@ -191,6 +274,10 @@
 </template>
 
 <script>
+    import {
+        disableBodyScroll,
+        clearAllBodyScrollLocks
+    } from 'body-scroll-lock'
    import { Facebook, Twitter, Linkedin, WhatsApp } from 'vue-socialmedia-share';
     import SearchBlog from '~/components/SearchBlog.vue'
     import Layout from '~/layouts/Blog.vue'
@@ -253,6 +340,7 @@
         data: () => ({
             searchResults: null,
             categories: [],
+            toggle: false,
             url: "https://yellowbrick-dev1.netlify.app/blog/and-the-winner-of-the-cloud-data-warehouse-benchmark-war-is-nobody/",
             menu: [
                 {
@@ -333,6 +421,9 @@
                 })
             },
             clickAnywhere(e) {
+                this.menu.forEach((item, x) => {
+                    if (!document.getElementById(`menu-${x}`).contains(e.target) && item.show) item.show = false
+                })
                 var ignoreClickOnMeElement = document.getElementById('search-box');
                 var isClickInsideElement = ignoreClickOnMeElement.contains(e.target);
                 if (!isClickInsideElement) {
@@ -353,6 +444,7 @@
             }
         },
         mounted() {
+            clearAllBodyScrollLocks()
             document.addEventListener('click', this.clickAnywhere)
             document.addEventListener('keydown', this.pressAnything)
             document.addEventListener('scroll', this.scrollAnytime)
@@ -433,7 +525,7 @@
     }
     }
     }
-    allCategory {
+    allCategory(sortBy: "title", order: ASC) {
     edges {
     node {
     id
