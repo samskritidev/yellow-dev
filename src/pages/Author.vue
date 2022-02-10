@@ -1,4 +1,30 @@
 <style scoped>
+@media only screen and (max-width: 767px) { 
+.authorName {
+           padding-top: 20px;
+             }
+}
+@media only screen and (max-width: 880px) {
+        #hamburger, #hamburger::after, #hamburger::before {
+            background-color: black;
+        }
+
+        .mobile-menu span, .mobile-menu a {
+            color: white;
+        }
+
+        .mobile-menu .nav-arrow:before, .mobile-menu .nav-arrow:after {
+            background-color: yellow;
+        }
+
+        .mobile-menu .main-nav-link.child a, .mobile-menu .main-nav-link a {
+            color: black;
+        }        
+
+    }
+    .author-about {
+    line-height: 27px;
+}
     .rfs-text-4xl {
         margin-top: 20px;
         margin-bottom: 20px;
@@ -240,26 +266,26 @@
         <section class="flex flex-col pb-2 pt-32 px-6 xl:px-0 bg-white">
         </section>
         <section class="px-6 xl:px-0" id="current_post">
-            <div class="max-w-1200 w-full mx-auto">
+            <div class="max-w-1200 w-full mx-auto md:px-12">
                 <h1 class="justify-center uppercase font-bold" style="text-align: center;">Our Authors</h1>
                 <p></p>
-                <p class="font-normal">Yellowbrick authors write compelling stories about cutting edge technologies &Aacute; trends, people, products, events, and topic that is valuable to our customers, employees and partners.</p>
-                <div class="flex flex-row flex-wrap -mx-6" style="border-top: 1px solid #80808047;">
-                    <div v-for="edge in searchResults ? searchResults : $page.allAuthor.edges" :key="edge.node.id" class="flex flex-col w-full relative current-post p-6">
-                        <div class="flex flex-col md:flex-row max-w-1200 w-full mx-auto relative">
-                            <g-link :to="edge.node.path" class="w-full md:w-1/5 main-box relative">
-                                <div class="float-box text-white">
+                <p class="font-normal pb-12" style="border-bottom: 1px solid #80808047;">Yellowbrick authors write compelling stories about cutting edge technologies &Aacute; trends, people, products, events, and topic that is valuable to our customers, employees and partners.</p>
+                <div class="flex flex-row flex-wrap pt-8 pb-8">
+                    <div v-for="edge in searchResults ? searchResults : $page.allAuthor.edges" :key="edge.node.id" class="flex flex-col w-full relative current-post pb-10">
+                        <div class="flex flex-col md:flex-row max-w-1200 w-full mx-auto">
+                            <g-link :to="edge.node.path" class="w-full md:w-1/3 mr-12">
+                                <div class="text-white">
                                     <img class="featured_image" :src="`${edge.node.authorImage}`" />
                                 </div>
                             </g-link>
-                            <div class="w-full md:w-2/3 main-box relative">
-                                <div class="float-box text-black">
+                            <div class="w-full md:w-1/1">
+                                <div class="text-black">
                                     <!-- <h6 class="text-yellow2 hidden md:block">Data Warehouse Modernization</h6> -->
 
-                                    <g-link :to="edge.node.path"><h4 class="rfs-text-3xl text-yellow1 uppercase font-bold" v-html="edge.node.name" /></g-link>
+                                    <g-link :to="edge.node.path"><h4 class="rfs-text-3xl text-yellow1 uppercase font-bold authorName" v-html="edge.node.name" /></g-link>
                                     <p class="featured-author" v-text="edge.node.position" />
-                                    <p class="rfs-text-base leading-tight font-normal" v-if="edge.node.authorAbout.length<498" v-html="edge.node.authorAbout"></p>
-                                    <p class="rfs-text-base leading-tight font-normal" v-else v-html="edge.node.authorAbout.substring(0,498)"></p>
+                                    <p class="rfs-text-base leading-tight font-normal author-about" v-if="edge.node.authorAbout.length<498" v-html="edge.node.authorAbout"></p>
+                                    <p class="rfs-text-base leading-tight font-normal author-about" v-else v-html="edge.node.authorAbout.substring(0,498)"></p>
                                 </div>
                             </div>
                         </div>
