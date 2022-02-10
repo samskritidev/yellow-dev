@@ -3,6 +3,11 @@
         margin-bottom: 2px !important;
         padding-bottom: 0 !important;
     }
+    .authorname p {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+    display: block;
+}
     @media only screen and (max-width: 880px) {
         #hamburger, #hamburger::after, #hamburger::before {
             background-color: black;
@@ -283,7 +288,7 @@
         </header>
         <section class="flex flex-col pb-2 pt-32 px-6 xl:px-0 bg-white">
         </section>
-        <section class="px-6 xl:px-0 bg-white pb-16" v-if="featuredBlog" style="border-bottom: 1px solid #0000002e; margin-top: 20px;">
+        <section class="px-6 xl:px-0 bg-white pb-20" v-if="featuredBlog" style="border-bottom: 1px solid #0000002e; margin-top: 20px;">
             <div class="flex flex-col md:flex-row max-w-1200 mx-auto">
 
                 <div class="w-full md:w-1/2 md:mr-4">
@@ -302,11 +307,11 @@
                         <p class="rfs-text-base leading-tight font-normal md:pb-6 block hidden_test" v-text="featuredBlog.description" />
                         <div class="flex">
                             <div class="w-1/7 mr-6">
-                                <img :src="`${featuredBlog.author.authorImage}`" style=" border-radius: 50%;" class="w-20" />
+                                <img :src="`${featuredBlog.author.authorImage}`" style=" border-radius: 50%;" class="w-16" />
                             </div>
-                            <div class="md:w-2/3">
+                            <div class="md:w-2/3 authorname">
                                 <g-link :to="featuredBlog.author.path">
-                                    <p class="featured-author font-bold mt-2" v-text="featuredBlog.author.name" />
+                                    <p class="featured-author font-bold mt-1" v-text="featuredBlog.author.name" />
                                 </g-link>
                                 <p v-text="featuredBlog.date" class="font-normal mb-0" />
                             </div>
@@ -330,19 +335,19 @@
                                 <div class="text-black md:pl-20 block">
                                     <template v-if="edge.node.categories">
                                         <div class="categorieslist">
-                                            <a v-for="(category) in edge.node.categories" :key="category.id" v-text="category.title === 'yellowbrick and tpc-ds' ? 'Yellowbrick and TPC-DS' : category.title" :href="`/blog/category/${category.title}`" class="uppercase font-bold text-yellow1 leading-none block md:mb-0 mr-4" />
+                                            <a v-for="(category) in edge.node.categories" :key="category.id" v-text="category.title === 'yellowbrick and tpc-ds' ? 'Yellowbrick and TPC-DS' : category.title" :href="`/blog/category/${category.title}`" class="uppercase font-bold text-yellow1 leading-none block md:mb-0 mr-4 pt-2 pb-8" />
                                         </div>
                                     </template>
-                                    <g-link :to="edge.node.path"><h4 class="rfs-text-4xl text-black font-bold hidden_test titlename" v-html="edge.node.title" /></g-link>
-                                    <p class="rfs-text-base leading-tight font-normal md:pb-1 hidden_test" v-html="edge.node.description" />
+                                    <g-link :to="edge.node.path"><h4 class="rfs-text-3xl text-black font-bold hidden_test titlename" v-html="edge.node.title" /></g-link>
+                                    <p class="rfs-text-base leading-tight font-normal pt-4 pb-1 hidden_test" v-html="edge.node.description" />
 
                                     <div class="flex">
                                         <div class="w-1/7 mr-6">
-                                            <img :src="`${edge.node.author.authorImage}`" style="border-radius: 50%;" class="w-20" />
+                                            <img :src="`${edge.node.author.authorImage}`" style="border-radius: 50%;" class="w-16" />
                                         </div>
-                                        <div class="md:w-2/3">
+                                        <div class="md:w-2/3 authorname">
                                             <g-link :to="edge.node.author.path">
-                                                <p class="featured-author font-bold mt-2" v-text="edge.node.author.name" />
+                                                <p class="featured-author font-bold mt-1" v-text="edge.node.author.name" />
                                             </g-link>
                                             <p v-text="edge.node.date" class="font-normal mb-0" />
                                         </div>
