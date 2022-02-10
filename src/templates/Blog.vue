@@ -140,7 +140,13 @@
                                 <p v-text="$page.blog.date" class="font-normal" />
                             </div>
                             <div class="w-full md:w-2/3 author_section flex flex-end" style="justify-content: flex-end;">
-                          
+                                <template>
+                                    <div class="hello">
+                                        <client-only>
+                                            <facebook url="https://yellowbrick-dev1.netlify.app/" title="Facebook" scale="2"></facebook>
+                                        </client-only>
+</div>
+                                </template>
 
                             </div>
                         </div>
@@ -185,6 +191,7 @@
 </template>
 
 <script>
+   import { Facebook, Twitter, Linkedin, WhatsApp } from 'vue-socialmedia-share';
     import SearchBlog from '~/components/SearchBlog.vue'
     import Layout from '~/layouts/Blog.vue'
     export default {
@@ -307,7 +314,11 @@
         },
         components: {
             SearchBlog,
-            Layout
+            Layout,
+            Facebook,
+            Twitter,
+            Linkedin,
+            WhatsApp
         },
         methods: {
             toggleDrawer(open) {
