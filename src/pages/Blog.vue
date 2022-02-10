@@ -216,7 +216,7 @@
     <Layout>
 
         <header id="topnav" class="fixed flex flex-row cc:flex-col z-50 items-center w-full bg-white">
-            <nav role="navigation" class="flex flex-col items-center space-between max-w-1400 mx-auto w-full px-5 py-3 cc:py-0">
+            <nav role="navigation" class="flex flex-col items-center space-between max-w-1400 mx-auto w-full px-5 py-0 cc:py-0">
 
                 <div class="flex items-center w-full space-between">
 
@@ -288,8 +288,8 @@
         </header>
         <section class="flex flex-col pb-2 pt-32 px-6 xl:px-0 bg-white">
         </section>
-        <section class="px-6 xl:px-0 bg-white pb-20" v-if="featuredBlog" style="border-bottom: 1px solid #0000002e; margin-top: 20px;">
-            <div class="flex flex-col md:flex-row max-w-1200 mx-auto">
+        <section class="px-6 xl:px-0 bg-white pb-20 md:pt-8" v-if="featuredBlog" style="border-bottom: 1px solid #0000002e; margin-top: 0px;">
+            <div class="flex flex-col md:flex-row max-w-1200 mx-auto md:px-12">
 
                 <div class="w-full md:w-1/2 md:mr-4">
                     <div class="md:mr-12">
@@ -300,11 +300,11 @@
                     <div class=" text-black">
                         <template v-if="featuredBlog.categories">
                             <div class="categorieslist">
-                                <a v-for="(category) in featuredBlog.categories" :key="category.id" v-text="category.title === 'yellowbrick and tpc-ds' ? 'Yellowbrick and TPC-DS' : category.title" :href="`/blog/category/${category.title}`" class="categorylist uppercase font-bold text-yellow1 leading-none block md:mb-8 md:mr-6" />
+                                <a v-for="(category) in featuredBlog.categories" :key="category.id" v-text="category.title === 'yellowbrick and tpc-ds' ? 'Yellowbrick and TPC-DS' : category.title" :href="`/blog/category/${category.title}`" class="categorylist uppercase font-bold text-yellow1 leading-none block mb-8 md:mr-6" />
                             </div>
                         </template>
                         <g-link :to="featuredBlog.path"><h2 class="rfs-text-4xl font-bold pb-0" style="line-height: 1.1;" v-html="featuredBlog.title" /></g-link>
-                        <p class="rfs-text-base leading-tight font-normal md:pb-6 block hidden_test" v-text="featuredBlog.description" />
+                        <p class="rfs-text-base leading-tight font-normal pb-6 block hidden_test" v-text="featuredBlog.description" />
                         <div class="flex">
                             <div class="w-1/7 mr-6">
                                 <img :src="`${featuredBlog.author.authorImage}`" style=" border-radius: 50%;" class="w-16" />
@@ -320,11 +320,11 @@
                 </div>
             </div>
         </section>
-        <section class="px-6 xl:px-0 py-12" id="current_post">
+        <section class="px-6 xl:px-0 pb-0 pt-12" id="current_post">
             <div class="max-w-1200 w-full mx-auto">
-                <h1 class="text-yellow1 uppercase font-bold mb-6">Current Posts</h1>
+                <h1 class="text-yellow1 uppercase font-bold mb-6 px-4 md:px-12">Current Posts</h1>
                 <div class="flex flex-row flex-wrap -mx-6">
-                    <div v-for="edge in searchResults ? searchResults : $page.allBlog.edges" :key="edge.node.id" class="flex flex-col w-full relative current-post pb-16 px-6">
+                    <div v-for="edge in searchResults ? searchResults : $page.allBlog.edges" :key="edge.node.id" class="flex flex-col w-full relative current-post pb-16 px-6 md:px-20">
                         <div class="flex flex-col md:flex-row max-w-1200 w-full mx-auto relative border">
                             <div :to="edge.node.path" class="w-full md:w-2/5">
                                 <div class="text-white">
