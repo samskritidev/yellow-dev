@@ -2,18 +2,15 @@
 id: f6e3aea9-fc52-403d-8f5b-855a77624696
 name: Mark Cusack
 position: Chief Technology Officer
-authorImage: /uploads/mark-cusack-touch-up.png
+authorImage: /uploads/mark-cusack.jpg
 authorAbout: >-
   <!--StartFragment-->
 
 
-  Before joining Yellowbrick, Mark was Vice President for Data and Analytics at Teradata, where he led a variety of product management and technology teams in data warehouse and advanced analytics groups.
+  Mark Cusack is the CTO at Yellowbrick. Mark has worked in the data warehousing and advanced analytics space for the past 20 years. He was a co-founding developer at the data warehouse archiving company RainStor, which was acquired by Teradata in 2014. Mark holds a PhD in computational physics, and has worked in academia, government, startups and enterprises over the course of his career.\
 
 
-  He was also Chief Architect of Teradata’s IoT Analytics effort. Mark joined Teradata in 2014 when Teradata acquired the startup RainStor, where he was a co-founding developer and Chief Architect. Prior to RainStor, Mark was a lead scientist in the UK Ministry of Defence.
-
-
-  Mark holds a Ph.D. in computational physics from Newcastle University, UK, with a thesis centered on discovering the electronic and non-linear optical properties of quantum dots. As a research fellow at Newcastle, he developed new techniques to model these novel quantum structures using large-scale parallel and distributed computing approaches.
+  Mark is a keen runner. He prefers to race the 5K distance, but will also tackle 10K, half-marathons and the occasional full marathon if pushed. He also boxes and skis - although not generally at the same time.
 
 
   <!--EndFragment-->
