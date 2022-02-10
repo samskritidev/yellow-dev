@@ -1,4 +1,10 @@
 <style scoped>
+    .menu-item span, .menu-item a {
+        font-weight: normal;
+    }
+    .main-nav-link a {
+        text-transform: capitalize;
+    }
   .overline {
     border-top: 5px solid #FFCD32;
     font-weight: 600;
@@ -13,9 +19,51 @@
         padding: 5px 15px 5px 15px;
 
     }
+    .titlename {
+        margin-bottom: 2px !important;
+        padding-bottom: 0 !important;
+    }
+
+    .authorname p {
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
+        display: block;
+    }
+
+    @media only screen and (max-width: 880px) {
+        #hamburger, #hamburger::after, #hamburger::before {
+            background-color: black;
+        }
+
+        .mobile-menu span, .mobile-menu a {
+            color: white;
+        }
+
+        .mobile-menu .nav-arrow:before, .mobile-menu .nav-arrow:after {
+            background-color: yellow;
+        }
+
+        .mobile-menu .main-nav-link.child a, .mobile-menu .main-nav-link a {
+            color: black;
+        }
+    }
+
+    .categorieslist {
+        display: flex;
+    }
+
     .rfs-text-4xl {
         margin-top: 20px;
         margin-bottom: 20px;
+    }
+
+    .hidden_test {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        -webkit-box-orient: vertical;
     }
 
     .leading-none {
@@ -24,9 +72,7 @@
 
     .featured_image {
         min-height: 302px;
-        min-width: 330px;
         max-height: 307px;
-        max-width: 320px;
         -o-object-fit: cover;
         object-fit: cover;
     }
@@ -42,8 +88,28 @@
 
     .featured_image1 {
         min-height: 390px;
-        min-width: 530px;
         object-fit: cover;
+    }
+
+    .active.pagerLink {
+        background-color: #ffcd32;
+        border: 1px solid black;
+        font-weight: bold;
+        font-size: 25px;
+    }
+
+    .nav-arrow {
+        margin-right: -5px;
+    }
+
+    .pagerLink {
+        font-weight: bold;
+        color: black;
+        font-size: 25px;
+    }
+
+    .featured-author {
+        margin-bottom: 0.5rem;
     }
 
     .main-box {
@@ -158,7 +224,7 @@
                             <img alt="Yellowbrick Blog Page" src="/uploads/logo.png" />
                         </a>
 
-                        <div :class="[showDrawer ? 'bg-transparent-75' : 'hidden']" class="fixed cc:hidden z-40 inset-0 trans-bg-color" @click="toggleDrawer(false)" />
+                        <div :class="[showDrawer ? 'bg-transparent-75' : 'hidden']" class="fixed cc:hidden inset-0 trans-bg-color" @click="toggleDrawer(false)" />
                         <ul ref="drawer" :style="{ right: showDrawer ? '0px' : '-100%' }" style="transition: right 0.25s ease;" class="fixed z-100 cc:static cc:flex items-center inset-y-0 h-screen cc:h-auto bg-black cc:bg-transparent w-full cc:w-auto m-0 mobile-menu">
                             <li class="cc:hidden flex justify-between p-2">
                                 <g-link to="/" class="p-2 pl-4">
@@ -169,14 +235,14 @@
                                 </div>
                             </li>
 
-                            <li class="flex relative text-black trans-bg-color pl-0 text-base hover:text-yellow1 menu-item cc:px-3 lg:px-6">
+                            <li class="flex relative text-black trans-bg-color pl-0 text-base hover:text-yellow1 menu-item cc:px-3 lg:px-6" @click='toggle = !toggle'>
                                 <label aria-haspopup="true" class="w-full relative">
                                     <div class="flex flex-row items-center">
                                         <span class="flex items-center cursor-pointer p-2 pl-6 cc:px-2 cc:py-2">Categories</span>
                                         <span class="nav-arrow text-black" />
                                     </div>
                                     <transition name="slider">
-                                        <ul style="display:none;" class="cc:absolute py-3 whitespace-no-wrap bg-yellow1 cc:mt-4 min-w-full cc:min-w-200 rounded-sm submenu" aria-label="submenu">
+                                        <ul v-show='toggle' class="cc:absolute py-3 whitespace-no-wrap bg-yellow1 cc:mt-4 min-w-full cc:min-w-200 rounded-sm submenu" aria-label="submenu">
                                             <li class="main-nav-link" v-for="category in this.categories" :key="category.id">
                                                 <g-link :to="category.path" aria-haspopup="true" class="flex px-8 py-2 cc:px-2 w-full"> {{ category.title }} </g-link>
                                             </li>
@@ -221,7 +287,7 @@
         </header>
         <section class="flex flex-col pb-2 pt-16 px-6 xl:px-0 bg-white">
         </section>
-        <section class="pt-12 px-6 xl:px-0" style="border-bottom: 1px solid #0000002e;">
+        <section class="px-6 xl:px-0 bg-white pb-8 pt-20" style="border-bottom: 1px solid #0000002e; margin-top: 0px;">
             <div class="max-w-1000 w-full mx-auto">
                 <h1 class="w-full rfs-text-6xl  font-black uppercase text-black font-semibold" style="margin:auto;text-align:center" v-html="$page.category.title" />
                 <br /><p class="text-black pl-1 font-normal">Lorem ipsum Lorem ipsumLorem ipsumLorem ipsumLorem  ipsumLorem ipsumLo  ipsumLorem ipsumLo  ipsumLorem ipsumLoipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum</p>
@@ -237,37 +303,39 @@
                 </ul>
             </div>
         </section>
-        <section class="px-6 xl:px-0 py-12" id="current_post">
+        <section class="px-6 xl:px-0 pb-0 pt-12" id="current_post">
             <div class="max-w-1200 w-full mx-auto">
                 <div class="flex flex-row flex-wrap -mx-6">
-                    <div v-for="edge in searchResults ? searchResults : $page.category.belongsTo.edges" :key="edge.node.id" class="flex flex-col w-full relative current-post p-6">
-                        <div class="flex flex-col md:flex-row max-w-1200 w-full mx-auto relative">
-                            <div :to="edge.node.path" class="w-full md:w-2/5 main-box relative">
-                                <div class="float-box text-white">
+                    <div v-for="edge in searchResults ? searchResults : $page.category.belongsTo.edges" :key="edge.node.id" class="flex flex-col w-full relative current-post pb-16 px-6 md:px-20">
+                        <div class="flex flex-col md:flex-row max-w-1200 w-full  mx-auto relative border">
+                            <div :to="edge.node.path" class="w-full md:w-2/5">
+                                <div class="text-white">
                                     <img class="featured_image" :src="`${edge.node.coverImage}`" />
                                 </div>
                             </div>
-                            <div class="w-full md:w-4/5 main-box relative" style="border-radius: 5px; border: 1px solid rgba(128,128,128,0.25882); border-left: none;">
-                                <div class="float-box text-black">
-                                    <template v-if="edge.node.categories">
-                                        <a v-for="(category) in edge.node.categories" :key="category.id" v-text="category.title === 'yellowbrick and tpc-ds' ? 'Yellowbrick and TPC-DS' : category.title" :href="`/blog/category/${category.title}`" class="uppercase font-bold text-yellow1 leading-none mr-2 inline" />
-                                    </template>
-                                    <g-link :to="edge.node.path"><h4 class="rfs-text-4xl text-black font-bold" v-html="edge.node.title" /></g-link>
-                                    <p class="rfs-text-base leading-tight font-normal" v-html="edge.node.description" />
+                            <div class="w-full md:w-4/5 p-2">
+                                <div class="text-black md:pl-20 block">
+                                    <div class="categorieslist">
+                                        <template v-if="edge.node.categories">
+                                            <a v-for="(category) in edge.node.categories" :key="category.id" v-text="category.title === 'yellowbrick and tpc-ds' ? 'Yellowbrick and TPC-DS' : category.title" :href="`/blog/category/${category.title}`" class="uppercase font-bold text-yellow1 leading-none block md:mb-0 mr-4 pt-2 pb-8" />
+                                        </template>
+                                    </div>
+                                        <g-link :to="edge.node.path"><h4 class="rfs-text-3xl text-black font-bold hidden_test titlename" v-html="edge.node.title" /></g-link>
+                                        <p class="rfs-text-base leading-tight font-normal  pt-4 pb-1 hidden_test" v-html="edge.node.description" />
 
-                                    <div class="flex flex-col md:flex-row md:w-1/2">
-                                        <div v-if="edge.node.author.authorImage" class="w-full md:w-1/4" style="margin-right: 15px; width: 70px;">
-                                            <img :src="`${edge.node.author.authorImage}`" style=" border-radius: 50%; width: 70px; height: 70px" />
-                                        </div>
-                                        <div class="w-full md:w-2/3">
-                                            <g-link :to="edge.node.author.path">
-                                                <p class="featured-author font-bold" v-text="edge.node.author.name" />
-                                            </g-link>
-                                            <p class="font-normal" v-text="edge.node.date" />
+                                        <div class="flex">
+                                            <div v-if="edge.node.author.authorImage" class="w-1/7 mr-6">
+                                                <img :src="`${edge.node.author.authorImage}`" style=" border-radius: 50%" class="w-16" />
+                                            </div>
+                                            <div class="md:w-2/3 authorname">
+                                                <g-link :to="edge.node.author.path">
+                                                    <p class="featured-author font-bold mt-1" v-text="edge.node.author.name" />
+                                                </g-link>
+                                                <p class="font-normal mb-0" v-text="edge.node.date" />
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -281,6 +349,10 @@
 <script>
     import Layout from '~/layouts/Blog.vue'
     import {
+        disableBodyScroll,
+        clearAllBodyScrollLocks
+    } from 'body-scroll-lock'
+    import {
         Pager
     } from 'gridsome'
     import SearchBlog from '~/components/SearchBlog.vue'
@@ -292,7 +364,8 @@
         },
     data: () => ({
           categories: [],
-          searchResults: null,
+        searchResults: null,
+        toggle: false,
         menu: [
             {
                 label: 'Industries',
@@ -387,7 +460,7 @@
                     });
             });
 
-            //clearAllBodyScrollLocks()
+            clearAllBodyScrollLocks()
             document.addEventListener('click', this.clickAnywhere)
             document.addEventListener('keydown', this.pressAnything)
             document.addEventListener('scroll', this.scrollAnytime)
@@ -416,6 +489,9 @@
                 })
             },
             clickAnywhere(e) {
+                this.menu.forEach((item, x) => {
+                    if (!document.getElementById(`menu-${x}`).contains(e.target) && item.show) item.show = false
+                })
                 var ignoreClickOnMeElement = document.getElementById('search-box');
                 var isClickInsideElement = ignoreClickOnMeElement.contains(e.target);
                 if (!isClickInsideElement) {

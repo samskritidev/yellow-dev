@@ -3,6 +3,12 @@
         margin-bottom: 2px !important;
         padding-bottom: 0 !important;
     }
+    .menu-item span, .menu-item a {
+        font-weight: normal;
+    }
+    .main-nav-link a {
+        text-transform: capitalize;
+    }
     .authorname p {
     margin-bottom: 0 !important;
     padding-bottom: 0 !important;
