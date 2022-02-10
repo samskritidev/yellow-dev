@@ -194,14 +194,16 @@
                 </div>
             </nav>
         </header>
-        <section class="hero">
-            <div style="margin-top: 50px; margin-bottom: 30px;" class="uppercase text-yellow1 leading-none max-w-1200 w-full mx-auto font-bold inline">
+        <section class="flex flex-col pb-2 pt-20 px-6 xl:px-0 bg-white">
+        </section>
+        <section class="px-6 xl:px-0 bg-white md:pt-8" >
+            <div  class="uppercase text-yellow1 leading-none max-w-1200 w-full mx-auto font-bold inline">
                 <template v-if="$page.blog.categories">
-                    <g-link v-for="(category) in $page.blog.categories" style="margin-top: 50px; margin-bottom: 30px;" :to="category.path"><span :key="category.id" style="margin-top: 50px; margin-right: 50px; margin-bottom: 30px;" class="uppercase text-yellow1 leading-none max-w-1200 w-full mx-auto font-bold inline"> {{category.title}}</span></g-link>
+                    <g-link v-for="(category) in $page.blog.categories"  :to="category.path"><span :key="category.id" style="margin-top: 50px;margin-bottom: 30px;" class="uppercase text-yellow1 leading-none max-w-1200 w-full  font-bold inline"> {{category.title}}</span></g-link>
                 </template>
                 <h1 style="margin-bottom: 30px; margin-top: 30px;" class="w-full rfs-text-6xl leading-none text-black font-semibold max-w-1200 w-full mx-auto" v-html="$page.blog.title" />
             </div>
-            <img :src="$page.blog.coverImage" />
+            <img class="w-full" :src="$page.blog.coverImage" />
         </section>
 
         <section class="bg-white pt-0 pb-2 px-6" style="padding:30px">
@@ -223,7 +225,13 @@
                                 <p v-text="$page.blog.date" class="font-normal" />
                             </div>
                             <div class="w-full md:w-2/3 author_section flex flex-end" style="justify-content: flex-end;">
-                               
+                                <template>
+                                    <div class="hello">
+                                        <ClientOnly>
+                                            <facebook url="https://yellowbrick-dev1.netlify.app/" title="Facebook" scale="2"></facebook>
+                                        </ClientOnly>
+</div>
+                                </template>
 
                             </div>
                         </div>
@@ -255,7 +263,7 @@
                     </div>
                     <br />
                 </div>
-                
+
             </div>
             <div class="flex flex-col md:flex-row max-w-1200 w-full mx-auto" style="margin-top:30px;">
                 <span class="uppercase font-semibold" style="float: left; padding: 8px; float: left; font-size: 1.2rem; margin-right: 50px;">CATEGORIES</span>
@@ -396,6 +404,10 @@
         components: {
             SearchBlog,
             Layout,
+            Facebook: () =>
+                import('vue-socialmedia-share')
+                    .then(m => m.Facebook)
+                    .catch(),
         },
         methods: {
             toggleDrawer(open) {
@@ -467,6 +479,7 @@
     name
     authorImage
     position
+    path
     }
     categories {
     id
