@@ -3,8 +3,7 @@
         margin-bottom: 2px !important;
         padding-bottom: 0 !important;
     }
-
-    @media only screen and (max-width: 640px) {
+    @media only screen and (max-width: 880px) {
         #hamburger, #hamburger::after, #hamburger::before {
             background-color: black;
         }
@@ -21,74 +20,73 @@
             color: black;
         }
     }
+        .categorieslist {
+            display: flex;
+        }
 
-    .categorieslist {
-        display: flex;
-    }
+        .rfs-text-4xl {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
 
-    .rfs-text-4xl {
-        margin-top: 20px;
-        margin-bottom: 20px;
-    }
+        .hidden_test {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
 
-    .hidden_test {
-        overflow: hidden;
-        text-overflow: ellipsis;
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        line-clamp: 2;
-        -webkit-box-orient: vertical;
-    }
+        .leading-none {
+            color: #497070;
+        }
 
-    .leading-none {
-        color: #497070;
-    }
+        .featured_image {
+            min-height: 302px;
+            max-height: 307px;
+            -o-object-fit: cover;
+            object-fit: cover;
+        }
 
-    .featured_image {
-        min-height: 302px;
-        max-height: 307px;
-        -o-object-fit: cover;
-        object-fit: cover;
-    }
+        .rfs-text-base {
+            margin-bottom: 1rem
+        }
 
-    .rfs-text-base {
-        margin-bottom: 1rem
-    }
+        .rfs-text-4xl {
+            margin-top: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
 
-    .rfs-text-4xl {
-        margin-top: 0.8rem;
-        margin-bottom: 0.8rem;
-    }
+        .featured_image1 {
+            min-height: 390px;
+            object-fit: cover;
+        }
 
-    .featured_image1 {
-        min-height: 390px;
-        object-fit: cover;
-    }
+        .active.pagerLink {
+            background-color: #ffcd32;
+            border: 1px solid black;
+            font-weight: bold;
+            font-size: 25px;
+        }
 
-    .active.pagerLink {
-        background-color: #ffcd32;
-        border: 1px solid black;
-        font-weight: bold;
-        font-size: 25px;
-    }
+        .nav-arrow {
+            margin-right: -5px;
+        }
 
-    .nav-arrow {
-        margin-right: -5px;
-    }
+        .pagerLink {
+            font-weight: bold;
+            color: black;
+            font-size: 25px;
+        }
 
-    .pagerLink {
-        font-weight: bold;
-        color: black;
-        font-size: 25px;
-    }
+        .featured-author {
+            margin-bottom: 0.5rem;
+        }
 
-    .featured-author {
-        margin-bottom: 0.5rem;
-    }
-
-    .main-box {
-        padding-top: 25%;
-        &:hover
+        .main-box {
+            padding-top: 25%;
+            &:hover
 
     {
         & .arrow-only
@@ -236,7 +234,7 @@
                             <li class="flex relative text-black trans-bg-color pl-0 text-base hover:text-yellow1 menu-item cc:px-3 lg:px-6" @click='toggle = !toggle'>
                                 <label aria-haspopup="true" class="w-full relative">
                                     <div class="flex flex-row items-center">
-                                        <span class="flex items-center cursor-pointer p-2 pl-6 cc:px-2 cc:py-2 font-normal">Categories</span>
+                                        <span class="flex items-center cursor-pointer p-2 pl-6 cc:px-2 cc:py-2">Categories</span>
                                         <span class="nav-arrow text-black" />
                                     </div>
                                     <transition name="slider">
@@ -252,10 +250,10 @@
 
                             <li v-for="(item, x) in menu" :key="x" :id="`menu-${x}`" class="flex cc:px-3 lg:px-6 relative text-black trans-bg-color pl-0 text-base hover:text-yellow1 menu-item" :class="{'cc:pl-3 lg:pl-6' : x === 0, 'cc:pl-3 lg:pl-6' : x === Object.keys(menu).length - 2, 'cc:pl-3 lg:pl-6' : x !== 0 && x !== Object.keys(menu).length - 2}"
                                 @click="item.show = !item.show">
-                                <g-link v-if="item.route" :to="item.route" class="p-2 px-6 cc:px-2 cc:py-2 font-normal">{{ item.label }}</g-link>
+                                <g-link v-if="item.route" :to="item.route" class="p-2 px-6 cc:px-2 cc:py-2">{{ item.label }}</g-link>
                                 <label v-else aria-haspopup="true" class="w-full relative">
                                     <div class="flex flex-row items-center">
-                                        <span v-text="item.label" class="flex items-center cursor-pointer p-2 pl-6 cc:px-2 cc:py-2 font-normal" />
+                                        <span v-text="item.label" class="flex items-center cursor-pointer p-2 pl-6 cc:px-2 cc:py-2" />
                                         <span class="nav-arrow text-black" />
                                     </div>
                                     <transition name="slider">
@@ -297,13 +295,13 @@
                     <div class=" text-black">
                         <template v-if="featuredBlog.categories">
                             <div class="categorieslist">
-                                <a v-for="(category) in featuredBlog.categories" :key="category.id" v-text="category.title === 'yellowbrick and tpc-ds' ? 'Yellowbrick and TPC-DS' : category.title" :href="`/blog/category/${category.title}`" class="categorylist uppercase font-bold text-yellow1 leading-none block md:mb-12 md:mr-6" />
+                                <a v-for="(category) in featuredBlog.categories" :key="category.id" v-text="category.title === 'yellowbrick and tpc-ds' ? 'Yellowbrick and TPC-DS' : category.title" :href="`/blog/category/${category.title}`" class="categorylist uppercase font-bold text-yellow1 leading-none block md:mb-8 md:mr-6" />
                             </div>
                         </template>
                         <g-link :to="featuredBlog.path"><h2 class="rfs-text-4xl font-bold pb-0" style="line-height: 1.1;" v-html="featuredBlog.title" /></g-link>
                         <p class="rfs-text-base leading-tight font-normal md:pb-6 block hidden_test" v-text="featuredBlog.description" />
                         <div class="flex">
-                            <div class="w-1/6 mr-6">
+                            <div class="w-1/7 mr-6">
                                 <img :src="`${featuredBlog.author.authorImage}`" style=" border-radius: 50%;" class="w-20" />
                             </div>
                             <div class="md:w-2/3">
@@ -317,11 +315,9 @@
                 </div>
             </div>
         </section>
-
-
         <section class="px-6 xl:px-0 py-12" id="current_post">
             <div class="max-w-1200 w-full mx-auto">
-                <h1 class="text-yellow1 uppercase font-bold">Current Posts</h1>
+                <h1 class="text-yellow1 uppercase font-bold mb-6">Current Posts</h1>
                 <div class="flex flex-row flex-wrap -mx-6">
                     <div v-for="edge in searchResults ? searchResults : $page.allBlog.edges" :key="edge.node.id" class="flex flex-col w-full relative current-post pb-16 px-6">
                         <div class="flex flex-col md:flex-row max-w-1200 w-full mx-auto relative border">
@@ -341,7 +337,7 @@
                                     <p class="rfs-text-base leading-tight font-normal md:pb-1 hidden_test" v-html="edge.node.description" />
 
                                     <div class="flex">
-                                        <div class="w-1/6 mr-6">
+                                        <div class="w-1/7 mr-6">
                                             <img :src="`${edge.node.author.authorImage}`" style="border-radius: 50%;" class="w-20" />
                                         </div>
                                         <div class="md:w-2/3">
