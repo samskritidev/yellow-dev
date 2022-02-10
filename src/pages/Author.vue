@@ -1,4 +1,11 @@
 <style scoped>
+    .menu-item span, .menu-item a {
+        font-weight: normal;
+    }
+
+    .main-nav-link a {
+        text-transform: capitalize;
+    }
 @media only screen and (max-width: 767px) { 
 .authorName {
            padding-top: 20px;
@@ -202,7 +209,7 @@
                             <img alt="Yellowbrick Blog Page" src="/uploads/logo.png" />
                         </a>
 
-                        <div :class="[showDrawer ? 'bg-transparent-75' : 'hidden']" class="fixed cc:hidden z-40 inset-0 trans-bg-color" @click="toggleDrawer(false)" />
+                        <div :class="[showDrawer ? 'bg-transparent-75' : 'hidden']" class="fixed cc:hidden  inset-0 trans-bg-color" @click="toggleDrawer(false)" />
                         <ul ref="drawer" :style="{ right: showDrawer ? '0px' : '-100%' }" style="transition: right 0.25s ease;" class="fixed z-100 cc:static cc:flex items-center inset-y-0 h-screen cc:h-auto bg-black cc:bg-transparent w-full cc:w-auto m-0 mobile-menu">
                             <li class="cc:hidden flex justify-between p-2">
                                 <g-link to="/" class="p-2 pl-4">
@@ -213,14 +220,14 @@
                                 </div>
                             </li>
 
-                            <li class="flex relative text-black trans-bg-color pl-0 text-base hover:text-yellow1 menu-item cc:px-3 lg:px-6">
+                            <li @click='toggle = !toggle' class="flex relative text-black trans-bg-color pl-0 text-base hover:text-yellow1 menu-item cc:px-3 lg:px-6">
                                 <label aria-haspopup="true" class="w-full relative">
                                     <div class="flex flex-row items-center">
                                         <span class="flex items-center cursor-pointer p-2 pl-6 cc:px-2 cc:py-2">Categories</span>
                                         <span class="nav-arrow text-black" />
                                     </div>
                                     <transition name="slider">
-                                        <ul style="display:none;" class="cc:absolute py-3 whitespace-no-wrap bg-yellow1 cc:mt-4 min-w-full cc:min-w-200 rounded-sm submenu" aria-label="submenu">
+                                        <ul v-show='toggle' class="cc:absolute py-3 whitespace-no-wrap bg-yellow1 cc:mt-4 min-w-full cc:min-w-200 rounded-sm submenu" aria-label="submenu">
                                             <li class="main-nav-link" v-for="category in this.categories" :key="category.id">
                                                 <g-link :to="category.path" aria-haspopup="true" class="flex px-8 py-2 cc:px-2 w-full"> {{ category.title }} </g-link>
                                             </li>
@@ -269,7 +276,7 @@
             <div class="max-w-1200 w-full mx-auto md:px-12">
                 <h1 class="justify-center uppercase font-bold" style="text-align: center;">Our Authors</h1>
                 <p></p>
-                <p class="font-normal pb-12" style="border-bottom: 1px solid #80808047;">Yellowbrick authors write compelling stories about cutting edge technologies &Aacute; trends, people, products, events, and topic that is valuable to our customers, employees and partners.</p>
+                <p class="font-normal pb-12" style="border-bottom: 1px solid #80808047;">Yellowbrick authors write compelling stories about cutting edge technologies & trends, people, products, events, and topic that is valuable to our customers, employees and partners.</p>
                 <div class="flex flex-row flex-wrap pt-8 pb-8">
                     <div v-for="edge in searchResults ? searchResults : $page.allAuthor.edges" :key="edge.node.id" class="flex flex-col w-full relative current-post pb-10">
                         <div class="flex flex-col md:flex-row max-w-1200 w-full mx-auto">
@@ -301,6 +308,10 @@
 </template>
 
 <script>
+    import {
+        disableBodyScroll,
+        clearAllBodyScrollLocks
+    } from 'body-scroll-lock'
     import Layout from '~/layouts/Blog.vue'
     import {
         Pager
@@ -327,6 +338,7 @@
             searchResults: null,
             featuredBlog: null,
             categories: [],
+            toggle: false,
             menu: [
         {
           label: 'Industries',
@@ -418,6 +430,7 @@
             }
         },
         mounted() {
+            clearAllBodyScrollLocks()
             document.addEventListener('click', this.clickAnywhere)
             document.addEventListener('keydown', this.pressAnything)
             document.addEventListener('scroll', this.scrollAnytime)

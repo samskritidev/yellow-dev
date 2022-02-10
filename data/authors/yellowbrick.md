@@ -2,7 +2,7 @@
 id: 1f5d5e99-3d0b-42ed-97aa-986473217b93
 name: Yellowbrick
 position: Yellowbrick
-authorImage: /uploads/yellowbrick-auther-icon.png
+authorImage: /uploads/yellowbrick-auther-icon.jpg
 authorAbout: >-
   <!--StartFragment-->
 

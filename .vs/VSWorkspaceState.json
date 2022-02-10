@@ -4,12 +4,12 @@
     "\\data",
     "\\src",
     "\\src\\admin",
+    "\\src\\components",
     "\\src\\layouts",
     "\\src\\pages",
-    "\\src\\pages\\resources\\briefs",
     "\\src\\templates",
     "\\static"
   ],
-  "SelectedNode": "\\src\\templates\\Blog.vue",
+  "SelectedNode": "\\src\\pages\\Author.vue",
   "PreviewInSolutionExplorer": false
 }
