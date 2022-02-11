@@ -20,10 +20,8 @@
         #hamburger, #hamburger::after, #hamburger::before {
             background-color: black;
         }
-        .announcement-box a {
-            margin: 0px;
-        }
-            .mobile-menu span, .mobile-menu a {
+
+        .mobile-menu span, .mobile-menu a {
             color: white;
         }
 
@@ -181,8 +179,9 @@
                                 </label>
                             </li>
                             <li id="search-box" class="flex list-none font-normal rfs-text-lg p-1 pl-6 cc:px-2 cc:py-1 relative">
-                                <span style="transform: rotate(-45deg);" class="inline-block cursor-pointer pb-2" @click="searchClick"><img src="/uploads/icons/search-icon.svg" style="display:none" class="search-icon" /></span>
+                                <span style="transform: rotate(-45deg);" class="inline-block cursor-pointer pb-2" @click="searchClick"><img src="/uploads/icons/search-icon.svg" class="search-icon" /></span>
                                 <transition name="pusher">
+                                    <search-blog v-show="searchFocus" v-model="searchResults" class="cc:absolute text-transparent" style="top:3px;right:28px;z-index:60;" />
                                 </transition>
                             </li>
                         </ul>
@@ -197,7 +196,7 @@
         </header>
         <section class="flex flex-col pb-2 pt-20 px-6 xl:px-0 bg-white">
         </section>
-        <section class="px-6 xl:px-0 bg-white pt-16" >
+        <section class="px-6 xl:px-0 bg-white md:pt-8" >
             <div  class="uppercase text-yellow1 leading-none max-w-1200 w-full mx-auto font-bold inline">
                 <template v-if="$page.blog.categories">
                     <g-link v-for="(category) in $page.blog.categories"  :to="category.path"><span :key="category.id" style="margin-top: 50px;margin-bottom: 30px;" class="uppercase text-yellow1 leading-none max-w-1200 w-full  font-bold inline"> {{category.title}}</span></g-link>
@@ -230,10 +229,7 @@
                                     <div class="hello">
                                         <p class="font-normal">SOCIAL SHARE</p>
                                         <ClientOnly>
-                                            <facebook style="padding-right:15px" :url="'https://www.yellowbrick.com' + this.$page.blog.path" title="Facebook" scale="2"></facebook>
-                                            <twitter style="padding-right: 15px" :url="'https://www.yellowbrick.com' + this.$page.blog.path" title="Twitter" scale="2"></twitter>
-                                            <linkedin style="padding-right: 15px" :url="'https://www.yellowbrick.com' + this.$page.blog.path" title="LinkedIn" scale="2"></linkedin>
-                                            <WhatsApp style="padding-right: 15px" :url="'https://www.yellowbrick.com' + this.$page.blog.path" title="Whatsapp" scale="2"></WhatsApp>
+                                            <facebook style="padding-left:15px" url="https://yellowbrick-dev1.netlify.app/blog/and-the-winner-of-the-cloud-data-warehouse-benchmark-war-is-nobody/" title="Facebook" scale="2"></facebook>
                                         </ClientOnly>
                                     </div>
                                 </template>
@@ -284,6 +280,7 @@
         disableBodyScroll,
         clearAllBodyScrollLocks
     } from 'body-scroll-lock'
+    import SearchBlog from '~/components/SearchBlog.vue'
     import Layout from '~/layouts/Blog.vue'
     export default {
         function(Vue, { head }) {
@@ -342,6 +339,7 @@
             }
         },
         data: () => ({
+            searchResults: null,
             categories: [],
             toggle: false,
             currentUrl: "",
@@ -390,8 +388,8 @@
                     label: 'More',
                     show: false,
                     subitems: [{
-                        label: 'Author',
-                        route: '/author'
+                        label: 'Coming Soon',
+                        route: '#'
                     },
                     ]
                 },
@@ -404,22 +402,11 @@
             event.target.src = "/uploads/author.png"
         },
         components: {
+            SearchBlog,
             Layout,
             Facebook: () =>
                 import('vue-socialmedia-share')
                     .then(m => m.Facebook)
-                    .catch(),
-            Twitter: () =>
-                import('vue-socialmedia-share')
-                    .then(m => m.Twitter)
-                    .catch(),
-            Linkedin: () =>
-                import('vue-socialmedia-share')
-                    .then(m => m.Linkedin)
-                    .catch(),
-            WhatsApp: () =>
-                import('vue-socialmedia-share')
-                    .then(m => m.WhatsApp)
                     .catch(),
         },
         methods: {
@@ -440,6 +427,12 @@
                 })
                 var ignoreClickOnMeElement = document.getElementById('search-box');
                 var isClickInsideElement = ignoreClickOnMeElement.contains(e.target);
+                if (!isClickInsideElement) {
+                    document.getElementById("search_div").style.display = "none";
+                }
+                else {
+                    document.getElementById("search_div").style.display = "block";
+                }
             },
             pressAnything(e) {
                 if (e.key === 'Escape') {

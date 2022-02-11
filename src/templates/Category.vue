@@ -310,7 +310,8 @@
                         <div class="flex flex-col md:flex-row max-w-1200 w-full  mx-auto relative border">
                             <div :to="edge.node.path" class="w-full md:w-2/5">
                                 <div class="text-white">
-                                    <img class="featured_image" :src="`${edge.node.coverImage}`" />
+                                    <img v-if="edge.node.thumbnailImage" class="featured_image" :src="`${edge.node.thumbnailImage}`" />
+                                    <img v-else class="featured_image" :src="`${edge.node.coverImage}`" />
                                 </div>
                             </div>
                             <div class="w-full md:w-4/5 p-2">
