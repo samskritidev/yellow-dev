@@ -4,7 +4,8 @@
   "scripts": {
     "build": "copyfiles --error --up 2 static/meta-tags/* node_modules/gridsome/lib/server && gridsome build",
     "develop": "gridsome develop",
-    "explore": "gridsome explore"
+    "explore": "gridsome explore",
+    "netlify": "netlify"
   },
   "dependencies": {
     "@gridsome/plugin-sitemap": "^0.2.2",
