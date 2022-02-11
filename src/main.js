@@ -9,12 +9,16 @@ import VueDisqus from 'vue-disqus'
 import 'typeface-source-sans-pro'
 import '~/css/main.css'
 import '~/css/prism.css'
+import SocialSharing  from 'vue-social-sharing'
+
+
 
 export default function(Vue, { router, head, isClient, appOptions }) {
   // Set default layout as a global component
   Vue.component('Layout', DefaultLayout)
   Vue.use(Vuex);
-  Vue.use(VuePluralize);
+    Vue.use(VuePluralize);
+    Vue.use(SocialSharing);
     Vue.use(VueDisqus);
   appOptions.store = new Vuex.Store({
     state:{

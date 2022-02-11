@@ -266,17 +266,31 @@
                                 </div>
                             </div>
                             <div class="w-full md:w-2/3 author_section flex flex-end socialicons">
+                                <p class="font-normal">SOCIAL SHARE</p>
+                                
                                 <template>
-                                    <div class="hello">
-                                        <p class="font-normal">SOCIAL SHARE</p>
-                                        <ClientOnly>
-                                            <facebook style="padding-right:15px" :url="'https://www.yellowbrick.com' + this.$page.blog.path" title="Facebook" scale="2"></facebook>
-                                        </ClientOnly>
-                                        <ClientOnly>
-                                            <linkedin style="padding-right:15px" :url="'https://www.yellowbrick.com' + this.$page.blog.path" title="Facebook" scale="2"></linkedin>
-                                        </ClientOnly>
-                                    </div>
+                                    <button>
+                                        <ShareNetwork network="twitter"
+                                                      url="https://lindaojo.com/blog/another-awesome-article"
+                                                      title="Another Awesome Article"
+                                                      description="This is another awesome article for awesome readers"
+                                                      twitter-user="LindaOjo_">
+                                            <span><img src="/uploads/twitter.png" /></span>
+                                        </ShareNetwork>
+                                    </button>
                                 </template>
+                                <template>
+                                    <button>
+                                        <ShareNetwork network="facebook"
+                                                      url="https://lindaojo.com/blog/awesome-article"
+                                                      title="Awesome Article"
+                                                      description="This is an awesome article for awesome readers"
+                                                      hashtags="Frontend, Programming">
+                                            <span><img src="/uploads/facebook.svg" /></span>
+                                        </ShareNetwork>
+                                    </button>
+                                </template>
+
                             </div>
                         </div>
                     </div>
@@ -444,14 +458,6 @@
         },
         components: {
             Layout,
-            Facebook: async () => {
-                const { Facebook } = await import('vue-socialmedia-share')
-                return Facebook
-            },
-            Linkedin: async () => {
-                const { Linkedin } = await import('vue-socialmedia-share')
-                return Linkedin
-            },
         },
         methods: {
             toggleDrawer(open) {
