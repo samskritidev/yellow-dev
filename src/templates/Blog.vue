@@ -2,7 +2,9 @@
     .leading-none {
         color: #497070;
     }
-
+.headingsocial {
+    justify-content: end;
+}
     .blog a:not(.button):not(.link) {
         border-bottom: 0px !important;
     }
@@ -187,7 +189,7 @@
                                 </div>
                             </li>
 
-                            <li @click='toggle = !toggle' class="flex relative text-black trans-bg-color pl-0 text-base hover:text-yellow1 menu-item cc:px-3 lg:px-6">
+                            <li class="flex relative text-black trans-bg-color pl-0 text-base hover:text-yellow1 menu-item cc:px-3 lg:px-6" @click='toggle = !toggle'>
                                 <label aria-haspopup="true" class="w-full relative">
                                     <div class="flex flex-row items-center">
                                         <span class="flex items-center cursor-pointer p-2 pl-6 cc:px-2 cc:py-2">Categories</span>
@@ -243,7 +245,7 @@
                 <template v-if="$page.blog.categories">
                     <g-link v-for="(category) in $page.blog.categories" :to="category.path"><span :key="category.id" style="margin-top: 50px;margin-bottom: 30px;" class="uppercase leading-none max-w-1200 w-full  font-bold inline"> {{category.title}}</span></g-link>
                 </template>
-                <h1 class="detailstitle capitalize rfs-text-5xl text-black font-semibold max-w-1200 mx-auto" v-html="$page.blog.title" />
+                <h1 class="detailstitle capitalize rfs-text-5xl text-black font-bold max-w-1200 mx-auto" v-html="$page.blog.title" />
             </div>
             <img class="w-full pb-12" :src="$page.blog.coverImage" />
         </section>
@@ -265,32 +267,48 @@
                                     <p v-text="$page.blog.date" class="italic text-sm" />
                                 </div>
                             </div>
-                            <div class="w-full md:w-2/3 author_section flex flex-end socialicons">
-                                <p class="font-normal">SOCIAL SHARE</p>
-                                
-                                <template>
-                                    <button>
-                                        <ShareNetwork network="twitter"
-                                                      url="https://lindaojo.com/blog/another-awesome-article"
-                                                      title="Another Awesome Article"
-                                                      description="This is another awesome article for awesome readers"
-                                                      twitter-user="LindaOjo_">
-                                            <span><img src="/uploads/twitter.png" /></span>
-                                        </ShareNetwork>
-                                    </button>
-                                </template>
+                            <div class="w-full md:w-2/3 author_section  socialicons">
+                            <p class="font-normal headingsocial md:flex md:flex-end">SOCIAL SHARE</p>
+                               <div class="md:flex md:flex-end headingsocial">
                                 <template>
                                     <button>
                                         <ShareNetwork network="facebook"
-                                                      url="https://lindaojo.com/blog/awesome-article"
-                                                      title="Awesome Article"
-                                                      description="This is an awesome article for awesome readers"
-                                                      hashtags="Frontend, Programming">
-                                            <span><img src="/uploads/facebook.svg" /></span>
+                                                      :url="'https://www.yellowbrick.com' + this.$page.blog.path"
+                                                      :title=" this.$page.blog.title"
+                                                      hashtags="Yellowbrick">
+                                            <span><img src="/uploads/facebook.png" class="mr-4"/></span>
                                         </ShareNetwork>
                                     </button>
                                 </template>
-
+                                <template>
+                                    <button>
+                                        <ShareNetwork network="twitter"
+                                                      :url="'https://www.yellowbrick.com' + this.$page.blog.path"
+                                                      :title="this.$page.blog.title"
+                                                      hashtags="Yellowbrick">
+                                            <span><img src="/uploads/twitter.png" class="mr-4"/></span>
+                                        </ShareNetwork>
+                                    </button>
+                                </template>
+                                <template>
+                                    <button>
+                                        <ShareNetwork network="linkedin"
+                                                      :url="'https://www.yellowbrick.com' + this.$page.blog.path"
+                                                      :title="this.$page.blog.title">
+                                            <span><img src="/uploads/linkedin.png" class="mr-4"/></span>
+                                        </ShareNetwork>
+                                    </button>
+                                </template>
+                                <template>
+                                    <button>
+                                        <ShareNetwork network="WhatsApp"
+                                                      :url="'https://www.yellowbrick.com' + this.$page.blog.path"
+                                                      :title="this.$page.blog.title">
+                                            <span><img src="/uploads/whatsapp.png" class="mr-0"/></span>
+                                        </ShareNetwork>
+                                    </button>
+                                </template> 
+                               </div>
                             </div>
                         </div>
                     </div>
