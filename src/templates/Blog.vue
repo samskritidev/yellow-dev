@@ -231,6 +231,9 @@
                                         <p class="font-normal">SOCIAL SHARE</p>
                                         <ClientOnly>
                                             <facebook style="padding-right:15px" :url="'https://www.yellowbrick.com' + this.$page.blog.path" title="Facebook" scale="2"></facebook>
+                                            <twitter style="padding-right: 15px" :url="'https://www.yellowbrick.com' + this.$page.blog.path" title="Twitter" scale="2"></twitter>
+                                            <linkedin style="padding-right: 15px" :url="'https://www.yellowbrick.com' + this.$page.blog.path" title="LinkedIn" scale="2"></linkedin>
+                                            <WhatsApp style="padding-right: 15px" :url="'https://www.yellowbrick.com' + this.$page.blog.path" title="Whatsapp" scale="2"></WhatsApp>
                                         </ClientOnly>
                                     </div>
                                 </template>
@@ -404,6 +407,18 @@
             Facebook: () =>
                 import('vue-socialmedia-share')
                     .then(m => m.Facebook)
+                    .catch(),
+            Twitter: () =>
+                import('vue-socialmedia-share')
+                    .then(m => m.Twitter)
+                    .catch(),
+            Linkedin: () =>
+                import('vue-socialmedia-share')
+                    .then(m => m.Linkedin)
+                    .catch(),
+            WhatsApp: () =>
+                import('vue-socialmedia-share')
+                    .then(m => m.WhatsApp)
                     .catch(),
         },
         methods: {

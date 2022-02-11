@@ -25,6 +25,7 @@
     "gridsome-source-greenhouse": "^2.0.1",
     "gridsome-transformer-netlify": "^1.0.3",
     "hooper": "^0.3.4",
+    "netlify-cli": "^9.3.0",
     "netlify-cms": "^2.9.7",
     "rfs": "^9.0.2",
     "tailwindcss-rfs": "^2.1.1",
