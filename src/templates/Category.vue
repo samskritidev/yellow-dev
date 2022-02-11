@@ -290,7 +290,7 @@
         <section class="px-6 xl:px-0 bg-white pb-8 pt-20" style="border-bottom: 1px solid #0000002e; margin-top: 0px;">
             <div class="max-w-1000 w-full mx-auto">
                 <h1 class="w-full rfs-text-6xl  font-black uppercase text-black font-semibold" style="margin:auto;text-align:center" v-html="$page.category.title" />
-                <br /><p class="text-black pl-1 font-normal"> Yellowbrick delivers improved and predictable performance and cost with improved operational simplicity and deployment.</p>
+                <br /><p class="text-black pl-1 font-normal" style="display:none"> Yellowbrick delivers improved and predictable performance and cost with improved operational simplicity and deployment.</p>
             </div>
             <div class="flex flex-col max-w-1200 w-full mx-auto">
                 <ul class="m-0 py-8">
@@ -310,7 +310,8 @@
                         <div class="flex flex-col md:flex-row max-w-1200 w-full  mx-auto relative border">
                             <div :to="edge.node.path" class="w-full md:w-2/5">
                                 <div class="text-white">
-                                    <img class="featured_image" :src="`${edge.node.coverImage}`" />
+                                    <img v-if="edge.node.thumbnailImage" class="featured_image" :src="`${edge.node.thumbnailImage}`" />
+                                    <img v-else class="featured_image" :src="`${edge.node.coverImage}`" />
                                 </div>
                             </div>
                             <div class="w-full md:w-4/5 p-2">
@@ -411,8 +412,8 @@
                 label: 'More',
                 show: false,
                 subitems: [{
-                    label: 'Coming Soon',
-                    route: '#'
+                    label: 'Author',
+                    route: '/author'
                 },
                 ]
             },

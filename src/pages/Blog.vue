@@ -299,7 +299,8 @@
 
                 <div class="w-full md:w-1/2 md:mr-4">
                     <div class="md:mr-12">
-                        <img class="featured_image1" :src="`${featuredBlog.coverImage}`" />
+                        <img v-if="featuredBlog.thumbnailImage" class="featured_image1" :src="`${featuredBlog.thumbnailImage}`" />
+                        <img v-else class="featured_image1" :src="`${featuredBlog.coverImage}`" />
                     </div>
                 </div>
                 <div class="w-full md:w-1/2 p-2">
@@ -334,7 +335,8 @@
                         <div class="flex flex-col md:flex-row max-w-1200 w-full mx-auto relative border">
                             <div :to="edge.node.path" class="w-full md:w-2/5">
                                 <div class="text-white">
-                                    <img class="featured_image" :src="`${edge.node.coverImage}`" />
+                                    <img v-if="edge.node.thumbnailImage" class="featured_image" :src="`${edge.node.thumbnailImage}`" />
+                                    <img v-else class="featured_image" :src="`${edge.node.coverImage}`" />
                                 </div>
                             </div>
                             <div class="w-full md:w-4/5 p-2">
@@ -448,8 +450,8 @@
                     label: 'More',
                     show: false,
                     subitems: [{
-                        label: 'Coming Soon',
-                        route: '#'
+                        label: 'Author',
+                        route: '/author'
                     },
                     ]
                 },

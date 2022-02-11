@@ -208,7 +208,7 @@
                                 </label>
                             </li>
                             <li id="search-box" class="flex list-none font-normal rfs-text-lg p-1 pl-6 cc:px-2 cc:py-1 relative">
-                                <span style="transform: rotate(-45deg);" class="inline-block cursor-pointer pb-2" @click="searchClick"><img src="/uploads/icons/search-icon.svg" style="display:none" class="search-icon" /></span>
+                                <span style="transform: rotate(-45deg);" class="inline-block cursor-pointer pb-2" ><img src="/uploads/icons/search-icon.svg" style="display:none" class="search-icon" /></span>
                                 <transition name="pusher">
                                 </transition>
                             </li>
@@ -256,10 +256,7 @@
                                     <div class="hello">
                                         <p class="font-normal">SOCIAL SHARE</p>
                                         <ClientOnly>
-                                            <facebook style="padding-right:15px" :url="currentUrl" title="Facebook" scale="2"></facebook>
-                                            <twitter style="padding-right: 15px" :url="currentUrl" title="Twitter" scale="2"></twitter>
-                                            <linkedin style="padding-right: 15px" :url="currentUrl" title="LinkedIn" scale="2"></linkedin>
-                                            <WhatsApp style="padding-right: 15px" :url="currentUrl" title="Whatsapp" scale="2"></WhatsApp>
+                                            <facebook style="padding-right:15px" :url="'https://www.yellowbrick.com' + this.$page.blog.path" title="Facebook" scale="2"></facebook>
                                         </ClientOnly>
                                     </div>
                                 </template>
@@ -367,9 +364,6 @@
                 ]
             }
         },
-        created() {
-            this.currentUrl = window.location.href;
-        },
         data: () => ({
             categories: [],
             toggle: false,
@@ -419,14 +413,13 @@
                     label: 'More',
                     show: false,
                     subitems: [{
-                        label: 'Coming Soon',
-                        route: '#'
+                        label: 'Author',
+                        route: '/author'
                     },
                     ]
                 },
             ],
             showDrawer: false,
-            searchFocus: false,
             openNav: false,
         }),
         setAltImg(event) {
@@ -438,18 +431,6 @@
                 import('vue-socialmedia-share')
                     .then(m => m.Facebook)
                     .catch(),
-            Twitter: () =>
-                import('vue-socialmedia-share')
-                    .then(m => m.Twitter)
-                    .catch(),
-            Linkedin: () =>
-                import('vue-socialmedia-share')
-                    .then(m => m.Linkedin)
-                    .catch(),
-            WhatsApp: () =>
-                import('vue-socialmedia-share')
-                    .then(m => m.WhatsApp)
-                    .catch(),
         },
         methods: {
             toggleDrawer(open) {
@@ -457,34 +438,11 @@
                 if (open) disableBodyScroll(this.$refs.drawer)
                 else clearAllBodyScrollLocks()
             },
-            searchClick() {
-                this.searchFocus = true
-                this.$nextTick(() => {
-                    document.getElementById('search-box').focus()
-                })
-            },
             clickAnywhere(e) {
                 this.menu.forEach((item, x) => {
                     if (!document.getElementById(`menu-${x}`).contains(e.target) && item.show) item.show = false
                 })
-                var ignoreClickOnMeElement = document.getElementById('search-box');
-                var isClickInsideElement = ignoreClickOnMeElement.contains(e.target);
-                if (!isClickInsideElement) {
-                    document.getElementById("search_div").style.display = "none";
-                }
-                else {
-                    document.getElementById("search_div").style.display = "block";
-                }
             },
-            pressAnything(e) {
-                if (e.key === 'Escape') {
-                    this.showDrawer = false
-                    this.searchFocus = false
-                    this.menu.forEach((item, x) => {
-                        if (item.show) item.show = false
-                    })
-                }
-            }
         },
         mounted() {
             clearAllBodyScrollLocks()
