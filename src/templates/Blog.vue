@@ -1,25 +1,6 @@
 <style scoped>
-    .leading-none {
-        color: #497070;
-    }
-
-    .blog a:not(.button):not(.link) {
-        border-bottom: 0px !important;
-    }
-
     body {
         background: rgba(13,23,28,1);
-    }
-
-    .blog a:not(.button):not(.link):hover {
-        background: #fff !important;
-        color: #000 !important;
-    }
-
-    .detailstitle {
-        margin-top: 60px;
-        margin-bottom: 40px;
-        line-height: 60px;
     }
 
     .author_section p {
@@ -36,30 +17,12 @@
 
     .announcement-box a {
         margin: 20px;
-        /* border: 0.5px solid #e5e5e5; */
+        border: 0.5px solid #e5e5e5;
     }
-
-    @media only screen and (min-width: 881px) {
-        .socialicons {
-            justify-content: end;
-        }
-    }
-
     @media only screen and (max-width: 880px) {
         #hamburger, #hamburger::after, #hamburger::before {
             background-color: black;
         }
-
-        .socialicons {
-            margin-top: 22px;
-        }
-
-        .detailstitle {
-            margin-top: 40px;
-            margin-bottom: 40px;
-            line-height: 36px;
-        }
-
         .announcement-box a {
             margin: 0px;
         }
@@ -238,10 +201,10 @@
         </header>
         <section class="flex flex-col pb-2 pt-20 px-6 xl:px-0 bg-white">
         </section>
-        <section class="px-0 xl:px-0 bg-white pt-16">
-            <div class="uppercase max-w-1200 w-full mx-auto font-bold px-4 md:px-20">
+        <section class="px-6 xl:px-0 bg-white pt-16" >
+            <div  class="uppercase text-yellow1 leading-none max-w-1200 w-full mx-auto font-bold inline">
                 <template v-if="$page.blog.categories">
-                    <g-link v-for="(category) in $page.blog.categories" :to="category.path"><span :key="category.id" style="margin-top: 50px;margin-bottom: 30px;" class="uppercase leading-none max-w-1200 w-full  font-bold inline"> {{category.title}}</span></g-link>
+                    <g-link v-for="(category) in $page.blog.categories"  :to="category.path"><span :key="category.id" style="margin-top: 50px;margin-bottom: 30px;" class="uppercase text-yellow1 leading-none max-w-1200 w-full  font-bold inline"> {{category.title}}</span></g-link>
                 </template>
                 <h1 class="detailstitle capitalize rfs-text-5xl text-black font-semibold max-w-1200 mx-auto" v-html="$page.blog.title" />
             </div>
@@ -252,20 +215,18 @@
             <div class="flex flex-col md:flex-row max-w-1200 w-full mx-auto">
                 <div class="w-full md:w-4/6 ">
                     <div class="flex flex-col md:flex-row">
-                        <div class="md:flex w-full max-w-1200 mb-4  bg-transparent">
-                            <div class="flex flex-row">
-                                <div class="w-32 mr-6">
-                                    <img :src="$page.blog.author.authorImage" style="border-radius: 50%;" />
-                                </div>
-                                <div class="w-full md:w-1/8 author_section">
-                                    <g-link :to="$page.blog.author.path">
-                                        <p class="featured-author uppercase font-bold" v-text="$page.blog.author.name" />
-                                    </g-link>
-                                    <p v-text="$page.blog.author.position" class="font-normal" />
-                                    <p v-text="$page.blog.date" class="italic text-sm" />
-                                </div>
+                        <div class="flex w-full max-w-1200 mx-auto mb-4  bg-transparent">
+                            <div class="w-full md:w-2/4" style="margin-right: 15px; width: 70px;">
+                                <img :src="$page.blog.author.authorImage" style=" border-radius: 50%; width: 70px; height: 70px" />
                             </div>
-                            <div class="w-full md:w-2/3 author_section flex flex-end socialicons">
+                            <div class="w-full md:w-1/4 author_section">
+                                <g-link :to="$page.blog.author.path">
+                                    <p class="featured-author uppercase font-bold" v-text="$page.blog.author.name" />
+                                </g-link>
+                                <p v-text="$page.blog.author.position" class="font-normal" />
+                                <p v-text="$page.blog.date" class="font-normal" />
+                            </div>
+                            <div class="w-full md:w-2/3 author_section flex flex-end" style="justify-content: flex-end;">
                                 <template>
                                     <div class="hello">
                                         <p class="font-normal">SOCIAL SHARE</p>
@@ -300,7 +261,7 @@
                         <h4 class="font-semibold">Meet Our Authors</h4>
                         <template v-if="$page.allAuthor.edges">
                             <span class="inline-block border-l-2 border-teal mx-4 text-yellow1"></span>
-                            <a v-for="(author) in $page.allAuthor.edges" :key="author.node.name" class="capitalize text-yellow1 leading-none mr-2 inline" style="float:left"><g-link :to="author.node.path"><img :src="author.node.authorImage" style="width: 50px; height: 50px" class="rounded" /></g-link></a>
+                            <a v-for="(author) in $page.allAuthor.edges" :key="author.node.name" class="capitalize text-yellow1 leading-none mr-2 inline" style="float:left"><g-link :to="author.node.path"><img :src="author.node.authorImage" style="  width: 70px; height: 70px" /></g-link></a>
                         </template>
                     </div>
                     <br />
