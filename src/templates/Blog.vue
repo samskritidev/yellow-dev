@@ -230,10 +230,10 @@
                                     <div class="hello">
                                         <p class="font-normal">SOCIAL SHARE</p>
                                         <ClientOnly>
-                                            <facebook style="padding-right:15px" :url="currentUrl" title="Facebook" scale="2"></facebook>
-                                            <twitter style="padding-right: 15px" :url="currentUrl" title="Twitter" scale="2"></twitter>
-                                            <linkedin style="padding-right: 15px" :url="currentUrl" title="LinkedIn" scale="2"></linkedin>
-                                            <WhatsApp style="padding-right: 15px" :url="currentUrl" title="Whatsapp" scale="2"></WhatsApp>
+                                            <facebook style="padding-right:15px" :url="'https://www.yellowbrick.com' + this.$page.blog.path" title="Facebook" scale="2"></facebook>
+                                            <twitter style="padding-right: 15px" :url="'https://www.yellowbrick.com' + this.$page.blog.path" title="Twitter" scale="2"></twitter>
+                                            <linkedin style="padding-right: 15px" :url="'https://www.yellowbrick.com' + this.$page.blog.path" title="LinkedIn" scale="2"></linkedin>
+                                            <WhatsApp style="padding-right: 15px" :url="'https://www.yellowbrick.com' + this.$page.blog.path" title="Whatsapp" scale="2"></WhatsApp>
                                         </ClientOnly>
                                     </div>
                                 </template>
@@ -341,9 +341,6 @@
                 ]
             }
         },
-        created() {
-            this.currentUrl = window.location.href;
-        },
         data: () => ({
             categories: [],
             toggle: false,
@@ -393,8 +390,8 @@
                     label: 'More',
                     show: false,
                     subitems: [{
-                        label: 'Coming Soon',
-                        route: '#'
+                        label: 'Author',
+                        route: '/author'
                     },
                     ]
                 },
@@ -443,12 +440,6 @@
                 })
                 var ignoreClickOnMeElement = document.getElementById('search-box');
                 var isClickInsideElement = ignoreClickOnMeElement.contains(e.target);
-                if (!isClickInsideElement) {
-                    document.getElementById("search_div").style.display = "none";
-                }
-                else {
-                    document.getElementById("search_div").style.display = "block";
-                }
             },
             pressAnything(e) {
                 if (e.key === 'Escape') {

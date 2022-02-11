@@ -448,8 +448,8 @@
                     label: 'More',
                     show: false,
                     subitems: [{
-                        label: 'Coming Soon',
-                        route: '#'
+                        label: 'Author',
+                        route: '/author'
                     },
                     ]
                 },
