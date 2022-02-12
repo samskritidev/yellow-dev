@@ -318,6 +318,7 @@
                             </div>
                             <div class="md:w-2/3 authorname">
                                 <g-link :to="featuredBlog.author.path">
+
                                     <p class="featured-author font-bold mt-1" v-text="featuredBlog.author.name" />
                                 </g-link>
                                 <p v-text="featuredBlog.date" class="font-normal mb-0" />
