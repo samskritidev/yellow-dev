@@ -250,7 +250,7 @@
             </div>
         </section>
 
-        <section class="px-6 xl:px-0 pb-0 py-12" id="current_post">
+        <section class="px-6 xl:px-0 pb-0 py-16" id="current_post">
             <div class="max-w-1200 w-full mx-auto">
                 <div class="flex flex-row flex-wrap -mx-6">
                     <div v-for="edge in searchResults ? searchResults : $page.author.belongsTo.edges" :key="edge.node.id" class="flex flex-col w-full relative current-post pb-16 px-6 md:px-20">

@@ -289,7 +289,7 @@
         </section>
         <section class="px-6 xl:px-0 bg-white pb-8 pt-20" style="border-bottom: 1px solid #0000002e; margin-top: 0px;">
             <div class="max-w-1000 w-full mx-auto">
-                <h1 class="w-full rfs-text-6xl  font-black uppercase text-black font-semibold" style="margin:auto;text-align:center" v-html="$page.category.title" />
+                <h1 class="w-full rfs-text-5xl  font-black uppercase text-black" style="margin:auto;text-align:center" v-html="$page.category.title" />
                 <br /><p class="text-black pl-1 font-normal" style="display:none"> Yellowbrick delivers improved and predictable performance and cost with improved operational simplicity and deployment.</p>
             </div>
             <div class="flex flex-col max-w-1200 w-full mx-auto">
@@ -303,7 +303,7 @@
                 </ul>
             </div>
         </section>
-        <section class="px-6 xl:px-0 pb-0 pt-12" id="current_post">
+        <section class="px-6 xl:px-0 pb-0 pt-16" id="current_post">
             <div class="max-w-1200 w-full mx-auto">
                 <div class="flex flex-row flex-wrap -mx-6">
                     <div v-for="edge in searchResults ? searchResults : $page.category.belongsTo.edges" :key="edge.node.id" class="flex flex-col w-full relative current-post pb-16 px-6 md:px-20">

@@ -460,31 +460,12 @@
     <Layout>
         <base-section :classNames="'hero flex pt-24 pb-12 md:pt-20 md:pb-10 px-5 xl:px-0'">
             <div class="w-full lg:w-5/6 z-10">
-                <h3 class="rfs-text-4xl text-white sub-title mb-6 md:pt-16">A modern, open, and elastic data warehouse that runs consistently across cloud and on-premises with predictable and controllable costs.
+                <h3 class="rfs-text-5xl text-white sub-title mb-6 md:pt-16">Run all your data anywhere.<br>
+                <span class="text-yellow1">Yellowbrick Data Warehouse</span></h3>
 </h3>
-            </div>
-            <div class="flex flex-col w-full md:max-w-1200 mx-auto lg:pt-6">
+            </div>            <div class="flex flex-col w-full md:max-w-1200 mx-auto lg:pt-6">
                 <div class="z-10 relative lg:w-5/6">
                     <hooper ref="carousel" @slide="updateCarousel" :autoPlay="true" :playSpeed="10000">
-                        <slide>
-                            <div class="flex flex-col px-12 pt-12 slidebg-transparent">
-                                <div class="md:flex">
-                                    <div class="w-100 sm:text-center" style="padding-right: 20px;">
-                                        <img src="/uploads/images/customers/white/bmw.png" class="hooper-slide__image mr-auto" />
-                                    </div>
-                                    <div class="w-4/5">
-                                        <p class="rfs-text-lg mb-1 quote1">
-                                            “We are confident that Yellowbrick’s ability to quickly
-                                            analyze large amounts of data and offer new insights will help
-                                            us deliver on our goals.”
-                                        </p><p class="rfs-text-base font-bold">
-                                            Ian Smith, CEO, BMW Group Financial Services North
-                                            America
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </slide>
                         <slide>
                             <div class="flex flex-col px-12 pt-12 slidebg-transparent">
                                 <div class="md:flex">

@@ -3,10 +3,6 @@
         color: #497070;
     }
 
-    .headingsocial {
-        justify-content: end;
-    }
-
     .blog a:not(.button):not(.link) {
         border-bottom: 0px !important;
     }
@@ -269,48 +265,32 @@
                                     <p v-text="$page.blog.date" class="italic text-sm" />
                                 </div>
                             </div>
-                            <div class="w-full md:w-2/3 author_section  socialicons">
-                                <p class="font-normal headingsocial md:flex md:flex-end">SOCIAL SHARE</p>
-                                <div class="md:flex md:flex-end headingsocial">
-                                    <template>
-                                        <button>
-                                            <ShareNetwork network="facebook"
-                                                          :url="'https://www.yellowbrick.com' + this.$page.blog.path"
-                                                          :title=" this.$page.blog.title"
-                                                          hashtags="Yellowbrick">
-                                                <span><img src="/uploads/facebook.png" class="mr-4" /></span>
-                                            </ShareNetwork>
-                                        </button>
-                                    </template>
-                                    <template>
-                                        <button>
-                                            <ShareNetwork network="twitter"
-                                                          :url="'https://www.yellowbrick.com' + this.$page.blog.path"
-                                                          :title="this.$page.blog.title"
-                                                          hashtags="Yellowbrick">
-                                                <span><img src="/uploads/twitter.png" class="mr-4" /></span>
-                                            </ShareNetwork>
-                                        </button>
-                                    </template>
-                                    <template>
-                                        <button>
-                                            <ShareNetwork network="linkedin"
-                                                          :url="'https://www.yellowbrick.com' + this.$page.blog.path"
-                                                          :title="this.$page.blog.title">
-                                                <span><img src="/uploads/linkedin.png" class="mr-4" /></span>
-                                            </ShareNetwork>
-                                        </button>
-                                    </template>
-                                    <template>
-                                        <button>
-                                            <ShareNetwork network="WhatsApp"
-                                                          :url="'https://www.yellowbrick.com' + this.$page.blog.path"
-                                                          :title="this.$page.blog.title">
-                                                <span><img src="/uploads/whatsapp.png" class="mr-0" /></span>
-                                            </ShareNetwork>
-                                        </button>
-                                    </template>
-                                </div>
+                            <div class="w-full md:w-2/3 author_section flex flex-end socialicons">
+                                <p class="font-normal">SOCIAL SHARE</p>
+                                
+                                <template>
+                                    <button>
+                                        <ShareNetwork network="twitter"
+                                                      url="https://lindaojo.com/blog/another-awesome-article"
+                                                      title="Another Awesome Article"
+                                                      description="This is another awesome article for awesome readers"
+                                                      twitter-user="LindaOjo_">
+                                            <span><img src="/uploads/twitter.png" /></span>
+                                        </ShareNetwork>
+                                    </button>
+                                </template>
+                                <template>
+                                    <button>
+                                        <ShareNetwork network="facebook"
+                                                      url="https://lindaojo.com/blog/awesome-article"
+                                                      title="Awesome Article"
+                                                      description="This is an awesome article for awesome readers"
+                                                      hashtags="Frontend, Programming">
+                                            <span><img src="/uploads/facebook.svg" /></span>
+                                        </ShareNetwork>
+                                    </button>
+                                </template>
+
                             </div>
                         </div>
                     </div>
