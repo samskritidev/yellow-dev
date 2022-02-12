@@ -9,7 +9,8 @@ description: "The phenomenal performance Yellowbrick delivers enables Clarity
   data with our existing system, whereas data results came back in milliseconds
   in the Yellowbrick solution. “"
 date: 2019-09-09
-coverImage: /uploads/Yellowbrick-BlogImage10.jpg
+coverImage: /uploads/yb_bloghero34.jpg
+thumbnailImage: /uploads/yb_blogthumb_feature34.jpg
 categories:
   - customers
 featured: false

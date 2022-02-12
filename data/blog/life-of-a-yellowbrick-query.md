@@ -3,7 +3,8 @@ title: Life of a Yellowbrick query
 author: 1f5d5e99-3d0b-42ed-97aa-986473217b93
 description: An overview of workload management in Yellowbrick Data Warehouse
 date: 2021-03-08T22:36:07.939Z
-coverImage: /uploads/Yellowbrick-BlogImage6.jpg
+coverImage: /uploads/yb_bloghero20.jpg
+thumbnailImage: /uploads/yb_blogthumb_feature20.jpg
 categories:
   - product
 featured: false

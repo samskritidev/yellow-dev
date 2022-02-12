@@ -7,7 +7,8 @@ description: The pairing of analytical capability in the cloud with a data
   capabilities way ahead, but be forewarned, not all platforms leverage this
   breakout capacity to the fullest.
 date: 2020-04-13
-coverImage: /uploads/Yellowbrick-BlogImage13.jpg
+coverImage: /uploads/yb_bloghero32.jpg
+thumbnailImage: /uploads/yb_blogthumb_feature32.jpg
 categories:
   - use cases
 featured: false

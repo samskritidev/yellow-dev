@@ -3,7 +3,8 @@ title: 451 Research | Top 10 IT trends for 2019
 author: 1f5d5e99-3d0b-42ed-97aa-986473217b93
 description: 451 Research | Top 10 IT trends for 2019
 date: 2019-01-28
-coverImage: /uploads/Yellowbrick-BlogImage5.jpg
+coverImage: /uploads/yb_bloghero45.jpg
+thumbnailImage: /uploads/yb_blogthumb_feature45.jpg
 categories:
   - use cases
   - research

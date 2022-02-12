@@ -3,7 +3,8 @@ title: 451 Research | Retailers stock up on the benefits of machine learning
 author: 1f5d5e99-3d0b-42ed-97aa-986473217b93
 description: test
 date: 2018-12-16
-coverImage: /uploads/Yellowbrick-BlogImage3.jpg
+coverImage: /uploads/yb_bloghero40.jpg
+thumbnailImage: /uploads/yb_blogthumb_feature40.jpg
 categories:
   - use cases
   - research

@@ -536,6 +536,7 @@
     path
     description
     coverImage
+    thumbnailImage
     categories {
     id
     title

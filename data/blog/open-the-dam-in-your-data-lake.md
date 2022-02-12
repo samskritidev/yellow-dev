@@ -3,7 +3,8 @@ title: Open The Dam In Your Data Lake
 author: c65e4263-d0a0-4f0c-85ce-36ae0b3246c2
 description: Open The Dam In Your Data Lake
 date: 2018-10-05
-coverImage: /uploads/Yellowbrick-BlogImage16.jpg
+coverImage: /uploads/yb_bloghero47.jpg
+thumbnailImage: /uploads/yb_blogthumb_feature47.jpg
 categories:
   - use cases
 featured: false

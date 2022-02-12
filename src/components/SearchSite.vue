@@ -172,28 +172,29 @@ export default {
 </script>
 
 <static-query>
-  query Blog {
+    query Blog {
     allBlog {
-      edges {
-        node {
-          id
-          title
-          date(format: "DD MMM YYYY")
-          path
-          coverImage
-          content
-        }
-      }
+    edges {
+    node {
+    id
+    title
+    date(format: "DD MMM YYYY")
+    path
+    coverImage
+    thumbnailImage
+    content
+    }
+    }
     }
     team: pages(path: "/data/pages/team") {
-      path
-      id
-      members {
-        name
-        position
-        photo
-        body
-      }
+    path
+    id
+    members {
+    name
+    position
+    photo
+    body
     }
-  }
+    }
+    }
 </static-query>

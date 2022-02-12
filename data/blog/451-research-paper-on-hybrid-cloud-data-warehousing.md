@@ -7,7 +7,8 @@ description: To be truly data-driven, enterprises need to analyze their data
   enough to have separate hybrid cloud and data analytics strategies running in
   parallel.
 date: 2020-05-18
-coverImage: /uploads/Yellowbrick-BlogImage2.jpg
+coverImage: /uploads/yb_bloghero25.jpg
+thumbnailImage: /uploads/yb_blogthumb_feature25.jpg
 categories:
   - use cases
   - cloud

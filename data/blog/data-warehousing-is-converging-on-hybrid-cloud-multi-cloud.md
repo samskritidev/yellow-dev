@@ -5,7 +5,8 @@ description: Yellowbrick brings a hybrid/multi-cloud approach to data analytics
   in the form of a modern MPP data warehouse that offers the freedom to deploy
   anywhere.
 date: 2021-02-10T19:07:09.362Z
-coverImage: /uploads/Yellowbrick-BlogImage10.jpg
+coverImage: /uploads/yb_bloghero21.jpg
+thumbnailImage: /uploads/yb_blogthumb_feature21.jpg
 categories:
   - cloud
   - research

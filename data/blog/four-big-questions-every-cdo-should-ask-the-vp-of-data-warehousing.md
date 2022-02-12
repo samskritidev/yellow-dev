@@ -4,7 +4,8 @@ author: 1f5d5e99-3d0b-42ed-97aa-986473217b93
 description: Strategic questions every Chief Data Officer or data leader should
   be asking their VP of Data Warehousing
 date: 2020-03-18
-coverImage: /uploads/Yellowbrick-BlogImage15.jpg
+coverImage: /uploads/yb_bloghero27.jpg
+thumbnailImage: /uploads/yb_blogthumb_feature27.jpg
 categories:
   - use cases
 featured: false

@@ -3,7 +3,8 @@ title: Supercharge cybersecurity with Netflow and Yellowbrick Data
 author: 1f5d5e99-3d0b-42ed-97aa-986473217b93
 description: Supercharge cybersecurity with Netflow and Yellowbrick Data
 date: 2019-04-25
-coverImage: /uploads/Yellowbrick-BlogImage8.jpg
+coverImage: /uploads/yb_bloghero38.jpg
+thumbnailImage: /uploads/yb_blogthumb_feature38.jpg
 categories:
   - product
   - security

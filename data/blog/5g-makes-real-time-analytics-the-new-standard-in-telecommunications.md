@@ -5,7 +5,8 @@ description: In the telecommunications business, every consumer and business is
   a potential consumer. That creates a huge universe for monetization
   opportunities.
 date: 2021-01-25T19:43:15.958Z
-coverImage: /uploads/Yellowbrick-BlogImage1.jpg
+coverImage: /uploads/yb_bloghero16.jpg
+thumbnailImage: /uploads/yb_blogthumb_feature16.jpg
 categories:
   - use cases
 featured: true

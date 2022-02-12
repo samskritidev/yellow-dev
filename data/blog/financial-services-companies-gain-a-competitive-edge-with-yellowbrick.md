@@ -5,7 +5,8 @@ description: Choosing the right data infrastructure for financial services is
   critical for digital transformation. Yellowbrick gives Financial Services
   organizations a single, cost-effective data analytics solution.
 date: 2019-06-19
-coverImage: /uploads/Yellowbrick-BlogImage14.jpg
+coverImage: /uploads/yb_bloghero37.jpg
+thumbnailImage: /uploads/yb_blogthumb_feature37.jpg
 categories:
   - use cases
 featured: false

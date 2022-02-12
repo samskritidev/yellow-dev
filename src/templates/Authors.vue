@@ -466,6 +466,7 @@
     date(format: "DD MMM YYYY")
     path
     coverImage
+    thumbnailImage
     author {
     name
     authorImage

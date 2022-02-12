@@ -4,7 +4,8 @@ author: 1f5d5e99-3d0b-42ed-97aa-986473217b93
 description: There’s no data lakehouse without interactive analytics and the
   workload management that makes it happen
 date: 2021-02-22T18:22:29.649Z
-coverImage: /uploads/Yellowbrick-BlogImage8.jpg
+coverImage: /uploads/yb_bloghero15.jpg
+thumbnailImage: /uploads/yb_blogthumb_feature15.jpg
 categories:
   - product
   - use cases

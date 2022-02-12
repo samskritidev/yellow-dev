@@ -3,7 +3,8 @@ title: Best of 2021
 author: 1f5d5e99-3d0b-42ed-97aa-986473217b93
 description: "Yellowbrick’s customer testimonials. Our customers are succeeding with us. "
 date: 2021-12-02T22:38:37.105Z
-coverImage: /uploads/Yellowbrick-BlogImage10.jpg
+coverImage: /uploads/yb_bloghero1.jpg
+thumbnailImage: /uploads/yb_blogthumb_feature1.jpg
 categories:
   - product
 featured: false

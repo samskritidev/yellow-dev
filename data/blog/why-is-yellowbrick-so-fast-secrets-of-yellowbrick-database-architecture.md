@@ -5,7 +5,8 @@ description: Many of the assumptions about data warehouse architecture are
   outdated. Learn how Yellowbrick's modern design concepts will make you
   re-think what a data warehouse can do.
 date: 2021-05-04T01:20:22.753Z
-coverImage: /uploads/Yellowbrick-BlogImage1.jpg
+coverImage: /uploads/yb_bloghero12.jpg
+thumbnailImage: /uploads/yb_blogthumb_feature12.jpg
 categories:
   - product
 featured: true

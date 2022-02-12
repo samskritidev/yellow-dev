@@ -4,7 +4,8 @@ author: 1f5d5e99-3d0b-42ed-97aa-986473217b93
 description: How does the Yellowbrick query optimizer handle queries?
   Deconstructing its approach to TPC-DS queries is a great way to find out.
 date: 2021-04-29T18:29:45.754Z
-coverImage: /uploads/Yellowbrick-BlogImage4.jpg
+coverImage: /uploads/yb_bloghero13.jpg
+thumbnailImage: /uploads/yb_blogthumb_feature13.jpg
 categories:
   - yellowbrick and tpc-ds
   - product

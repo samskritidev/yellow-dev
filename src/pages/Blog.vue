@@ -541,6 +541,7 @@
     }
     path
     coverImage
+    thumbnailImage
     }
     }
     }
@@ -562,6 +563,7 @@
     }
     path
     coverImage
+    thumbnailImage
     }
     }
     }
@@ -589,6 +591,7 @@
     }
     path
     coverImage
+    thumbnailImage
     author {
     name
     authorImage

@@ -6,7 +6,8 @@ description: Yellowbrick Data delivers a modern data warehouse that sets the
   healthcare sector improve patient outcomes, accelerate time to market, drive
   cost reduction, and enable entirely new business models and revenue streams.
 date: 2019-08-20
-coverImage: /uploads/Yellowbrick-BlogImage14.jpg
+coverImage: /uploads/yb_bloghero29.jpg
+thumbnailImage: /uploads/yb_blogthumb_feature29.jpg
 categories:
   - use cases
 featured: false

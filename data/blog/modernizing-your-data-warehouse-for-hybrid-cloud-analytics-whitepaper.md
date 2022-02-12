@@ -4,7 +4,8 @@ author: 1f5d5e99-3d0b-42ed-97aa-986473217b93
 description: "Yellowbrick Offers New Whitepaper: Modernizing Your Data Warehouse
   for Hybrid Cloud Analytics"
 date: 2020-05-19
-coverImage: /uploads/Yellowbrick-BlogImage15.jpg
+coverImage: /uploads/yb_bloghero24.jpg
+thumbnailImage: /uploads/yb_blogthumb_feature24.jpg
 categories:
   - use cases
   - cloud

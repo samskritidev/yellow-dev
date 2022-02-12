@@ -7,7 +7,8 @@ description: The Yellowbrick solution’s high-performance design gives retailer
   and targeted advertising, and by optimizing product pricing, brands, features,
   and locations.
 date: 2019-08-16
-coverImage: /uploads/Yellowbrick-BlogImage4.jpg
+coverImage: /uploads/yb_bloghero30.jpg
+thumbnailImage: /uploads/yb_blogthumb_feature30.jpg
 categories:
   - use cases
 featured: false
