@@ -7,7 +7,8 @@ description: With data-driven decisions now demanding nearly immediate
   scalable performance (query latency, concurrency, load/ingest speed) is always
   achievable -- if you can pay for it.
 date: 2020-11-23T21:25:56.860Z
-coverImage: /uploads/Yellowbrick-BlogImage2.jpg
+coverImage: /uploads/yb_bloghero17.jpg
+thumbnailImage: /uploads/yb_blogthumb_feature17.jpg
 categories:
   - product
 featured: false

@@ -6,7 +6,8 @@ description: Uncertainty is causing disruption in every facet of business, from
   existing behaviors or adopting completely new ways of doing business to combat
   disruption.
 date: 2020-12-16T08:00:00.000Z
-coverImage: /uploads/Yellowbrick-BlogImage14.jpg
+coverImage: /uploads/yb_bloghero22.jpg
+thumbnailImage: /uploads/yb_blogthumb_feature22.jpg
 categories:
   - use cases
 featured: false

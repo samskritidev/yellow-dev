@@ -4,7 +4,8 @@ author: f6e3aea9-fc52-403d-8f5b-855a77624696
 description: Data is becoming more distributed, and data warehouses will have to
   adapt. But how?
 date: 2021-04-06T19:04:54.035Z
-coverImage: /uploads/Yellowbrick-BlogImage9.jpg
+coverImage: /uploads/yb_bloghero14.jpg
+thumbnailImage: /uploads/yb_blogthumb_feature14.jpg
 categories:
   - cloud
   - use cases

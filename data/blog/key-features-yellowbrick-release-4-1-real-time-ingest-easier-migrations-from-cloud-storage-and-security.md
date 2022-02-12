@@ -4,7 +4,8 @@ title: "Key new features in Yellowbrick Release 4.1: Focus on real-time ingest,
 author: 1f5d5e99-3d0b-42ed-97aa-986473217b93
 description: New features in Yellowbrick Release 4.1
 date: 2020-08-10
-coverImage: /uploads/Yellowbrick-BlogImage9.jpg
+coverImage: /uploads/yb_bloghero23.jpg
+thumbnailImage: /uploads/yb_blogthumb_feature23.jpg
 categories:
   - product
 featured: false

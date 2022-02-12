@@ -3,7 +3,8 @@ title: TPC-DS and the Yellowbrick query optimizer (TPC-DS Q06)
 author: 1f5d5e99-3d0b-42ed-97aa-986473217b93
 description: Yellowbrick Query Optimizer Team takes on TPC-DS Q06
 date: 2021-10-19T22:24:22.066Z
-coverImage: /uploads/Yellowbrick-BlogImage11.jpg
+coverImage: /uploads/yb_bloghero8.jpg
+thumbnailImage: /uploads/yb_blogthumb_feature8.jpg
 categories:
   - product
   - yellowbrick and tpc-ds

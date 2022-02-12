@@ -5,7 +5,8 @@ description: We're thrilled to announce our C1 round of funding from three new
   investors, including institutional investor Citadel Securities, which is also
   a recent new customer of Yellowbrick.
 date: 2021-11-04T14:58:58.770Z
-coverImage: /uploads/blog-simplicity.jpg
+coverImage: /uploads/yb_bloghero2.jpg
+thumbnailImage: /uploads/yb_blogthumb_feature2.jpg
 categories:
   - product
 featured: true

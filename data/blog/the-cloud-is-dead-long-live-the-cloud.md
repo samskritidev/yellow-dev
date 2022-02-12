@@ -4,7 +4,8 @@ author: f6e3aea9-fc52-403d-8f5b-855a77624696
 description: Freedom to choose deployment models doesn't mean you have to
   sacrifice the advantages of the cloud
 date: 2021-06-08T15:06:11.566Z
-coverImage: /uploads/Yellowbrick-BlogImage9.jpg
+coverImage: /uploads/yb_bloghero10.jpg
+thumbnailImage: /uploads/yb_blogthumb_feature10.jpg
 categories:
   - cloud
   - product

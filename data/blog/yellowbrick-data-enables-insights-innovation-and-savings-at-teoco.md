@@ -3,7 +3,8 @@ title: Yellowbrick Data enables insights, innovation, and savings at TEOCO
 author: 1f5d5e99-3d0b-42ed-97aa-986473217b93
 description: Yellowbrick Data enables insights, innovation, and savings at TEOCO
 date: 2018-08-30
-coverImage: /uploads/Yellowbrick-BlogImage1.jpg
+coverImage: /uploads/yb_bloghero42.jpg
+thumbnailImage: /uploads/yb_blogthumb_feature42.jpg
 categories:
   - customers
 featured: false

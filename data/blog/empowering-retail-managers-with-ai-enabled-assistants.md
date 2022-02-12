@@ -7,7 +7,8 @@ description: "Symphony RetailAI successfully implemented their Customer 360 AI
   view and track customer segments, product sales, and promotion effectiveness.
   "
 date: 2019-04-03
-coverImage: /uploads/Yellowbrick-BlogImage9.jpg
+coverImage: /uploads/yb_bloghero39.jpg
+thumbnailImage: /uploads/yb_blogthumb_feature39.jpg
 categories:
   - research
 featured: false

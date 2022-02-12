@@ -4,7 +4,8 @@ author: 1f5d5e99-3d0b-42ed-97aa-986473217b93
 description: Yellowbrick helps banks keep their competitive edge with fast
   analytics for more predictive insights, while keeping costs in check.
 date: 2019-06-19
-coverImage: /uploads/Yellowbrick-BlogImage12.jpg
+coverImage: /uploads/yb_bloghero36.jpg
+thumbnailImage: /uploads/yb_blogthumb_feature36.jpg
 categories:
   - use cases
 featured: false

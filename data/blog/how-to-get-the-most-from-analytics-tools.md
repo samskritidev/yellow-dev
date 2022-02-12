@@ -4,7 +4,8 @@ author: 1f5d5e99-3d0b-42ed-97aa-986473217b93
 description: Getting the most from your analytics tools is easier than ever with
   Yellowbrick Data
 date: 2020-03-09
-coverImage: /uploads/Yellowbrick-BlogImage2.jpg
+coverImage: /uploads/yb_bloghero33.jpg
+thumbnailImage: /uploads/yb_blogthumb_feature33.jpg
 categories:
   - use cases
 featured: false

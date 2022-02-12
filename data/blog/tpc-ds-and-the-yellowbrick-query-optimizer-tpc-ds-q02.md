@@ -4,7 +4,8 @@ author: 1f5d5e99-3d0b-42ed-97aa-986473217b93
 description: Tackling Query 2 (Q02), including the subtle tricks required to
   handle the fact tables in TPC-DS
 date: 2021-05-06T20:33:59.619Z
-coverImage: /uploads/Yellowbrick-BlogImage7.jpg
+coverImage: /uploads/yb_bloghero6.jpg
+thumbnailImage: /uploads/yb_blogthumb_feature6.jpg
 categories:
   - yellowbrick and tpc-ds
   - product

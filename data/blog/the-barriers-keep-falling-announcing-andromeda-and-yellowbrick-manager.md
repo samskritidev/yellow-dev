@@ -4,7 +4,8 @@ author: ecaacb3e-2059-45a9-a7e4-cfe94a878c7d
 description: These new product releases continue to push the price/performance
   envelope for customers
 date: 2021-04-06T23:25:34.866Z
-coverImage: /uploads/Yellowbrick-BlogImage10.jpg
+coverImage: /uploads/yb_bloghero19.jpg
+thumbnailImage: /uploads/yb_blogthumb_feature19.jpg
 categories:
   - product
   - cloud

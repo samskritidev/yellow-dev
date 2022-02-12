@@ -7,7 +7,8 @@ description: "By using Yellowbrick, insurance companies now have a golden
   models, new ways to integrate and use real-time data, and unified platform for
   a distributed cloud world. "
 date: 2021-05-12T19:39:41.053Z
-coverImage: /uploads/Yellowbrick-BlogImage16.jpg
+coverImage: /uploads/yb_bloghero11.jpg
+thumbnailImage: /uploads/yb_blogthumb_feature11.jpg
 categories:
   - use cases
 featured: false

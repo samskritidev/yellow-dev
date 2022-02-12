@@ -7,7 +7,8 @@ description: Yellowbrick offers free access to Yellowbrick Cloud Data Warehouse
   medical, pharmaceutical, and biotech industries. We want to do our part to
   accelerate their discoveries.
 date: 2020-05-14
-coverImage: /uploads/Yellowbrick-BlogImage16.jpg
+coverImage: /uploads/yb_bloghero31.jpg
+thumbnailImage: /uploads/yb_blogthumb_feature31.jpg
 categories:
   - use cases
 featured: false

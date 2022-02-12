@@ -3,7 +3,8 @@ title: TPC-DS and the Yellowbrick query optimizer (TPC-DS Q04)
 author: 1f5d5e99-3d0b-42ed-97aa-986473217b93
 description: When your database can scan TBs per second, who needs materialization?
 date: 2021-06-21T17:32:20.283Z
-coverImage: /uploads/Yellowbrick-BlogImage6.jpg
+coverImage: /uploads/yb_bloghero4.jpg
+thumbnailImage: /uploads/yb_blogthumb_feature4.jpg
 categories:
   - yellowbrick and tpc-ds
   - product

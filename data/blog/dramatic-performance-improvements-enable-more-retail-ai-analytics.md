@@ -3,7 +3,8 @@ title: Dramatic performance improvements enable more retail AI analytics
 author: 1f5d5e99-3d0b-42ed-97aa-986473217b93
 description: Dramatic performance improvements enable more retail AI analytics
 date: 2018-11-26
-coverImage: /uploads/Yellowbrick-BlogImage6.jpg
+coverImage: /uploads/yb_bloghero41.jpg
+thumbnailImage: /uploads/yb_blogthumb_feature41.jpg
 categories:
   - customers
 featured: false

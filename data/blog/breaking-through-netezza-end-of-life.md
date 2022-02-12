@@ -4,7 +4,8 @@ author: 1f5d5e99-3d0b-42ed-97aa-986473217b93
 description: Yellowbrick Data Warehouse provides a fast, seamless migration to a
   platform that prepares you for the future.
 date: 2018-12-14T00:00:00.000Z
-coverImage: /uploads/Yellowbrick-BlogImage12.jpg
+coverImage: /uploads/yb_bloghero46.jpg
+thumbnailImage: /uploads/yb_blogthumb_feature46.jpg
 categories:
   - use cases
 featured: false

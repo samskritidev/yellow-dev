@@ -4,7 +4,8 @@ author: f6e3aea9-fc52-403d-8f5b-855a77624696
 description: Our view of the slingshotting between Databricks and Snowflake
   after the TPC-DS 100TB benchmark results.
 date: 2021-11-19T21:17:58.322Z
-coverImage: /uploads/Yellowbrick-BlogImage3.jpg
+coverImage: /uploads/yb_bloghero7.jpg
+thumbnailImage: /uploads/yb_blogthumb_feature7.jpg
 categories:
   - research
 featured: true

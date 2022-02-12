@@ -9,7 +9,8 @@ description: Yellowbrick is the ideal analytics and data warehouse platform for
   Yellowbrick, insurers can achieve actionable insights to maximize customer
   value, reduce risk and exposure, and lower costs.
 date: 2019-08-20
-coverImage: /uploads/Yellowbrick-BlogImage4.jpg
+coverImage: /uploads/yb_bloghero35.jpg
+thumbnailImage: /uploads/yb_blogthumb_feature35.jpg
 categories:
   - use cases
 featured: false

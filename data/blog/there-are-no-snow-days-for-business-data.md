@@ -4,7 +4,8 @@ author: 1f5d5e99-3d0b-42ed-97aa-986473217b93
 description: If your data warehouse is critical to your business, peace of mind
   isn’t a luxury
 date: 2021-06-30T23:16:05.689Z
-coverImage: /uploads/Yellowbrick_AprilSummitHeroImage.jpg
+coverImage: /uploads/yb_bloghero9.jpg
+thumbnailImage: /uploads/yb_blogthumb_feature9.jpg
 categories:
   - cloud
 featured: false

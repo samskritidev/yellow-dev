@@ -4,7 +4,8 @@ author: 1f5d5e99-3d0b-42ed-97aa-986473217b93
 description: Avoid drowning in your data lake by augmenting the cheap storage
   with a full modern, purpose-built analytics environment.
 date: 2020-04-24
-coverImage: /uploads/Yellowbrick-BlogImage1.jpg
+coverImage: /uploads/yb_bloghero26.jpg
+thumbnailImage: /uploads/yb_blogthumb_feature26.jpg
 categories:
   - cloud
   - product
