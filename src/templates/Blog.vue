@@ -321,7 +321,10 @@
                             <g-link v-for="(author) in $page.latestBlogs.edges" :key="author.node.title" :to="author.node.path" class="flex flex-col w-full md:w-1/2 pb-8">
                                 <div data-v-4bc9d7de="" class="flex flex-col w-full h-full justify-content-center announcement-box__card bmw-group border">
                                     <div data-v-4bc9d7de="" class="max-w-xl w-full h-full">
-                                        <h4 data-v-4bc9d7de="" class="leading-tight mb-0 w-full text-black"><img style=" height: 230px" :src="author.node.coverImage" class=" w-full"></h4><div class="p-3 px-5">
+                                        <h4 data-v-4bc9d7de="" class="leading-tight mb-0 w-full text-black">
+                                            <img v-if="author.node.thumbnailImage"  :src="author.node.thumbnailImage" class=" w-full">
+                                            <img v-else :src="author.node.coverImage" class=" w-full" />
+                                        </h4><div class="p-3 px-5">
                                             <h5 v-text="author.node.title" class="leading-tight mb-0 text-black" style=" font-weight: 600;" />
                                             <p v-text="author.node.description" class="font-normal" style="margin-top: 5px;" />
                                         </div>
@@ -521,6 +524,7 @@
     path
     content
     coverImage
+    thumbnailImage
     date(format: "MMMM D, YYYY")
     author {
     name
@@ -560,6 +564,7 @@
     }
     path
     coverImage
+    thumbnailImage
     }
     }
     }
