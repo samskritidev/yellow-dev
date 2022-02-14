@@ -6,9 +6,9 @@
         max-width: 300px !important;
         font-size: 15px;
     }
-    .hs-form fieldset {
-  max-width: none!important;
-}
+    .hbspt-form .hs-input {
+        max-width: 300px !important;
+    }
     .custom-hbst {
         background-color: #ffcd32;
         padding: 10px;
@@ -398,9 +398,38 @@
                                     portalId: "8366986",
                                     formId: "2372a8f7-8866-4b45-9356-13c428960141",
                                     sfdcCampaignId: "7011G000000YAPpQAO",
+                                    submitButtonClass: "custom-hbst",
+                                    css: " ",
+                                    cssClass: "custom-hbst-but",
                                     });
-                                    </script>' />
-                                    <VueScriptComponent script='<script type="application/javascript"
+                                    </script><style>
+                                        .gartner-pi-link:hover {
+                                            background-image: none !important;
+                                        } 
+                                    .hs-input {
+                                            max-width: 300px !important;
+                                            border: 1px solid #dedede;
+                                            height: 40px;
+                                            background: #80808017;
+                                        }
+                                        .blog a:not(.gartner-pi-link) {
+                                            border-bottom: 0px !important;
+                                            color: none!important;
+                                            background-position: none !important;
+                                        }
+                                        .gartner-pi-link {
+                                            background-image: none !important;
+                                        }
+                                        .custom-hbst {
+                                            background-color: #ffcd32;
+                                            padding: 5px;
+                                            float: right;
+                                            position: relative;
+                                            margin-top: -40px;
+                                            border: 1px solid black;
+                                            margin-right: 50px;
+                                        }</style>' />
+                                             <VueScriptComponent script='<script type="application/javascript"
                                     src="https://www.gartner.com/reviews/public/Widget/js/widget.js">
                                     </script>
                                     <script type="application/javascript">
@@ -413,7 +442,7 @@
                                     container: document.getElementById("widget-container"),
                                     })
                                     </script>' />
-                                    <br />  
+                                     <br />
                                     <div id="widget-container"></div>
                                     <br />
                                     <div><a target="_blank" href="https://www.g2.com/products/yellowbrick-data-yellowbrick/reviews?utm_source=review-widget" title="Read reviews of Yellowbrick on G2"><img class="full-width" style="max-width: 300px" alt="Read Yellowbrick reviews on G2" src="https://www.g2.com/products/yellowbrick-data-yellowbrick/widgets/stars?color=white&amp;type=read" /></a>
