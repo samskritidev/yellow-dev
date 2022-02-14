@@ -1,6 +1,6 @@
 ---
 title: Data warehousing for distributed clouds
-author: f6e3aea9-fc52-403d-8f5b-855a77624696
+author: 5e8b4637-2bcd-47c9-8998-045923bbb48e
 description: Data is becoming more distributed, and data warehouses will have to
   adapt. But how?
 date: 2021-04-06T19:04:54.035Z

@@ -2,10 +2,13 @@
     .leading-none {
         color: #497070;
     }
-    .hs-form fieldset {
+    .hs-custom-style .hs-input, .hs-custom-style fieldset {
         max-width: 300px !important;
         font-size: 15px;
     }
+    .hs-form fieldset {
+  max-width: none!important;
+}
     .custom-hbst {
         background-color: #ffcd32;
         padding: 10px;

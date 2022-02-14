@@ -1,6 +1,6 @@
 ---
 title: Open The Dam In Your Data Lake
-author: c65e4263-d0a0-4f0c-85ce-36ae0b3246c2
+author: c835c764-0687-478a-8bd5-4a134b5f68a6
 description: Open The Dam In Your Data Lake
 date: 2018-10-05
 coverImage: /uploads/yb_bloghero47.jpg

@@ -60,7 +60,7 @@ module.exports = {
           options: {
               typeName: 'Author',
               baseDir: './data/authors',
-              pathPrefix: '/our-author',
+              pathPrefix: '/our-authors',
               template: './src/templates/Authors.vue',
               plugins: [
                   '@gridsome/remark-prismjs'

@@ -1,7 +1,7 @@
 ---
 title: "451 Research report: The strategic advantages of hybrid cloud data
   warehousing"
-author: f6e3aea9-fc52-403d-8f5b-855a77624696
+author: 5e8b4637-2bcd-47c9-8998-045923bbb48e
 description: To be truly data-driven, enterprises need to analyze their data
   wherever it resides – whether it’s on-premises or in the cloud.  And it’s not
   enough to have separate hybrid cloud and data analytics strategies running in

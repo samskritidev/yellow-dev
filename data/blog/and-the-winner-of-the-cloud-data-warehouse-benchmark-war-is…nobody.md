@@ -1,6 +1,6 @@
 ---
 title: And the winner of the cloud data warehouse benchmark war is…nobody
-author: f6e3aea9-fc52-403d-8f5b-855a77624696
+author: 5e8b4637-2bcd-47c9-8998-045923bbb48e
 description: Our view of the slingshotting between Databricks and Snowflake
   after the TPC-DS 100TB benchmark results.
 date: 2021-11-19T21:17:58.322Z
