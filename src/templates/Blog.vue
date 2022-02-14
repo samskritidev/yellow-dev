@@ -367,7 +367,8 @@
                     <div class="authorslist md:ml-12">
                         <template>
                             <div>
-                                <VueScriptComponent script='<script type="application/javascript"
+                                <ClientOnly>
+                                    <VueScriptComponent script='<script type="application/javascript"
                                     src="https://www.gartner.com/reviews/public/Widget/js/widget.js">
                             </script>
                             <script type="application/javascript">
@@ -380,6 +381,7 @@
                                     container: document.getElementById("widget-container"),
                                 })
                             </script>' />
+                                </ClientOnly>
                             </div>
                         </template>
 
@@ -398,7 +400,6 @@
 </template>
 
 <script>
-    import VueScriptComponent from 'vue-script-component'
     import {
         disableBodyScroll,
         clearAllBodyScrollLocks
@@ -514,7 +515,8 @@
         },
         components: {
             Layout,
-            VueScriptComponent
+            VueScriptComponent: () =>
+                import('vue-script-component'),
         },
         methods: {
             toggleDrawer(open) {
