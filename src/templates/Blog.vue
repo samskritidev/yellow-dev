@@ -6,16 +6,33 @@
     .headingsocial {
         justify-content: end;
     }
-
+    .gartner-pi-link:hover {
+            background-image: linear-gradient(to right, #fff 50%, #fff 50%) !important;
+    } 
     .blog a:not(.button):not(.link) {
         border-bottom: 0px !important;
     }
+    @media only screen and (max-width: 768px) {
+        .mobile-menu {
+            -webkit-overflow-scrolling: touch;
+            overflow-y: scroll;
+        }
+    }
 
+    @media(min-width: 880px) {
+        .menu-item:hover > label > .submenu {
+            display: block !important;
+        }
+
+        .submenu {
+            margin: 0;
+        }
+    }
     body {
         background: rgba(13,23,28,1);
     }
 
-    .blog a:not(.button):not(.link):hover {
+    .blog a:not(.button):not(.link):not(.gartner-pi-link):hover {
         background: #fff !important;
         color: #000 !important;
     }
@@ -194,7 +211,7 @@
                             <li class="flex relative text-black trans-bg-color pl-0 text-base hover:text-yellow1 menu-item cc:px-3 lg:px-6" @click='toggle = !toggle'>
                                 <label aria-haspopup="true" class="w-full relative">
                                     <div class="flex flex-row items-center">
-                                        <span class="flex items-center cursor-pointer p-2 pl-6 cc:px-2 cc:py-2">Categories</span>
+                                        <g-link to="/blog" class="flex items-center cursor-pointer p-2 pl-6 cc:px-2 cc:py-2">Categories</g-link>
                                         <span class="nav-arrow text-black" />
                                     </div>
                                     <transition name="slider">
@@ -316,36 +333,60 @@
                     </div>
                     <VueRemarkContent class="font-normal" style="border-bottom: 3px solid #d6d6d6;margin-top:30px;margin-bottom:30px" />
                     <h2 class="font-bold pl-6">Related Posts</h2>
-                    <template v-if="$page.latestBlogs.edges">
-                        <div class="w-full flex flex-col md:flex-row announcement-box relatedblogs">
-                            <g-link v-for="(author) in $page.latestBlogs.edges" :key="author.node.title" :to="author.node.path" class="flex flex-col w-full md:w-1/2 pb-8">
-                                <div data-v-4bc9d7de="" class="flex flex-col w-full h-full justify-content-center announcement-box__card bmw-group border">
-                                    <div data-v-4bc9d7de="" class="max-w-xl w-full h-full">
-                                        <h4 data-v-4bc9d7de="" class="leading-tight mb-0 w-full text-black">
-                                            <img v-if="author.node.thumbnailImage"  :src="author.node.thumbnailImage" class=" w-full">
-                                            <img v-else :src="author.node.coverImage" class=" w-full" />
-                                        </h4><div class="p-3 px-5">
-                                            <h5 v-text="author.node.title" class="leading-tight mb-0 text-black" style=" font-weight: 600;" />
-                                            <p v-text="author.node.description" class="font-normal" style="margin-top: 5px;" />
+                    <template>
+                        <div v-for="(author1,index) in $page.blog.categories" v-if="index < 1" :key="author1.id">
+                            <div class="w-full flex flex-col md:flex-row announcement-box relatedblogs">
+                                    <g-link v-for="(author,index) in author1.belongsTo.edges" v-if="$page.blog.title != author.node.title" :key="author.node.title" :to="author.node.path" class="flex flex-col w-full md:w-1/2 pb-8">
+                                        <div data-v-4bc9d7de="" class="flex flex-col w-full h-full justify-content-center announcement-box__card bmw-group border">
+                                            <div data-v-4bc9d7de="" class="max-w-xl w-full h-full">
+                                                <h4 data-v-4bc9d7de="" class="leading-tight mb-0 w-full text-black">
+                                                    <img v-if="author.node.thumbnailImage" :src="author.node.thumbnailImage" class=" w-full">
+                                                    <img v-else :src="author.node.coverImage" class=" w-full" />
+                                                </h4><div class="p-3 px-5">
+                                                    <h5 v-text="author.node.title" class="leading-tight mb-0 text-black" style=" font-weight: 600;" />
+                                                    <p v-text="author.node.description" class="font-normal" style="margin-top: 5px;" />
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
-                            </g-link>
+                                    </g-link>
+                            </div>
                         </div>
-                    </template>
+                </template>
                 </div>
                 <div class="md:w-2/6 mx-auto">
                     <div class="authorslist md:ml-12">
                         <h4 class="font-semibold">Meet Our Authors</h4>
                         <template v-if="$page.allAuthor.edges">
                             <span class="inline-block border-l-2 border-teal mx-4 text-yellow1"></span>
-                            <a v-for="(author) in $page.allAuthor.edges" :key="author.node.name" class="capitalize text-yellow1 leading-none mr-2 inline" style="float:left"><g-link :to="author.node.path"><img :src="author.node.authorImage" style="width: 50px; height: 50px" class="rounded" /></g-link></a>
+                            <a v-for="(author) in $page.allAuthor.edges" :key="author.node.name" class="capitalize text-yellow1 leading-none mr-2 inline" style="float:left"><g-link :to="author.node.path"><img :src="author.node.authorImage" style="width: 68px; height: 68px" class="rounded" /></g-link></a>
                         </template>
                     </div>
                     <br />
-                </div>
+                    <br />
+                    <br />
+                    <div class="authorslist md:ml-12">
+                        <template>
+                            <div>
+                                <VueScriptComponent script='<script type="application/javascript"
+                                    src="https://www.gartner.com/reviews/public/Widget/js/widget.js">
+                            </script>
+                            <script type="application/javascript">
+                                GartnerPI_Widget({
+                                    size: "small",
+                                    theme: "light",
+                                    sourcingLink: "https://gtnr.io/FlyPtAx1l",
+                                    widget_id: "MDM5NDZjOWEtMWY1Yi00NDNjLWFkZWItMTY0YTBjNGQzNjBk",
+                                    version: "2",
+                                    container: document.getElementById("widget-container"),
+                                })
+                            </script>' />
+                            </div>
+                        </template>
 
-            </div>
+                        <div id="widget-container"></div>
+                    </div>
+                </div>
+                </div>
             <div class="flex flex-col md:flex-row max-w-1200 w-full mx-auto" style="margin-top:30px;">
                 <span class="uppercase font-semibold" style="float: left; padding: 8px; float: left; font-size: 1.2rem; margin-right: 50px;">CATEGORIES</span>
                 <span class="categorylistblogbottom" style="float:left" v-for="category in $page.allCategory.edges" :key="category.node.id">
@@ -357,6 +398,7 @@
 </template>
 
 <script>
+    import VueScriptComponent from 'vue-script-component'
     import {
         disableBodyScroll,
         clearAllBodyScrollLocks
@@ -460,17 +502,8 @@
                     ]
                 },
                 {
-                    label: 'News',
-                    route: '/newsroom/'
-                },
-                {
-                    label: 'More',
-                    show: false,
-                    subitems: [{
-                        label: 'Author',
-                        route: '/author'
-                    },
-                    ]
+                    label: 'Author',
+                    route: '/author/'
                 },
             ],
             showDrawer: false,
@@ -481,6 +514,7 @@
         },
         components: {
             Layout,
+            VueScriptComponent
         },
         methods: {
             toggleDrawer(open) {
@@ -536,6 +570,24 @@
     id
     title
     path
+    id
+    title
+    belongsTo(limit: 2, sortBy: "date", order: ASC,filter: {id: { nin: [$id] }} ) {
+    edges {
+    node {
+    ...on Blog {
+    id
+    title
+    date
+    path
+    description
+    path
+    coverImage
+    thumbnailImage
+    }
+    }
+    }
+    }
     }
     }
     latestBlogs: allBlog(limit: 2, sortBy: "date", order: DESC) {

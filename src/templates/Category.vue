@@ -238,7 +238,7 @@
                             <li class="flex relative text-black trans-bg-color pl-0 text-base hover:text-yellow1 menu-item cc:px-3 lg:px-6" @click='toggle = !toggle'>
                                 <label aria-haspopup="true" class="w-full relative">
                                     <div class="flex flex-row items-center">
-                                        <span class="flex items-center cursor-pointer p-2 pl-6 cc:px-2 cc:py-2">Categories</span>
+                                        <g-link to="/blog" class="flex items-center cursor-pointer p-2 pl-6 cc:px-2 cc:py-2">Categories</g-link>
                                         <span class="nav-arrow text-black" />
                                     </div>
                                     <transition name="slider">
@@ -405,17 +405,8 @@
                 ]
             },
             {
-                label: 'News',
-                route: '/newsroom/'
-            },
-            {
-                label: 'More',
-                show: false,
-                subitems: [{
-                    label: 'Author',
-                    route: '/author'
-                },
-                ]
+                label: 'Author',
+                route: '/author/'
             },
         ],
         showDrawer: false,

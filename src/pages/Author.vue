@@ -2,7 +2,14 @@
     .menu-item span, .menu-item a {
         font-weight: normal;
     }
-
+    .hidden_test {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 6;
+        line-clamp: 6;
+        -webkit-box-orient: vertical;
+    }
     .main-nav-link a {
         text-transform: capitalize;
     }
@@ -223,7 +230,7 @@
                             <li @click='toggle = !toggle' class="flex relative text-black trans-bg-color pl-0 text-base hover:text-yellow1 menu-item cc:px-3 lg:px-6">
                                 <label aria-haspopup="true" class="w-full relative">
                                     <div class="flex flex-row items-center">
-                                        <span class="flex items-center cursor-pointer p-2 pl-6 cc:px-2 cc:py-2">Categories</span>
+                                        <g-link to="/blog" class="flex items-center cursor-pointer p-2 pl-6 cc:px-2 cc:py-2">Categories</g-link>
                                         <span class="nav-arrow text-black" />
                                     </div>
                                     <transition name="slider">
@@ -291,8 +298,7 @@
 
                                     <g-link :to="edge.node.path"><h4 class="rfs-text-3xl text-yellow1 uppercase font-bold authorName" v-html="edge.node.name" /></g-link>
                                     <p class="featured-author" v-text="edge.node.position" />
-                                    <p class="rfs-text-base leading-tight font-normal author-about" v-if="edge.node.authorAbout.length<498" v-html="edge.node.authorAbout"></p>
-                                    <p class="rfs-text-base leading-tight font-normal author-about" v-else v-html="edge.node.authorAbout.substring(0,498)"></p>
+                                    <p class="rfs-text-base leading-tight font-normal author-about hidden_test" v-html="edge.node.authorAbout"></p>
                                 </div>
                             </div>
                         </div>
@@ -377,17 +383,8 @@
           ]
         },
         {
-          label: 'News',
-            route: '/newsroom/'
-        },
-        {
-          label: 'More',
-          show: false,
-          subitems: [{
-              label: 'Author',
-              route: '/author'
-            },
-          ]
+            label: 'Author',
+            route: '/author/'
         },
       ],
       showDrawer: false,
