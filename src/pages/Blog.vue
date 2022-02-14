@@ -299,8 +299,10 @@
 
                 <div class="w-full md:w-1/2 md:mr-4">
                     <div class="md:mr-12">
+                         <g-link :to="featuredBlog.path">
                         <img v-if="featuredBlog.thumbnailImage" class="featured_image1" :src="`${featuredBlog.thumbnailImage}`" />
                         <img v-else class="featured_image1" :src="`${featuredBlog.coverImage}`" />
+                         </g-link>
                     </div>
                 </div>
                 <div class="w-full md:w-1/2 p-2">
@@ -314,11 +316,12 @@
                         <p class="rfs-text-base leading-tight font-normal pb-6 block hidden_test" v-text="featuredBlog.description" />
                         <div class="flex">
                             <div class="w-1/7 mr-6">
+                            <g-link :to="featuredBlog.author.path">
                                 <img :src="`${featuredBlog.author.authorImage}`" style=" border-radius: 50%;" class="w-16" />
+                            </g-link>
                             </div>
                             <div class="md:w-2/3 authorname">
                                 <g-link :to="featuredBlog.author.path">
-
                                     <p class="featured-author font-bold mt-1" v-text="featuredBlog.author.name" />
                                 </g-link>
                                 <p v-text="featuredBlog.date" class="font-normal mb-0" />
@@ -330,14 +333,16 @@
         </section>
         <section class="px-6 xl:px-0 pb-0 pt-12" id="current_post">
             <div class="max-w-1200 w-full mx-auto">
-                <h1 class="text-yellow1 uppercase font-bold mb-6 px-4 md:px-12">Current Posts</h1>
+                <h1 class="uppercase font-bold mb-6 px-4 md:px-12 leading-none">Current Posts</h1>
                 <div class="flex flex-row flex-wrap -mx-6">
                     <div v-for="edge in searchResults ? searchResults : $page.allBlog.edges" :key="edge.node.id" class="flex flex-col w-full relative current-post pb-16 px-6 md:px-20">
                         <div class="flex flex-col md:flex-row max-w-1200 w-full mx-auto relative border">
                             <div :to="edge.node.path" class="w-full md:w-2/5">
                                 <div class="text-white">
+                                    <g-link :to="edge.node.path">
                                     <img v-if="edge.node.thumbnailImage" class="featured_image" :src="`${edge.node.thumbnailImage}`" />
                                     <img v-else class="featured_image" :src="`${edge.node.coverImage}`" />
+                                    </g-link>
                                 </div>
                             </div>
                             <div class="w-full md:w-4/5 p-2">
@@ -352,7 +357,9 @@
 
                                     <div class="flex">
                                         <div class="w-1/7 mr-6">
+                                        <g-link :to="edge.node.author.path">
                                             <img :src="`${edge.node.author.authorImage}`" style="border-radius: 50%;" class="w-16" />
+                                        </g-link>
                                         </div>
                                         <div class="md:w-2/3 authorname">
                                             <g-link :to="edge.node.author.path">

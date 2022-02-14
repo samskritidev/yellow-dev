@@ -1,8 +1,8 @@
 ---
 id: ecaacb3e-2059-45a9-a7e4-cfe94a878c7d
 name: Nick Cox
-position: Co-founder and architect
-authorImage: /uploads/brinicombe.jpg
+position: Product Manager
+authorImage: /uploads/nick-cox.jpg
 authorAbout: >-
   <!--StartFragment-->
 

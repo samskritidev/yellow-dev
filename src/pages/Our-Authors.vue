@@ -1,4 +1,7 @@
 <style scoped>
+.leading-none {
+    color: #497070;
+}
     .menu-item span, .menu-item a {
         font-weight: normal;
     }
@@ -288,16 +291,16 @@
                     <div v-for="edge in searchResults ? searchResults : $page.allAuthor.edges" :key="edge.node.id" class="flex flex-col w-full relative current-post pb-10">
                         <div class="flex flex-col md:flex-row max-w-1200 w-full mx-auto">
                             <g-link :to="edge.node.path" class="w-full md:w-1/3 mr-12">
-                                <div class="text-white">
-                                    <img class="featured_image" :src="`${edge.node.authorImage}`" />
+                                <div class="text-white">                                    
+                                    <img class="featured_image" :src="`${edge.node.authorImage}`" />                                    
                                 </div>
                             </g-link>
                             <div class="w-full md:w-1/1">
                                 <div class="text-black">
                                     <!-- <h6 class="text-yellow2 hidden md:block">Data Warehouse Modernization</h6> -->
 
-                                    <g-link :to="edge.node.path"><h4 class="rfs-text-3xl text-yellow1 uppercase font-bold authorName" v-html="edge.node.name" /></g-link>
-                                    <p class="featured-author" v-text="edge.node.position" />
+                                    <g-link :to="edge.node.path"><h4 class="rfs-text-3xl uppercase font-bold authorName" v-html="edge.node.name" /></g-link>
+                                    <p class="featured-author leading-none" v-text="edge.node.position" />
                                     <p class="rfs-text-base leading-tight font-normal author-about hidden_test" v-html="edge.node.authorAbout"></p>
                                 </div>
                             </div>

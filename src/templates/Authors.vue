@@ -1,4 +1,7 @@
 <style scoped>
+  .leading-none {
+    color: #497070;
+   }
     .titlename {
         margin-bottom: 2px !important;
         padding-bottom: 0 !important;
@@ -238,12 +241,12 @@
         </header>
         <section class="flex flex-col pb-2 pt-32 px-6 xl:px-0 bg-white">
         </section>
-        <section class="px-6 xl:px-0 bg-white pb-20 md:pt-8" style="border-bottom: 1px solid #0000002e;">
+        <section class="px-6 xl:px-0 bg-white pb-20 md:pt-0" style="border-bottom: 1px solid #0000002e;">
             <div class="flex flex-col md:flex-row max-w-1200 mx-auto md:px-12">
                 <div class="w-full md:w-1/1">
-                    <img :src="`${$page.author.authorImage}`" style="margin: auto; max-width: 170px;" />
+                    <img :src="`${$page.author.authorImage}`" style="margin: auto; max-width: 250px;" />
                     <h1 class="font-bold uppercase" v-html="$page.author.name" style="text-align:center" />
-                    <p class="" v-html="$page.author.position" style="text-align: center; margin-bottom: 1.5rem; font-weight: 600;" />
+                    <p class="leading-none" v-html="$page.author.position" style="text-align: center; margin-bottom: 1.5rem; font-weight: 600;" />
                     <div class="font-normal" v-html="$page.author.authorAbout" />
                 </div>
                         
@@ -257,8 +260,10 @@
                         <div class="flex flex-col md:flex-row max-w-1200 w-full mx-auto relative border">
                             <div :to="edge.node.path" class="w-full md:w-2/5">
                                 <div class="text-white">
+                                    <g-link :to="edge.node.path">
                                     <img v-if="edge.node.thumbnailImage" class="featured_image" :src="`${edge.node.thumbnailImage}`" />
                                     <img v-else class="featured_image" :src="`${edge.node.coverImage}`" />
+                                    </g-link>
                                 </div>
                             </div>
                             <div class="w-full md:w-4/5 p-2">
@@ -273,7 +278,9 @@
 
                                         <div class="flex">
                                             <div class="md:w-1/7  mr-6">
+                                             <g-link :to="edge.node.author.path">
                                                 <img :src="`${edge.node.author.authorImage}`" class="w-16"  style=" border-radius: 50%;" />
+                                             </g-link>
                                             </div>
                                             <div class="md:w-2/3 authorname">
                                                 <g-link :to="edge.node.author.path">

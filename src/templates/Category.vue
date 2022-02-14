@@ -1,4 +1,10 @@
 <style scoped>
+.accent-yellow:after {
+    height: 0 !important;
+}
+.accent-yellow {
+    margin-right: 1.5rem !important;
+}
     .menu-item span, .menu-item a {
         font-weight: normal;
     }
@@ -293,11 +299,11 @@
                 <br /><p class="text-black pl-1 font-normal" style="display:none"> Yellowbrick delivers improved and predictable performance and cost with improved operational simplicity and deployment.</p>
             </div>
             <div class="flex flex-col max-w-1200 w-full mx-auto">
-                <ul class="m-0 py-8">
+                <ul class="m-0 py-8 mx-auto">
                     <li class="accent-yellow">
                         <g-link to="/blog/">All</g-link>
                     </li>
-                    <li class="accent-yellow font-bold" v-for="category in this.categories" :key="category.id" :class="{ 'active': $page.category.title === category.title }">
+                    <li class="accent-yellow" v-for="category in this.categories" :key="category.id" :class="{ 'active': $page.category.title === category.title }">
                         <g-link :to="category.path"> {{ category.title }} </g-link>
                     </li>
                 </ul>
@@ -310,8 +316,10 @@
                         <div class="flex flex-col md:flex-row max-w-1200 w-full  mx-auto relative border">
                             <div :to="edge.node.path" class="w-full md:w-2/5">
                                 <div class="text-white">
+                                    <g-link :to="edge.node.path">
                                     <img v-if="edge.node.thumbnailImage" class="featured_image" :src="`${edge.node.thumbnailImage}`" />
                                     <img v-else class="featured_image" :src="`${edge.node.coverImage}`" />
+                                    </g-link>
                                 </div>
                             </div>
                             <div class="w-full md:w-4/5 p-2">
@@ -326,7 +334,9 @@
 
                                         <div class="flex">
                                             <div v-if="edge.node.author.authorImage" class="w-1/7 mr-6">
+                                            <g-link :to="edge.node.author.path">
                                                 <img :src="`${edge.node.author.authorImage}`" style=" border-radius: 50%" class="w-16" />
+                                            </g-link>
                                             </div>
                                             <div class="md:w-2/3 authorname">
                                                 <g-link :to="edge.node.author.path">

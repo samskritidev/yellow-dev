@@ -54,8 +54,8 @@
     }
 
     .detailstitle {
-        margin-top: 60px;
-        margin-bottom: 40px;
+        margin-top: 10px;
+        margin-bottom: 20px;
         line-height: 60px;
     }
 
@@ -275,10 +275,10 @@
         </header>
         <section class="flex flex-col pb-2 pt-20 px-6 xl:px-0 bg-white">
         </section>
-        <section class="px-0 xl:px-0 bg-white pt-16">
+        <section class="px-0 xl:px-0 bg-white pt-8">
             <div class="uppercase max-w-1200 w-full mx-auto font-bold px-4 md:px-20">
                 <template v-if="$page.blog.categories">
-                    <g-link v-for="(category) in $page.blog.categories" :to="category.path"><span :key="category.id" style="margin-top: 50px;margin-bottom: 30px;" class="uppercase leading-none max-w-1200 w-full  font-bold inline"> {{category.title}}</span></g-link>
+                    <g-link v-for="(category) in $page.blog.categories" :to="category.path"><span :key="category.id" style="margin-top: 50px;margin-bottom: 30px; margin-right:20px;" class="uppercase leading-none max-w-1200 w-full  font-bold inline"> {{category.title}}</span></g-link>
                 </template>
                 <h1 class="detailstitle capitalize rfs-text-5xl text-black font-bold max-w-1200 mx-auto" v-html="$page.blog.title" />
             </div>
@@ -292,7 +292,9 @@
                         <div class="md:flex w-full max-w-1200 mb-4  bg-transparent">
                             <div class="flex flex-row">
                                 <div class="w-32 mr-6">
+                                    <g-link :to="$page.blog.author.path">
                                     <img :src="$page.blog.author.authorImage" style="border-radius: 50%;" />
+                                    </g-link>
                                 </div>
                                 <div class="w-full md:w-1/8 author_section">
                                     <g-link :to="$page.blog.author.path">
@@ -376,7 +378,7 @@
                         <h4 class="font-semibold">Meet Our Authors</h4>
                         <template v-if="$page.allAuthor.edges">
                             <span class="inline-block border-l-2 border-teal mx-4 text-yellow1"></span>
-                            <a v-for="(author) in $page.allAuthor.edges" :key="author.node.name" class="capitalize text-yellow1 leading-none mr-2 inline" style="float:left"><g-link :to="author.node.path"><img :src="author.node.authorImage" :title="author.node.name" style="width: 68px; height: 68px" class="rounded" /></g-link></a>
+                            <a v-for="(author) in $page.allAuthor.edges" :key="author.node.name" class="capitalize text-yellow1 leading-none mr-2 inline" style="float:left"><g-link :to="author.node.path"><img :src="author.node.authorImage" :title="author.node.name" style="width: 50px; height: 50px" class="rounded" /></g-link></a>
                         </template>
                     </div>
                     <br />
@@ -420,15 +422,25 @@
                                         .gartner-pi-link {
                                             background-image: none !important;
                                         }
-                                        .custom-hbst {
-                                            background-color: #ffcd32;
-                                            padding: 5px;
-                                            float: right;
-                                            position: relative;
-                                            margin-top: -40px;
-                                            border: 1px solid black;
-                                            margin-right: 50px;
-                                        }</style>' />
+                                        .hbspt-form form {
+                                          display: flex;
+                                           }
+                                           .custom-hbst {
+                                                background-color: #ffcd32;
+                                                padding-top: 6px;
+                                                padding-bottom: 7px;
+                                                padding-left: 6px;
+                                                padding-right: 6px;
+                                            }
+                                            ul.no-list.hs-error-msgs.inputs-list {
+                                                width: 100%;
+                                                list-style-type: none;
+                                                position: inherit;
+                                                margin: 0;
+                                                padding: 0;
+                                                color: red;
+                                            }
+                                        </style>' />
                                              <VueScriptComponent script='<script type="application/javascript"
                                     src="https://www.gartner.com/reviews/public/Widget/js/widget.js">
                                     </script>
