@@ -2,12 +2,25 @@
     .leading-none {
         color: #497070;
     }
-
+    .hs-form fieldset {
+        max-width: 300px !important;
+        font-size: 15px;
+    }
+    .custom-hbst {
+        background-color: #ffcd32;
+        padding: 10px;
+        float: right;
+        position: relative;
+        margin-top: -74px;
+    }
     .headingsocial {
         justify-content: end;
     }
+    .disqus-footer__wrapper{
+        display:none;
+    }
     .gartner-pi-link:hover {
-            background-image: linear-gradient(to right, #fff 50%, #fff 50%) !important;
+        background-image: linear-gradient(to right, #fff 50%, #fff 50%) !important;
     } 
     .blog a:not(.button):not(.link) {
         border-bottom: 0px !important;
@@ -56,7 +69,7 @@
     }
 
     .announcement-box a {
-        margin: 20px;
+        margin-right: 20px;
         /* border: 0.5px solid #e5e5e5; */
     }
 
@@ -295,7 +308,7 @@
                                                           :url="'https://www.yellowbrick.com' + this.$page.blog.path"
                                                           :title=" this.$page.blog.title"
                                                           hashtags="Yellowbrick">
-                                                <span><img src="/uploads/facebook.png" class="mr-4" /></span>
+                                                <span><img src="/uploads/facebook.png" title="Facebook" class="mr-4" /></span>
                                             </ShareNetwork>
                                         </button>
                                     </template>
@@ -305,7 +318,7 @@
                                                           :url="'https://www.yellowbrick.com' + this.$page.blog.path"
                                                           :title="this.$page.blog.title"
                                                           hashtags="Yellowbrick">
-                                                <span><img src="/uploads/twitter.png" class="mr-4" /></span>
+                                                <span><img src="/uploads/twitter.png" title="Twitter" class="mr-4" /></span>
                                             </ShareNetwork>
                                         </button>
                                     </template>
@@ -314,7 +327,7 @@
                                             <ShareNetwork network="linkedin"
                                                           :url="'https://www.yellowbrick.com' + this.$page.blog.path"
                                                           :title="this.$page.blog.title">
-                                                <span><img src="/uploads/linkedin.png" class="mr-4" /></span>
+                                                <span><img src="/uploads/linkedin.png" title="Linkedin" class="mr-4" /></span>
                                             </ShareNetwork>
                                         </button>
                                     </template>
@@ -323,7 +336,7 @@
                                             <ShareNetwork network="WhatsApp"
                                                           :url="'https://www.yellowbrick.com' + this.$page.blog.path"
                                                           :title="this.$page.blog.title">
-                                                <span><img src="/uploads/whatsapp.png" class="mr-0" /></span>
+                                                <span><img src="/uploads/whatsapp.png" title="Whatsapp" class="mr-0" /></span>
                                             </ShareNetwork>
                                         </button>
                                     </template>
@@ -331,8 +344,10 @@
                             </div>
                         </div>
                     </div>
-                    <VueRemarkContent class="font-normal" style="border-bottom: 3px solid #d6d6d6;margin-top:30px;margin-bottom:30px" />
-                    <h2 class="font-bold pl-6">Related Posts</h2>
+                    <VueRemarkContent class="font-normal" style="border-bottom: 3px solid #d6d6d6;margin-top:30px;margin-bottom:12px" />
+                    <h2 data-v-6b2564f1="" data-v-3c2763e1="" class="font-bold">Blog Comments</h2>
+                    <Disqus shortname="yellowbrick-com" :identifier="this.$page.blog.path" />
+                    <h2 class="font-bold" style="border-top: 3px solid rgb(214, 214, 214); margin-top: 20px; padding-top: 8px;">Related Posts</h2>
                     <template>
                         <div v-for="(author1,index) in $page.blog.categories" v-if="index < 1" :key="author1.id">
                             <div class="w-full flex flex-col md:flex-row announcement-box relatedblogs">
@@ -358,7 +373,7 @@
                         <h4 class="font-semibold">Meet Our Authors</h4>
                         <template v-if="$page.allAuthor.edges">
                             <span class="inline-block border-l-2 border-teal mx-4 text-yellow1"></span>
-                            <a v-for="(author) in $page.allAuthor.edges" :key="author.node.name" class="capitalize text-yellow1 leading-none mr-2 inline" style="float:left"><g-link :to="author.node.path"><img :src="author.node.authorImage" style="width: 68px; height: 68px" class="rounded" /></g-link></a>
+                            <a v-for="(author) in $page.allAuthor.edges" :key="author.node.name" class="capitalize text-yellow1 leading-none mr-2 inline" style="float:left"><g-link :to="author.node.path"><img :src="author.node.authorImage" :title="author.node.name" style="width: 68px; height: 68px" class="rounded" /></g-link></a>
                         </template>
                     </div>
                     <br />
@@ -368,19 +383,38 @@
                         <template>
                             <div>
                                 <ClientOnly>
+                                    <h5 class="font-semibold" style="font-size: 1.38rem;">Get the latest Yellowbrick blogs</h5>
+                                    <VueScriptComponent script='
+                                    <!--[if lte IE 8]>
+    <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
+    <![endif]-->
+                                    <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
+                                    <script>
+                                    hbspt.forms.create({
+                                    region: "na1",
+                                    portalId: "8366986",
+                                    formId: "2372a8f7-8866-4b45-9356-13c428960141",
+                                    sfdcCampaignId: "7011G000000YAPpQAO",
+                                    });
+                                    </script>' />
                                     <VueScriptComponent script='<script type="application/javascript"
                                     src="https://www.gartner.com/reviews/public/Widget/js/widget.js">
-                            </script>
-                            <script type="application/javascript">
-                                GartnerPI_Widget({
+                                    </script>
+                                    <script type="application/javascript">
+                                    GartnerPI_Widget({
                                     size: "small",
                                     theme: "light",
                                     sourcingLink: "https://gtnr.io/FlyPtAx1l",
                                     widget_id: "MDM5NDZjOWEtMWY1Yi00NDNjLWFkZWItMTY0YTBjNGQzNjBk",
                                     version: "2",
                                     container: document.getElementById("widget-container"),
-                                })
-                            </script>' />
+                                    })
+                                    </script>' />
+                                    <br />  
+                                    <div id="widget-container"></div>
+                                    <br />
+                                    <div><a target="_blank" href="https://www.g2.com/products/yellowbrick-data-yellowbrick/reviews?utm_source=review-widget" title="Read reviews of Yellowbrick on G2"><img class="full-width" style="max-width: 300px" alt="Read Yellowbrick reviews on G2" src="https://www.g2.com/products/yellowbrick-data-yellowbrick/widgets/stars?color=white&amp;type=read" /></a>
+                                    <script type="application/javascript" >(function (a, b, c, d) { window.fetch("https://www.g2.com/products/yellowbrick-data-yellowbrick/rating_schema.json").then(e => e.json()).then(f => { c = a.createElement(b); c.type = "application/ld+json"; c.text = JSON.stringify(f); d = a.getElementsByTagName(b)[0]; d.parentNode.insertBefore(c, d); }); })(document, "script");</script></div>
                                 </ClientOnly>
                             </div>
                         </template>
@@ -503,8 +537,8 @@
                     ]
                 },
                 {
-                    label: 'Author',
-                    route: '/author/'
+                    label: 'Our Authors',
+                    route: '/our-authors/'
                 },
             ],
             showDrawer: false,
@@ -622,7 +656,7 @@
     }
     }
     }
-    allAuthor {
+    allAuthor(sortBy: "name", order: ASC) {
     edges {
     node {
     name

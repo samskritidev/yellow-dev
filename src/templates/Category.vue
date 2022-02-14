@@ -405,8 +405,8 @@
                 ]
             },
             {
-                label: 'Author',
-                route: '/author/'
+                label: 'Our Authors',
+                route: '/our-authors/'
             },
         ],
         showDrawer: false,
