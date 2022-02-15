@@ -313,7 +313,7 @@
                                     <template>
                                         <button>
                                             <ShareNetwork network="facebook"
-                                                          :url="'https://www.yellowbrick.com' + this.$page.blog.path"
+                                                          :url="'https://yellowbrick-dev1.netlify.app' + this.$page.blog.path"
                                                           :title=" this.$page.blog.title"
                                                           hashtags="Yellowbrick">
                                                 <span><img src="/uploads/facebook.png" title="Facebook" class="mr-4" /></span>
@@ -323,7 +323,7 @@
                                     <template>
                                         <button>
                                             <ShareNetwork network="twitter"
-                                                          :url="'https://www.yellowbrick.com' + this.$page.blog.path"
+                                                          :url="'https://yellowbrick-dev1.netlify.app' + this.$page.blog.path"
                                                           :title="this.$page.blog.title"
                                                           hashtags="Yellowbrick">
                                                 <span><img src="/uploads/twitter.png" title="Twitter" class="mr-4" /></span>
@@ -333,7 +333,7 @@
                                     <template>
                                         <button>
                                             <ShareNetwork network="linkedin"
-                                                          :url="'https://www.yellowbrick.com' + this.$page.blog.path"
+                                                          :url="'https://yellowbrick-dev1.netlify.app' + this.$page.blog.path"
                                                           :title="this.$page.blog.title">
                                                 <span><img src="/uploads/linkedin.png" title="Linkedin" class="mr-4" /></span>
                                             </ShareNetwork>
@@ -342,7 +342,7 @@
                                     <template>
                                         <button>
                                             <ShareNetwork network="WhatsApp"
-                                                          :url="'https://www.yellowbrick.com' + this.$page.blog.path"
+                                                          :url="'https://yellowbrick-dev1.netlify.app' + this.$page.blog.path"
                                                           :title="this.$page.blog.title">
                                                 <span><img src="/uploads/whatsapp.png" title="Whatsapp" class="mr-0" /></span>
                                             </ShareNetwork>
