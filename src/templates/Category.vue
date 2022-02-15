@@ -1,4 +1,7 @@
 <style scoped>
+.brighter-teal {
+    color: #00c3d7;
+}
 .accent-yellow:after {
     height: 0 !important;
 }
@@ -326,7 +329,7 @@
                                 <div class="text-black md:pl-20 block">
                                     <div class="categorieslist">
                                         <template v-if="edge.node.categories">
-                                            <a v-for="(category) in edge.node.categories" :key="category.id" v-text="category.title === 'yellowbrick and tpc-ds' ? 'Yellowbrick and TPC-DS' : category.title" :href="`/blog/category/${category.title}`" class="uppercase font-bold text-yellow1 leading-none block md:mb-0 mr-4 pt-2 pb-8" />
+                                            <a v-for="(category) in edge.node.categories" :key="category.id" v-text="category.title === 'yellowbrick and tpc-ds' ? 'Yellowbrick and TPC-DS' : category.title" :href="`/blog/category/${category.title}`" class="uppercase font-bold brighter-teal block md:mb-0 mr-4 pt-2 pb-8" />
                                         </template>
                                     </div>
                                         <g-link :to="edge.node.path"><h4 class="rfs-text-3xl text-black font-bold hidden_test titlename" v-html="edge.node.title" /></g-link>

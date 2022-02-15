@@ -1,4 +1,7 @@
 <style scoped>
+.brighter-teal {
+    color: #00c3d7;
+}
     .leading-none {
         color: #497070;
     }
@@ -278,7 +281,7 @@
         <section class="px-0 xl:px-0 bg-white pt-8">
             <div class="uppercase max-w-1200 w-full mx-auto font-bold px-4 md:px-20">
                 <template v-if="$page.blog.categories">
-                    <g-link v-for="(category) in $page.blog.categories" :to="category.path"><span :key="category.id" style="margin-top: 50px;margin-bottom: 30px; margin-right:20px;" class="uppercase leading-none max-w-1200 w-full  font-bold inline"> {{category.title}}</span></g-link>
+                    <g-link v-for="(category) in $page.blog.categories" :to="category.path"><span :key="category.id" style="margin-top: 50px;margin-bottom: 30px; margin-right:20px;" class="uppercase brighter-teal max-w-1200 w-full  font-bold inline"> {{category.title}}</span></g-link>
                 </template>
                 <h1 class="detailstitle capitalize rfs-text-5xl text-black font-bold max-w-1200 mx-auto" v-html="$page.blog.title" />
             </div>

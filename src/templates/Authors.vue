@@ -2,6 +2,9 @@
   .leading-none {
     color: #497070;
    }
+   .brighter-teal {
+    color: #00c3d7;
+}
     .titlename {
         margin-bottom: 2px !important;
         padding-bottom: 0 !important;
@@ -246,7 +249,7 @@
                 <div class="w-full md:w-1/1">
                     <img :src="`${$page.author.authorImage}`" style="margin: auto; max-width: 250px;" />
                     <h1 class="font-bold uppercase" v-html="$page.author.name" style="text-align:center" />
-                    <p class="leading-none" v-html="$page.author.position" style="text-align: center; margin-bottom: 1.5rem; font-weight: 600;" />
+                    <p class="brighter-teal" v-html="$page.author.position" style="text-align: center; margin-bottom: 1.5rem; font-weight: 600;" />
                     <div class="font-normal" v-html="$page.author.authorAbout" />
                 </div>
                         
@@ -270,7 +273,7 @@
                                 <div class="text-black md:pl-20 block">
                                         <template v-if="edge.node.categories">
                                             <div class="categorieslist">
-                                                <a v-for="(category) in edge.node.categories" :key="category.id" v-text="category.title === 'yellowbrick and tpc-ds' ? 'Yellowbrick and TPC-DS' : category.title" :href="`/blog/category/${category.title}`" class="uppercase font-bold text-yellow1 leading-none block md:mb-0 mr-4 pt-2 pb-8" />
+                                                <a v-for="(category) in edge.node.categories" :key="category.id" v-text="category.title === 'yellowbrick and tpc-ds' ? 'Yellowbrick and TPC-DS' : category.title" :href="`/blog/category/${category.title}`" class="uppercase font-bold brighter-teal block md:mb-0 mr-4 pt-2 pb-8" />
                                             </div>
                                          </template>
                                         <g-link :to="edge.node.path"><h4 class="rfs-text-3xl text-black font-bold hidden_test titlename" v-html="edge.node.title" /></g-link>

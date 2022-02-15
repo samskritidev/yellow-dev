@@ -1,4 +1,7 @@
 <style scoped>
+.brighter-teal {
+    color: #00c3d7;
+}
 .leading-none {
     color: #497070;
 }
@@ -300,7 +303,7 @@
                                     <!-- <h6 class="text-yellow2 hidden md:block">Data Warehouse Modernization</h6> -->
 
                                     <g-link :to="edge.node.path"><h4 class="rfs-text-3xl uppercase font-bold authorName" v-html="edge.node.name" /></g-link>
-                                    <p class="featured-author leading-none" v-text="edge.node.position" />
+                                    <p class="featured-author brighter-teal" v-text="edge.node.position" />
                                     <p class="rfs-text-base leading-tight font-normal author-about hidden_test" v-html="edge.node.authorAbout"></p>
                                 </div>
                             </div>

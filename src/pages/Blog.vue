@@ -1,4 +1,7 @@
 <style scoped>
+.brighter-teal {
+    color: #00c3d7;
+}
     .titlename {
         margin-bottom: 2px !important;
         padding-bottom: 0 !important;
@@ -309,7 +312,7 @@
                     <div class=" text-black">
                         <template v-if="featuredBlog.categories">
                             <div class="categorieslist">
-                                <a v-for="(category) in featuredBlog.categories" :key="category.id" v-text="category.title === 'yellowbrick and tpc-ds' ? 'Yellowbrick and TPC-DS' : category.title" :href="`/blog/category/${category.title}`" class="categorylist uppercase font-bold text-yellow1 leading-none block mb-8 md:mr-6" />
+                                <a v-for="(category) in featuredBlog.categories" :key="category.id" v-text="category.title === 'yellowbrick and tpc-ds' ? 'Yellowbrick and TPC-DS' : category.title" :href="`/blog/category/${category.title}`" class="categorylist uppercase font-bold brighter-teal block mb-8 md:mr-6" />
                             </div>
                         </template>
                         <g-link :to="featuredBlog.path"><h2 class="rfs-text-4xl font-bold pb-0" style="line-height: 1.1;" v-html="featuredBlog.title" /></g-link>
@@ -349,7 +352,7 @@
                                 <div class="text-black md:pl-20 block">
                                     <template v-if="edge.node.categories">
                                         <div class="categorieslist">
-                                            <a v-for="(category) in edge.node.categories" :key="category.id" v-text="category.title === 'yellowbrick and tpc-ds' ? 'Yellowbrick and TPC-DS' : category.title" :href="`/blog/category/${category.title}`" class="uppercase font-bold text-yellow1 leading-none block md:mb-0 mr-4 pt-2 pb-8" />
+                                            <a v-for="(category) in edge.node.categories" :key="category.id" v-text="category.title === 'yellowbrick and tpc-ds' ? 'Yellowbrick and TPC-DS' : category.title" :href="`/blog/category/${category.title}`" class="uppercase font-bold brighter-teal block md:mb-0 mr-4 pt-2 pb-8" />
                                         </div>
                                     </template>
                                     <g-link :to="edge.node.path"><h4 class="rfs-text-3xl text-black font-bold hidden_test titlename" v-html="edge.node.title" /></g-link>
