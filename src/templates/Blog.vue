@@ -512,12 +512,12 @@
                     {
                         key: 'og:url',
                         name: 'og:url',
-                        content: 'https://www.yellowbrick.com' + this.$page.blog.path,
+                        content: 'https://yellowbrick-dev1.netlify.app' + this.$page.blog.path,
                     },
                     {
                         key: 'og:image',
                         name: 'og:image',
-                        content: 'https://www.yellowbrick.com' + this.$page.blog.coverImage,
+                        content: 'https://yellowbrick-dev1.netlify.app' + this.$page.blog.coverImage,
                     },
                     {
                         key: 'twitter:title',
@@ -532,12 +532,12 @@
                     {
                         key: 'twitter:image',
                         name: 'twitter:image',
-                        content: 'https://www.yellowbrick.com' + this.$page.blog.coverImage,
+                        content: 'https://yellowbrick-dev1.netlify.app' + this.$page.blog.coverImage,
                     },
                     {
                         key: 'twitter:url',
                         name: 'twitter:url',
-                        content: 'https://www.yellowbrick.com' + this.$page.blog.path,
+                        content: 'https://yellowbrick-dev1.netlify.app' + this.$page.blog.path,
                     }
                 ]
             }
