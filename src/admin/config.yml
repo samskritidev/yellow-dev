@@ -39,7 +39,8 @@ collections:
       - {label: Author Name, name: name, widget: string}
       - {label: Position, name: position, widget: string}
       - {label: Author Image, name: authorImage, widget: image}
-      - {label: About Author, name: authorAbout, widget: markdown}
+      - {label: About Author/Professional, name: authorAbout, widget: markdown}
+      - {label: About Author/Fun/Interest, name: authorInterest, widget: markdown}
       - {label: Created Date, name: date, widget: date}
   -
     label: Pages

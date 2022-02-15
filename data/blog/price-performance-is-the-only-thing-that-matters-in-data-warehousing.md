@@ -1,6 +1,6 @@
 ---
 title: Price/performance is the only thing that matters in data warehousing
-author: 5e8b4637-2bcd-47c9-8998-045923bbb48e
+author: 1f5d5e99-3d0b-42ed-97aa-986473217b93
 description: With data-driven decisions now demanding nearly immediate
   time-to-insight, data warehouse performance is critical, with competitive
   benchmarking now a bloodsport among vendors. The little known secret is that

@@ -1,6 +1,6 @@
 ---
 title: "The Walking Dead: Enterprise Edition"
-author: 1f5d5e99-3d0b-42ed-97aa-986473217b93
+author: c835c764-0687-478a-8bd5-4a134b5f68a6
 description: Using Netezza? You can do better with Yellowbrick. Modernize your
   data warehouse with us now.
 date: 2020-06-09

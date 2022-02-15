@@ -2,15 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\data",
-    "\\data\\blog_featured",
+    "\\data\\blog",
     "\\src",
-    "\\src\\components",
-    "\\src\\components\\icons",
+    "\\src\\assets\\images",
     "\\src\\layouts",
     "\\src\\pages",
-    "\\src\\pages\\company",
-    "\\src\\pages\\products"
+    "\\src\\pages\\products",
+    "\\src\\templates",
+    "\\static"
   ],
-  "SelectedNode": "\\src\\templates\\Blog.vue",
+  "SelectedNode": "\\data\\blog\\covid-19-response-expansion.md",
   "PreviewInSolutionExplorer": false
 }

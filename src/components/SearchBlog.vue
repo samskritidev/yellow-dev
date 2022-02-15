@@ -5,8 +5,8 @@
 </style>
 <template>
   <div id="search_div" class="w-full max-w-1200 mx-auto flex flex-row justify-end items-center search_div" style="top:20px;">
-    <input ref="input" class="w-100 text-xl text-black text-xl border border-gray-200 focus:outline-none focus:shadow focus:border-gray-400 rounded px-3 py-2 appearance-none leading-normal bg-white" placeholder="Search Blog" type="search" @input="search" @focus="search" @blur="search" @keydown.esc.enter="$refs.input.blur()" v-model="q" />
-    <a v-if="(value) && (value.length >=1)" href="#current_post" class="rfs-text-xl float-left text-black border-gray-200 w-100" v-text="`${value.length} results`" />
+    <input @input="search1" @blur="search" @focus="search1"  ref="input" class="w-100 text-xl text-black text-xl border border-gray-200 focus:outline-none focus:shadow focus:border-gray-400 rounded px-3 appearance-none leading-normal bg-white" placeholder="Search Blog" type="text"  v-model="q" />
+      <img @click="search" id="search-icon" @keydown.esc.enter="$refs.input.blur()" style="transform: rotate(-45deg); width: 25px; height: 25px; position: absolute; margin-right: 8px; "  src="/uploads/icons/search-icon.svg" class="search-icon" />
   </div>
 </template>
 
@@ -31,7 +31,7 @@ export default {
     })
     this.index.add(this.$static.allBlog.edges)
 
-    document.onkeyup = (e) => {
+      document.onkeyup = (e) => {
       if (e.which === 191) this.$refs.input.focus()
     }
   },
@@ -42,6 +42,9 @@ export default {
       else if (this.q.length < 1) res = []
       else res = this.index.search({ query: this.q })
       this.$emit('input', res)
+      },
+      search1() {
+        //document.getElementById("search-icon").style.display = "none";
     }
   }
 }

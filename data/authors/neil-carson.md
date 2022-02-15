@@ -13,12 +13,13 @@ authorAbout: >-
   Prior to Fusion-io, Neil was Chief Application Architect at Dell, where he led the platform architecture team across MessageOne, Everdream, Silverback Networks and other acquired development groups. Neil joined Dell through the acquisition of Everdream where he was Chief Architect.
 
 
-  Neil has also held roles at BMC/Remedy and Liberate Technologies, including Principal Product Architect and Principal Engineer. Neil has served as a technical advisor for startups Oxygen Finance and Datera Inc.
+  <!--EndFragment-->
+authorInterest: >-
+  Neil has also held roles at BMC/Remedy and Liberate Technologies, including
+  Principal Product Architect and Principal Engineer. Neil has served as a
+  technical advisor for startups Oxygen Finance and Datera Inc.
 
 
   Neil earned a Bachelor’s degree in Computer Software Engineering from Cranfield University.
-
-
-  <!--EndFragment-->
 date: 2022-02-14T11:58:52.773Z
 ---

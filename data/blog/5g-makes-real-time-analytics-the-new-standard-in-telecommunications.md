@@ -1,6 +1,6 @@
 ---
 title: 5G makes real-time analytics the new standard in telecommunications
-author: c835c764-0687-478a-8bd5-4a134b5f68a6
+author: 1f5d5e99-3d0b-42ed-97aa-986473217b93
 description: In the telecommunications business, every consumer and business is
   a potential consumer. That creates a huge universe for monetization
   opportunities.

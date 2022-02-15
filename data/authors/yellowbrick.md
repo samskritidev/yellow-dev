@@ -10,12 +10,16 @@ authorAbout: >-
   <!--StartFragment-->
 
 
-  Yellowbrick is revolutionizing the world of data analytics with the world’s most flexible cloud native data warehouse. Organizations of all sizes rely on Yellowbrick to get answers to their hardest business questions, power their decision-making, and get real-time insights at a fraction of the cost of alternatives. Yellowbrick offers superior price/performance for every business use-case, along with the unique ability to run analytic workloads in public or private clouds, at the network edge, or any combination--with the choice of usage based pricing or predictable fixed cost subscription
+  Yellowbrick is revolutionizing the world of data analytics with the world’s most flexible cloud native data warehouse. Organizations of all sizes rely on Yellowbrick to get answers to their hardest business questions, power their decision-making, and get real-time insights at a fraction of the cost of alternatives. 
 
 
   <!--EndFragment-->
 
 
   <!--EndFragment-->
+authorInterest: Yellowbrick offers superior price/performance for every business
+  use-case, along with the unique ability to run analytic workloads in public or
+  private clouds, at the network edge, or any combination--with the choice of
+  usage based pricing or predictable fixed cost subscription
 date: 2022-02-06T16:01:48.570Z
 ---

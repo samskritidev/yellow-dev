@@ -1,6 +1,6 @@
 ---
 title: Why is Yellowbrick so fast? Secrets of Yellowbrick Data Warehouse architecture
-author: 5e8b4637-2bcd-47c9-8998-045923bbb48e
+author: 1f5d5e99-3d0b-42ed-97aa-986473217b93
 description: Many of the assumptions about data warehouse architecture are
   outdated. Learn how Yellowbrick's modern design concepts will make you
   re-think what a data warehouse can do.

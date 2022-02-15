@@ -279,10 +279,7 @@
                                 </label>
                             </li>
                             <li id="search-box" class="flex list-none font-normal rfs-text-lg p-1 pl-6 cc:px-2 cc:py-1 relative">
-                                <span style="transform: rotate(-45deg);" class="inline-block cursor-pointer pb-2" @click="searchClick"><img src="/uploads/icons/search-icon.svg" class="search-icon" /></span>
-                                <transition name="pusher">
-                                    <search-blog v-show="searchFocus" v-model="searchResults" class="cc:absolute text-transparent" style="top:3px;right:28px;z-index:60;" />
-                                </transition>
+                                <span class="inline-block cursor-pointer pb-2"><search-blog v-model="searchResults" class="text-transparent" /></span>
                             </li>
                         </ul>
 
@@ -382,42 +379,6 @@
         toggle: false,
         menu: [
             {
-                label: 'Industries',
-                show: false,
-                subitems: [
-                    {
-                        label: 'Financial Services',
-                        route: '/solutions/financial-services/',
-                        indent: true
-                    },
-                    {
-                        label: 'Healthcare & Life Sciences',
-                        route: '/solutions/healthcare-life-sciences/',
-                        indent: true
-                    },
-                    {
-                        label: 'Insurance',
-                        route: '/solutions/insurance/',
-                        indent: true
-                    },
-                    {
-                        label: 'Retail',
-                        route: '/solutions/retail/',
-                        indent: true
-                    },
-                    {
-                        label: 'Federal',
-                        route: '/solutions/federal/',
-                        indent: true
-                    },
-                    {
-                        label: 'Telecommunications',
-                        route: '/solutions/telecom/',
-                        indent: true
-                    },
-                ]
-            },
-            {
                 label: 'Our Authors',
                 route: '/our-authors/'
             },
@@ -488,23 +449,13 @@
                 else clearAllBodyScrollLocks()
             },
             searchClick() {
-                this.searchFocus = true
-                this.$nextTick(() => {
-                    document.getElementById('search-box').focus()
-                })
+                
             },
             clickAnywhere(e) {
                 this.menu.forEach((item, x) => {
                     if (!document.getElementById(`menu-${x}`).contains(e.target) && item.show) item.show = false
                 })
-                var ignoreClickOnMeElement = document.getElementById('search-box');
-                var isClickInsideElement = ignoreClickOnMeElement.contains(e.target);
-                if (!isClickInsideElement) {
-                    document.getElementById("search_div").style.display = "none";
-                }
-                else {
-                    document.getElementById("search_div").style.display = "block";
-                }
+                
             },
             pressAnything(e) {
                 if (e.key === 'Escape') {

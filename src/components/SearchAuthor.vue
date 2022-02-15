@@ -4,10 +4,10 @@
 }
 </style>
 <template>
-  <div id="search_div" class="w-full max-w-1200 mx-auto flex flex-row justify-end items-center search_div" style="top:20px;">
-    <input ref="input" class="w-100 text-xl text-black text-xl border border-gray-200 focus:outline-none focus:shadow focus:border-gray-400 rounded px-3 py-2 appearance-none leading-normal bg-white" placeholder="Search Author" type="search" @input="search" @focus="search" @blur="search" @keydown.esc.enter="$refs.input.blur()" v-model="q" />
-    <a v-if="(value) && (value.length >=1)" href="#current_post" class="rfs-text-xl float-left text-black border-gray-200 w-100" v-text="`${value.length} results`" />
-  </div>
+    <div id="search_div" class="w-full max-w-1200 mx-auto flex flex-row justify-end items-center search_div" style="top:20px;">
+        <input ref="input" @blur="search" class="w-100 text-xl text-black text-xl border border-gray-200 focus:outline-none focus:shadow focus:border-gray-400 rounded px-3 appearance-none leading-normal bg-white" placeholder="Search Author" type="text" v-model="q" />
+        <img @click="search" id="search-icon" @keydown.esc.enter="$refs.input.blur()" style="transform: rotate(-45deg); width: 25px; height: 25px; position: absolute; margin-right: 8px; " src="/uploads/icons/search-icon.svg" class="search-icon" />
+    </div>
 </template>
 
 <script>
@@ -57,6 +57,7 @@ export default {
     date(format: "MMMM D YYYY")
     path
     authorAbout
+    authorInterest
     name
     authorImage
     path
