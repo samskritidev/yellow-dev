@@ -271,7 +271,7 @@
                                 <div class="text-black md:pl-20 block">
                                         <template v-if="edge.node.categories">
                                             <div class="categorieslist">
-                                                <a v-for="(category) in edge.node.categories" :key="category.id" v-text="category.title === 'yellowbrick and tpc-ds' ? 'Yellowbrick and TPC-DS' : category.title" @click="handleEvent(`/blog/category/${category.title}`)" :href="`/blog/category/${category.title}`" class="uppercase font-bold brighter-teal block md:mb-0 mr-4 pt-2 pb-8" />
+                                                <a v-for="(category) in edge.node.categories" :key="category.id" v-text="category.title === 'yellowbrick and tpc-ds' ? 'Yellowbrick and TPC-DS' : category.title" @click="handleEvent(`/blog/category/${category.title}`)"  class="uppercase font-bold brighter-teal block md:mb-0 mr-4 pt-2 pb-8" />
                                             </div>
                                          </template>
                                         <a @click="handleEvent(edge.node.path)" :to="edge.node.path"><h4 class="rfs-text-3xl text-black font-bold hidden_test titlename" v-html="edge.node.title" /></a>
