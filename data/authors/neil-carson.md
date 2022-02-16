@@ -7,19 +7,17 @@ authorAbout: >-
   <!--StartFragment-->
 
 
-  Previously, Neil served as Executive Vice President and Chief Technology Officer at Fusion-io where he was responsible for company strategy, product definitions, roadmaps, corporate development and strategic partnerships and key customer acquisitions.
-
-
-  Prior to Fusion-io, Neil was Chief Application Architect at Dell, where he led the platform architecture team across MessageOne, Everdream, Silverback Networks and other acquired development groups. Neil joined Dell through the acquisition of Everdream where he was Chief Architect.
+  Neil co-founded Yellowbrick after having held CTO and Chief Architect positions at companies large and small, including Fusion-io, Dell, Everdream and BMC Software. He currently serves as Yellowbrick’s CEO and de-facto chief architect.
 
 
   <!--EndFragment-->
 authorInterest: >-
-  Neil has also held roles at BMC/Remedy and Liberate Technologies, including
-  Principal Product Architect and Principal Engineer. Neil has served as a
-  technical advisor for startups Oxygen Finance and Datera Inc.
+  <!--StartFragment-->
 
 
-  Neil earned a Bachelor’s degree in Computer Software Engineering from Cranfield University.
+  Neil is a native of the UK and loves travelling, woodworking and cooking. He has a passion for experiencing different cultures and has learned to speak fluent Mandarin and Cantonese.
+
+
+  <!--EndFragment-->
 date: 2022-02-14T11:58:52.773Z
 ---

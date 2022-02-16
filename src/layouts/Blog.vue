@@ -54,7 +54,7 @@
             <section class="bg-gray-500 px-5">
                 <div class="max-w-1400 mx-auto py-12 md:py20 px-6 lg:px-0">
                     <div class="w-full flex flex-row items-center mb-12">
-                        <g-link to="/">
+                        <a @click="handleEvent('/')" to="/">
                             <svg xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 242.7 40.9" xml:space="preserve" style="width:200px;max-width:200px;">
                             <path fill="#f3f6f6" d="M186.5 15.4h3.4v2.8h.1c.2-.5.5-.9.9-1.3s.8-.7 1.3-1 1-.5 1.5-.7c.6-.2 1.1-.2 1.7-.2s1.1.1 1.5.2l-.2 3.7c-.3-.1-.6-.1-.8-.2-.3-.1-.6-.1-.8-.1-1.7 0-3 .5-3.8 1.4-.9.9-1.3 2.4-1.3 4.4v9h-3.4v-18h-.1zM66.2 18L58.6 7.6h-4.4l10.4 13.6v12.2h3.5V21L78.3 7.6h-4.4L66.2 18zM130.9 24.4c0 5.2-4.2 9.5-9.5 9.5s-9.5-4.2-9.5-9.5c0-5.2 4.2-9.5 9.5-9.5s9.5 4.3 9.5 9.5zm-9.4-6.1c-3.4 0-6.1 2.7-6.1 6.1s2.7 6.1 6.1 6.1 6.1-2.7 6.1-6.1-2.8-6.1-6.1-6.1zM82.5 14.9c-5.2 0-9.5 4.2-9.5 9.5s4.2 9.5 9.5 9.5c2.8 0 5.3-1.2 7-3.1l-3-1.7c-1.1.9-2.5 1.5-4 1.5-2.9 0-5.4-2.1-6-4.8h15.3c.1-.4.1-.8.1-1.3 0-5.3-4.2-9.6-9.4-9.6zm0 3.4c2.8 0 5.2 2 5.9 4.6H76.6c.6-2.6 3-4.6 5.9-4.6zM216.6 30.5c-3.4 0-6.1-2.7-6.1-6.1s2.7-6.1 6.1-6.1c1.5 0 2.9.6 4 1.5l3-1.7c-1.7-1.9-4.2-3.2-7-3.2-5.2 0-9.5 4.2-9.5 9.5s4.2 9.5 9.5 9.5c2.8 0 5.3-1.2 7-3.1l-3-1.7c-1.1.8-2.5 1.4-4 1.4zM132.3 15.4h3.8l4 13.5h.1l4.3-13.5h3.6l4.6 13.5h.1l3.8-13.5h3.6l-5.8 18h-3.5l-4.8-13.5h-.1l-4.4 13.5H138l-5.7-18zM199.8 15.4h3.4v18h-3.4v-18zM199.8 8.9h3.4v3.4h-3.4V8.9zM95.8 33.4h3.4V9.6l-3.4-2v25.8zM104.8 33.4h3.4V9.6l-3.4-2v25.8zM173.2 14.9c-2.3 0-4.4.8-6.1 2.2V9.5l-3.4-2v25.8h3.4v-1.8c1.6 1.4 3.8 2.2 6.1 2.2 5.2 0 9.5-4.2 9.5-9.5 0-5-4.3-9.3-9.5-9.3zm0 15.6c-3.4 0-6.1-2.7-6.1-6.1s2.7-6.1 6.1-6.1 6.1 2.7 6.1 6.1-2.7 6.1-6.1 6.1zM233.6 23.6l8.4-8.2h-4.7l-7.8 7.8V9.6l-3.4-2v25.8h3.4v-9.3l8.4 9.3h4.8l-9.1-9.8z" />
                             <path fill="#fdcf41" d="M35.4 0H18.7l-1.8 3.2 8.3 14.5h16.7l1.9-3.2L35.4 0z" />
@@ -66,44 +66,45 @@
                             <path fill="#fdcf41" d="M35.4 40.9l8.4-14.4-1.9-3.2H25.2l-8.3 14.5 1.8 3.1h16.7z" />
                             <path fill="#cf8a00" d="M35.4 40.9l-1.8-3.1H16.9l1.8 3.1h16.7z" />
                             <path fill="#cf8a00" d="M35.4 40.9l-1.8-3.1 8.3-14.5 1.9 3.2-8.4 14.4z" /></svg>
-                        </g-link>
+                        </a>
                     </div>
                     <div class="flex flex-row flex-wrap">
                         <div class="flex flex-wrap w-full lg:w-1/2 mb-10">
 
                             <div class="w-full sm:w-1/2 flex flex-col">
                                 <ul class="list-none p-0 m-0 text-gray-200 leading-loose">
-                                    <li><g-link to="/products/data-warehouse/">Products</g-link></li>
-                                    <li><g-link to="/customers/">Customers</g-link></li>
-                                    <li><g-link to="/resources/">Resource Library</g-link></li>
-                                    <li><g-link to="/company/partners/">Partners</g-link></li>
-                                    <li><g-link to="/company#teammembers">Team</g-link></li>
-                                    <li><g-link to="https://support.yellowbrick.io/">Customer Center</g-link></li>
+                                    <li><a @click="handleEvent('/products/data-warehouse/')" to="/products/data-warehouse/">Products</a></li>
+                                    <li><a @click="handleEvent('/customers/')" to="/customers/">Customers</a></li>
+                                    <li><a @click="handleEvent('/resources/')" to="/resources/">Resource Library</a></li>
+                                    <li><a @click="handleEvent('/company/partners/')" to="/company/partners/">Partners</a></li>
+                                    <li><a @click="handleEvent('/company#teammembers')" to="/company#teammembers">Team</a></li>
+                                    <li><a @click="handleEvent('https://support.yellowbrick.io/')" to="https://support.yellowbrick.io/">Customer Center</a></li>
                                 </ul>
                             </div>
 
                             <div class="w-full sm:w-1/2 flex flex-col">
                                 <ul class="list-none p-0 m-0 text-gray-200 leading-loose">
+  
                                     <li>
-                                        <g-link to="/contact-us/">Contact Us</g-link>
+                                        <a @click="handleEvent('/contact-us/')" to="/contact-us/">Contact Us</a>
                                     </li>
                                     <li>
-                                        <g-link to="/company/careers/">Careers</g-link>
+                                        <a @click="handleEvent('/company/careers/')" to="/company/careers/">Careers</a>
                                     </li>
                                     <li>
-                                        <g-link to="/resources/webcasts/">Virtual Events</g-link>
+                                        <a @click="handleEvent('/resources/webcasts/')" to="/resources/webcasts/">Virtual Events</a>
                                     </li>
                                     <li>
-                                        <g-link to="/blog/">Blog</g-link>
+                                        <a @click="handleEvent('/blog/')" to="/blog/">Blog</a>
                                     </li>
                                     <li>
-                                        <g-link to="/newsroom/">News</g-link>
+                                        <a @click="handleEvent('/newsroom/')" to="/newsroom/">News</a>
                                     </li>
                                     <li>
-                                        <g-link to="/company/">Company</g-link>
+                                        <a @click="handleEvent('/company/')" to="/company/">Company</a>
                                     </li>
                                     <li>
-                                        <g-link to="/terms/">Terms & Privacy Policy</g-link>
+                                        <a @click="handleEvent('/terms/')" to="/terms/">Terms & Privacy Policy</a>
                                     </li>
                                 </ul>
                             </div>

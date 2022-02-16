@@ -1,23 +1,145 @@
+
+<script>
+    import Layout from '~/layouts/Blog.vue'
+    import {
+        disableBodyScroll,
+        clearAllBodyScrollLocks
+    } from 'body-scroll-lock'
+    import {
+        Pager
+    } from 'gridsome'
+    import SearchBlog from '~/components/SearchBlog.vue'
+    export default {
+        components: {
+            Layout,
+            Pager,
+            SearchBlog,
+        },
+        data: () => ({
+            categories: [],
+            searchResults: null,
+            toggle: false,
+            menu: [
+                {
+                    label: 'Our Authors',
+                    route: '/our-authors/'
+                },
+            ],
+            showDrawer: false,
+            searchFocus: false,
+            openNav: false,
+        }),
+        metaInfo() {
+            return {
+                title: this.$page.category.title,
+                meta: [{
+                    key: 'description',
+                    name: 'description',
+                    content: 'Find blogs related to this Topic.'
+                }]
+            }
+        },
+        mounted() {
+            if (this.$page?.featuredBlog?.edges?.length > 0) {
+                this.featuredBlog = this.$page.featuredBlog.edges[0].node;
+            }
+            if (this.$page?.allCategory?.edges?.length > 0) {
+                this.$page.allCategory.edges.forEach((category) => {
+                    this.categories.push(category.node);
+                })
+                this.categories.sort(function (a, b) {
+                    let optA = a.title.toUpperCase();
+                    let optB = b.title.toUpperCase();
+                    return (optA < optB) ? -1 : (optA > optB) ? 1 : 0;
+                });
+            }
+            // temp code to remove old service workers
+            self.addEventListener('install', function (e) {
+                self.skipWaiting();
+            });
+
+            self.addEventListener('activate', function (e) {
+                self.registration.unregister()
+                    .then(function () {
+                        return self.clients.matchAll();
+                    })
+                    .then(function (clients) {
+                        clients.forEach(client => client.navigate(client.url))
+                    });
+            });
+
+            clearAllBodyScrollLocks()
+            document.addEventListener('click', this.clickAnywhere)
+            document.addEventListener('keydown', this.pressAnything)
+            document.addEventListener('scroll', this.scrollAnytime)
+
+            setTimeout(function (document) {
+                if (!document)
+                    return;
+                const path = 'https://www.yellowbrick.com' + document.location.pathname;
+            }(document))
+        },
+        beforeDestroy() {
+            document.removeEventListener('click', this.clickAnywhere)
+            document.removeEventListener('keydown', this.pressAnything)
+            document.removeEventListener('scroll', this.scrollAnytime)
+        },
+        methods: {
+            handleEvent(open) {
+                window.location.href = open;
+            },
+            toggleDrawer(open) {
+                this.showDrawer = open
+                if (open) disableBodyScroll(this.$refs.drawer)
+                else clearAllBodyScrollLocks()
+            },
+            searchClick() {
+
+            },
+            clickAnywhere(e) {
+                this.menu.forEach((item, x) => {
+                    if (!document.getElementById(`menu-${x}`).contains(e.target) && item.show) item.show = false
+                })
+
+            },
+            pressAnything(e) {
+                if (e.key === 'Escape') {
+                    this.showDrawer = false
+                    this.searchFocus = false
+                    this.menu.forEach((item, x) => {
+                        if (item.show) item.show = false
+                    })
+                }
+            }
+        },
+    }
+</script>
 <style scoped>
-.brighter-teal {
-    color: #00c3d7;
-}
-.accent-yellow:after {
-    height: 0 !important;
-}
-.accent-yellow {
-    margin-right: 1.5rem !important;
-}
+    .brighter-teal {
+        color: #00c3d7;
+    }
+
+    .accent-yellow:after {
+        height: 0 !important;
+    }
+
+    .accent-yellow {
+        margin-right: 1.5rem !important;
+    }
+
     .menu-item span, .menu-item a {
         font-weight: normal;
     }
+
     .main-nav-link a {
         text-transform: capitalize;
     }
-  .overline {
-    border-top: 5px solid #FFCD32;
-    font-weight: 600;
-  }
+
+    .overline {
+        border-top: 5px solid #FFCD32;
+        font-weight: 600;
+    }
+
     #topnav {
         border-bottom: 1px solid black;
     }
@@ -26,8 +148,8 @@
         background-color: #FFCD32;
         color: black;
         padding: 5px 15px 5px 15px;
-
     }
+
     .titlename {
         margin-bottom: 2px !important;
         padding-bottom: 0 !important;
@@ -150,27 +272,37 @@
         color: white;
         padding: 5px 15px 5px 15px;
     }
+
     .main-box {
         padding: 1.334% 5px;
-        &:hover {
-      & .arrow-only {
+        &:hover
+
+    {
+        & .arrow-only
+
+    {
         @apply text-teal;
+        &:after
 
-        &:after {
-          transform: translateX(10px);
-          cursor: pointer;
-          color: teal;
-        }
-      }
+    {
+        transform: translateX(10px);
+        cursor: pointer;
+        color: teal;
     }
-  }
 
-  .current-post {
-    & .arrow-only-white {
-      @apply flex flex-row relative items-baseline rfs-text-base font-normal text-white;
-      transition: all .2s ease;
+    }
+    }
+    }
 
-      &:after {
+    .current-post {
+        & .arrow-only-white
+
+    {
+        @apply flex flex-row relative items-baseline rfs-text-base font-normal text-white;
+        transition: all .2s ease;
+        &:after
+
+    {
         @apply flex ml-2;
         content: '';
         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 30'%3E%3Cpath d='M47.2 13.2L34 .7c-1-1-2.6-.9-3.6.1s-.9 2.6.1 3.6l8.6 8.1H2.5C1.1 12.5 0 13.6 0 15s1.1 2.5 2.5 2.5h36.6l-8.6 8.1c-1 1-1.1 2.6-.1 3.6.5.5 1.2.8 1.8.8.6 0 1.3-.2 1.7-.7l13.2-12.5c.5-.5.8-1.1.8-1.8.1-.7-.2-1.4-.7-1.8z' fill='%231f292e'/%3E%3C/svg%3E ");
@@ -179,46 +311,54 @@
         height: 10px;
         transform: translateX(0);
         transition: all .2s ease;
-      }
+    }
+
     }
 
     &:hover {
-      & .arrow-only-white {
+        & .arrow-only-white
+
+    {
         @apply text-teal;
+        &:after
 
-        &:after {
-          transform: translateX(10px);
-          cursor: pointer;
-          color: teal;
-        }
-      }
-    }
-  }
-
-  .arrow-only {
-    @apply flex flex-row relative items-baseline rfs-text-base font-normal;
-    transition: all .2s ease;
-
-    &:after {
-      @apply flex ml-2;
-      content: '';
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 30'%3E%3Cpath d='M47.2 13.2L34 .7c-1-1-2.6-.9-3.6.1s-.9 2.6.1 3.6l8.6 8.1H2.5C1.1 12.5 0 13.6 0 15s1.1 2.5 2.5 2.5h36.6l-8.6 8.1c-1 1-1.1 2.6-.1 3.6.5.5 1.2.8 1.8.8.6 0 1.3-.2 1.7-.7l13.2-12.5c.5-.5.8-1.1.8-1.8.1-.7-.2-1.4-.7-1.8z' fill='%231f292e'/%3E%3C/svg%3E ");
-      width: 16px;
-      height: 10px;
-      transform: translateX(0);
-      transition: all .2s ease;
-    }
-
-    &:hover {
-      @apply text-teal;
-
-      &:after {
+    {
         transform: translateX(10px);
         cursor: pointer;
         color: teal;
-      }
     }
-  }
+
+    }
+    }
+    }
+
+    .arrow-only {
+        @apply flex flex-row relative items-baseline rfs-text-base font-normal;
+        transition: all .2s ease;
+        &:after
+
+    {
+        @apply flex ml-2;
+        content: '';
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 30'%3E%3Cpath d='M47.2 13.2L34 .7c-1-1-2.6-.9-3.6.1s-.9 2.6.1 3.6l8.6 8.1H2.5C1.1 12.5 0 13.6 0 15s1.1 2.5 2.5 2.5h36.6l-8.6 8.1c-1 1-1.1 2.6-.1 3.6.5.5 1.2.8 1.8.8.6 0 1.3-.2 1.7-.7l13.2-12.5c.5-.5.8-1.1.8-1.8.1-.7-.2-1.4-.7-1.8z' fill='%231f292e'/%3E%3C/svg%3E ");
+        width: 16px;
+        height: 10px;
+        transform: translateX(0);
+        transition: all .2s ease;
+    }
+
+    &:hover {
+        @apply text-teal;
+        &:after
+
+    {
+        transform: translateX(10px);
+        cursor: pointer;
+        color: teal;
+    }
+
+    }
+    }
 </style>
 
 <template>
@@ -236,9 +376,9 @@
                         <div :class="[showDrawer ? 'bg-transparent-75' : 'hidden']" class="fixed cc:hidden inset-0 trans-bg-color" @click="toggleDrawer(false)" />
                         <ul ref="drawer" :style="{ right: showDrawer ? '0px' : '-100%' }" style="transition: right 0.25s ease;" class="fixed z-100 cc:static cc:flex items-center inset-y-0 h-screen cc:h-auto bg-black cc:bg-transparent w-full cc:w-auto m-0 mobile-menu">
                             <li class="cc:hidden flex justify-between p-2">
-                                <g-link to="/" class="p-2 pl-4">
+                                <a @click="handleEvent('/')" to="/" class="p-2 pl-4">
                                     <img alt="Yellowbrick Data Logo" src="/uploads/images/yb-logo-dark.svg" width="130" />
-                                </g-link>
+                                </a>
                                 <div :class="{ hidden: !showDrawer }" class="p-2" @click="toggleDrawer(false)">
                                     <button id="close"></button>
                                 </div>
@@ -247,13 +387,13 @@
                             <li class="flex relative text-black trans-bg-color pl-0 text-base hover:text-yellow1 menu-item cc:px-3 lg:px-6" @click='toggle = !toggle'>
                                 <label aria-haspopup="true" class="w-full relative">
                                     <div class="flex flex-row items-center">
-                                        <g-link to="/blog" class="flex items-center cursor-pointer p-2 pl-6 cc:px-2 cc:py-2">Categories</g-link>
+                                         <a @click="handleEvent('/blog/')" to="/blog" class="flex items-center cursor-pointer p-2 pl-6 cc:px-2 cc:py-2">Categories</a>
                                         <span class="nav-arrow text-black" />
                                     </div>
                                     <transition name="slider">
                                         <ul v-show='toggle' class="cc:absolute py-3 whitespace-no-wrap bg-yellow1 cc:mt-4 min-w-full cc:min-w-200 rounded-sm submenu" aria-label="submenu">
                                             <li class="main-nav-link" v-for="category in this.categories" :key="category.id">
-                                                <g-link :to="category.path" aria-haspopup="true" class="flex px-8 py-2 cc:px-2 w-full"> {{ category.title }} </g-link>
+                                                <a @click="handleEvent(category.path)" aria-haspopup="true" class="flex px-8 py-2 cc:px-2 w-full"> {{ category.title }} </a>
                                             </li>
                                         </ul>
                                     </transition>
@@ -263,7 +403,7 @@
 
                             <li v-for="(item, x) in menu" :key="x" :id="`menu-${x}`" class="flex cc:px-3 lg:px-6 relative text-black trans-bg-color pl-0 text-base hover:text-yellow1 menu-item" :class="{'cc:pl-3 lg:pl-6' : x === 0, 'cc:pl-3 lg:pl-6' : x === Object.keys(menu).length - 2, 'cc:pl-3 lg:pl-6' : x !== 0 && x !== Object.keys(menu).length - 2}"
                                 @click="item.show = !item.show">
-                                <g-link v-if="item.route" :to="item.route" class="p-2 px-6 cc:px-2 cc:py-2">{{ item.label }}</g-link>
+                                <a @click="handleEvent(item.route)" v-if="item.route" :to="item.route" class="p-2 px-6 cc:px-2 cc:py-2">{{ item.label }}</a>
                                 <label v-else aria-haspopup="true" class="w-full relative">
                                     <div class="flex flex-row items-center">
                                         <span v-text="item.label" class="flex items-center cursor-pointer p-2 pl-6 cc:px-2 cc:py-2" />
@@ -272,8 +412,8 @@
                                     <transition name="slider">
                                         <ul v-show="item.show" class="cc:absolute py-3 whitespace-no-wrap bg-yellow1 cc:mt-4 min-w-full cc:min-w-200 rounded-sm submenu" aria-label="submenu">
                                             <li v-for="(subitem, y) in item.subitems" :key="y" class="main-nav-link" :class="{'child' : subitem.indent, 'parent' : subitem.parent}">
-                                                <g-link :to="subitem.route" aria-haspopup="true" class="flex px-8 py-2 cc:px-2 w-full">{{ subitem.label }}</g-link>
-                                            </li>
+                                                <a @click="handleEvent(subitem.route)" :to="subitem.route" aria-haspopup="true" class="flex px-8 py-2 cc:px-2 w-full">{{ subitem.label }}</a>
+</li>
                                         </ul>
                                     </transition>
                                 </label>
@@ -301,11 +441,11 @@
             <div class="flex flex-col max-w-1200 w-full mx-auto">
                 <ul class="m-0 py-8 mx-auto">
                     <li class="accent-yellow">
-                        <g-link to="/blog/">All</g-link>
+                        <a @click="handleEvent('/blog/')" to="/blog/">All</a>
                     </li>
                     <li class="accent-yellow" v-for="category in this.categories" :key="category.id" :class="{ 'active': $page.category.title === category.title }">
-                        <g-link :to="category.path"> {{ category.title }} </g-link>
-                    </li>
+                        <a @click="handleEvent(category.path)" :to="category.path"> {{ category.title }} </a>
+</li>
                 </ul>
             </div>
         </section>
@@ -316,37 +456,37 @@
                         <div class="flex flex-col md:flex-row max-w-1200 w-full  mx-auto relative border">
                             <div :to="edge.node.path" class="w-full md:w-2/5">
                                 <div class="text-white">
-                                    <g-link :to="edge.node.path">
-                                    <img v-if="edge.node.thumbnailImage" class="featured_image" :src="`${edge.node.thumbnailImage}`" />
-                                    <img v-else class="featured_image" :src="`${edge.node.coverImage}`" />
-                                    </g-link>
+                                    <a @click="handleEvent(edge.node.path)":to="edge.node.path">
+                                        <img v-if="edge.node.thumbnailImage" class="featured_image" :src="`${edge.node.thumbnailImage}`" />
+                                        <img v-else class="featured_image" :src="`${edge.node.coverImage}`" />
+                                    </a>
                                 </div>
                             </div>
                             <div class="w-full md:w-4/5 p-2">
                                 <div class="text-black md:pl-20 block">
                                     <div class="categorieslist">
                                         <template v-if="edge.node.categories">
-                                            <a v-for="(category) in edge.node.categories" :key="category.id" v-text="category.title === 'yellowbrick and tpc-ds' ? 'Yellowbrick and TPC-DS' : category.title" :href="`/blog/category/${category.title}`" class="uppercase font-bold brighter-teal block md:mb-0 mr-4 pt-2 pb-8" />
+                                            <a v-for="(category) in edge.node.categories" :key="category.id" v-text="category.title === 'yellowbrick and tpc-ds' ? 'Yellowbrick and TPC-DS' : category.title" @click="handleEvent(`/blog/category/${category.title}`)" :href="`/blog/category/${category.title}`" class="uppercase font-bold brighter-teal block md:mb-0 mr-4 pt-2 pb-8" />
                                         </template>
                                     </div>
-                                        <g-link :to="edge.node.path"><h4 class="rfs-text-3xl text-black font-bold hidden_test titlename" v-html="edge.node.title" /></g-link>
-                                        <p class="rfs-text-base leading-tight font-normal  pt-4 pb-1 hidden_test" v-html="edge.node.description" />
+                                    <a @click="handleEvent(edge.node.path)" :to="edge.node.path"><h4 class="rfs-text-3xl text-black font-bold hidden_test titlename" v-html="edge.node.title" /></a>
+                                    <p class="rfs-text-base leading-tight font-normal  pt-4 pb-1 hidden_test" v-html="edge.node.description" />
 
-                                        <div class="flex">
-                                            <div v-if="edge.node.author.authorImage" class="w-1/7 mr-6">
-                                            <g-link :to="edge.node.author.path">
+                                    <div class="flex">
+                                        <div v-if="edge.node.author.authorImage" class="w-1/7 mr-6">
+                                            <a @click="handleEvent(edge.node.author.path)" :to="edge.node.author.path">
                                                 <img :src="`${edge.node.author.authorImage}`" style=" border-radius: 50%" class="w-16" />
-                                            </g-link>
-                                            </div>
-                                            <div class="md:w-2/3 authorname">
-                                                <g-link :to="edge.node.author.path">
-                                                    <p class="featured-author font-bold mt-1" v-text="edge.node.author.name" />
-                                                </g-link>
-                                                <p class="font-normal mb-0" v-text="edge.node.date" />
-                                            </div>
+                                            </a>
+                                        </div>
+                                        <div class="md:w-2/3 authorname">
+                                            <a @click="handleEvent(edge.node.author.path)" :to="edge.node.author.path">
+                                                <p class="featured-author font-bold mt-1" v-text="edge.node.author.name" />
+                                            </a>
+                                            <p class="font-normal mb-0" v-text="edge.node.date" />
                                         </div>
                                     </div>
                                 </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -357,118 +497,6 @@
     </Layout>
 </template>
 
-<script>
-    import Layout from '~/layouts/Blog.vue'
-    import {
-        disableBodyScroll,
-        clearAllBodyScrollLocks
-    } from 'body-scroll-lock'
-    import {
-        Pager
-    } from 'gridsome'
-    import SearchBlog from '~/components/SearchBlog.vue'
-  export default {
-        components: {
-          Layout,
-          Pager,
-            SearchBlog,
-        },
-    data: () => ({
-          categories: [],
-        searchResults: null,
-        toggle: false,
-        menu: [
-            {
-                label: 'Our Authors',
-                route: '/our-authors/'
-            },
-        ],
-        showDrawer: false,
-        searchFocus: false,
-        openNav: false,
-    }),
-    metaInfo() {
-      return {
-        title: this.$page.category.title,
-        meta: [{
-          key: 'description',
-          name: 'description',
-          content: 'Find blogs related to this Topic.'
-        }]
-      }
-        },
-        mounted() {
-            if (this.$page?.featuredBlog?.edges?.length > 0) {
-                this.featuredBlog = this.$page.featuredBlog.edges[0].node;
-            }
-            if (this.$page?.allCategory?.edges?.length > 0) {
-                this.$page.allCategory.edges.forEach((category) => {
-                    this.categories.push(category.node);
-                })
-                this.categories.sort(function (a, b) {
-                    let optA = a.title.toUpperCase();
-                    let optB = b.title.toUpperCase();
-                    return (optA < optB) ? -1 : (optA > optB) ? 1 : 0;
-                });
-            }
-            // temp code to remove old service workers
-            self.addEventListener('install', function (e) {
-                self.skipWaiting();
-            });
-
-            self.addEventListener('activate', function (e) {
-                self.registration.unregister()
-                    .then(function () {
-                        return self.clients.matchAll();
-                    })
-                    .then(function (clients) {
-                        clients.forEach(client => client.navigate(client.url))
-                    });
-            });
-
-            clearAllBodyScrollLocks()
-            document.addEventListener('click', this.clickAnywhere)
-            document.addEventListener('keydown', this.pressAnything)
-            document.addEventListener('scroll', this.scrollAnytime)
-
-            setTimeout(function (document) {
-                if (!document)
-                    return;
-                const path = 'https://www.yellowbrick.com' + document.location.pathname;
-            }(document))
-        },
-        beforeDestroy() {
-            document.removeEventListener('click', this.clickAnywhere)
-            document.removeEventListener('keydown', this.pressAnything)
-            document.removeEventListener('scroll', this.scrollAnytime)
-        },
-        methods: {
-            toggleDrawer(open) {
-                this.showDrawer = open
-                if (open) disableBodyScroll(this.$refs.drawer)
-                else clearAllBodyScrollLocks()
-            },
-            searchClick() {
-                
-            },
-            clickAnywhere(e) {
-                this.menu.forEach((item, x) => {
-                    if (!document.getElementById(`menu-${x}`).contains(e.target) && item.show) item.show = false
-                })
-                
-            },
-            pressAnything(e) {
-                if (e.key === 'Escape') {
-                    this.showDrawer = false
-                    this.searchFocus = false
-                    this.menu.forEach((item, x) => {
-                        if (item.show) item.show = false
-                    })
-                }
-            }
-        },
-  }
-</script>
 
 <page-query>
     query Category($id: ID!,$page: Int) {

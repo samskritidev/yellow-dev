@@ -219,25 +219,25 @@
                         <div :class="[showDrawer ? 'bg-transparent-75' : 'hidden']" class="fixed cc:hidden inset-0 trans-bg-color" @click="toggleDrawer(false)" />
                         <ul ref="drawer" :style="{ right: showDrawer ? '0px' : '-100%' }" style="transition: right 0.25s ease;" class="fixed z-100 cc:static cc:flex items-center inset-y-0 h-screen cc:h-auto bg-black cc:bg-transparent w-full cc:w-auto m-0 mobile-menu">
                             <li class="cc:hidden flex justify-between p-2">
-                                <g-link to="/" class="p-2 pl-4">
+                                <a @click="handleEvent('/')" class="p-2 pl-4">
                                     <img alt="Yellowbrick Data Logo" src="/uploads/images/yb-logo-dark.svg" width="130" />
-                                </g-link>
-                                <div :class="{ hidden: !showDrawer }" class="p-2" @click="toggleDrawer(false)">
-                                    <button id="close"></button>
-                                </div>
-                            </li>
+                                    </a>
+                                    <div :class="{ hidden: !showDrawer }" class="p-2" @click="toggleDrawer(false)">
+                                        <button id="close"></button>
+                                    </div>
+</li>
 
                             <li class="flex relative text-black trans-bg-color pl-0 text-base hover:text-yellow1 menu-item cc:px-3 lg:px-6" @click='toggle = !toggle'>
                                 <label aria-haspopup="true" class="w-full relative">
                                     <div class="flex flex-row items-center">
-                                        <g-link to="/blog" class="flex items-center cursor-pointer p-2 pl-6 cc:px-2 cc:py-2">Categories</g-link>
+                                        <a @click="handleEvent('/blog/')" class="flex items-center cursor-pointer p-2 pl-6 cc:px-2 cc:py-2">Categories</a>
                                         <span class="nav-arrow text-black" />
                                     </div>
                                     <transition name="slider">
                                         <ul v-show='toggle' class="cc:absolute py-3 whitespace-no-wrap bg-yellow1 cc:mt-4 min-w-full cc:min-w-200 rounded-sm submenu" aria-label="submenu">
                                             <li class="main-nav-link" v-for="category in $page.allCategory.edges" :key="category.node.id">
-                                                <g-link :to="category.node.path" aria-haspopup="true" class="flex px-8 py-2 cc:px-2 w-full"> {{category.node.title }} </g-link>
-                                            </li>
+                                                <a @click="handleEvent(category.node.path)" aria-haspopup="true" class="flex px-8 py-2 cc:px-2 w-full"> {{category.node.title }} </a>
+</li>
                                         </ul>
                                     </transition>
                                 </label>
@@ -246,7 +246,7 @@
 
                             <li v-for="(item, x) in menu" :key="x" :id="`menu-${x}`" class="flex cc:px-3 lg:px-6 relative text-black trans-bg-color pl-0 text-base hover:text-yellow1 menu-item" :class="{'cc:pl-3 lg:pl-6' : x === 0, 'cc:pl-3 lg:pl-6' : x === Object.keys(menu).length - 2, 'cc:pl-3 lg:pl-6' : x !== 0 && x !== Object.keys(menu).length - 2}"
                                 @click="item.show = !item.show">
-                                <g-link v-if="item.route" :to="item.route" class="p-2 px-6 cc:px-2 cc:py-2">{{ item.label }}</g-link>
+                                <a @click="handleEvent(item.route)" v-if="item.route"  class="p-2 px-6 cc:px-2 cc:py-2">{{ item.label }}</a>
                                 <label v-else aria-haspopup="true" class="w-full relative">
                                     <div class="flex flex-row items-center">
                                         <span v-text="item.label" class="flex items-center cursor-pointer p-2 pl-6 cc:px-2 cc:py-2" />
@@ -255,8 +255,8 @@
                                     <transition name="slider">
                                         <ul v-show="item.show" class="cc:absolute py-3 whitespace-no-wrap bg-yellow1 cc:mt-4 min-w-full cc:min-w-200 rounded-sm submenu" aria-label="submenu">
                                             <li v-for="(subitem, y) in item.subitems" :key="y" class="main-nav-link" :class="{'child' : subitem.indent, 'parent' : subitem.parent}">
-                                                <g-link :to="subitem.route" aria-haspopup="true" class="flex px-8 py-2 cc:px-2 w-full">{{ subitem.label }}</g-link>
-                                            </li>
+                                                <a @click="handleEvent(subitem.route)"  aria-haspopup="true" class="flex px-8 py-2 cc:px-2 w-full">{{ subitem.label }}</a>
+</li>
                                         </ul>
                                     </transition>
                                 </label>
@@ -281,7 +281,7 @@
         <section class="px-0 xl:px-0 bg-white pt-8">
             <div class="uppercase max-w-1200 w-full mx-auto font-bold px-4 md:px-20">
                 <template v-if="$page.blog.categories">
-                    <g-link v-for="(category) in $page.blog.categories" :to="category.path"><span :key="category.id" style="margin-top: 50px;margin-bottom: 30px; margin-right:20px;" class="uppercase brighter-teal max-w-1200 w-full  font-bold inline"> {{category.title}}</span></g-link>
+                    <a @click="handleEvent(category.path)" v-for="(category) in $page.blog.categories" :to="category.path"><span :key="category.id" style="margin-top: 50px;margin-bottom: 30px; margin-right:20px;" class="uppercase brighter-teal max-w-1200 w-full  font-bold inline"> {{category.title}}</span></a>
                 </template>
                 <h1 class="detailstitle capitalize rfs-text-5xl text-black font-bold max-w-1200 mx-auto" v-html="$page.blog.title" />
             </div>
@@ -295,14 +295,14 @@
                         <div class="md:flex w-full max-w-1200 mb-4  bg-transparent">
                             <div class="flex flex-row">
                                 <div class="w-32 mr-6">
-                                    <g-link :to="$page.blog.author.path">
+                                    <a @click="handleEvent($page.blog.author.path)" :to="$page.blog.author.path">
                                     <img :src="$page.blog.author.authorImage" style="border-radius: 50%;" />
-                                    </g-link>
+                                    </a>
                                 </div>
                                 <div class="w-full md:w-1/8 author_section">
-                                    <g-link :to="$page.blog.author.path">
+                                    <a @click="handleEvent($page.blog.author.path)" :to="$page.blog.author.path">
                                         <p class="featured-author uppercase font-bold" v-text="$page.blog.author.name" />
-                                    </g-link>
+                                    </a>
                                     <p v-text="$page.blog.author.position" class="font-normal" />
                                     <p v-text="$page.blog.date" class="italic text-sm" />
                                 </div>
@@ -352,6 +352,7 @@
                             </div>
                         </div>
                     </div>
+                    <p><a @click="handleEvent('/blog')">Back to Blog ></a></p>
                     <VueRemarkContent class="font-normal" style="border-bottom: 3px solid #d6d6d6;margin-top:30px;margin-bottom:12px" />
                     <h2 data-v-6b2564f1="" data-v-3c2763e1="" class="font-bold">Blog Comments</h2>
                     <Disqus shortname="yellowbrick-com" :identifier="this.$page.blog.path" />
@@ -359,7 +360,7 @@
                     <template>
                         <div v-for="(author1,index) in $page.blog.categories" v-if="index < 1" :key="author1.id">
                             <div class="w-full flex flex-col md:flex-row announcement-box relatedblogs">
-                                    <g-link v-for="(author,index) in author1.belongsTo.edges" v-if="$page.blog.title != author.node.title" :key="author.node.title" :to="author.node.path" class="flex flex-col w-full md:w-1/2 pb-8">
+                                    <a v-for="(author,index) in author1.belongsTo.edges" v-if="$page.blog.title != author.node.title" :key="author.node.title"  @click="handleEvent(author.node.path)" :to="author.node.path" class="flex flex-col w-full md:w-1/2 pb-8">
                                         <div data-v-4bc9d7de="" class="flex flex-col w-full h-full justify-content-center announcement-box__card bmw-group border">
                                             <div data-v-4bc9d7de="" class="max-w-xl w-full h-full">
                                                 <h4 data-v-4bc9d7de="" class="leading-tight mb-0 w-full text-black">
@@ -371,17 +372,17 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </g-link>
+                                    </a>
                             </div>
                         </div>
                 </template>
                 </div>
                 <div class="md:w-2/6 mx-auto">
                     <div class="authorslist md:ml-12">
-                        <h4 class="font-semibold">Meet Our Authors</h4>
+                        <a @click="handleEvent('/our-authors')" ><h4 class="font-semibold">Meet Our Authors</h4></a>
                         <template v-if="$page.allAuthor.edges">
                             <span class="inline-block border-l-2 border-teal mx-4 text-yellow1"></span>
-                            <a v-for="(author) in $page.allAuthor.edges" :key="author.node.name" class="capitalize text-yellow1 leading-none mr-2 inline" style="float:left"><g-link :to="author.node.path"><img :src="author.node.authorImage" :title="author.node.name" style="width: 50px; height: 50px" class="rounded" /></g-link></a>
+                            <a v-for="(author) in $page.allAuthor.edges" :key="author.node.name" class="capitalize text-yellow1 leading-none mr-2 inline" style="float:left"  @click="handleEvent(author.node.path)" :to="author.node.path"><img :src="author.node.authorImage" :title="author.node.name" style="width: 50px; height: 50px" class="rounded" /></a>
                         </template>
                     </div>
                     <br />
@@ -410,8 +411,11 @@
                                     </script><style>
                                         .gartner-pi-link:hover {
                                             background-image: none !important;
-                                        } 
-                                    .hs-input {
+                                        }
+                                        .gartner-pi-reviews-link {
+                                    display:none;
+                                    }
+                                        .hs-input {
                                             max-width: 300px !important;
                                             border: 1px solid #dedede;
                                             height: 40px;
@@ -473,7 +477,7 @@
             <div class="flex flex-col md:flex-row max-w-1200 w-full mx-auto" style="margin-top:30px;">
                 <span class="uppercase font-semibold" style="float: left; padding: 8px; float: left; font-size: 1.2rem; margin-right: 50px;">CATEGORIES</span>
                 <span class="categorylistblogbottom" style="float:left" v-for="category in $page.allCategory.edges" :key="category.node.id">
-                    <g-link :to="category.node.path" aria-haspopup="true" class="flex px-8 py-2 cc:px-2 w-full capitalize"> {{category.node.title }} </g-link>
+                    <a @click="handleEvent(category.node.path)" :to="category.node.path" aria-haspopup="true" class="flex px-8 py-2 cc:px-2 w-full capitalize"> {{category.node.title }} </a>
                 </span>
             </div>
         </section>
@@ -512,12 +516,12 @@
                     {
                         key: 'og:url',
                         name: 'og:url',
-                        content: 'https://www.yellowbrick.com' + this.$page.blog.path,
+                        content: 'https://yellowbrick-dev1.netlify.app' + this.$page.blog.path,
                     },
                     {
                         key: 'og:image',
                         name: 'og:image',
-                        content: 'https://www.yellowbrick.com' + this.$page.blog.coverImage,
+                        content: 'https://yellowbrick-dev1.netlify.app' + this.$page.blog.coverImage,
                     },
                     {
                         key: 'twitter:title',
@@ -532,12 +536,12 @@
                     {
                         key: 'twitter:image',
                         name: 'twitter:image',
-                        content: 'https://www.yellowbrick.com' + this.$page.blog.coverImage,
+                        content: 'https://yellowbrick-dev1.netlify.app' + this.$page.blog.coverImage,
                     },
                     {
                         key: 'twitter:url',
                         name: 'twitter:url',
-                        content: 'https://www.yellowbrick.com' + this.$page.blog.path,
+                        content: 'https://yellowbrick-dev1.netlify.app' + this.$page.blog.path,
                     }
                 ]
             }
@@ -564,6 +568,9 @@
                 import('vue-script-component'),
         },
         methods: {
+            handleEvent(open) {
+                window.location.href = open;
+            },
             toggleDrawer(open) {
                 this.showDrawer = open
                 if (open) disableBodyScroll(this.$refs.drawer)

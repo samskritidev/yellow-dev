@@ -48,7 +48,7 @@
 
           <div role="navigation" class="text-white z-30 w-full flex flex-wrap justify-end xl:flex-no-wrap">
 
-            <g-link to="/" class="mr-auto flex-auto self-start py-4" aria-label="Yellowbrick Home Page">
+            <a @click="handleEvent('/')"  to="/" class="mr-auto flex-auto self-start py-4" aria-label="Yellowbrick Home Page">
               <svg class="hidden cc:flex lg:hidden" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 43.8 40.9" xml:space="preserve" style="width:100%;max-width:44px;">
                 <path fill="#fdcf41" d="M35.4 0H18.7l-1.8 3.2 8.3 14.5h16.7l1.9-3.2L35.4 0z" />
                 <path fill="#cf8a00" d="M35.4 0l-1.8 3.2 8.3 14.5 1.9-3.2L35.4 0z" />
@@ -73,14 +73,14 @@
                   <path fill="#cf8a00" d="M35.4 40.9l-1.8-3.1 8.3-14.5 1.9 3.2-8.4 14.4z" />
                 </g>
               </svg>
-            </g-link>
+            </a>
 
             <div :class="[showDrawer ? 'bg-transparent-75' : 'hidden']" class="fixed cc:hidden z-40 inset-0 trans-bg-color" @click="toggleDrawer(false)" />
             <ul ref="drawer" :style="{ right: showDrawer ? '0px' : '-100%' }" style="transition: right 0.25s ease;" class="fixed z-50 cc:static cc:flex items-center inset-y-0 h-screen cc:h-auto bg-black cc:bg-transparent w-full cc:w-auto m-0 mobile-menu">
               <li class="cc:hidden flex justify-between p-2">
-                <g-link to="/" class="p-2 pl-4">
+                <a @click="handleEvent('/')"  to="/" class="p-2 pl-4">
                   <img alt="Yellowbrick Data Logo" src="/uploads/images/yb-logo-dark.svg" width="130" />
-                </g-link>
+                </a>
                 <div :class="{ hidden: !showDrawer }" class="p-2" @click="toggleDrawer(false)">
                   <button id="close"></button>
                 </div>
@@ -95,7 +95,7 @@
 
               <li v-for="(item, x) in menu" :key="x" :id="`menu-${x}`" class="flex relative trans-bg-color pl-0 text-base hover:text-yellow1 menu-item" :class="{'cc:pl-0 lg:pl-0' : x === 0, 'cc:pl-2 lg:pl-2' : x === Object.keys(menu).length - 2, 'cc:pl-3 lg:pl-6' : x !== 0 && x !== Object.keys(menu).length - 2}"
                 @click="item.show = !item.show">
-                <g-link v-if="item.route" :to="item.route" class="p-2 px-6 cc:px-2 cc:py-2">{{ item.label }}</g-link>
+                <a v-if="item.route" @click="handleEvent(item.route)" :to="item.route" class="p-2 px-6 cc:px-2 cc:py-2">{{ item.label }}</a>
                 <label v-else aria-haspopup="true" class="w-full relative">
                   <div class="flex flex-row items-center">
                     <span v-text="item.label" class="flex items-center cursor-pointer p-2 pl-6 cc:px-2 cc:py-2" />
@@ -104,17 +104,17 @@
                   <transition name="slider">
                     <ul v-show="item.show" class="cc:absolute py-3 whitespace-no-wrap bg-yellow1 cc:mt-4 min-w-full cc:min-w-200 rounded-sm submenu" aria-label="submenu">
                       <li v-for="(subitem, y) in item.subitems" :key="y" class="main-nav-link" :class="{'child' : subitem.indent, 'parent' : subitem.parent}">
-                        <g-link :to="subitem.route" aria-haspopup="true" class="flex px-8 py-2 cc:px-2 w-full">{{ subitem.label }}</g-link>
+                        <a @click="handleEvent(subitem.route)"  aria-haspopup="true" class="flex px-8 py-2 cc:px-2 w-full">{{ subitem.label }}</a>
                       </li>
                     </ul>
                   </transition>
                 </label>
               </li>
               <li class="flex cc:hidden p-6 justify-center">
-                <a class="button button-sm yellow mx-0 px-4 lg:px-5" href="/test-drive/" aria-haspopup="true">
+                <a class="button button-sm yellow mx-0 px-4 lg:px-5" @click="handleEvent('/test-drive/')" href="/test-drive/" aria-haspopup="true">
                   <span class="whitespace-no-wrap">Test drive</span>
                 </a>
-                <a class="button button-sm yellow mx-0 px-4 lg:px-5" href="/go/book-a-demo/" aria-haspopup="true">
+                <a class="button button-sm yellow mx-0 px-4 lg:px-5" @click="handleEvent('/go/book-a-demo/')" href="/go/book-a-demo/" aria-haspopup="true">
                   <span class="whitespace-no-wrap">Book a demo</span>
                 </a>
               </li>
@@ -123,11 +123,11 @@
             <div class="hidden cc:flex justify-end items-center border-t w-full xl:w-auto cc:border-gray-800 xl:border-0 cc:ml-5">
               <ul class="flex m-0 px-0">
                 <li class="flex pr-1">
-                  <a class="button button-sm yellow mx-0 px-4 lg:px-5" href="/test-drive/" aria-haspopup="true">
+                  <a class="button button-sm yellow mx-0 px-4 lg:px-5" @click="handleEvent('/test-drive/')" href="/test-drive/" aria-haspopup="true">
                     <span class="whitespace-no-wrap">Test drive</span></a>
                 </li>
                 <li class="flex">
-                  <a class="button button-sm yellow mx-0 px-4 lg:px-5" href="/go/book-a-demo/" aria-haspopup="true">
+                  <a class="button button-sm yellow mx-0 px-4 lg:px-5" @click="handleEvent('/go/book-a-demo/')" href="/go/book-a-demo/" aria-haspopup="true">
                     <span class="whitespace-no-wrap">Book a demo</span></a>
                 </li>
               </ul>
@@ -149,7 +149,7 @@
       <section class="bg-gray-500 px-5">
         <div class="max-w-1400 mx-auto py-12 md:py20 px-6 lg:px-0">
           <div class="w-full flex flex-row items-center mb-12">
-            <g-link to="/">
+            <a @click="handleEvent('/')" to="/">
               <svg xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 242.7 40.9" xml:space="preserve" style="width:200px;max-width:200px;">
                 <path fill="#f3f6f6" d="M186.5 15.4h3.4v2.8h.1c.2-.5.5-.9.9-1.3s.8-.7 1.3-1 1-.5 1.5-.7c.6-.2 1.1-.2 1.7-.2s1.1.1 1.5.2l-.2 3.7c-.3-.1-.6-.1-.8-.2-.3-.1-.6-.1-.8-.1-1.7 0-3 .5-3.8 1.4-.9.9-1.3 2.4-1.3 4.4v9h-3.4v-18h-.1zM66.2 18L58.6 7.6h-4.4l10.4 13.6v12.2h3.5V21L78.3 7.6h-4.4L66.2 18zM130.9 24.4c0 5.2-4.2 9.5-9.5 9.5s-9.5-4.2-9.5-9.5c0-5.2 4.2-9.5 9.5-9.5s9.5 4.3 9.5 9.5zm-9.4-6.1c-3.4 0-6.1 2.7-6.1 6.1s2.7 6.1 6.1 6.1 6.1-2.7 6.1-6.1-2.8-6.1-6.1-6.1zM82.5 14.9c-5.2 0-9.5 4.2-9.5 9.5s4.2 9.5 9.5 9.5c2.8 0 5.3-1.2 7-3.1l-3-1.7c-1.1.9-2.5 1.5-4 1.5-2.9 0-5.4-2.1-6-4.8h15.3c.1-.4.1-.8.1-1.3 0-5.3-4.2-9.6-9.4-9.6zm0 3.4c2.8 0 5.2 2 5.9 4.6H76.6c.6-2.6 3-4.6 5.9-4.6zM216.6 30.5c-3.4 0-6.1-2.7-6.1-6.1s2.7-6.1 6.1-6.1c1.5 0 2.9.6 4 1.5l3-1.7c-1.7-1.9-4.2-3.2-7-3.2-5.2 0-9.5 4.2-9.5 9.5s4.2 9.5 9.5 9.5c2.8 0 5.3-1.2 7-3.1l-3-1.7c-1.1.8-2.5 1.4-4 1.4zM132.3 15.4h3.8l4 13.5h.1l4.3-13.5h3.6l4.6 13.5h.1l3.8-13.5h3.6l-5.8 18h-3.5l-4.8-13.5h-.1l-4.4 13.5H138l-5.7-18zM199.8 15.4h3.4v18h-3.4v-18zM199.8 8.9h3.4v3.4h-3.4V8.9zM95.8 33.4h3.4V9.6l-3.4-2v25.8zM104.8 33.4h3.4V9.6l-3.4-2v25.8zM173.2 14.9c-2.3 0-4.4.8-6.1 2.2V9.5l-3.4-2v25.8h3.4v-1.8c1.6 1.4 3.8 2.2 6.1 2.2 5.2 0 9.5-4.2 9.5-9.5 0-5-4.3-9.3-9.5-9.3zm0 15.6c-3.4 0-6.1-2.7-6.1-6.1s2.7-6.1 6.1-6.1 6.1 2.7 6.1 6.1-2.7 6.1-6.1 6.1zM233.6 23.6l8.4-8.2h-4.7l-7.8 7.8V9.6l-3.4-2v25.8h3.4v-9.3l8.4 9.3h4.8l-9.1-9.8z" />
                 <path fill="#fdcf41" d="M35.4 0H18.7l-1.8 3.2 8.3 14.5h16.7l1.9-3.2L35.4 0z" />
@@ -161,44 +161,44 @@
                 <path fill="#fdcf41" d="M35.4 40.9l8.4-14.4-1.9-3.2H25.2l-8.3 14.5 1.8 3.1h16.7z" />
                 <path fill="#cf8a00" d="M35.4 40.9l-1.8-3.1H16.9l1.8 3.1h16.7z" />
                 <path fill="#cf8a00" d="M35.4 40.9l-1.8-3.1 8.3-14.5 1.9 3.2-8.4 14.4z" /></svg>
-            </g-link>
+            </a>
           </div>
           <div class="flex flex-row flex-wrap">
             <div class="flex flex-wrap w-full lg:w-1/2 mb-10">
 
               <div class="w-full sm:w-1/2 flex flex-col">
                 <ul class="list-none p-0 m-0 text-gray-200 leading-loose">
-                  <li><g-link to="/products/data-warehouse/">Products</g-link></li>
-                  <li><g-link to="/customers/">Customers</g-link></li>
-                  <li><g-link to="/resources/">Resource Library</g-link></li>
-                  <li><g-link to="/company/partners/">Partners</g-link></li>
-                  <li><g-link to="/company#teammembers">Team</g-link></li>
-                  <li><g-link to="https://support.yellowbrick.io/">Customer Center</g-link></li>
+                  <li><a @click="handleEvent('/products/data-warehouse/')" to="/products/data-warehouse/">Products</a></li>
+                  <li><a @click="handleEvent('/customers/')" to="/customers/">Customers</a></li>
+                  <li><a @click="handleEvent('/resources/')" to="/resources/">Resource Library</a></li>
+                  <li><a @click="handleEvent('/company/partners/')" to="/company/partners/">Partners</a></li>
+                  <li><a @click="handleEvent('/company#teammembers')" to="/company#teammembers">Team</a></li>
+                  <li><a @click="handleEvent('https://support.yellowbrick.io/')" to="https://support.yellowbrick.io/">Customer Center</a></li>
                 </ul>
               </div>
 
               <div class="w-full sm:w-1/2 flex flex-col">
                 <ul class="list-none p-0 m-0 text-gray-200 leading-loose">
                   <li>
-                    <g-link to="/contact-us/">Contact Us</g-link>
+                    <a @click="handleEvent('/contact-us/')" to="/contact-us/">Contact Us</a>
                   </li>
                   <li>
-                    <g-link to="/company/careers/">Careers</g-link>
+                    <a @click="handleEvent('/company/careers/')" to="/company/careers/">Careers</a>
                   </li>
                   <li>
-                    <g-link to="/resources/webcasts/">Virtual Events</g-link>
+                    <a @click="handleEvent('/resources/webcasts/')" to="/resources/webcasts/">Virtual Events</a>
                   </li>
                   <li>
-                    <g-link to="/blog/">Blog</g-link>
+                    <a @click="handleEvent('/blog/')" to="/blog/">Blog</a>
                   </li>
                   <li>
-                    <g-link to="/newsroom/">News</g-link>
+                    <a @click="handleEvent('/newsroom/')" to="/newsroom/">News</a>
                   </li>
                   <li>
-                    <g-link to="/company/">Company</g-link>
+                    <a @click="handleEvent('/company/')" to="/company/">Company</a>
                   </li>
                   <li>
-                    <g-link to="/terms/">Terms & Privacy Policy</g-link>
+                    <a @click="handleEvent('/terms/')" to="/terms/">Terms & Privacy Policy</a>
                   </li>
                 </ul>
               </div>
@@ -491,7 +491,10 @@
       document.removeEventListener('keydown', this.pressAnything)
       document.removeEventListener('scroll', this.scrollAnytime)
     },
-    methods: {
+        methods: {
+            handleEvent(open) {
+                window.location.href = open;
+            },
       toggleDrawer(open) {
         this.showDrawer = open
         if (open) disableBodyScroll(this.$refs.drawer)

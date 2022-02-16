@@ -225,9 +225,9 @@
                         <div :class="[showDrawer ? 'bg-transparent-75' : 'hidden']" class="fixed cc:hidden  inset-0 trans-bg-color" @click="toggleDrawer(false)" />
                         <ul ref="drawer" :style="{ right: showDrawer ? '0px' : '-100%' }" style="transition: right 0.25s ease;" class="fixed z-100 cc:static cc:flex items-center inset-y-0 h-screen cc:h-auto bg-black cc:bg-transparent w-full cc:w-auto m-0 mobile-menu">
                             <li class="cc:hidden flex justify-between p-2">
-                                <g-link to="/" class="p-2 pl-4">
+                                <a @click="handleEvent('/')" to="/" class="p-2 pl-4">
                                     <img alt="Yellowbrick Data Logo" src="/uploads/images/yb-logo-dark.svg" width="130" />
-                                </g-link>
+                                </a>
                                 <div :class="{ hidden: !showDrawer }" class="p-2" @click="toggleDrawer(false)">
                                     <button id="close"></button>
                                 </div>
@@ -236,13 +236,13 @@
                             <li @click='toggle = !toggle' class="flex relative text-black trans-bg-color pl-0 text-base hover:text-yellow1 menu-item cc:px-3 lg:px-6">
                                 <label aria-haspopup="true" class="w-full relative">
                                     <div class="flex flex-row items-center">
-                                        <g-link to="/blog" class="flex items-center cursor-pointer p-2 pl-6 cc:px-2 cc:py-2">Categories</g-link>
+                                        <a @click="handleEvent('/blog/')" to="/blog" class="flex items-center cursor-pointer p-2 pl-6 cc:px-2 cc:py-2">Categories</a>
                                         <span class="nav-arrow text-black" />
                                     </div>
                                     <transition name="slider">
                                         <ul v-show='toggle' class="cc:absolute py-3 whitespace-no-wrap bg-yellow1 cc:mt-4 min-w-full cc:min-w-200 rounded-sm submenu" aria-label="submenu">
                                             <li class="main-nav-link" v-for="category in this.categories" :key="category.id">
-                                                <g-link :to="category.path" aria-haspopup="true" class="flex px-8 py-2 cc:px-2 w-full"> {{ category.title }} </g-link>
+                                                <a @click="handleEvent(category.path)" aria-haspopup="true" class="flex px-8 py-2 cc:px-2 w-full"> {{ category.title }} </a>
                                             </li>
                                         </ul>
                                     </transition>
@@ -252,7 +252,7 @@
 
                             <li v-for="(item, x) in menu" :key="x" :id="`menu-${x}`" class="flex cc:px-3 lg:px-6 relative text-black trans-bg-color pl-0 text-base hover:text-yellow1 menu-item" :class="{'cc:pl-3 lg:pl-6' : x === 0, 'cc:pl-3 lg:pl-6' : x === Object.keys(menu).length - 2, 'cc:pl-3 lg:pl-6' : x !== 0 && x !== Object.keys(menu).length - 2}"
                                 @click="item.show = !item.show">
-                                <g-link v-if="item.route" :to="item.route" class="p-2 px-6 cc:px-2 cc:py-2">{{ item.label }}</g-link>
+                                <a @click="handleEvent(item.route)" v-if="item.route" :to="item.route" class="p-2 px-6 cc:px-2 cc:py-2">{{ item.label }}</a>
                                 <label v-else aria-haspopup="true" class="w-full relative">
                                     <div class="flex flex-row items-center">
                                         <span v-text="item.label" class="flex items-center cursor-pointer p-2 pl-6 cc:px-2 cc:py-2" />
@@ -261,7 +261,7 @@
                                     <transition name="slider">
                                         <ul v-show="item.show" class="cc:absolute py-3 whitespace-no-wrap bg-yellow1 cc:mt-4 min-w-full cc:min-w-200 rounded-sm submenu" aria-label="submenu">
                                             <li v-for="(subitem, y) in item.subitems" :key="y" class="main-nav-link" :class="{'child' : subitem.indent, 'parent' : subitem.parent}">
-                                                <g-link :to="subitem.route" aria-haspopup="true" class="flex px-8 py-2 cc:px-2 w-full">{{ subitem.label }}</g-link>
+                                                <a @click="handleEvent(subitem.route)" :to="subitem.route" aria-haspopup="true" class="flex px-8 py-2 cc:px-2 w-full">{{ subitem.label }}</a>
                                             </li>
                                         </ul>
                                     </transition>
@@ -290,16 +290,16 @@
                 <div class="flex flex-row flex-wrap pt-8 pb-8">
                     <div v-for="edge in searchResults ? searchResults : $page.allAuthor.edges" :key="edge.node.id" class="flex flex-col w-full relative current-post pb-10">
                         <div class="flex flex-col md:flex-row max-w-1200 w-full mx-auto">
-                            <g-link :to="edge.node.path" class="w-full md:w-1/3 mr-12">
+                            <a @click="handleEvent(edge.node.path)" :to="edge.node.path" class="w-full md:w-1/3 mr-12">
                                 <div class="text-white">                                    
                                     <img class="featured_image" :src="`${edge.node.authorImage}`" />                                    
                                 </div>
-                            </g-link>
+                            </a>
                             <div class="w-full md:w-1/1">
                                 <div class="text-black">
                                     <!-- <h6 class="text-yellow2 hidden md:block">Data Warehouse Modernization</h6> -->
 
-                                    <g-link :to="edge.node.path"><h4 class="rfs-text-3xl uppercase font-bold authorName" v-html="edge.node.name" /></g-link>
+                                    <a @click="handleEvent(edge.node.path)" :to="edge.node.path"><h4 class="rfs-text-3xl uppercase font-bold authorName" v-html="edge.node.name" /></a>
                                     <p class="featured-author brighter-teal" v-text="edge.node.position" />
                                     <p class="rfs-text-base leading-tight font-normal author-about hidden_test" v-html="edge.node.authorAbout"></p>
                                     <p class="rfs-text-base leading-tight font-normal author-about hidden_test" v-html="edge.node.authorInterest"></p>
@@ -363,6 +363,9 @@
             event.target.src = "/uploads/author.png"
         },
         methods: {
+            handleEvent(open) {
+                window.location.href = open;
+            },
             toggleDrawer(open) {
                 this.showDrawer = open
                 if (open) disableBodyScroll(this.$refs.drawer)

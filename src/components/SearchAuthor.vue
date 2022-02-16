@@ -54,6 +54,7 @@ export default {
     node {
     id
     name
+    position
     date(format: "MMMM D YYYY")
     path
     authorAbout

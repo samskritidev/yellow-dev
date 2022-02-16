@@ -460,8 +460,10 @@
     <Layout>
         <base-section :classNames="'hero flex pt-24 pb-12 md:pt-20 md:pb-10 px-5 xl:px-0'">
             <div class="w-full lg:w-5/6 z-10">
-                <h3 class="rfs-text-5xl text-white sub-title mb-6 md:pt-16">Run all your data anywhere.<br>
-                <span class="text-yellow1">Yellowbrick Data Warehouse</span></h3>
+                <h3 class="rfs-text-5xl text-white sub-title mb-6 md:pt-16">
+                    Run all your data anywhere. Across cloud and on-premises.<br>
+                    <span class="text-yellow1">Yellowbrick Data Warehouse</span>
+                </h3>
 </h3>
             </div>            <div class="flex flex-col w-full md:max-w-1200 mx-auto lg:pt-6">
                 <div class="z-10 relative lg:w-5/6">
