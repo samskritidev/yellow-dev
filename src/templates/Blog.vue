@@ -221,11 +221,11 @@
                             <li class="cc:hidden flex justify-between p-2">
                                 <a @click="handleEvent('/')" class="p-2 pl-4">
                                     <img alt="Yellowbrick Data Logo" src="/uploads/images/yb-logo-dark.svg" width="130" />
-                                    </a>
-                                    <div :class="{ hidden: !showDrawer }" class="p-2" @click="toggleDrawer(false)">
-                                        <button id="close"></button>
-                                    </div>
-</li>
+                                </a>
+                                <div :class="{ hidden: !showDrawer }" class="p-2" @click="toggleDrawer(false)">
+                                    <button id="close"></button>
+                                </div>
+                            </li>
 
                             <li class="flex relative text-black trans-bg-color pl-0 text-base hover:text-yellow1 menu-item cc:px-3 lg:px-6" @click='toggle = !toggle'>
                                 <label aria-haspopup="true" class="w-full relative">
@@ -237,7 +237,7 @@
                                         <ul v-show='toggle' class="cc:absolute py-3 whitespace-no-wrap bg-yellow1 cc:mt-4 min-w-full cc:min-w-200 rounded-sm submenu" aria-label="submenu">
                                             <li class="main-nav-link" v-for="category in $page.allCategory.edges" :key="category.node.id">
                                                 <a @click="handleEvent(category.node.path)" aria-haspopup="true" class="flex px-8 py-2 cc:px-2 w-full"> {{category.node.title }} </a>
-</li>
+                                            </li>
                                         </ul>
                                     </transition>
                                 </label>
@@ -246,7 +246,7 @@
 
                             <li v-for="(item, x) in menu" :key="x" :id="`menu-${x}`" class="flex cc:px-3 lg:px-6 relative text-black trans-bg-color pl-0 text-base hover:text-yellow1 menu-item" :class="{'cc:pl-3 lg:pl-6' : x === 0, 'cc:pl-3 lg:pl-6' : x === Object.keys(menu).length - 2, 'cc:pl-3 lg:pl-6' : x !== 0 && x !== Object.keys(menu).length - 2}"
                                 @click="item.show = !item.show">
-                                <a @click="handleEvent(item.route)" v-if="item.route"  class="p-2 px-6 cc:px-2 cc:py-2">{{ item.label }}</a>
+                                <a @click="handleEvent(item.route)" v-if="item.route" class="p-2 px-6 cc:px-2 cc:py-2">{{ item.label }}</a>
                                 <label v-else aria-haspopup="true" class="w-full relative">
                                     <div class="flex flex-row items-center">
                                         <span v-text="item.label" class="flex items-center cursor-pointer p-2 pl-6 cc:px-2 cc:py-2" />
@@ -255,16 +255,15 @@
                                     <transition name="slider">
                                         <ul v-show="item.show" class="cc:absolute py-3 whitespace-no-wrap bg-yellow1 cc:mt-4 min-w-full cc:min-w-200 rounded-sm submenu" aria-label="submenu">
                                             <li v-for="(subitem, y) in item.subitems" :key="y" class="main-nav-link" :class="{'child' : subitem.indent, 'parent' : subitem.parent}">
-                                                <a @click="handleEvent(subitem.route)"  aria-haspopup="true" class="flex px-8 py-2 cc:px-2 w-full">{{ subitem.label }}</a>
-</li>
+                                                <a @click="handleEvent(subitem.route)" aria-haspopup="true" class="flex px-8 py-2 cc:px-2 w-full">{{ subitem.label }}</a>
+                                            </li>
                                         </ul>
                                     </transition>
                                 </label>
                             </li>
                             <li id="search-box" class="flex list-none font-normal rfs-text-lg p-1 pl-6 cc:px-2 cc:py-1 relative">
-                                <span style="transform: rotate(-45deg);" class="inline-block cursor-pointer pb-2"><img src="/uploads/icons/search-icon.svg" style="display:none" class="search-icon" /></span>
-                                <transition name="pusher">
-                                </transition>
+                                <span class="inline-block cursor-pointer pb-2"><search-blog  class="text-transparent" /></span>
+
                             </li>
                         </ul>
 
@@ -546,6 +545,7 @@
         clearAllBodyScrollLocks
     } from 'body-scroll-lock'
     import Layout from '~/layouts/Blog.vue'
+    import SearchBlog from '~/components/SearchBlogdetail.vue'
     export default {
         function(Vue, { head }) {
             Vue.use(VueDisqus)
@@ -620,6 +620,7 @@
         },
         components: {
             Layout,
+            SearchBlog,
             VueScriptComponent: () =>
                 import('vue-script-component'),
         },
