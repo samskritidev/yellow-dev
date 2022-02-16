@@ -2,7 +2,7 @@
   "name": "yellowbrick.com",
   "private": true,
   "scripts": {
-    "build": "copyfiles --error --up 2 static/meta-tags/* node_modules/gridsome/lib/server && gridsome build",
+    "build": "gridsome build",
     "develop": "gridsome develop",
     "explore": "gridsome explore",
     "netlify": "netlify"
