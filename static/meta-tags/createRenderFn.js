@@ -145,14 +145,12 @@ class HBMetaData {
         <meta data-vue-tag="ssr" property="og:type" content="${pageData.type || this.defaultType}">
         <meta data-vue-tag="ssr" property="og:title" content="${pageData.title}">
         <meta data-vue-tag="ssr" property="og:description" content="${pageData.description}">
-        <meta data-vue-tag="ssr" property="og:image" content="${pageData.image || this.defaultImage}">
         <!-- Twitter Meta Tags -->
         <meta data-vue-tag="ssr" property="twitter:url" content="${fullPath}">
         <meta data-vue-tag="ssr" name="twitter:card" content="summary_large_image">
         <meta data-vue-tag="ssr" property="twitter:domain" content="${this.rootDomain}">
         <meta data-vue-tag="ssr" name="twitter:title" content="${pageData.title}">
-        <meta data-vue-tag="ssr" name="twitter:description" content="${pageData.description}">
-        <meta data-vue-tag="ssr" name="twitter:image" content="${pageData.image || this.defaultImage}">`
+        <meta data-vue-tag="ssr" name="twitter:description" content="${pageData.description}">`
       :
       `
         <!-- Gridsome Meta Tags -->
@@ -172,7 +170,6 @@ class HBMetaData {
         <meta data-vue-tag="ssr" rel="meta" name="google-site-verification" content="NC78CPdFCziU5hWlyrNDag4IFcqDLEndo2qoUpErhVg">
         <meta data-vue-tag="ssr" name="facebook-domain-verification" content="k6dcmb8s043dr7rtdbnb7r8kpejdw2">
     `
-
     return metaData;
   }
 }
