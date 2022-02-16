@@ -253,7 +253,7 @@
                                     <transition name="slider">
                                         <ul v-show='toggle' class="cc:absolute py-3 whitespace-no-wrap bg-yellow1 cc:mt-4 min-w-full cc:min-w-200 rounded-sm submenu" aria-label="submenu">
                                             <li class="main-nav-link" v-for="category in this.categories" :key="category.id">
-                                                <a @click="handleEvent(category.path)"  aria-haspopup="true" class="flex px-8 py-2 cc:px-2 w-full"> {{ category.title }} </a>
+                                                <g-link :to="category.path" aria-haspopup="true" class="flex px-8 py-2 cc:px-2 w-full"> {{ category.title }} </g-link>
                                             </li>
                                         </ul>
                                     </transition>
@@ -427,9 +427,6 @@
             event.target.src = "/uploads/author.png"
         },
         methods: {
-            handleEvent(open) {
-                window.location.href = open;
-            },
             toggleDrawer(open) {
                 this.showDrawer = open
                 if (open) disableBodyScroll(this.$refs.drawer)
