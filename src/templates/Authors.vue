@@ -177,7 +177,7 @@
                 <div class="flex items-center w-full space-between">
 
                     <div role="navigation" class="text-white z-30 w-full flex flex-wrap justify-end xl:flex-no-wrap">
-                        <a href="/" class="mr-auto flex-auto self-start py-4">
+                        <a @click="handleEvent('/')" class="mr-auto flex-auto self-start py-4">
                             <img alt="Yellowbrick Blog Page" src="/uploads/logo.png" />
                         </a>
 

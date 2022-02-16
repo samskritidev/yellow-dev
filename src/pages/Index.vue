@@ -566,7 +566,7 @@
                     <br />
                     <div class="z-10 lg:pt-6 md:pb-6">
                         <div class="block sm:flex yellowbrickbtn">
-                            <a href="/why-yellowbrick/">
+                            <a @click="handleEvent('/why-yellowbrick/')" >
                                 <button class="hover-text text-black px-10 rfs-text-lg bg-yellow1 mt-6">
                                     How Yellowbrick is Different
                                 </button>
@@ -586,7 +586,7 @@
             </h4>
 
             <div class="w-full flex flex-col md:flex-row announcement-box">
-                 <a href="/go/economic-benefits-of-yellowbrick/" class="banner-left flex flex-col w-full md:w-1/3 relative md:border-white">
+                 <a @click="handleEvent('/go/economic-benefits-of-yellowbrick/')" class="banner-left flex flex-col w-full md:w-1/3 relative md:border-white">
                     <div class="flex flex-col w-full h-full justify-content-center announcement-box__card bmw-group">
                         <div class="max-w-xl w-full h-full">
                             <h4 class="leading-tight mb-0 w-full" :class="'text-black' || 'text-black'">
@@ -601,7 +601,7 @@
                         </div>
                     </div>
                 </a>               
-                <a :href="$page.home.bannerLeft.url" class="banner-right flex flex-col w-full md:w-1/3 relative md:border-white">
+                <a @click="handleEvent($page.home.bannerLeft.url)" class="banner-right flex flex-col w-full md:w-1/3 relative md:border-white">
                     <div class="flex flex-col w-full h-full justify-center md:align-center announcement-box__card bmw-group">
                         <div class="bg-container"></div>
                         <div class="max-w-xl w-full h-full">
@@ -618,7 +618,7 @@
                         </div>
                     </div>
                 </a>
-                <a :href="$page.home.bannerRight.url" class="banner-right flex flex-col w-full md:w-1/3 relative  md:border-white">
+                <a @click="handleEvent($page.home.bannerRight.url)"  class="banner-right flex flex-col w-full md:w-1/3 relative  md:border-white">
                     <div class="flex flex-col w-full h-full justify-center md:align-center announcement-box__card bmw-group">
                         <div class="bg-container"></div>
                         <div class="max-w-xl w-full h-full">
@@ -804,7 +804,7 @@
         <base-section>
             <h3 class="rfs-text-4xl">Learn more about Yellowbrick</h3>
             <div class="learnMore-grid z-0 grid grid-cols-1 md:grid-cols-12">
-                <a href="/go/forrester-survey-whitepaper/" class="learnMore-grid__item relative z-10 flex flex-col justify-end text-white bg-transparent md:col-span-4 border-12 p-6 border-white">
+                <a @click="handleEvent('/go/forrester-survey-whitepaper/')"  class="learnMore-grid__item relative z-10 flex flex-col justify-end text-white bg-transparent md:col-span-4 border-12 p-6 border-white">
                     <i>
                         <svg width="48" height="53" class="mb-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 456.16 503.31">
                             <defs>
@@ -829,7 +829,7 @@
                         Read about Yellowbrick in The Forrester Wave<sup class="tm">TM</sup>
                     </p>
                 </a>
-                <a href="/test-drive/" class="learnMore-grid__item relative z-10 flex flex-col justify-end text-white bg-transparent md:col-span-8 border-12 p-6 border-white">
+                <a  @click="handleEvent('/test-drive/')" class="learnMore-grid__item relative z-10 flex flex-col justify-end text-white bg-transparent md:col-span-8 border-12 p-6 border-white">
                     <i>
                         <svg width="48" height="53" class="mb-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256.34 288.37">
                             <defs>
@@ -850,7 +850,7 @@
                     </p>
                 </a>
 
-                <a href="/go/distributed-cloud-whitepaper/" class="learnMore-grid__item relative z-10 flex flex-col justify-end text-white bg-transparent md:col-span-5 border-12 p-6 border-white">
+                <a @click="handleEvent('/go/distributed-cloud-whitepaper/')"  class="learnMore-grid__item relative z-10 flex flex-col justify-end text-white bg-transparent md:col-span-5 border-12 p-6 border-white">
                     <i>
                         <svg width="48" height="53" class="mb-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 382.52 486.82">
                             <defs>
@@ -871,7 +871,7 @@
                         Learn how Yellowbrick is bringing data warehousing to distributed clouds
                     </p>
                 </a>
-                <a href="/resources/#podcasts" class="learnMore-grid__item relative z-10 flex flex-col justify-end text-white bg-transparent md:col-span-3 border-12 p-6 border-white">
+                <a @click="handleEvent('/resources/#podcasts')"   class="learnMore-grid__item relative z-10 flex flex-col justify-end text-white bg-transparent md:col-span-3 border-12 p-6 border-white">
                     <i>
                         <svg width="48" height="53" class="mb-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 303.63 501.18">
                             <defs>
@@ -891,7 +891,7 @@
                     <h3 class="rfs-text-xl uppercase mb-0">Podcast</h3>
                     <p class="rfs-text-lg h-14">Learn about the latest industry trends</p>
                 </a>
-                <a href="/go/modernize-your-data-warehouse/" class="learnMore-grid__item relative z-10 flex flex-col justify-end text-white bg-transparent md:col-span-4 border-12 p-6 border-white">
+                <a @click="handleEvent('/go/modernize-your-data-warehouse/')"   class="learnMore-grid__item relative z-10 flex flex-col justify-end text-white bg-transparent md:col-span-4 border-12 p-6 border-white">
                     <i>
                         <svg width="48" height="53" class="mb-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 385.61 497.4">
                             <defs>
@@ -1027,6 +1027,9 @@
             },
         },
         methods: {
+            handleEvent(open) {
+                window.location.href = open;
+            },
             slidePrev() {
                 this.$refs.carousel.slidePrev();
             },
