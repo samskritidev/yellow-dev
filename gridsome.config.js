@@ -5,7 +5,9 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 module.exports = {
+
     chainWebpack: config => {
+        config.plugins.delete('prefetch');
        // if (process.env.NODE_ENV === 'production') {
             config.module.rule('vue').uses.delete('cache-loader');
             config.module.rule('js').uses.delete('cache-loader');

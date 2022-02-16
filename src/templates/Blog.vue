@@ -567,42 +567,42 @@
                     },
                     {
                         key: 'og:title',
-                        name: 'og:title',
+                        property: 'og:title',
                         content: this.$page.blog.title,
                     },
                     {
                         key: 'og:description',
-                        name: 'og:description',
+                        property: 'og:description',
                         content: this.$page.blog.description,
                     },
                     {
                         key: 'og:url',
-                        name: 'og:url',
+                        property: 'og:url',
                         content: 'https://yellowbrick-dev1.netlify.app' + this.$page.blog.path,
                     },
                     {
                         key: 'og:image',
-                        name: 'og:image',
+                        property: 'og:image',
                         content: 'https://yellowbrick-dev1.netlify.app' + this.$page.blog.coverImage,
                     },
                     {
                         key: 'twitter:title',
-                        name: 'twitter:title',
+                        property: 'twitter:title',
                         content: this.$page.blog.title,
                     },
                     {
                         key: 'twitter:description',
-                        name: 'twitter:description',
+                        property: 'twitter:description',
                         content: this.$page.blog.description,
                     },
                     {
                         key: 'twitter:image',
-                        name: 'twitter:image',
+                        property: 'twitter:image',
                         content: 'https://yellowbrick-dev1.netlify.app' + this.$page.blog.coverImage,
                     },
                     {
                         key: 'twitter:url',
-                        name: 'twitter:url',
+                        property: 'twitter:url',
                         content: 'https://yellowbrick-dev1.netlify.app' + this.$page.blog.path,
                     }
                 ]
