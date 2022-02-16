@@ -2,7 +2,7 @@
 id: 39fb9f4d-be73-4a6c-a458-04ce9edae581
 name: Bob Rumsby
 position: Principal Technical Writer
-authorImage: /uploads/bob_rumsby.jpeg
+authorImage: /uploads/bob-rumsby.jpg
 authorAbout: >-
   <!--StartFragment-->
 

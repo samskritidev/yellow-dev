@@ -1,22 +1,27 @@
 <style scoped>
-.brighter-teal {
-    color: #00c3d7;
-}
+    .brighter-teal {
+        color: #00c3d7;
+    }
+
     .titlename {
         margin-bottom: 2px !important;
         padding-bottom: 0 !important;
     }
+
     .menu-item span, .menu-item a {
         font-weight: normal;
     }
+
     .main-nav-link a {
         text-transform: capitalize;
     }
+
     .authorname p {
-    margin-bottom: 0 !important;
-    padding-bottom: 0 !important;
-    display: block;
-}
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
+        display: block;
+    }
+
     @media only screen and (max-width: 880px) {
         #hamburger, #hamburger::after, #hamburger::before {
             background-color: black;
@@ -34,72 +39,70 @@
             color: black;
         }
     }
-        .categorieslist {
-            display: flex;
-        }
 
-        .rfs-text-4xl {
-            margin-top: 20px;
-            margin-bottom: 20px;
-        }
+    .categorieslist {
+        display: flex;
+    }
 
-        .hidden_test {
-            overflow: hidden;
-            text-overflow: ellipsis;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            line-clamp: 2;
-            -webkit-box-orient: vertical;
-        }
+    .rfs-text-4xl {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
 
-      
-     
+    .hidden_test {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        -webkit-box-orient: vertical;
+    }
 
-        .featured_image {
-            min-height: 302px;
-            max-height: 307px;
-            -o-object-fit: cover;
-            object-fit: cover;
-        }
+    .featured_image {
+        min-height: 302px;
+        max-height: 307px;
+        -o-object-fit: cover;
+        object-fit: cover;
+    }
 
-        .rfs-text-base {
-            margin-bottom: 1rem
-        }
+    .rfs-text-base {
+        margin-bottom: 1rem
+    }
 
-        .rfs-text-4xl {
-            margin-top: 0.8rem;
-            margin-bottom: 0.8rem;
-        }
+    .rfs-text-4xl {
+        margin-top: 0.8rem;
+        margin-bottom: 0.8rem;
+    }
 
-        .featured_image1 {
-            min-height: 390px;
-            object-fit: cover;
-        }
+    .featured_image1 {
+        min-height: 390px;
+        object-fit: cover;
+    }
 
-        .active.pagerLink {
-            background-color: #ffcd32;
-            border: 1px solid black;
-            font-weight: bold;
-            font-size: 25px;
-        }
+    .active.pagerLink {
+        background-color: #ffcd32;
+        border: 1px solid black;
+        font-weight: bold;
+        font-size: 25px;
+    }
 
-        .nav-arrow {
-            margin-right: -5px;
-        }
+    .nav-arrow {
+        margin-right: -5px;
+    }
 
-        .pagerLink {
-            font-weight: bold;
-            color: black;
-            font-size: 25px;
-        }
+    .pagerLink {
+        font-weight: bold;
+        color: black;
+        font-size: 25px;
+    }
 
-        .featured-author {
-            margin-bottom: 0.5rem;
-        }
+    .featured-author {
+        margin-bottom: 0.5rem;
+    }
 
-        .main-box {
-            padding-top: 25%;
-            &:hover
+    .main-box {
+        padding-top: 25%;
+        &:hover
 
     {
         & .arrow-only
@@ -253,7 +256,7 @@
                                     <transition name="slider">
                                         <ul v-show='toggle' class="cc:absolute py-3 whitespace-no-wrap bg-yellow1 cc:mt-4 min-w-full cc:min-w-200 rounded-sm submenu" aria-label="submenu">
                                             <li class="main-nav-link" v-for="category in this.categories" :key="category.id">
-                                                <g-link :to="category.path" aria-haspopup="true" class="flex px-8 py-2 cc:px-2 w-full"> {{ category.title }} </g-link>
+                                                <a @click="handleEvent(category.path)" aria-haspopup="true" class="flex px-8 py-2 cc:px-2 w-full"> {{ category.title }} </a>
                                             </li>
                                         </ul>
                                     </transition>
@@ -279,7 +282,7 @@
                                 </label>
                             </li>
                             <li id="search-box" class="flex list-none font-normal rfs-text-lg p-1 pl-6 cc:px-2 cc:py-1 relative">
-                                <span class="inline-block cursor-pointer pb-2" ><search-blog v-model="searchResults" class="text-transparent" /></span>
+                                <span class="inline-block cursor-pointer pb-2"><search-blog v-model="searchResults" class="text-transparent" /></span>
 
                             </li>
                         </ul>
@@ -299,10 +302,10 @@
 
                 <div class="w-full md:w-1/2 md:mr-4">
                     <div class="md:mr-12">
-                         <a @click="handleEvent(featuredBlog.path)" :to="featuredBlog.path">
-                        <img v-if="featuredBlog.thumbnailImage" class="featured_image1" :src="`${featuredBlog.thumbnailImage}`" />
-                        <img v-else class="featured_image1" :src="`${featuredBlog.coverImage}`" />
-                         </a>
+                        <a @click="handleEvent(featuredBlog.path)" :to="featuredBlog.path">
+                            <img v-if="featuredBlog.thumbnailImage" class="featured_image1" :src="`${featuredBlog.thumbnailImage}`" />
+                            <img v-else class="featured_image1" :src="`${featuredBlog.coverImage}`" />
+                        </a>
                     </div>
                 </div>
                 <div class="w-full md:w-1/2 p-2">
@@ -316,9 +319,9 @@
                         <p class="rfs-text-base leading-tight font-normal pb-6 block hidden_test" v-text="featuredBlog.description" />
                         <div class="flex">
                             <div class="w-1/7 mr-6">
-                            <a @click="handleEvent(featuredBlog.author.path)" :to="featuredBlog.author.path">
-                                <img :src="`${featuredBlog.author.authorImage}`" style=" border-radius: 50%;" class="w-16" />
-                            </a>
+                                <a @click="handleEvent(featuredBlog.author.path)" :to="featuredBlog.author.path">
+                                    <img :src="`${featuredBlog.author.authorImage}`" style=" border-radius: 50%;" class="w-16" />
+                                </a>
                             </div>
                             <div class="md:w-2/3 authorname">
                                 <a @click="handleEvent(featuredBlog.author.path)" :to="featuredBlog.author.path">
@@ -340,8 +343,8 @@
                             <div :to="edge.node.path" class="w-full md:w-2/5">
                                 <div class="text-white">
                                     <a @click="handleEvent(edge.node.path)" :to="edge.node.path">
-                                    <img v-if="edge.node.thumbnailImage" class="featured_image" :src="`${edge.node.thumbnailImage}`" />
-                                    <img v-else class="featured_image" :src="`${edge.node.coverImage}`" />
+                                        <img v-if="edge.node.thumbnailImage" class="featured_image" :src="`${edge.node.thumbnailImage}`" />
+                                        <img v-else class="featured_image" :src="`${edge.node.coverImage}`" />
                                     </a>
                                 </div>
                             </div>
@@ -357,9 +360,9 @@
 
                                     <div class="flex">
                                         <div class="w-1/7 mr-6">
-                                        <a @click="handleEvent(edge.node.author.path)" :to="edge.node.author.path">
-                                            <img :src="`${edge.node.author.authorImage}`" style="border-radius: 50%;" class="w-16" />
-                                        </a>
+                                            <a @click="handleEvent(edge.node.author.path)" :to="edge.node.author.path">
+                                                <img :src="`${edge.node.author.authorImage}`" style="border-radius: 50%;" class="w-16" />
+                                            </a>
                                         </div>
                                         <div class="md:w-2/3 authorname">
                                             <a @click="handleEvent(edge.node.author.path)" :to="edge.node.author.path">
@@ -427,20 +430,23 @@
             event.target.src = "/uploads/author.png"
         },
         methods: {
+         handleEvent(open) {
+                window.location.href = open;
+            },
             toggleDrawer(open) {
                 this.showDrawer = open
                 if (open) disableBodyScroll(this.$refs.drawer)
                 else clearAllBodyScrollLocks()
             },
             searchClick() {
-                
+
             },
             clickAnywhere(e) {
                 this.menu.forEach((item, x) => {
                     if (!document.getElementById(`menu-${x}`).contains(e.target) && item.show) item.show = false
                 })
                 var ignoreClickOnMeElement = document.getElementById('search-box');
-             
+
             },
             pressAnything(e) {
                 if (e.key === 'Escape') {
