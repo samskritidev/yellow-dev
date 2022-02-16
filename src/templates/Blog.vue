@@ -455,7 +455,7 @@
                                     width: 100%;
                                     list-style-type: none;
                                     padding-left: 0;
-                                    padding-top: 34px;
+                                    padding-top: 4px;
                                     color: red;
                                     }
                                         @media only screen and (max-width: 768px) {
@@ -496,7 +496,13 @@
                                     position: relative;
                                     z-index: 9;
                                     }
+                                        label.hs-main-font-element {
+                                            display: none;
+                                        }
 
+                                        .gartner-pi-card .gartner-pi-as-of-date {
+                                            -webkit-transform: inherit !important;
+                                        }
                                     </style>' />
                                     <VueScriptComponent script='<script type="application/javascript"
                                     src="https://www.gartner.com/reviews/public/Widget/js/widget.js">
