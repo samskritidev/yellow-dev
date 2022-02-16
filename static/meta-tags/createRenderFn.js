@@ -117,7 +117,7 @@ class HBMetaData {
 
   constructor() {
 
-    this.rootDomain = 'https://www.yellowbrick.com'
+      this.rootDomain = 'https://yellowbrick-dev1.netlify.app'
     this.defaultImage = `${this.rootDomain}/uploads/yb-icon.png`
     this.defaultType = 'article'
     this.pages = require('./meta-tags.json')
