@@ -1,1 +1,10 @@
-
+[
+    {
+        "url": "https://www.yellowbrick.com/why-yellowbrick/",
+        "path": "/why-yellowbrick/",
+        "image": "https://www.yellowbrick.com/assets/static/thumb-ebook-meet-yellowbrick.6ef341c.8c8d938208d3fdf7dcb45a9753c964dd.png",
+        "title": "Yellowbrick Data - Yellowbrick Data",
+        "description": "Yellowbrick’s architecture provides a flexible, future-proof platform that meets any deployment need across private, public, and hybrid/distributed clouds.",
+        "type": "article"
+    },
+]
