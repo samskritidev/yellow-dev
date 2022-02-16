@@ -12,8 +12,16 @@
         overflow: hidden;
         text-overflow: ellipsis;
         display: -webkit-box;
-        -webkit-line-clamp: 3;
-        line-clamp: 3;
+        -webkit-line-clamp: 7;
+        line-clamp: 7;
+        -webkit-box-orient: vertical;
+    }
+    .hidden_test1 {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
         -webkit-box-orient: vertical;
     }
     .main-nav-link a {
@@ -301,9 +309,11 @@
 
                                     <a @click="handleEvent(edge.node.path)" :to="edge.node.path"><h4 class="rfs-text-3xl uppercase font-bold authorName" v-html="edge.node.name" /></a>
                                     <p class="featured-author brighter-teal" v-text="edge.node.position" />
-                                    <p class="rfs-text-base leading-tight font-normal author-about hidden_test" v-html="edge.node.authorAbout"></p>
-                                    <p class="rfs-text-base leading-tight font-normal author-about hidden_test" v-html="edge.node.authorInterest"></p>
-                                </div>
+                                    <div class="hidden_test">
+                                        <p class="rfs-text-base leading-tight font-normal author-about" v-html="edge.node.authorAbout"></p>
+                                        <p class="rfs-text-base leading-tight font-normal author-about" v-html="edge.node.authorInterest"></p>
+                                    </div>
+                                    </div>
                             </div>
                         </div>
                     </div>

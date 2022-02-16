@@ -352,7 +352,7 @@
                             </div>
                         </div>
                     </div>
-                    <p><a @click="handleEvent('/blog')">Back to Blog ></a></p>
+                    <div style="float: right; margin-top: -10px; margin-bottom: 20px; "><a class="brighter-teal font-semibold" style="color: #00c3d7;" @click="handleEvent('/blog')">Back to Blog ></a></div>
                     <VueRemarkContent class="font-normal" style="border-bottom: 3px solid #d6d6d6;margin-top:30px;margin-bottom:12px" />
                     <h2 data-v-6b2564f1="" data-v-3c2763e1="" class="font-bold">Blog Comments</h2>
                     <Disqus shortname="yellowbrick-com" :identifier="this.$page.blog.path" />
@@ -409,46 +409,97 @@
                                     cssClass: "custom-hbst-but",
                                     });
                                     </script><style>
-                                        .gartner-pi-link:hover {
-                                            background-image: none !important;
-                                        }
-                                        .gartner-pi-reviews-link {
+                                    .gartner-pi-link:hover {
+                                    background-image: none !important;
+                                    }
+                                    .gartner-pi-reviews-link {
                                     display:none;
                                     }
-                                        .hs-input {
-                                            max-width: 300px !important;
-                                            border: 1px solid #dedede;
-                                            height: 40px;
-                                            background: #80808017;
+                                    .hs-input {
+                                    max-width: 300px !important;
+                                    border: 1px solid #dedede;
+                                    height: 40px;
+                                    background: #80808017;
+                                    }
+                                    .blog a:not(.gartner-pi-link) {
+                                    border-bottom: 0px !important;
+                                    color: none!important;
+                                    background-position: none !important;
+                                    }
+                                    .gartner-pi-link {
+                                    background-image: none !important;
+                                    }
+                                    .hbspt-form form {
+                                    display: flex;
+                                    }
+                                    .custom-hbst {
+                                    background-color: #ffcd32;
+                                    padding-top: 6px;
+                                    padding-bottom: 7px;
+                                    padding-left: 6px;
+                                    padding-right: 6px;
+                                    }
+
+                                    .hydrated.rw-badge2 {
+                                    position: inherit;
+                                    width:300px;
+                                    }
+                                        .hbspt-form {
+                                    width:300px;
+                                    }
+                                        .hydrated.rw-badge2 .container {
+                                            border-radius: 0px;
+                                            box-shadow: 1px solid white;
+                                            margin: 0px;
                                         }
-                                        .blog a:not(.gartner-pi-link) {
-                                            border-bottom: 0px !important;
-                                            color: none!important;
-                                            background-position: none !important;
-                                        }
-                                        .gartner-pi-link {
-                                            background-image: none !important;
-                                        }
-                                        .hbspt-form form {
-                                          display: flex;
-                                           }
-                                           .custom-hbst {
-                                                background-color: #ffcd32;
-                                                padding-top: 6px;
-                                                padding-bottom: 7px;
-                                                padding-left: 6px;
-                                                padding-right: 6px;
+                                    ul.no-list.hs-error-msgs.inputs-list {
+                                    width: 100%;
+                                    list-style-type: none;
+                                    padding-left: 0;
+                                    padding-top: 34px;
+                                    color: red;
+                                    }
+                                        @media only screen and (max-width: 768px) {
+                                            div#gartner-pi-widget-MDM5NDZjOWEtMWY1Yi00NDNjLWFkZWItMTY0YTBjNGQzNjBk {
+                                                width: auto;
                                             }
-                                            ul.no-list.hs-error-msgs.inputs-list {
-                                                width: 100%;
-                                                list-style-type: none;
-                                                position: inherit;
-                                                margin: 0;
-                                                padding: 0;
-                                                color: red;
+                                            .hydrated.rw-badge2 {
+                                                width: auto !important;
                                             }
-                                        </style>' />
-                                             <VueScriptComponent script='<script type="application/javascript"
+                                            .hbspt-form {
+                                                width: auto !important;
+                                            }
+                                        }
+                                    ul.no-list.hs-error-msgs.inputs-list li {
+                                    width: 100%;
+                                    }
+                                    .reviews-num {
+                                    display:none;
+                                    }
+                                    .container {
+                                    position: relative;
+                                    border-width: 1px;
+                                    border-style: solid;
+                                    border-radius: 0px;
+                                    box-shadow: 1px solid white;
+                                    margin: 0px;
+                                    }
+
+                                    .hydrated.rw-badge2 {
+                                    width: 300px;
+                                    }
+                                    .hs_error_rollup {
+                                    position: absolute;
+                                    width: 100%;
+                                    }
+
+                                    .input input {
+                                    position: relative;
+                                    z-index: 9;
+                                    }
+
+                                    </style>' />
+                                    <VueScriptComponent script='<script type="application/javascript"
                                     src="https://www.gartner.com/reviews/public/Widget/js/widget.js">
                                     </script>
                                     <script type="application/javascript">
@@ -461,11 +512,16 @@
                                     container: document.getElementById("widget-container"),
                                     })
                                     </script>' />
-                                     <br />
+                                    <br />
                                     <div id="widget-container"></div>
                                     <br />
-                                    <div><a target="_blank" href="https://www.g2.com/products/yellowbrick-data-yellowbrick/reviews?utm_source=review-widget" title="Read reviews of Yellowbrick on G2"><img class="full-width" style="max-width: 300px" alt="Read Yellowbrick reviews on G2" src="https://www.g2.com/products/yellowbrick-data-yellowbrick/widgets/stars?color=white&amp;type=read" /></a>
-                                    <script type="application/javascript" >(function (a, b, c, d) { window.fetch("https://www.g2.com/products/yellowbrick-data-yellowbrick/rating_schema.json").then(e => e.json()).then(f => { c = a.createElement(b); c.type = "application/ld+json"; c.text = JSON.stringify(f); d = a.getElementsByTagName(b)[0]; d.parentNode.insertBefore(c, d); }); })(document, "script");</script></div>
+                                    <div>
+
+                                    <!-- Begin widget code -->
+                                    <div data-rw-badge2="28103"></div>
+                                    <script type="application/javascript">var script = document.createElement("script"); script.type = "module"; script.src = "https://widgets.thereviewsplace.com/2.0/rw-widget-badge2.js"; document.getElementsByTagName("head")[0].appendChild(script);</script>
+                                    <!-- End widget code -->
+                                    </div>
                                 </ClientOnly>
                             </div>
                         </template>

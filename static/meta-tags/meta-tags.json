@@ -2279,14 +2279,14 @@
         "description": "Free Yellowbrick data warehouse trial for 7 days. Experience the unmatched performance and see how Yellowbrick can power your business today.",
         "type": "article"
     },
-    {
-        "url": "https://www.yellowbrick.com/blog/there-are-no-snow-days-for-business-data/",
-        "path": "/blog/there-are-no-snow-days-for-business-data/",
-        "image": "https://www.yellowbrick.com/uploads/Yellowbrick_AprilSummitHeroImage.jpg",
-        "title": "There are no \"snow days\" for business data - Yellowbrick Data",
-        "description": "If your data warehouse is critical to your business, peace of mind isn’t a luxury",
-        "type": "article"
-    },
+  {
+    "url": "https://yellowbrick-dev1.netlify.app/blog/there-are-no-snow-days-for-business-data/",
+    "path": "/blog/there-are-no-snow-days-for-business-data/",
+    "image": "https://yellowbrick-dev1.netlify.app/uploads/yb_bloghero9.jpg",
+    "title": "There are no \"snow days\" for business data - Yellowbrick Data",
+    "description": "If your data warehouse is critical to your business, peace of mind isn’t a luxury",
+    "type": "article"
+  },
     {
         "url": "https://www.yellowbrick.com/press-releases/yellowbrick-hosts-summit-introduces-first-data-warehouse-for-distributed-clouds/",
         "path": "/press-releases/yellowbrick-hosts-summit-introduces-first-data-warehouse-for-distributed-clouds/",
