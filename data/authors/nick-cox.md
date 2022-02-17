@@ -2,7 +2,7 @@
 id: ecaacb3e-2059-45a9-a7e4-cfe94a878c7d
 name: Nick Cox
 position: Head of Product
-authorImage: /uploads/nick-cox.jpg
+authorImage: /uploads/nick-cox0.jpg
 authorAbout: >-
   <!--StartFragment-->
 
@@ -15,7 +15,7 @@ authorInterest: >-
   <!--StartFragment-->
 
 
-  Nick is a keen builder of increasingly large items, from useful furniture to obscure classic European cars.
+  Nick is a keen builder of increasingly large items, from useful furniture to obscure classic European cars. When stuck he loves to run, with half marathons and multi-day events being his favorite.
 
 
   <!--EndFragment-->

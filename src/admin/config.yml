@@ -43,6 +43,23 @@ collections:
       - {label: About Author/Fun/Interest, name: authorInterest, widget: markdown}
       - {label: Created Date, name: date, widget: date}
   -
+    label: Customers
+    name: customers
+    files:
+      -
+        label: Logos
+        name: customer
+        file: data/pages/client.yml
+        fields:
+          -
+            label: Logos
+            name: logo
+            widget: list
+            fields:
+              - {label: Name, name: name, widget: string}
+              - {label: Position, name: position, widget: string}
+              - {label: Photo, name: photo, widget: image}
+  -
     label: Pages
     name: pages
     files:

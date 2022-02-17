@@ -288,6 +288,7 @@
                         </ul>
 
                     </div>
+                    <div id="mobile_search"><img @click="searchClick" src="/uploads/icons/search-icon.svg" style="transform: rotate(-45deg); width: 25px; height: 25px; margin-top: 25px; margin-left: 20px; " /><span class="inline-block cursor-pointer pb-2"><search-blog1 v-model="searchResults" class="text-transparent" /></span></div>
                     <div class="cursor-pointer cc:hidden flex-1 flex items-center justify-end ml-8" @click="toggleDrawer(true)">
                         <button id="hamburger" aria-label="Show the menu" />
                     </div>
@@ -394,6 +395,7 @@
         Pager
     } from 'gridsome'
     import SearchBlog from '~/components/SearchBlog.vue'
+    import SearchBlog1 from '~/components/SearchBlog1.vue'
     import BiWeeklyBanner from '~/components/BiWeeklyBanner.vue'
 
     export default {
@@ -409,6 +411,7 @@
             Layout,
             Pager,
             SearchBlog,
+            SearchBlog1,
             BiWeeklyBanner
         },
         data: () => ({
@@ -439,7 +442,12 @@
                 else clearAllBodyScrollLocks()
             },
             searchClick() {
-
+                var x = document.getElementById("search_div1");
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                }
             },
             clickAnywhere(e) {
                 this.menu.forEach((item, x) => {
@@ -459,6 +467,7 @@
             }
         },
         mounted() {
+            document.getElementById("search_div1").style.display = "none";
             clearAllBodyScrollLocks()
             document.addEventListener('click', this.clickAnywhere)
             document.addEventListener('keydown', this.pressAnything)

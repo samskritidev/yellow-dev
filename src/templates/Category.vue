@@ -9,10 +9,12 @@
         Pager
     } from 'gridsome'
     import SearchBlog from '~/components/SearchBlog.vue'
+    import SearchBlog1 from '~/components/SearchBlog1.vue'
     export default {
         components: {
             Layout,
             Pager,
+            SearchBlog1,
             SearchBlog,
         },
         data: () => ({
@@ -40,6 +42,7 @@
             }
         },
         mounted() {
+            document.getElementById("search_div1").style.display = "none";
             if (this.$page?.featuredBlog?.edges?.length > 0) {
                 this.featuredBlog = this.$page.featuredBlog.edges[0].node;
             }
@@ -94,7 +97,12 @@
                 else clearAllBodyScrollLocks()
             },
             searchClick() {
-
+                var x = document.getElementById("search_div1");
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                }
             },
             clickAnywhere(e) {
                 this.menu.forEach((item, x) => {
@@ -364,7 +372,7 @@
 <template>
     <Layout>
         <header id="topnav" class="fixed flex flex-row cc:flex-col z-50 items-center w-full bg-white">
-            <nav role="navigation" class="flex flex-col items-center space-between max-w-1400 mx-auto w-full px-5 py-3 cc:py-0">
+            <nav role="navigation" class="flex flex-col items-center space-between max-w-1400 mx-auto w-full px-5 py-0 cc:py-0">
 
                 <div class="flex items-center w-full space-between">
 
@@ -387,7 +395,7 @@
                             <li class="flex relative text-black trans-bg-color pl-0 text-base hover:text-yellow1 menu-item cc:px-3 lg:px-6" @click='toggle = !toggle'>
                                 <label aria-haspopup="true" class="w-full relative">
                                     <div class="flex flex-row items-center">
-                                         <a @click="handleEvent('/blog/')" to="/blog" class="flex items-center cursor-pointer p-2 pl-6 cc:px-2 cc:py-2">Categories</a>
+                                        <a @click="handleEvent('/blog/')" to="/blog" class="flex items-center cursor-pointer p-2 pl-6 cc:px-2 cc:py-2">Categories</a>
                                         <span class="nav-arrow text-black" />
                                     </div>
                                     <transition name="slider">
@@ -413,7 +421,7 @@
                                         <ul v-show="item.show" class="cc:absolute py-3 whitespace-no-wrap bg-yellow1 cc:mt-4 min-w-full cc:min-w-200 rounded-sm submenu" aria-label="submenu">
                                             <li v-for="(subitem, y) in item.subitems" :key="y" class="main-nav-link" :class="{'child' : subitem.indent, 'parent' : subitem.parent}">
                                                 <a @click="handleEvent(subitem.route)" :to="subitem.route" aria-haspopup="true" class="flex px-8 py-2 cc:px-2 w-full">{{ subitem.label }}</a>
-</li>
+                                            </li>
                                         </ul>
                                     </transition>
                                 </label>
@@ -424,6 +432,7 @@
                         </ul>
 
                     </div>
+                    <div id="mobile_search"><img @click="searchClick" src="/uploads/icons/search-icon.svg" style="transform: rotate(-45deg); width: 25px; height: 25px; margin-top: 25px; margin-left: 20px; " /><span class="inline-block cursor-pointer pb-2"><search-blog1 v-model="searchResults" class="text-transparent" /></span></div>
                     <div class="cursor-pointer cc:hidden flex-1 flex items-center justify-end ml-8" @click="toggleDrawer(true)">
                         <button id="hamburger" aria-label="Show the menu" />
                     </div>

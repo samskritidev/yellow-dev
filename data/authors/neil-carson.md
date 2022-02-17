@@ -15,7 +15,7 @@ authorInterest: >-
   <!--StartFragment-->
 
 
-  Neil is a native of the UK and loves travelling, woodworking and cooking. He has a passion for experiencing different cultures and has learned to speak fluent Mandarin and Cantonese.
+  Neil is a native of the UK and loves traveling, woodworking and cooking. He has a passion for experiencing different cultures and speaks five languages including fluency in Mandarin and Cantonese.
 
 
   <!--EndFragment-->

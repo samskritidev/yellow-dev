@@ -207,12 +207,12 @@
 <template>
     <Layout>
         <header id="topnav" class="fixed flex flex-row cc:flex-col z-50 items-center w-full bg-white" style=" border-bottom: 1px solid grey">
-            <nav role="navigation" class="flex flex-col items-center space-between max-w-1400 mx-auto w-full px-5 py-3 cc:py-0">
+            <nav role="navigation" class="flex flex-col items-center space-between max-w-1400 mx-auto w-full px-5 py-0 cc:py-0">
 
                 <div class="flex items-center w-full space-between">
 
                     <div role="navigation" class="text-white z-30 w-full flex flex-wrap justify-end xl:flex-no-wrap">
-                        <a @click="handleEvent('/')"  class="mr-auto flex-auto self-start py-4">
+                        <a @click="handleEvent('/')" class="mr-auto flex-auto self-start py-4">
                             <img alt="Yellowbrick Blog Page" src="/uploads/logo.png" />
                         </a>
 
@@ -262,12 +262,13 @@
                                 </label>
                             </li>
                             <li id="search-box" class="flex list-none font-normal rfs-text-lg p-1 pl-6 cc:px-2 cc:py-1 relative">
-                                <span class="inline-block cursor-pointer pb-2"><search-blog  class="text-transparent" /></span>
+                                <span class="inline-block cursor-pointer pb-2"><search-blog class="text-transparent" /></span>
 
                             </li>
                         </ul>
 
                     </div>
+                    <div id="mobile_search"><img @click="searchClick" src="/uploads/icons/search-icon.svg" style="transform: rotate(-45deg); width: 25px; height: 25px; margin-top: 25px; margin-left: 20px; " /><span class="inline-block cursor-pointer pb-2"><search-blog1 class="text-transparent" /></span></div>
                     <div class="cursor-pointer cc:hidden flex-1 flex items-center justify-end ml-8" @click="toggleDrawer(true)">
                         <button id="hamburger" aria-label="Show the menu" />
                     </div>
@@ -552,6 +553,7 @@
     } from 'body-scroll-lock'
     import Layout from '~/layouts/Blog.vue'
     import SearchBlog from '~/components/SearchBlogdetail.vue'
+    import SearchBlog1 from '~/components/SearchBlogdetail1.vue'
     export default {
         function(Vue, { head }) {
             Vue.use(VueDisqus)
@@ -626,6 +628,7 @@
         },
         components: {
             Layout,
+            SearchBlog1,
             SearchBlog,
             VueScriptComponent: () =>
                 import('vue-script-component'),
@@ -633,6 +636,14 @@
         methods: {
             handleEvent(open) {
                 window.location.href = open;
+            },
+            searchClick() {
+                var x = document.getElementById("search_div1");
+                if (x.style.display === "none") {
+                    x.style.display = "block";
+                } else {
+                    x.style.display = "none";
+                }
             },
             toggleDrawer(open) {
                 this.showDrawer = open
@@ -646,6 +657,7 @@
             },
         },
         mounted() {
+            document.getElementById("search_div1").style.display = "none";
             clearAllBodyScrollLocks()
             document.addEventListener('click', this.clickAnywhere)
             document.addEventListener('keydown', this.pressAnything)

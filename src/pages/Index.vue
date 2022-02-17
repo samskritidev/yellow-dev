@@ -697,7 +697,7 @@
                         <li>Most migrations complete in weeks</li>
                         <li>Simple, unified management across all deployments</li>
                     </ul>
-                    <arrow-link-button class="rfs-text-base text-teal font-medium" title="migration" href="/products/migration/">Migration</arrow-link-button>
+                    <arrow-link-button class="rfs-text-base text-teal font-medium" title="migration" href="/blog">Migration</arrow-link-button>
                 </div>
                 <div class="w-full pb-16 md:pb-0 flex items-center md:w-2/5">
                     <i class="block w-full" style="max-height: 400px">
