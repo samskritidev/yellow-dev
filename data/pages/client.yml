@@ -68,13 +68,12 @@ members:
     photo: /uploads/mark-cusack-touch-up.png
     position: Chief Technology Officer
   - body: >+
-      Tim Young is the Chief Marketing Officer at Yellowbrick. 
-      He is a sales-savvy data-driven marketing leader with 25 
-      years of experience in data warehousing, machine learning, 
-      analytics, and enterprise applications. He is a category creator 
-      and has run marketing organizations for pre-IPO startups, including 
-      DataRobot and Netezza, and large global enterprises, including Oracle, 
-      IBM, and Workday. 
+      Tim Young is the Chief Marketing Officer at Yellowbrick.  He is a
+      sales-savvy data-driven marketing leader with 25  years of experience in
+      data warehousing, machine learning,  analytics, and enterprise
+      applications. He is a category creator  and has run marketing
+      organizations for pre-IPO startups, including  DataRobot and Netezza, and
+      large global enterprises, including Oracle,  IBM, and Workday. 
 
     name: Tim Young
     photo: /uploads/team/Tim-Young.jpg
@@ -92,3 +91,13 @@ members:
     name: Gail Boddy
     photo: /uploads/team/team-gail-2021.jpg
     position: Chief Human Resources Officer
+logo:
+  - name: Alliancedata
+    position: "1"
+    photo: /uploads/alliance-data.png
+  - name: Allscripts
+    position: "2"
+    photo: /uploads/allscripts.png
+  - name: BMW
+    position: "3"
+    photo: /uploads/bmw-formatted.png
