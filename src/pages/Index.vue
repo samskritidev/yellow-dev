@@ -9,9 +9,7 @@
             padding-right: 10px !important;
         }
     }
-    .customer_logos {
-        padding: 15px;
-    }
+ 
     .home-reviews {
         background-image: url(/uploads/reviews.png);
         background-repeat: no-repeat;
@@ -928,8 +926,8 @@
                 Yellowbrick helps enterprises innovate and thrive
             </h4>
             <div class="flex flex-col md:flex-row flex-wrap max-w-1200 mx-auto">
-                <span v-for="logo in $page.pages.logo" :key="logo.name" class="w-full md:w-1/4" style="padding:20px">
-                    <img class="w-full customer_logos" :src="logo.photo" :title="logo.name " />
+                <span v-for="logo in $page.pages.logo" :key="logo.name" class="w-full md:w-1/4  pl-0 pr-0 md:pl-2 md:pr-2 pb-0 pt-0 md:pb-2 md:pt-2">
+                    <img class="w-full customer_logos pl-8 pr-8 md:pl-4 md:pr-4 pb-8 pt-8 md:pd-2 md:pt-2" :src="logo.photo" :title="logo.name " />
                 </span>
             </div>
         </base-section>
