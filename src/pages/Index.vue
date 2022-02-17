@@ -9,7 +9,14 @@
             padding-right: 10px !important;
         }
     }
-
+    .customer_logos {
+        padding: 15px;
+    }
+    .home-reviews {
+        background-image: url(/uploads/reviews.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
     .hooper-slide {
         width: 100% !important;
     }
@@ -464,7 +471,7 @@
                     Run all your data anywhere. Across cloud and on-premises.<br>
                     <span class="text-yellow1">Yellowbrick Data Warehouse</span>
                 </h3>
-</h3>
+                </h3>
             </div>            <div class="flex flex-col w-full md:max-w-1200 mx-auto lg:pt-6">
                 <div class="z-10 relative lg:w-5/6">
                     <hooper ref="carousel" @slide="updateCarousel" :autoPlay="true" :playSpeed="10000">
@@ -566,7 +573,7 @@
                     <br />
                     <div class="z-10 lg:pt-6 md:pb-6">
                         <div class="block sm:flex yellowbrickbtn">
-                            <a @click="handleEvent('/why-yellowbrick/')" >
+                            <a @click="handleEvent('/why-yellowbrick/')">
                                 <button class="hover-text text-black px-10 rfs-text-lg bg-yellow1 mt-6">
                                     How Yellowbrick is Different
                                 </button>
@@ -586,7 +593,7 @@
             </h4>
 
             <div class="w-full flex flex-col md:flex-row announcement-box">
-                 <a @click="handleEvent('/go/economic-benefits-of-yellowbrick/')" class="banner-left flex flex-col w-full md:w-1/3 relative md:border-white">
+                <a @click="handleEvent('/go/economic-benefits-of-yellowbrick/')" class="banner-left flex flex-col w-full md:w-1/3 relative md:border-white">
                     <div class="flex flex-col w-full h-full justify-content-center announcement-box__card bmw-group">
                         <div class="max-w-xl w-full h-full">
                             <h4 class="leading-tight mb-0 w-full" :class="'text-black' || 'text-black'">
@@ -600,13 +607,13 @@
                             </div>
                         </div>
                     </div>
-                </a>               
+                </a>
                 <a @click="handleEvent($page.home.bannerLeft.url)" class="banner-right flex flex-col w-full md:w-1/3 relative md:border-white">
                     <div class="flex flex-col w-full h-full justify-center md:align-center announcement-box__card bmw-group">
                         <div class="bg-container"></div>
                         <div class="max-w-xl w-full h-full">
                             <h4 class="leading-tight mb-0 w-full" :class="'text-black' || 'text-black'">
-                                <img class=" w-full" src="/uploads/yellowbrick-data-partners.png" style="height:240px;"/>
+                                <img class=" w-full" src="/uploads/yellowbrick-data-partners.png" style="height:240px;" />
                             </h4>  <div class="p-3 px-5">
                                 <h5 class="leading-tight mb-0" style="text-transform:uppercase;font-weight:600" :class="'text-black' || 'text-black'">
                                     {{ $page.home.bannerLeft.eyebrow }}
@@ -618,7 +625,7 @@
                         </div>
                     </div>
                 </a>
-                <a @click="handleEvent($page.home.bannerRight.url)"  class="banner-right flex flex-col w-full md:w-1/3 relative  md:border-white">
+                <a @click="handleEvent($page.home.bannerRight.url)" class="banner-right flex flex-col w-full md:w-1/3 relative  md:border-white">
                     <div class="flex flex-col w-full h-full justify-center md:align-center announcement-box__card bmw-group">
                         <div class="bg-container"></div>
                         <div class="max-w-xl w-full h-full">
@@ -804,7 +811,7 @@
         <base-section>
             <h3 class="rfs-text-4xl">Learn more about Yellowbrick</h3>
             <div class="learnMore-grid z-0 grid grid-cols-1 md:grid-cols-12">
-                <a @click="handleEvent('/go/forrester-survey-whitepaper/')"  class="learnMore-grid__item relative z-10 flex flex-col justify-end text-white bg-transparent md:col-span-4 border-12 p-6 border-white">
+                <a @click="handleEvent('/go/forrester-survey-whitepaper/')" class="learnMore-grid__item relative z-10 flex flex-col justify-end text-white bg-transparent md:col-span-4 border-12 p-6 border-white">
                     <i>
                         <svg width="48" height="53" class="mb-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 456.16 503.31">
                             <defs>
@@ -829,7 +836,7 @@
                         Read about Yellowbrick in The Forrester Wave<sup class="tm">TM</sup>
                     </p>
                 </a>
-                <a  @click="handleEvent('/test-drive/')" class="learnMore-grid__item relative z-10 flex flex-col justify-end text-white bg-transparent md:col-span-8 border-12 p-6 border-white">
+                <a @click="handleEvent('/test-drive/')" class="learnMore-grid__item relative z-10 flex flex-col justify-end text-white bg-transparent md:col-span-8 border-12 p-6 border-white">
                     <i>
                         <svg width="48" height="53" class="mb-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256.34 288.37">
                             <defs>
@@ -850,7 +857,7 @@
                     </p>
                 </a>
 
-                <a @click="handleEvent('/go/distributed-cloud-whitepaper/')"  class="learnMore-grid__item relative z-10 flex flex-col justify-end text-white bg-transparent md:col-span-5 border-12 p-6 border-white">
+                <a @click="handleEvent('/go/distributed-cloud-whitepaper/')" class="learnMore-grid__item relative z-10 flex flex-col justify-end text-white bg-transparent md:col-span-5 border-12 p-6 border-white">
                     <i>
                         <svg width="48" height="53" class="mb-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 382.52 486.82">
                             <defs>
@@ -871,7 +878,7 @@
                         Learn how Yellowbrick is bringing data warehousing to distributed clouds
                     </p>
                 </a>
-                <a @click="handleEvent('/resources/#podcasts')"   class="learnMore-grid__item relative z-10 flex flex-col justify-end text-white bg-transparent md:col-span-3 border-12 p-6 border-white">
+                <a @click="handleEvent('/resources/#podcasts')" class="learnMore-grid__item relative z-10 flex flex-col justify-end text-white bg-transparent md:col-span-3 border-12 p-6 border-white">
                     <i>
                         <svg width="48" height="53" class="mb-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 303.63 501.18">
                             <defs>
@@ -891,7 +898,7 @@
                     <h3 class="rfs-text-xl uppercase mb-0">Podcast</h3>
                     <p class="rfs-text-lg h-14">Learn about the latest industry trends</p>
                 </a>
-                <a @click="handleEvent('/go/modernize-your-data-warehouse/')"   class="learnMore-grid__item relative z-10 flex flex-col justify-end text-white bg-transparent md:col-span-4 border-12 p-6 border-white">
+                <a @click="handleEvent('/go/modernize-your-data-warehouse/')" class="learnMore-grid__item relative z-10 flex flex-col justify-end text-white bg-transparent md:col-span-4 border-12 p-6 border-white">
                     <i>
                         <svg width="48" height="53" class="mb-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 385.61 497.4">
                             <defs>
@@ -914,45 +921,211 @@
                     </p>
                 </a>
             </div>
-        </base-section>
-
-        <base-section :classNames="'bg-black slash-box-big'">
 
         </base-section>
-
-        <base-section class="get-started bg-gray-100">
-            <h3 class="rfs-text-4xl mb-3 md:mb-6">Get started with Yellowbrick</h3>
-            <div class="flex flex-col md:flex-row">
-                <ul class="w-full md:w-1/4 list-none m-0 md:mr-6 p-0 rfs-text-3xl">
-                    <li>
-                        <arrow-link-button class="rfs-text-3xl" href="/go/book-a-demo/">Demos</arrow-link-button>
-                    </li>
-                    <li>
-                        <arrow-link-button class="rfs-text-3xl" href="/test-drive/">Test Drive</arrow-link-button>
-                    </li>
-                    <li>
-                        <arrow-link-button class="rfs-text-3xl" href="/resources/webcasts/">Webinars</arrow-link-button>
-                    </li>
-                </ul>
-                <div class="w-full md:w-3/4">
-                    <h3 class="rfs-text-3xl">
-                        Join us for a Yellowbrick demos and webinars!
+        <base-section>
+            <h4 class="rfs-text-3xl mb-5 mx-auto max-w-screen-md justify-center font-bold mt-0">
+                Yellowbrick helps enterprises innovate and thrive
+            </h4>
+            <div class="flex flex-col md:flex-row flex-wrap max-w-1200 mx-auto">
+                <span v-for="logo in $page.pages.logo" :key="logo.name" class="w-full md:w-1/4" style="padding:20px">
+                    <img class="w-full customer_logos" :src="logo.photo" :title="logo.name " />
+                </span>
+            </div>
+        </base-section>
+        <base-section :classNames="'home-reviews flex pt-2 pb-12 md:pt-2 md:pb-10 px-5 xl:px-0'">
+            <div class="flex flex-col max-w-1200 w-full mx-auto">
+                <div class="flex flex-col md:flex-row">
+                <div class="w-full lg:w-1/2 z-10  my-auto">
+                    <h3 class="rfs-text-6xl text-black sub-title mb-6 md:pt-16 my-auto" style="padding:80px;margin:0px">
+                        Yellowbrick is top rated in customer reviews
                     </h3>
-                    <p class="rfs-text-base mb-6">
-                        Learn how to easily and securely analyze billions of rows of data,
-                        with sub-second query response. Join our monthly demos with experts
-                        who share Yellowbrick features and answer your questions live.
-                    </p>
-                    <h3 class="rfs-text-3xl">You’ll learn how Yellowbrick enables:</h3>
-                    <ul>
-                        <li>Real-time analytics</li>
-                        <li>Data lake analytics</li>
-                        <li>Data warehouse modernization</li>
-                        <li>Analytics across distributed data clouds</li>
-                    </ul>
+                </div>
+                <div class="w-full lg:w-1/2 z-10">
+                    <template>
+                        <div>
+                            <ClientOnly>
+                                <VueScriptComponent script='<style>
+                                .gartner-pi-link:hover {
+                                background-image: none !important;
+                                }
+                                .gartner-pi-reviews-link {
+                                display:none;
+                                }
+                                .hs-input {
+                                max-width: 300px !important;
+                                border: 1px solid #dedede;
+                                height: 40px;
+                                background: #80808017;
+                                }
+                                .blog a:not(.gartner-pi-link) {
+                                border-bottom: 0px !important;
+                                color: none!important;
+                                background-position: none !important;
+                                }
+                                .gartner-pi-link {
+                                background-image: none !important;
+                                }
+                                .hbspt-form form {
+                                display: flex;
+                                }
+                                .custom-hbst {
+                                background-color: #ffcd32;
+                                padding-top: 6px;
+                                padding-bottom: 7px;
+                                padding-left: 6px;
+                                padding-right: 6px;
+                                }
+
+                                .hydrated.rw-badge2 {
+                                position: inherit;
+                                width: 400px;
+                                margin-top: 50px;
+                                }
+                                .hbspt-form {
+                                width:300px;
+                                }
+                                .hydrated.rw-badge2 .container {
+                                border-radius: 0px;
+                                box-shadow: 1px solid white;
+                                margin: 0px;
+                                }
+                                ul.no-list.hs-error-msgs.inputs-list {
+                                width: 100%;
+                                list-style-type: none;
+                                padding-left: 0;
+                                padding-top: 4px;
+                                color: red;
+                                }
+                                div#gartner-pi-widget-MDM5NDZjOWEtMWY1Yi00NDNjLWFkZWItMTY0YTBjNGQzNjBk {
+                                width: 350px;
+                                height:200px;
+                                }
+                                @media only screen and (max-width: 768px) {
+                                div#gartner-pi-widget-MDM5NDZjOWEtMWY1Yi00NDNjLWFkZWItMTY0YTBjNGQzNjBk {
+                                width: auto;
+                                }
+                                    .background-square, .background-square1 {
+                                        width: 281px !important;
+                                        padding: 10px !important;
+                                        height: 220px !important;
+                                    }
+                                .home-reviews h3 {
+                                padding:0px!important;}
+                                .hydrated.rw-badge2 {
+                                width: auto !important;
+                                }
+                                .hbspt-form {
+                                width: auto !important;
+                                }
+                                }
+                                ul.no-list.hs-error-msgs.inputs-list li {
+                                width: 100%;
+                                }
+                                .reviews-num {
+                                display:none;
+                                }
+                                .container {
+                                position: relative;
+                                border-width: 1px;
+                                border-style: solid;
+                                border-radius: 0px;
+                                box-shadow: 1px solid white;
+                                margin: 0px;
+                                }
+
+                                .hydrated.rw-badge2 {
+                                width: 350px;
+                                }
+                                .hs_error_rollup {
+                                position: absolute;
+                                width: 100%;
+                                }
+                                .background-square, .background-square1 {
+                                width: 410px;
+                                float: right;
+                                height: 260px;
+                                box-shadow: -5px 5px 10px #80808021;
+                                background-color: white;
+                                padding: 30px;
+                                }
+                                .input input {
+                                position: relative;
+                                z-index: 9;
+                                }
+                                label.hs-main-font-element {
+                                display: none;
+                                }
+
+                                .gartner-pi-card .gartner-pi-as-of-date {
+                                -webkit-transform: inherit !important;
+                                }
+                                </style>' />
+                                <VueScriptComponent script='<script type="application/javascript"
+                                src="https://www.gartner.com/reviews/public/Widget/js/widget.js">
+                                </script>
+                                <script type="application/javascript">
+                                GartnerPI_Widget({
+                                size: "small",
+                                theme: "light",
+                                sourcingLink: "https://gtnr.io/FlyPtAx1l",
+                                widget_id: "MDM5NDZjOWEtMWY1Yi00NDNjLWFkZWItMTY0YTBjNGQzNjBk",
+                                version: "2",
+                                container: document.getElementById("widget-container"),
+                                })
+                                </script>' />
+                                <br />
+
+                                <div class="background-square">
+                                <div id="widget-container"></div>
+                                </div>
+                                <div style=" width: 200px; float: right;color:white">G2 Widget</div>
+                                <div class="background-square1">
+                                <!-- Begin widget code -->
+                                <div data-rw-badge2="28103"></div>
+                                <script type="application/javascript">var script = document.createElement("script"); script.type = "module"; script.src = "https://widgets.thereviewsplace.com/2.0/rw-widget-badge2.js"; document.getElementsByTagName("head")[0].appendChild(script);</script>
+                                <!-- End widget code -->
+                                </div>
+                            </ClientOnly>
+                        </div>
+                    </template>
+                    </div>
                 </div>
             </div>
         </base-section>
+            <base-section class="get-started bg-gray-100">
+                <h3 class="rfs-text-4xl mb-3 md:mb-6">Get started with Yellowbrick</h3>
+                <div class="flex flex-col md:flex-row">
+                    <ul class="w-full md:w-1/4 list-none m-0 md:mr-6 p-0 rfs-text-3xl">
+                        <li>
+                            <arrow-link-button class="rfs-text-3xl" href="/go/book-a-demo/">Demos</arrow-link-button>
+                        </li>
+                        <li>
+                            <arrow-link-button class="rfs-text-3xl" href="/test-drive/">Test Drive</arrow-link-button>
+                        </li>
+                        <li>
+                            <arrow-link-button class="rfs-text-3xl" href="/resources/webcasts/">Webinars</arrow-link-button>
+                        </li>
+                    </ul>
+                    <div class="w-full md:w-3/4">
+                        <h3 class="rfs-text-3xl">
+                            Join us for a Yellowbrick demos and webinars!
+                        </h3>
+                        <p class="rfs-text-base mb-6">
+                            Learn how to easily and securely analyze billions of rows of data,
+                            with sub-second query response. Join our monthly demos with experts
+                            who share Yellowbrick features and answer your questions live.
+                        </p>
+                        <h3 class="rfs-text-3xl">You’ll learn how Yellowbrick enables:</h3>
+                        <ul>
+                            <li>Real-time analytics</li>
+                            <li>Data lake analytics</li>
+                            <li>Data warehouse modernization</li>
+                            <li>Analytics across distributed data clouds</li>
+                        </ul>
+                    </div>
+                </div>
+            </base-section>
     </Layout>
 </template>
 <script src="https://unpkg.com/vue-star-rating/dist/VueStarRating.umd.min.js"></script>
@@ -1012,7 +1185,9 @@
             Hooper,
             Slide,
             HooperNavigation,
-            HooperPagination
+            HooperPagination,
+            VueScriptComponent: () =>
+                import('vue-script-component'),
         },
         data() {
             return {
@@ -1061,6 +1236,13 @@
     titleColor
     url
     image
+    }
+    }
+    pages(path: "/data/pages/client") {
+    logo {
+    name
+    position
+    photo
     }
     }
     }

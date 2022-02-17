@@ -44,11 +44,11 @@ collections:
       - {label: Created Date, name: date, widget: date}
   -
     label: Customers
-    name: customers
+    name: client
     files:
       -
         label: Logos
-        name: customer
+        name: logos
         file: data/pages/client.yml
         fields:
           -
