@@ -1132,6 +1132,7 @@
                                     font-weight: 500;
                                     margin-right: 8px;
                                     }
+                                   
                                     </style>' />
                                     <VueScriptComponent script='<script type="application/javascript"
                                     src="https://www.gartner.com/reviews/public/Widget/js/widget.js">
@@ -1153,14 +1154,16 @@
                                     </div>
                                     <div class="background-square1">
                                     <div><img style="float:right" src="/uploads/logo-g2crowd.png" /></div>
+                                       <a target="_blank" href="https://www.g2.com/products/yellowbrick-data-yellowbrick/reviews?utm_source=review-widget">
                                     <div class="g2-pi-card">
                                     <div class="g2-pi-header"><h5>Yellowbrick</h5>
                                     <h6>The data warehouse for distributed clouds</h6>
                                     </div>
                                     </div>
+                                       </a>
                                     <!-- Begin widget code -->
                                     <div  data-rw-badge2="28103"></div>
-                                    <div style="color: #4b6cc9; float:right;font-size: 14px; font-weight: 500; position: relative; margin-top: -25px;" ><a target="_blank" href="https://www.g2.com/products/g2/reviews/start?return_to=https%3A%2F%2Fwww.g2.com%2Fproducts%2Fg2%2Ftake_survey">Submit a review <span style="display: inline-block;"><img src="/uploads/right.png"></span></a></div>
+                                    <div style="color: #4b6cc9; float:right;font-size: 14px; font-weight: 500; position: relative; margin-top: -25px;" ><a target="_blank" href="https://www.g2.com/products/yellowbrick-data-yellowbrick/reviews?utm_source=review-widget">Submit a review <span style="display: inline-block;"><img src="/uploads/right.png"></span></a></div>
                                     <script type="application/javascript">var script = document.createElement("script"); script.type = "module"; script.src = "https://widgets.thereviewsplace.com/2.0/rw-widget-badge2.js"; document.getElementsByTagName("head")[0].appendChild(script);</script>
                                     <!-- End widget code -->
                                     </div>
