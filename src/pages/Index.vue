@@ -1020,6 +1020,11 @@
                                     width: 350px;
                                     height:180px;
                                     }
+                                        @media screen and (min-width: 768px) and (max-device-width: 912px) {
+                                            .background-square1 {
+                                                margin-right: 0 !important;
+                                            }
+                                        }
                                     @media only screen and (max-width: 768px) {
                                     .background-square1 {
                                     margin-right: 0px!important;
