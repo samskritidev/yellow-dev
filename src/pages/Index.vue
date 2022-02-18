@@ -935,7 +935,7 @@
             <div class="flex flex-col max-w-1200 w-full mx-auto">
                 <div class="flex flex-col md:flex-row">
                 <div class="w-full lg:w-1/2 z-10  md:pl-16 my-auto">
-                    <h3 class="review-title rfs-text-6xl text-black sub-title mb-6  md:pt-16 my-auto" style="margin: 0px; width: 440px; border-bottom: 20px solid #ffcd32; ">
+                    <h3 class="review-title rfs-text-6xl text-black sub-title mb-6  my-auto" style="width: 440px; border-bottom: 20px solid #ffcd32; ">
                         Yellowbrick is top rated in customer reviews
                     </h3>
                 </div>
