@@ -13,6 +13,7 @@
             margin-top: 30px !important;
         }
     }
+
     .home-reviews {
         background-image: url(/uploads/reviews.png);
         background-repeat: no-repeat;
@@ -928,16 +929,16 @@
 
         </base-section>
         <base-section>
-            <h4 class="rfs-text-3xl mb-5 mx-auto max-w-screen-md justify-center py-4 font-bold mt-0" style="margin-top: 10px;">
+            <h3 class="rfs-text-4xl mb-5 mx-auto justify-center py-8 mt-0" style="margin-top: 10px;">
                 Yellowbrick helps enterprises innovate and thrive
-            </h4>
+            </h3>
             <div class="flex flex-col md:flex-row flex-wrap max-w-1200 mx-auto">
                 <span v-for="logo in $page.pages.logo" :key="logo.name" class="w-full md:w-1/4  pl-0 pr-0 md:pl-2 md:pr-2 pb-0 pt-0 md:pb-2 md:pt-2">
                     <img class="w-full customer_logos pl-8 pr-8 md:pl-4 md:pr-4 pb-8 pt-8 md:pd-2 md:pt-2" :src="logo.photo" :title="logo.name " />
                 </span>
             </div>
         </base-section>
-        <base-section :classNames="'  flex pt-2 pb-12 md:pt-2 md:pb-20 px-5 xl:px-0'">
+        <base-section :classNames="' home-reviews flex pt-2 pb-12 md:pt-12 md:pb-20 px-5 xl:px-0'">
             <div class="flex flex-col max-w-1200 w-full mx-auto">
                 <div class="flex flex-col md:flex-row">
                     <div class="w-full lg:w-1/2 z-10  md:pl-10 md:pr-4 my-auto">
@@ -945,167 +946,219 @@
                             Yellowbrick is top rated in customer reviews
                         </h3>
                     </div>
-                    <div class="w-full lg:w-1/2 z-10 md:pb-6">
+                    <div class="w-full lg:w-1/2 z-10 md:pb-0">
                         <template>
                             <div>
                                 <ClientOnly>
                                     <VueScriptComponent script='<style>
 
-                                 @media screen and (min-width: 728px) and (max-device-width: 912px) {
-                                        div#gartner-pi-widget-MDM5NDZjOWEtMWY1Yi00NDNjLWFkZWItMTY0YTBjNGQzNjBk {
-                                            width: 100% !important;
-                                            height: 180px !important;
-                                        }
-                                        .background-square, .background-square1 {
-                                            width: auto !important;
-                                            float: none !important;
-                                        }
-                                        .hydrated.rw-badge2 {
-                                            width: auto !important;
-                                        }
-                                }
-                                .gartner-pi-link:hover {
-                                background-image: none !important;
-                                }
-                                .gartner-pi-reviews-link {
-                                display:none;
-                                }
-                                .hs-input {
-                                max-width: 300px !important;
-                                border: 1px solid #dedede;
-                                height: 40px;
-                                background: #80808017;
-                                }
-                                .blog a:not(.gartner-pi-link) {
-                                border-bottom: 0px !important;
-                                color: none!important;
-                                background-position: none !important;
-                                }
-                                .gartner-pi-link {
-                                background-image: none !important;
-                                }
-                                .hbspt-form form {
-                                display: flex;
-                                }
-                                .custom-hbst {
-                                background-color: #ffcd32;
-                                padding-top: 6px;
-                                padding-bottom: 7px;
-                                padding-left: 6px;
-                                padding-right: 6px;
-                                }
-
-                                .hydrated.rw-badge2 {
-                                position: inherit;
-                                width: 400px;
-                                margin-top: 50px;
-                                }
-                                .hbspt-form {
-                                width:300px;
-                                }
-                                .hydrated.rw-badge2 .container {
-                                border-radius: 0px;
-                                box-shadow: 1px solid white;
-                                margin: 0px;
-                                }
-                                ul.no-list.hs-error-msgs.inputs-list {
-                                width: 100%;
-                                list-style-type: none;
-                                padding-left: 0;
-                                padding-top: 4px;
-                                color: red;
-                                }
-                                div#gartner-pi-widget-MDM5NDZjOWEtMWY1Yi00NDNjLWFkZWItMTY0YTBjNGQzNjBk {
-                                width: 350px;
-                                height:180px;
-                                }
-                                @media only screen and (max-width: 768px) {
-                                div#gartner-pi-widget-MDM5NDZjOWEtMWY1Yi00NDNjLWFkZWItMTY0YTBjNGQzNjBk {
-                                width: 100%;
-                                }
-
-                                .review-title {
-                                width: auto !important;
-                                }
-                                .background-square, .background-square1 {
-                                width: auto !important;
-                                float:none!important;
-                                }
-                                    .customer_logos {
-                                        padding: 10px !important;
+                                    @media screen and (min-width: 728px) and (max-device-width: 912px) {
+                                    div#gartner-pi-widget-MDM5NDZjOWEtMWY1Yi00NDNjLWFkZWItMTY0YTBjNGQzNjBk {
+                                    width: 100% !important;
+                                    height: 180px !important;
                                     }
-                                .home-reviews h3 {
-                                padding:0px!important;}
-                                .hydrated.rw-badge2 {
-                                width: auto !important;
-                                }
-                                .hbspt-form {
-                                width: auto !important;
-                                }
-                                }
-                                ul.no-list.hs-error-msgs.inputs-list li {
-                                width: 100%;
-                                }
-                                .reviews-num {
-                                display:none;
-                                }
-                                .container {
-                                position: relative;
-                                border-width: 1px;
-                                border-style: solid;
-                                border-radius: 0px;
-                                box-shadow: 1px solid white;
-                                margin: 0px;
-                                }
 
-                                .hydrated.rw-badge2 {
-                                width: 350px;
-                                }
-                                .hs_error_rollup {
-                                position: absolute;
-                                width: 100%;
-                                }
-                                .background-square, .background-square1 {
-                                width: 405px;
-                                float: right;
+                                    .background-square, .background-square1 {
+                                    width: auto !important;
+                                    float: none !important;
+                                    }
+                                    .hydrated.rw-badge2 {
+                                    width: auto !important;
+                                    }
+                                    }
+                                    .gartner-pi-link:hover {
+                                    background-image: none !important;
+                                    }
+                                    .gartner-pi-reviews-link {
+                                    display:none;
+                                    }
+                                    .hs-input {
+                                    max-width: 300px !important;
+                                    border: 1px solid #dedede;
+                                    height: 40px;
+                                    background: #80808017;
+                                    }
+                                    .blog a:not(.gartner-pi-link) {
+                                    border-bottom: 0px !important;
+                                    color: none!important;
+                                    background-position: none !important;
+                                    }
+                                    .gartner-pi-link {
+                                    background-image: none !important;
+                                    }
+                                    .hbspt-form form {
+                                    display: flex;
+                                    }
+                                    .custom-hbst {
+                                    background-color: #ffcd32;
+                                    padding-top: 6px;
+                                    padding-bottom: 7px;
+                                    padding-left: 6px;
+                                    padding-right: 6px;
+                                    }
 
-                                }
-                                .input input {
-                                position: relative;
-                                z-index: 9;
-                                }
-                                label.hs-main-font-element {
-                                display: none;
-                                }
+                                    .hydrated.rw-badge2 {
+                                    position: inherit;
+                                    width: 400px;
+                                    }
+                                    .hbspt-form {
+                                    width:300px;
+                                    }
+                                    .hydrated.rw-badge2 .container {
+                                    border-radius: 0px;
+                                    box-shadow: 1px solid white;
+                                    margin: 0px;
+                                    }
+                                    ul.no-list.hs-error-msgs.inputs-list {
+                                    width: 100%;
+                                    list-style-type: none;
+                                    padding-left: 0;
+                                    padding-top: 4px;
+                                    color: red;
+                                    }
+                                    div#gartner-pi-widget-MDM5NDZjOWEtMWY1Yi00NDNjLWFkZWItMTY0YTBjNGQzNjBk {
+                                    width: 350px;
+                                    height:180px;
+                                    }
+                                    @media only screen and (max-width: 768px) {
+                                    .background-square1 {
+                                    margin-right: 0px!important;
+                                    height: 200px;
+                                    }
+                                    div#gartner-pi-widget-MDM5NDZjOWEtMWY1Yi00NDNjLWFkZWItMTY0YTBjNGQzNjBk {
+                                    width: 100%;
+                                    }
 
-                                .gartner-pi-card .gartner-pi-as-of-date {
-                                -webkit-transform: inherit !important;
-                                }
-                                </style>' />
-                                <VueScriptComponent script='<script type="application/javascript"
-                                src="https://www.gartner.com/reviews/public/Widget/js/widget.js">
-                                </script>
-                                <script type="application/javascript">
-                                GartnerPI_Widget({
-                                size: "small",
-                                theme: "light",
-                                sourcingLink: "https://gtnr.io/FlyPtAx1l",
-                                widget_id: "MDM5NDZjOWEtMWY1Yi00NDNjLWFkZWItMTY0YTBjNGQzNjBk",
-                                version: "2",
-                                container: document.getElementById("widget-container"),
-                                })
-                                </script>' />
-                                <br />
+                                    .review-title {
+                                    width: auto !important;
+                                    }
 
-                                <div class="background-square">
-                                <div id="widget-container"></div>
-                                </div>
-                                <div class="background-square1">
-                                <!-- Begin widget code -->
-                                <div data-rw-badge2="28103"></div>
-                                <script type="application/javascript">var script = document.createElement("script"); script.type = "module"; script.src = "https://widgets.thereviewsplace.com/2.0/rw-widget-badge2.js"; document.getElementsByTagName("head")[0].appendChild(script);</script>
-                                <!-- End widget code -->
-                                </div>
+                                    .background-square, .background-square1 {
+                                    width: auto !important;
+                                    float: none !important;
+                                    }
+                                    .customer_logos {
+                                    padding: 10px !important;
+                                    }
+                                    .home-reviews h3 {
+                                    padding:0px!important;}
+                                    .hydrated.rw-badge2 {
+                                    width: auto !important;
+                                    }
+                                    .hbspt-form {
+                                    width: auto !important;
+                                    }
+                                    }
+                                    ul.no-list.hs-error-msgs.inputs-list li {
+                                    width: 100%;
+                                    }
+                                    .reviews-num {
+                                    display:none;
+                                    }
+                                    .container {
+                                    position: relative;
+                                    border-width: 1px;
+                                    border-style: solid;
+                                    border-radius: 0px;
+                                    box-shadow: 1px solid white;
+                                    margin: 0px;
+                                    }
+
+                                    .hydrated.rw-badge2 {
+                                    width: 350px;
+                                    }
+                                    .hs_error_rollup {
+                                    position: absolute;
+                                    width: 100%;
+                                    }
+                                    .background-square, .background-square1 {
+                                    width: 405px;
+                                    float: right;
+
+                                    }
+                                    .background-square1 {
+                                    background-color: white;
+                                    margin-top: 50px;
+                                    border: 1px solid #dedede;
+                                    padding: 18px;
+                                    width: 350px;
+                                    margin-right: 55px;
+                                    }
+                                    .input input {
+                                    position: relative;
+                                    z-index: 9;
+                                    }
+                                    label.hs-main-font-element {
+                                    display: none;
+                                    }
+
+                                    .gartner-pi-card .gartner-pi-as-of-date {
+                                    -webkit-transform: inherit !important;
+                                    }
+                                    .g2-pi-header h6 {
+                                    font-size: 13px;
+                                    letter-spacing: .3px;
+                                    line-height: normal;
+                                    margin: 0 0 35px;
+                                    font-weight: 300;
+                                    }
+                                    .g2-pi-header h5 {
+                                    font-size: 22px;
+                                    margin: 20px 0 3px 0;
+                                    line-height: normal;
+                                    font-weight: 500;
+                                    }
+                                    .star {
+                                    font-size: 24px;
+                                    color: #f2c71a;
+                                    }
+                                    .value {
+                                    font-size: 1.5em;
+                                    font-weight: 500;
+                                    margin-right: 8px;
+                                    }
+                                    .widget.container .rating.star {
+                                    font-size: 24px;
+                                    color: #f2c71a;
+                                    }
+
+                                    .widget.container .rating.value {
+                                    font-size: 1.5em;
+                                    font-weight: 500;
+                                    margin-right: 8px;
+                                    }
+                                    </style>' />
+                                    <VueScriptComponent script='<script type="application/javascript"
+                                    src="https://www.gartner.com/reviews/public/Widget/js/widget.js">
+                                    </script>
+                                    <script type="application/javascript">
+                                    GartnerPI_Widget({
+                                    size: "small",
+                                    theme: "light",
+                                    sourcingLink: "https://gtnr.io/FlyPtAx1l",
+                                    widget_id: "MDM5NDZjOWEtMWY1Yi00NDNjLWFkZWItMTY0YTBjNGQzNjBk",
+                                    version: "2",
+                                    container: document.getElementById("widget-container"),
+                                    })
+                                    </script>' />
+                                    <br />
+
+                                    <div class="background-square">
+                                    <div id="widget-container"></div>
+                                    </div>
+                                    <div class="background-square1">
+                                    <div><img style="float:right" src="/uploads/logo-g2crowd.png" /></div>
+                                    <div class="g2-pi-card">
+                                    <div class="g2-pi-header"><h5>Yellowbrick</h5>
+                                    <h6>The data warehouse for distributed clouds</h6>
+                                    </div>
+                                    </div>
+                                    <!-- Begin widget code -->
+                                    <div  data-rw-badge2="28103"></div>
+                                    <div style="color: #4b6cc9; float:right;font-size: 14px; font-weight: 500; position: relative; margin-top: -25px;" ><a target="_blank" href="https://www.g2.com/products/g2/reviews/start?return_to=https%3A%2F%2Fwww.g2.com%2Fproducts%2Fg2%2Ftake_survey">Submit a review <span style="display: inline-block;"><img src="/uploads/right.png"></span></a></div>
+                                    <script type="application/javascript">var script = document.createElement("script"); script.type = "module"; script.src = "https://widgets.thereviewsplace.com/2.0/rw-widget-badge2.js"; document.getElementsByTagName("head")[0].appendChild(script);</script>
+                                    <!-- End widget code -->
+                                    </div>
                                 </ClientOnly>
                             </div>
                         </template>
