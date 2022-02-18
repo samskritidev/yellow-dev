@@ -510,6 +510,9 @@
                                     .hbspt-form {
                                     width: auto !important;
                                     }
+                                    .background-square1 {
+                                    width:100%!important;
+                                    }
                                     }
                                     ul.no-list.hs-error-msgs.inputs-list li {
                                     width: 100%;
@@ -557,7 +560,7 @@
                                     background-color: white;
                                     border: 1px solid #dedede;
                                     padding: 12px;
-                                    width: 100%;
+                                    width: 300px;
                                     }
                                     .g2-pi-header h5 {
                                     font-size: 22px;

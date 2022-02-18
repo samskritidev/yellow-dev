@@ -10,7 +10,7 @@
                v-model="q"
                type="text"
                placeholder="Search Blog"
-               class="w-100 text-xl text-black text-xl border border-gray-200 focus:outline-none focus:shadow focus:border-gray-400 rounded px-3 appearance-none leading-normal bg-white"
+               class="w-100 text-base text-gray-400 font-normal border border-gray-200 focus:outline-none focus:shadow focus:border-gray-400 rounded px-3 appearance-none leading-normal bg-white"
                @keydown.esc="results = null"
                @keydown.down="selectionMove(1)"
                @keydown.up="selectionMove(-1)"
