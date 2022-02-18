@@ -421,7 +421,6 @@
                     </div>
                     <br />
                     <br />
-                    <br />
                     <div class="authorslist md:ml-12">
                         <template>
                             <div>
@@ -473,27 +472,27 @@
                                     padding-left: 6px;
                                     padding-right: 6px;
                                     }
-                                        @media screen and (min-width: 768px) and (max-device-width: 1172px) {
-                                            div#gartner-pi-widget-MDM5NDZjOWEtMWY1Yi00NDNjLWFkZWItMTY0YTBjNGQzNjBk {
-                                                width: 100% !important;
-                                            }
+                                    @media screen and (min-width: 768px) and (max-device-width: 1172px) {
+                                    div#gartner-pi-widget-MDM5NDZjOWEtMWY1Yi00NDNjLWFkZWItMTY0YTBjNGQzNjBk {
+                                    width: 100% !important;
+                                    }
 
-                                            .hbspt-form {
-                                                width: 100% !important;
-                                            }
-                                        }
+                                    .hbspt-form {
+                                    width: 100% !important;
+                                    }
+                                    }
                                     .hydrated.rw-badge2 {
                                     position: inherit;
                                     width:300px;
                                     }
-                                        .hbspt-form {
+                                    .hbspt-form {
                                     width:300px;
                                     }
-                                        .hydrated.rw-badge2 .container {
-                                            border-radius: 0px;
-                                            box-shadow: 1px solid white;
-                                            margin: 0px;
-                                        }
+                                    .hydrated.rw-badge2 .container {
+                                    border-radius: 0px;
+                                    box-shadow: 1px solid white;
+                                    margin: 0px;
+                                    }
                                     ul.no-list.hs-error-msgs.inputs-list {
                                     width: 100%;
                                     list-style-type: none;
@@ -501,17 +500,17 @@
                                     padding-top: 4px;
                                     color: red;
                                     }
-                                        @media only screen and (max-width: 768px) {
-                                            div#gartner-pi-widget-MDM5NDZjOWEtMWY1Yi00NDNjLWFkZWItMTY0YTBjNGQzNjBk {
-                                                width: 100%;
-                                            }
-                                            .hydrated.rw-badge2 {
-                                                width: auto !important;
-                                            }
-                                            .hbspt-form {
-                                                width: auto !important;
-                                            }
-                                        }
+                                    @media only screen and (max-width: 768px) {
+                                    div#gartner-pi-widget-MDM5NDZjOWEtMWY1Yi00NDNjLWFkZWItMTY0YTBjNGQzNjBk {
+                                    width: 100%;
+                                    }
+                                    .hydrated.rw-badge2 {
+                                    width: auto !important;
+                                    }
+                                    .hbspt-form {
+                                    width: auto !important;
+                                    }
+                                    }
                                     ul.no-list.hs-error-msgs.inputs-list li {
                                     width: 100%;
                                     }
@@ -539,13 +538,55 @@
                                     position: relative;
                                     z-index: 9;
                                     }
-                                        label.hs-main-font-element {
-                                            display: none;
-                                        }
+                                    label.hs-main-font-element {
+                                    display: none;
+                                    }
 
-                                        .gartner-pi-card .gartner-pi-as-of-date {
-                                            -webkit-transform: inherit !important;
-                                        }
+                                    .gartner-pi-card .gartner-pi-as-of-date {
+                                    -webkit-transform: inherit !important;
+                                    }
+                                    .g2-pi-header h6 {
+                                    font-size: 13px;
+                                    letter-spacing: .3px;
+                                    line-height: normal;
+                                    margin: 0 0 35px;
+                                    font-weight: 300;
+                                    }
+
+                                    .background-square1 {
+                                    background-color: white;
+                                    border: 1px solid #dedede;
+                                    padding: 12px;
+                                    width: 100%;
+                                    }
+                                    .g2-pi-header h5 {
+                                    font-size: 22px;
+                                    margin: 20px 0 3px 0;
+                                    line-height: normal;
+                                    font-weight: 500;
+                                    }
+
+                                    .star {
+                                    font-size: 24px;
+                                    color: #f2c71a;
+                                    }
+
+                                    .value {
+                                    font-size: 1.5em;
+                                    font-weight: 500;
+                                    margin-right: 8px;
+                                    }
+
+                                    .widget.container .rating.star {
+                                    font-size: 24px;
+                                    color: #f2c71a;
+                                    }
+
+                                    .widget.container .rating.value {
+                                    font-size: 1.5em;
+                                    font-weight: 500;
+                                    margin-right: 8px;
+                                    }
                                     </style>' />
                                     <VueScriptComponent script='<script type="application/javascript"
                                     src="https://www.gartner.com/reviews/public/Widget/js/widget.js">
@@ -565,10 +606,20 @@
                                     <br />
                                     <div>
 
+                                    <div class="background-square1">
+                                    <div><img style="float:right" src="/uploads/logo-g2crowd.png" /></div>
+                                    <div class="g2-pi-card">
+                                    <div class="g2-pi-header">
+                                    <h5>Yellowbrick</h5>
+                                    <h6>The data warehouse for distributed clouds</h6>
+                                    </div>
+                                    </div>
                                     <!-- Begin widget code -->
                                     <div data-rw-badge2="28103"></div>
+                                    <div style="color: #4b6cc9; float:right;font-size: 14px; font-weight: 500; position: relative; margin-top: -25px;"><a target="_blank" href="https://www.g2.com/products/g2/reviews/start?return_to=https%3A%2F%2Fwww.g2.com%2Fproducts%2Fg2%2Ftake_survey">Submit a review <span style="display: inline-block;"><img src="/uploads/right.png"></span></a></div>
                                     <script type="application/javascript">var script = document.createElement("script"); script.type = "module"; script.src = "https://widgets.thereviewsplace.com/2.0/rw-widget-badge2.js"; document.getElementsByTagName("head")[0].appendChild(script);</script>
                                     <!-- End widget code -->
+                                    </div>
                                     </div>
                                 </ClientOnly>
                             </div>
