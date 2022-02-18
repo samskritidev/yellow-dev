@@ -2,7 +2,7 @@
 id: ecaacb3e-2059-45a9-a7e4-cfe94a878c7d
 name: Nick Cox
 position: Head of Product
-authorImage: /uploads/nick-cox0.jpg
+authorImage: /uploads/nick-cox.jpg
 authorAbout: >-
   <!--StartFragment-->
 

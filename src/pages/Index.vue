@@ -922,7 +922,7 @@
 
         </base-section>
         <base-section>
-            <h4 class="rfs-text-3xl mb-5 mx-auto max-w-screen-md justify-center font-bold mt-0">
+            <h4 class="rfs-text-3xl mb-5 mx-auto max-w-screen-md justify-center py-4 font-bold mt-0" style="margin-top: 10px;">
                 Yellowbrick helps enterprises innovate and thrive
             </h4>
             <div class="flex flex-col md:flex-row flex-wrap max-w-1200 mx-auto">
@@ -931,15 +931,15 @@
                 </span>
             </div>
         </base-section>
-        <base-section :classNames="'home-reviews flex pt-2 pb-12 md:pt-2 md:pb-10 px-5 xl:px-0'">
+        <base-section :classNames="' flex pt-2 pb-12 md:pt-2 md:pb-24 px-5 xl:px-0'">
             <div class="flex flex-col max-w-1200 w-full mx-auto">
                 <div class="flex flex-col md:flex-row">
-                <div class="w-full lg:w-1/2 z-10  my-auto">
-                    <h3 class="rfs-text-6xl text-black sub-title mb-6 md:pt-16 my-auto" style="padding:80px;margin:0px">
+                <div class="w-full lg:w-1/2 z-10  md:pl-16 my-auto">
+                    <h3 class="review-title rfs-text-6xl text-black sub-title mb-6  md:pt-16 my-auto" style="margin: 0px; width: 440px; border-bottom: 20px solid #ffcd32; ">
                         Yellowbrick is top rated in customer reviews
                     </h3>
                 </div>
-                <div class="w-full lg:w-1/2 z-10">
+                <div class="w-full lg:w-1/2 z-10 md:pb-6">
                     <template>
                         <div>
                             <ClientOnly>
@@ -997,16 +997,22 @@
                                 }
                                 div#gartner-pi-widget-MDM5NDZjOWEtMWY1Yi00NDNjLWFkZWItMTY0YTBjNGQzNjBk {
                                 width: 350px;
-                                height:200px;
+                                height:180px;
                                 }
                                 @media only screen and (max-width: 768px) {
                                 div#gartner-pi-widget-MDM5NDZjOWEtMWY1Yi00NDNjLWFkZWItMTY0YTBjNGQzNjBk {
-                                width: auto;
+                                width: 350px;
                                 }
-                                    .background-square, .background-square1 {
-                                        width: 281px !important;
+
+                                .review-title {
+                                width: auto !important;
+                                }
+                                .background-square, .background-square1 {
+                                width: 350px !important;
+                                float: right !important;
+                                }
+                                    .customer_logos {
                                         padding: 10px !important;
-                                        height: 220px !important;
                                     }
                                 .home-reviews h3 {
                                 padding:0px!important;}
@@ -1040,12 +1046,9 @@
                                 width: 100%;
                                 }
                                 .background-square, .background-square1 {
-                                width: 410px;
+                                width: 405px;
                                 float: right;
-                                height: 260px;
-                                box-shadow: -5px 5px 10px #80808021;
-                                background-color: white;
-                                padding: 30px;
+
                                 }
                                 .input input {
                                 position: relative;

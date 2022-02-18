@@ -17,12 +17,6 @@ logo:
   - name: SymphonyRetail
     position: "7"
     photo: /uploads/symphony.png
-  - name: Melco
-    position: "9"
-    photo: /uploads/melco.png
-  - name: Teoco
-    position: "10"
-    photo: /uploads/teoco.png
   - name: ACIWorldwide
     position: 5"
     photo: /uploads/aci.png
