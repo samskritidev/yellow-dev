@@ -1,7 +1,7 @@
 <style scoped>
-::placeholder {
-  @apply rfs-text-lg text-gray-400 font-light;
-}
+    ::placeholder {
+        @apply text-base text-gray-400 font-normal;
+    }
 </style>
 <template>
     <div id="search_div" class="w-full max-w-1200 mx-auto flex flex-row justify-end items-center search_div" style="top:20px;">

@@ -27,7 +27,11 @@
     .main-nav-link a {
         text-transform: capitalize;
     }
-@media only screen and (max-width: 767px) { 
+@media only screen and (max-width: 767px) {
+    .hidden_test {
+        -webkit-line-clamp: 20;
+        line-clamp: 20;
+    }
 .authorName {
            padding-top: 20px;
              }

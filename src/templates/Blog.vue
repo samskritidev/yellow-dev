@@ -2,6 +2,40 @@
 .brighter-teal {
     color: #00c3d7;
 }
+    @media only screen and (max-width: 371px) {
+        .authorimages {
+            width: 34px !important;
+            height: 34px !important;
+        }
+    }
+    @media screen and (min-width: 401px) and (max-device-width: 767px) {
+        .featured_image {
+            min-height: auto !important;
+            max-height: 100% !important;
+            -o-object-fit: cover;
+            object-fit: cover;
+        }
+    }
+    @media screen and (min-width: 768px) and (max-width: 1172px) {
+        .announcement-box a {
+            margin-right: 20px !important;
+        }
+        .authorimages {
+            width: 30px !important;
+            height: 30px !important;
+        }
+
+        .authorslist {
+            margin-left: 16px !important;
+        }
+
+        .hydrated.rw-badge2 {
+            width: auto !important;
+        }
+    }
+    .blog a:not(.button):not(.link) {
+        background-image: none !important;
+    }
     .leading-none {
         color: #497070;
     }
@@ -382,7 +416,7 @@
                         <a @click="handleEvent('/our-authors')" ><h4 class="font-semibold">Meet Our Authors</h4></a>
                         <template v-if="$page.allAuthor.edges">
                             <span class="inline-block border-l-2 border-teal mx-4 text-yellow1"></span>
-                            <a v-for="(author) in $page.allAuthor.edges" :key="author.node.name" class="capitalize text-yellow1 leading-none mr-2 inline" style="float:left"  @click="handleEvent(author.node.path)" :to="author.node.path"><img :src="author.node.authorImage" :title="author.node.name" style="width: 50px; height: 50px" class="rounded" /></a>
+                            <a v-for="(author) in $page.allAuthor.edges" :key="author.node.name" class="capitalize text-yellow1 leading-none mr-2 inline" style="float:left"  @click="handleEvent(author.node.path)" :to="author.node.path"><img :src="author.node.authorImage" :title="author.node.name" style="width: 50px; height: 50px" class="rounded authorimages" /></a>
                         </template>
                     </div>
                     <br />
@@ -439,7 +473,15 @@
                                     padding-left: 6px;
                                     padding-right: 6px;
                                     }
+                                        @media screen and (min-width: 768px) and (max-device-width: 1172px) {
+                                            div#gartner-pi-widget-MDM5NDZjOWEtMWY1Yi00NDNjLWFkZWItMTY0YTBjNGQzNjBk {
+                                                width: 100% !important;
+                                            }
 
+                                            .hbspt-form {
+                                                width: 100% !important;
+                                            }
+                                        }
                                     .hydrated.rw-badge2 {
                                     position: inherit;
                                     width:300px;
@@ -461,7 +503,7 @@
                                     }
                                         @media only screen and (max-width: 768px) {
                                             div#gartner-pi-widget-MDM5NDZjOWEtMWY1Yi00NDNjLWFkZWItMTY0YTBjNGQzNjBk {
-                                                width: auto;
+                                                width: 100%;
                                             }
                                             .hydrated.rw-badge2 {
                                                 width: auto !important;

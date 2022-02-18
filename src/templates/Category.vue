@@ -126,6 +126,14 @@
     .brighter-teal {
         color: #00c3d7;
     }
+    @media screen and (min-width: 401px) and (max-device-width: 767px) {
+        .featured_image {
+            min-height: auto !important;
+            max-height: 100% !important;
+            -o-object-fit: cover;
+            object-fit: cover;
+        }
+    }
 
     .accent-yellow:after {
         height: 0 !important;

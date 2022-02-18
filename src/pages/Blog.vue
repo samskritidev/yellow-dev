@@ -7,7 +7,17 @@
         margin-bottom: 2px !important;
         padding-bottom: 0 !important;
     }
-
+    ::placeholder {
+        @apply text-base text-gray-400 font-normal;
+    }
+    @media screen and (min-width: 401px) and (max-device-width: 767px) {
+        .featured_image {
+            min-height: auto !important;
+            max-height: 100% !important;
+            -o-object-fit: cover;
+            object-fit: cover;
+        }
+    }
     .menu-item span, .menu-item a {
         font-weight: normal;
     }
@@ -223,168 +233,6 @@
     }
 </style>
 
-<template>
-    <Layout>
-
-        <header id="topnav" class="fixed flex flex-row cc:flex-col z-50 items-center w-full bg-white">
-            <nav role="navigation" class="flex flex-col items-center space-between max-w-1400 mx-auto w-full px-5 py-0 cc:py-0">
-
-                <div class="flex items-center w-full space-between">
-
-                    <div role="navigation" class="text-white z-30 w-full flex flex-wrap justify-end xl:flex-no-wrap">
-                        <a @click="handleEvent('/')" class="mr-auto flex-auto self-start py-4">
-                            <img alt="Yellowbrick Blog Page" src="/uploads/logo.png" />
-                        </a>
-
-                        <div :class="[showDrawer ? 'bg-transparent-75' : 'hidden']" class="fixed cc:hidden inset-0 trans-bg-color" @click="toggleDrawer(false)" />
-                        <ul ref="drawer" :style="{ right: showDrawer ? '0px' : '-100%' }" style="transition: right 0.25s ease;" class="fixed z-100 cc:static cc:flex items-center inset-y-0 h-screen cc:h-auto bg-black cc:bg-transparent w-full cc:w-auto m-0 mobile-menu">
-                            <li class="cc:hidden flex justify-between p-2">
-                                <a @click="handleEvent('/')" to="/" class="p-2 pl-4">
-                                    <img alt="Yellowbrick Data Logo" src="/uploads/images/yb-logo-dark.svg" width="130" />
-                                </a>
-                                <div :class="{ hidden: !showDrawer }" class="p-2" @click="toggleDrawer(false)">
-                                    <button id="close"></button>
-                                </div>
-                            </li>
-
-                            <li class="flex relative text-black trans-bg-color pl-0 text-base hover:text-yellow1 menu-item cc:px-3 lg:px-6" @click='toggle = !toggle'>
-                                <label aria-haspopup="true" class="w-full relative">
-                                    <div class="flex flex-row items-center">
-                                        <a @click="handleEvent('/blog/')" to="/blog" class="flex items-center cursor-pointer p-2 pl-6 cc:px-2 cc:py-2">Categories</a>
-                                        <span class="nav-arrow text-black" />
-                                    </div>
-                                    <transition name="slider">
-                                        <ul v-show='toggle' class="cc:absolute py-3 whitespace-no-wrap bg-yellow1 cc:mt-4 min-w-full cc:min-w-200 rounded-sm submenu" aria-label="submenu">
-                                            <li class="main-nav-link" v-for="category in this.categories" :key="category.id">
-                                                <a @click="handleEvent(category.path)" aria-haspopup="true" class="flex px-8 py-2 cc:px-2 w-full"> {{ category.title }} </a>
-                                            </li>
-                                        </ul>
-                                    </transition>
-                                </label>
-                            </li>
-
-
-                            <li v-for="(item, x) in menu" :key="x" :id="`menu-${x}`" class="flex cc:px-3 lg:px-6 relative text-black trans-bg-color pl-0 text-base hover:text-yellow1 menu-item" :class="{'cc:pl-3 lg:pl-6' : x === 0, 'cc:pl-3 lg:pl-6' : x === Object.keys(menu).length - 2, 'cc:pl-3 lg:pl-6' : x !== 0 && x !== Object.keys(menu).length - 2}"
-                                @click="item.show = !item.show">
-                                <a @click="handleEvent(item.route)" v-if="item.route" :to="item.route" class="p-2 px-6 cc:px-2 cc:py-2">{{ item.label }}</a>
-                                <label v-else aria-haspopup="true" class="w-full relative">
-                                    <div class="flex flex-row items-center">
-                                        <span v-text="item.label" class="flex items-center cursor-pointer p-2 pl-6 cc:px-2 cc:py-2" />
-                                        <span class="nav-arrow text-black" />
-                                    </div>
-                                    <transition name="slider">
-                                        <ul v-show="item.show" class="cc:absolute py-3 whitespace-no-wrap bg-yellow1 cc:mt-4 min-w-full cc:min-w-200 rounded-sm submenu" aria-label="submenu">
-                                            <li v-for="(subitem, y) in item.subitems" :key="y" class="main-nav-link" :class="{'child' : subitem.indent, 'parent' : subitem.parent}">
-                                                <a @click="handleEvent(subitem.route)" :to="subitem.route" aria-haspopup="true" class="flex px-8 py-2 cc:px-2 w-full">{{ subitem.label }}</a>
-                                            </li>
-                                        </ul>
-                                    </transition>
-                                </label>
-                            </li>
-                            <li id="search-box" class="flex list-none font-normal rfs-text-lg p-1 pl-6 cc:px-2 cc:py-1 relative">
-                                <span class="inline-block cursor-pointer pb-2"><search-blog v-model="searchResults" class="text-transparent" /></span>
-
-                            </li>
-                        </ul>
-
-                    </div>
-                    <div id="mobile_search"><img @click="searchClick" src="/uploads/icons/search-icon.svg" style="transform: rotate(-45deg); width: 25px; height: 25px; margin-top: 25px; margin-left: 20px; " /><span class="inline-block cursor-pointer pb-2"><search-blog1 v-model="searchResults" class="text-transparent" /></span></div>
-                    <div class="cursor-pointer cc:hidden flex-1 flex items-center justify-end ml-8" @click="toggleDrawer(true)">
-                        <button id="hamburger" aria-label="Show the menu" />
-                    </div>
-
-                </div>
-            </nav>
-        </header>
-        <section class="flex flex-col pb-2 pt-32 px-6 xl:px-0 bg-white">
-        </section>
-        <section class="px-6 xl:px-0 bg-white pb-20 md:pt-8" v-if="featuredBlog" style="border-bottom: 1px solid #0000002e; margin-top: 0px;">
-            <div class="flex flex-col md:flex-row max-w-1200 mx-auto md:px-12">
-
-                <div class="w-full md:w-1/2 md:mr-4">
-                    <div class="md:mr-12">
-                        <a @click="handleEvent(featuredBlog.path)" :to="featuredBlog.path">
-                            <img v-if="featuredBlog.thumbnailImage" class="featured_image1" :src="`${featuredBlog.thumbnailImage}`" />
-                            <img v-else class="featured_image1" :src="`${featuredBlog.coverImage}`" />
-                        </a>
-                    </div>
-                </div>
-                <div class="w-full md:w-1/2 p-2">
-                    <div class=" text-black">
-                        <template v-if="featuredBlog.categories">
-                            <div class="categorieslist">
-                                <a v-for="(category) in featuredBlog.categories" :key="category.id" v-text="category.title === 'yellowbrick and tpc-ds' ? 'Yellowbrick and TPC-DS' : category.title" @click="handleEvent(`/blog/category/${category.title}`)"  class="categorylist uppercase font-bold brighter-teal block mb-8 md:mr-6" />
-                            </div>
-                        </template>
-                        <a @click="handleEvent(featuredBlog.path)" :to="featuredBlog.path"><h2 class="rfs-text-4xl font-bold pb-0" style="line-height: 1.1;" v-html="featuredBlog.title" /></a>
-                        <p class="rfs-text-base leading-tight font-normal pb-6 block hidden_test" v-text="featuredBlog.description" />
-                        <div class="flex">
-                            <div class="w-1/7 mr-6">
-                                <a @click="handleEvent(featuredBlog.author.path)" :to="featuredBlog.author.path">
-                                    <img :src="`${featuredBlog.author.authorImage}`" style=" border-radius: 50%;" class="w-16" />
-                                </a>
-                            </div>
-                            <div class="md:w-2/3 authorname">
-                                <a @click="handleEvent(featuredBlog.author.path)" :to="featuredBlog.author.path">
-                                    <p class="featured-author font-bold mt-1" v-text="featuredBlog.author.name" />
-                                </a>
-                                <p v-text="featuredBlog.date" class="font-normal mb-0" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="px-6 xl:px-0 pb-0 pt-12" id="current_post">
-            <div class="max-w-1200 w-full mx-auto">
-                <h1 class="uppercase font-bold mb-6 px-4 md:px-12 leading-none">Current Posts</h1>
-                <div class="flex flex-row flex-wrap -mx-6">
-                    <div v-for="edge in searchResults ? searchResults : $page.allBlog.edges" :key="edge.node.id" class="flex flex-col w-full relative current-post pb-16 px-6 md:px-20">
-                        <div class="flex flex-col md:flex-row max-w-1200 w-full mx-auto relative border">
-                            <div :to="edge.node.path" class="w-full md:w-2/5">
-                                <div class="text-white">
-                                    <a @click="handleEvent(edge.node.path)" :to="edge.node.path">
-                                        <img v-if="edge.node.thumbnailImage" class="featured_image" :src="`${edge.node.thumbnailImage}`" />
-                                        <img v-else class="featured_image" :src="`${edge.node.coverImage}`" />
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="w-full md:w-4/5 p-2">
-                                <div class="text-black md:pl-20 block">
-                                    <template v-if="edge.node.categories">
-                                        <div class="categorieslist">
-                                            <a v-for="(category) in edge.node.categories" :key="category.id" v-text="category.title === 'yellowbrick and tpc-ds' ? 'Yellowbrick and TPC-DS' : category.title" @click="handleEvent(`/blog/category/${category.title}`)" class="uppercase font-bold brighter-teal block md:mb-0 mr-4 pt-2 pb-8" />
-                                        </div>
-                                    </template>
-                                    <a @click="handleEvent(edge.node.path)" :to="edge.node.path"><h4 class="rfs-text-3xl text-black font-bold hidden_test titlename" v-html="edge.node.title" /></a>
-                                    <p class="rfs-text-base leading-tight font-normal pt-4 pb-1 hidden_test" v-html="edge.node.description" />
-
-                                    <div class="flex">
-                                        <div class="w-1/7 mr-6">
-                                            <a @click="handleEvent(edge.node.author.path)" :to="edge.node.author.path">
-                                                <img :src="`${edge.node.author.authorImage}`" style="border-radius: 50%;" class="w-16" />
-                                            </a>
-                                        </div>
-                                        <div class="md:w-2/3 authorname">
-                                            <a @click="handleEvent(edge.node.author.path)" :to="edge.node.author.path">
-                                                <p class="featured-author font-bold mt-1" v-text="edge.node.author.name" />
-                                            </a>
-                                            <p v-text="edge.node.date" class="font-normal mb-0" />
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <Pager v-if="!searchResults" class="flex w-full mx-auto py-8 bg-white text-3xl justify-center" :info="$page.allBlog.pageInfo" linkClass="pagerLink" />
-
-    </Layout>
-</template>
-
 <script>
     import {
         disableBodyScroll,
@@ -579,3 +427,165 @@
     }
     }
 </page-query>
+<template>
+    <Layout>
+
+        <header id="topnav" class="fixed flex flex-row cc:flex-col z-50 items-center w-full bg-white">
+            <nav role="navigation" class="flex flex-col items-center space-between max-w-1400 mx-auto w-full px-5 py-0 cc:py-0">
+
+                <div class="flex items-center w-full space-between">
+
+                    <div role="navigation" class="text-white z-30 w-full flex flex-wrap justify-end xl:flex-no-wrap">
+                        <a @click="handleEvent('/')" class="mr-auto flex-auto self-start py-4">
+                            <img alt="Yellowbrick Blog Page" src="/uploads/logo.png" />
+                        </a>
+
+                        <div :class="[showDrawer ? 'bg-transparent-75' : 'hidden']" class="fixed cc:hidden inset-0 trans-bg-color" @click="toggleDrawer(false)" />
+                        <ul ref="drawer" :style="{ right: showDrawer ? '0px' : '-100%' }" style="transition: right 0.25s ease;" class="fixed z-100 cc:static cc:flex items-center inset-y-0 h-screen cc:h-auto bg-black cc:bg-transparent w-full cc:w-auto m-0 mobile-menu">
+                            <li class="cc:hidden flex justify-between p-2">
+                                <a @click="handleEvent('/')" to="/" class="p-2 pl-4">
+                                    <img alt="Yellowbrick Data Logo" src="/uploads/images/yb-logo-dark.svg" width="130" />
+                                </a>
+                                <div :class="{ hidden: !showDrawer }" class="p-2" @click="toggleDrawer(false)">
+                                    <button id="close"></button>
+                                </div>
+                            </li>
+
+                            <li class="flex relative text-black trans-bg-color pl-0 text-base hover:text-yellow1 menu-item cc:px-3 lg:px-6" @click='toggle = !toggle'>
+                                <label aria-haspopup="true" class="w-full relative">
+                                    <div class="flex flex-row items-center">
+                                        <a @click="handleEvent('/blog/')" to="/blog" class="flex items-center cursor-pointer p-2 pl-6 cc:px-2 cc:py-2">Categories</a>
+                                        <span class="nav-arrow text-black" />
+                                    </div>
+                                    <transition name="slider">
+                                        <ul v-show='toggle' class="cc:absolute py-3 whitespace-no-wrap bg-yellow1 cc:mt-4 min-w-full cc:min-w-200 rounded-sm submenu" aria-label="submenu">
+                                            <li class="main-nav-link" v-for="category in this.categories" :key="category.id">
+                                                <a @click="handleEvent(category.path)" aria-haspopup="true" class="flex px-8 py-2 cc:px-2 w-full"> {{ category.title }} </a>
+                                            </li>
+                                        </ul>
+                                    </transition>
+                                </label>
+                            </li>
+
+
+                            <li v-for="(item, x) in menu" :key="x" :id="`menu-${x}`" class="flex cc:px-3 lg:px-6 relative text-black trans-bg-color pl-0 text-base hover:text-yellow1 menu-item" :class="{'cc:pl-3 lg:pl-6' : x === 0, 'cc:pl-3 lg:pl-6' : x === Object.keys(menu).length - 2, 'cc:pl-3 lg:pl-6' : x !== 0 && x !== Object.keys(menu).length - 2}"
+                                @click="item.show = !item.show">
+                                <a @click="handleEvent(item.route)" v-if="item.route" :to="item.route" class="p-2 px-6 cc:px-2 cc:py-2">{{ item.label }}</a>
+                                <label v-else aria-haspopup="true" class="w-full relative">
+                                    <div class="flex flex-row items-center">
+                                        <span v-text="item.label" class="flex items-center cursor-pointer p-2 pl-6 cc:px-2 cc:py-2" />
+                                        <span class="nav-arrow text-black" />
+                                    </div>
+                                    <transition name="slider">
+                                        <ul v-show="item.show" class="cc:absolute py-3 whitespace-no-wrap bg-yellow1 cc:mt-4 min-w-full cc:min-w-200 rounded-sm submenu" aria-label="submenu">
+                                            <li v-for="(subitem, y) in item.subitems" :key="y" class="main-nav-link" :class="{'child' : subitem.indent, 'parent' : subitem.parent}">
+                                                <a @click="handleEvent(subitem.route)" :to="subitem.route" aria-haspopup="true" class="flex px-8 py-2 cc:px-2 w-full">{{ subitem.label }}</a>
+                                            </li>
+                                        </ul>
+                                    </transition>
+                                </label>
+                            </li>
+                            <li id="search-box" class="flex list-none font-normal rfs-text-lg p-1 pl-6 cc:px-2 cc:py-1 relative">
+                                <span class="inline-block cursor-pointer pb-2"><search-blog v-model="searchResults" class="text-transparent" /></span>
+
+                            </li>
+                        </ul>
+
+                    </div>
+                    <div id="mobile_search"><img @click="searchClick" src="/uploads/icons/search-icon.svg" style="transform: rotate(-45deg); width: 25px; height: 25px; margin-top: 25px; margin-left: 20px; " /><span class="inline-block cursor-pointer pb-2"><search-blog1 v-model="searchResults" class="text-transparent" /></span></div>
+                    <div class="cursor-pointer cc:hidden flex-1 flex items-center justify-end ml-8" @click="toggleDrawer(true)">
+                        <button id="hamburger" aria-label="Show the menu" />
+                    </div>
+
+                </div>
+            </nav>
+        </header>
+        <section class="flex flex-col pb-2 pt-32 px-6 xl:px-0 bg-white">
+        </section>
+        <section class="px-6 xl:px-0 bg-white pb-20 md:pt-8" v-if="featuredBlog" style="border-bottom: 1px solid #0000002e; margin-top: 0px;">
+            <div class="flex flex-col md:flex-row max-w-1200 mx-auto md:px-12">
+
+                <div class="w-full md:w-1/2 md:mr-4">
+                    <div class="md:mr-12">
+                        <a @click="handleEvent(featuredBlog.path)" :to="featuredBlog.path">
+                            <img v-if="featuredBlog.thumbnailImage" class="featured_image1" :src="`${featuredBlog.thumbnailImage}`" />
+                            <img v-else class="featured_image1" :src="`${featuredBlog.coverImage}`" />
+                        </a>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2 p-2">
+                    <div class=" text-black">
+                        <template v-if="featuredBlog.categories">
+                            <div class="categorieslist">
+                                <a v-for="(category) in featuredBlog.categories" :key="category.id" v-text="category.title === 'yellowbrick and tpc-ds' ? 'Yellowbrick and TPC-DS' : category.title" @click="handleEvent(`/blog/category/${category.title}`)"  class="categorylist uppercase font-bold brighter-teal block mb-8 md:mr-6" />
+                            </div>
+                        </template>
+                        <a @click="handleEvent(featuredBlog.path)" :to="featuredBlog.path"><h2 class="rfs-text-4xl font-bold pb-0" style="line-height: 1.1;" v-html="featuredBlog.title" /></a>
+                        <p class="rfs-text-base leading-tight font-normal pb-6 block hidden_test" v-text="featuredBlog.description" />
+                        <div class="flex">
+                            <div class="w-1/7 mr-6">
+                                <a @click="handleEvent(featuredBlog.author.path)" :to="featuredBlog.author.path">
+                                    <img :src="`${featuredBlog.author.authorImage}`" style=" border-radius: 50%;" class="w-16" />
+                                </a>
+                            </div>
+                            <div class="md:w-2/3 authorname">
+                                <a @click="handleEvent(featuredBlog.author.path)" :to="featuredBlog.author.path">
+                                    <p class="featured-author font-bold mt-1" v-text="featuredBlog.author.name" />
+                                </a>
+                                <p v-text="featuredBlog.date" class="font-normal mb-0" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="px-6 xl:px-0 pb-0 pt-12" id="current_post">
+            <div class="max-w-1200 w-full mx-auto">
+                <h1 class="uppercase font-bold mb-6 px-4 md:px-12 leading-none">Current Posts</h1>
+                <div class="flex flex-row flex-wrap -mx-6">
+                    <div v-for="edge in searchResults ? searchResults : $page.allBlog.edges" :key="edge.node.id" class="flex flex-col w-full relative current-post pb-16 px-6 md:px-20">
+                        <div class="flex flex-col md:flex-row max-w-1200 w-full mx-auto relative border">
+                            <div :to="edge.node.path" class="w-full md:w-2/5">
+                                <div class="text-white">
+                                    <a @click="handleEvent(edge.node.path)" :to="edge.node.path">
+                                        <img v-if="edge.node.thumbnailImage" class="featured_image" :src="`${edge.node.thumbnailImage}`" />
+                                        <img v-else class="featured_image" :src="`${edge.node.coverImage}`" />
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="w-full md:w-4/5 p-2">
+                                <div class="text-black md:pl-20 block">
+                                    <template v-if="edge.node.categories">
+                                        <div class="categorieslist">
+                                            <a v-for="(category) in edge.node.categories" :key="category.id" v-text="category.title === 'yellowbrick and tpc-ds' ? 'Yellowbrick and TPC-DS' : category.title" @click="handleEvent(`/blog/category/${category.title}`)" class="uppercase font-bold brighter-teal block md:mb-0 mr-4 pt-2 pb-8" />
+                                        </div>
+                                    </template>
+                                    <a @click="handleEvent(edge.node.path)" :to="edge.node.path"><h4 class="rfs-text-3xl text-black font-bold hidden_test titlename" v-html="edge.node.title" /></a>
+                                    <p class="rfs-text-base leading-tight font-normal pt-4 pb-1 hidden_test" v-html="edge.node.description" />
+
+                                    <div class="flex">
+                                        <div class="w-1/7 mr-6">
+                                            <a @click="handleEvent(edge.node.author.path)" :to="edge.node.author.path">
+                                                <img :src="`${edge.node.author.authorImage}`" style="border-radius: 50%;" class="w-16" />
+                                            </a>
+                                        </div>
+                                        <div class="md:w-2/3 authorname">
+                                            <a @click="handleEvent(edge.node.author.path)" :to="edge.node.author.path">
+                                                <p class="featured-author font-bold mt-1" v-text="edge.node.author.name" />
+                                            </a>
+                                            <p v-text="edge.node.date" class="font-normal mb-0" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <Pager v-if="!searchResults" class="flex w-full mx-auto py-8 bg-white text-3xl justify-center" :info="$page.allBlog.pageInfo" linkClass="pagerLink" />
+
+    </Layout>
+</template>
+

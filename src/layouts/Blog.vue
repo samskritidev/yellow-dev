@@ -1,4 +1,7 @@
 <style scoped>
+    ::placeholder {
+        @apply text-base text-gray-400 font-normal;
+    }
     .nav-arrow:after,.nav-arrow:before {
         --bg-opacity: 1;
         background-color: black;

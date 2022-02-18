@@ -8,20 +8,26 @@
             padding-left: 10px !important;
             padding-right: 10px !important;
         }
+
+        .hydrated.rw-badge2 {
+            margin-top: 30px !important;
+        }
     }
- 
     .home-reviews {
         background-image: url(/uploads/reviews.png);
         background-repeat: no-repeat;
         background-size: cover;
     }
+
     .hooper-slide {
         width: 100% !important;
     }
+
     .slidebg-transparent {
-    background-color: #00000036;
-    border-radius: 10px;
-      }
+        background-color: #00000036;
+        border-radius: 10px;
+    }
+
     .yellowbrickbtn button:hover {
         color: #000;
         background: #ffffff;
@@ -931,19 +937,33 @@
                 </span>
             </div>
         </base-section>
-        <base-section :classNames="' flex pt-2 pb-12 md:pt-2 md:pb-24 px-5 xl:px-0'">
-            <div class="flex flex-col max-w-1200 w-full mx-auto">
+        <base-section :classNames="'  flex pt-2 pb-12 md:pt-2 md:pb-20 px-5 xl:px-0'">
+            <div class=" home-reviews flex flex-col max-w-1200 w-full mx-auto">
                 <div class="flex flex-col md:flex-row">
-                <div class="w-full lg:w-1/2 z-10  md:pl-16 my-auto">
-                    <h3 class="review-title rfs-text-6xl text-black sub-title mb-6  my-auto" style="width: 440px; border-bottom: 20px solid #ffcd32; ">
-                        Yellowbrick is top rated in customer reviews
-                    </h3>
-                </div>
-                <div class="w-full lg:w-1/2 z-10 md:pb-6">
-                    <template>
-                        <div>
-                            <ClientOnly>
-                                <VueScriptComponent script='<style>
+                    <div class="w-full lg:w-1/2 z-10  md:pl-10 md:pr-4 my-auto">
+                        <h3 class="review-title rfs-text-6xl text-black sub-title mb-6  my-auto" style="width: 440px; border-bottom: 20px solid #ffcd32; ">
+                            Yellowbrick is top rated in customer reviews
+                        </h3>
+                    </div>
+                    <div class="w-full lg:w-1/2 z-10 md:pb-6">
+                        <template>
+                            <div>
+                                <ClientOnly>
+                                    <VueScriptComponent script='<style>
+
+                                 @media screen and (min-width: 728px) and (max-device-width: 912px) {
+                                        div#gartner-pi-widget-MDM5NDZjOWEtMWY1Yi00NDNjLWFkZWItMTY0YTBjNGQzNjBk {
+                                            width: 100% !important;
+                                            height: 180px !important;
+                                        }
+                                        .background-square, .background-square1 {
+                                            width: auto !important;
+                                            float: none !important;
+                                        }
+                                        .hydrated.rw-badge2 {
+                                            width: auto !important;
+                                        }
+                                }
                                 .gartner-pi-link:hover {
                                 background-image: none !important;
                                 }
@@ -1001,15 +1021,15 @@
                                 }
                                 @media only screen and (max-width: 768px) {
                                 div#gartner-pi-widget-MDM5NDZjOWEtMWY1Yi00NDNjLWFkZWItMTY0YTBjNGQzNjBk {
-                                width: 350px;
+                                width: 100%;
                                 }
 
                                 .review-title {
                                 width: auto !important;
                                 }
                                 .background-square, .background-square1 {
-                                width: 350px !important;
-                                float: right !important;
+                                width: auto !important;
+                                float:none!important;
                                 }
                                     .customer_logos {
                                         padding: 10px !important;
@@ -1080,53 +1100,52 @@
                                 <div class="background-square">
                                 <div id="widget-container"></div>
                                 </div>
-                                <div style=" width: 200px; float: right;color:white">G2 Widget</div>
                                 <div class="background-square1">
                                 <!-- Begin widget code -->
                                 <div data-rw-badge2="28103"></div>
                                 <script type="application/javascript">var script = document.createElement("script"); script.type = "module"; script.src = "https://widgets.thereviewsplace.com/2.0/rw-widget-badge2.js"; document.getElementsByTagName("head")[0].appendChild(script);</script>
                                 <!-- End widget code -->
                                 </div>
-                            </ClientOnly>
-                        </div>
-                    </template>
+                                </ClientOnly>
+                            </div>
+                        </template>
                     </div>
                 </div>
             </div>
         </base-section>
-            <base-section class="get-started bg-gray-100">
-                <h3 class="rfs-text-4xl mb-3 md:mb-6">Get started with Yellowbrick</h3>
-                <div class="flex flex-col md:flex-row">
-                    <ul class="w-full md:w-1/4 list-none m-0 md:mr-6 p-0 rfs-text-3xl">
-                        <li>
-                            <arrow-link-button class="rfs-text-3xl" href="/go/book-a-demo/">Demos</arrow-link-button>
-                        </li>
-                        <li>
-                            <arrow-link-button class="rfs-text-3xl" href="/test-drive/">Test Drive</arrow-link-button>
-                        </li>
-                        <li>
-                            <arrow-link-button class="rfs-text-3xl" href="/resources/webcasts/">Webinars</arrow-link-button>
-                        </li>
+        <base-section class="get-started bg-gray-100">
+            <h3 class="rfs-text-4xl mb-3 md:mb-6">Get started with Yellowbrick</h3>
+            <div class="flex flex-col md:flex-row">
+                <ul class="w-full md:w-1/4 list-none m-0 md:mr-6 p-0 rfs-text-3xl">
+                    <li>
+                        <arrow-link-button class="rfs-text-3xl" href="/go/book-a-demo/">Demos</arrow-link-button>
+                    </li>
+                    <li>
+                        <arrow-link-button class="rfs-text-3xl" href="/test-drive/">Test Drive</arrow-link-button>
+                    </li>
+                    <li>
+                        <arrow-link-button class="rfs-text-3xl" href="/resources/webcasts/">Webinars</arrow-link-button>
+                    </li>
+                </ul>
+                <div class="w-full md:w-3/4">
+                    <h3 class="rfs-text-3xl">
+                        Join us for a Yellowbrick demos and webinars!
+                    </h3>
+                    <p class="rfs-text-base mb-6">
+                        Learn how to easily and securely analyze billions of rows of data,
+                        with sub-second query response. Join our monthly demos with experts
+                        who share Yellowbrick features and answer your questions live.
+                    </p>
+                    <h3 class="rfs-text-3xl">You’ll learn how Yellowbrick enables:</h3>
+                    <ul>
+                        <li>Real-time analytics</li>
+                        <li>Data lake analytics</li>
+                        <li>Data warehouse modernization</li>
+                        <li>Analytics across distributed data clouds</li>
                     </ul>
-                    <div class="w-full md:w-3/4">
-                        <h3 class="rfs-text-3xl">
-                            Join us for a Yellowbrick demos and webinars!
-                        </h3>
-                        <p class="rfs-text-base mb-6">
-                            Learn how to easily and securely analyze billions of rows of data,
-                            with sub-second query response. Join our monthly demos with experts
-                            who share Yellowbrick features and answer your questions live.
-                        </p>
-                        <h3 class="rfs-text-3xl">You’ll learn how Yellowbrick enables:</h3>
-                        <ul>
-                            <li>Real-time analytics</li>
-                            <li>Data lake analytics</li>
-                            <li>Data warehouse modernization</li>
-                            <li>Analytics across distributed data clouds</li>
-                        </ul>
-                    </div>
                 </div>
-            </base-section>
+            </div>
+        </base-section>
     </Layout>
 </template>
 <script src="https://unpkg.com/vue-star-rating/dist/VueStarRating.umd.min.js"></script>

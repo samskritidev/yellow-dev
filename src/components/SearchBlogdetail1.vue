@@ -1,10 +1,10 @@
 <style scoped>
     ::placeholder {
-        @apply rfs-text-lg text-gray-400 font-light;
+        @apply text-base text-gray-400 font-normal;
     }
 </style>
 <template>
-    <div id="search_div1" class="w-full max-w-1200 mx-auto flex flex-row justify-end items-center text-transparent" style="position: absolute; top: 80px; right: -10px !important;">
+    <div id="search_div1" class="w-full max-w-1200 mx-auto flex flex-row justify-end items-center text-transparent" style="position: absolute; top: 80px; right: -10px !important; display: none;">
         <input @input="search" @focus="search" @blur="search" @keydown.esc.enter="$refs.input.blur()"
                id="search-site"
                v-model="q"

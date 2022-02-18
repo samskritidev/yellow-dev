@@ -1,6 +1,6 @@
 <style scoped>
     ::placeholder {
-        @apply rfs-text-lg text-gray-400 font-light;
+        @apply text-base text-gray-400 font-normal;
     }
 </style>
 <template>
