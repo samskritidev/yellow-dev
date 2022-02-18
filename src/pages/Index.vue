@@ -938,7 +938,7 @@
             </div>
         </base-section>
         <base-section :classNames="'  flex pt-2 pb-12 md:pt-2 md:pb-20 px-5 xl:px-0'">
-            <div class=" home-reviews flex flex-col max-w-1200 w-full mx-auto">
+            <div class="flex flex-col max-w-1200 w-full mx-auto">
                 <div class="flex flex-col md:flex-row">
                     <div class="w-full lg:w-1/2 z-10  md:pl-10 md:pr-4 my-auto">
                         <h3 class="review-title rfs-text-6xl text-black sub-title mb-6  my-auto" style="width: 440px; border-bottom: 20px solid #ffcd32; ">
