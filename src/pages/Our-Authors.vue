@@ -2,6 +2,22 @@
 .brighter-teal {
     color: #00c3d7;
 }
+    .author-twitter {
+        margin-top: 10px;
+    }
+
+    .social {
+        float: left;
+        float: left;
+        padding: 10px 20px 10px 0px;
+        border-bottom: none !important;
+    }
+
+        .social:hover {
+            background-image: none !important;
+            background-size: 0 !important;
+            transition: none !important;
+        }
 .leading-none {
     color: #497070;
 }
@@ -12,8 +28,8 @@
         overflow: hidden;
         text-overflow: ellipsis;
         display: -webkit-box;
-        -webkit-line-clamp: 7;
-        line-clamp: 7;
+        -webkit-line-clamp: 3;
+        line-clamp: 3;
         -webkit-box-orient: vertical;
     }
     .hidden_test1 {
@@ -314,9 +330,10 @@
 
                                     <a @click="handleEvent(edge.node.path)" :to="edge.node.path"><h4 class="rfs-text-3xl uppercase font-bold authorName" v-html="edge.node.name" /></a>
                                     <p class="featured-author brighter-teal" v-text="edge.node.position" />
-                                    <div class="hidden_test">
-                                        <p class="rfs-text-base leading-tight font-normal author-about" v-html="edge.node.authorAbout"></p>
+                                    <div class="">
+                                        <p class="rfs-text-base leading-tight hidden_test font-normal author-about" v-html="edge.node.authorAbout"></p>
                                         <p class="rfs-text-base leading-tight font-normal author-about" v-html="edge.node.authorInterest"></p>
+                                        <p class="author-twitter"><a class="social" target="_blank" :href="edge.node.twitterUrl"><span><img src="/uploads/twitter-author.png" /></span></a><a class="social" target="_blank" :href="edge.node.linkedinUrl"><span><img src="/uploads/linkedin-author.png" /></span></a></p>
                                     </div>
                                     </div>
                             </div>
@@ -449,6 +466,8 @@
     authorImage
     authorAbout
     authorInterest
+    twitterUrl
+    linkedinUrl
     path
     }
     }

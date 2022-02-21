@@ -41,6 +41,8 @@ collections:
       - {label: Author Image, name: authorImage, widget: image}
       - {label: About Author/Professional, name: authorAbout, widget: markdown}
       - {label: About Author/Fun/Interest, name: authorInterest, widget: markdown}
+      - {label: Twitter Profile URL, name: twitterUrl, widget: string, required: false}
+      - {label: Linkedin Profile URL, name: linkedinUrl, widget: string, required: false}
       - {label: Created Date, name: date, widget: date}
   -
     label: Customers
