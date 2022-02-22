@@ -9,7 +9,7 @@
                id="search-site"
                v-model="q"
                type="search"
-               placeholder="Search News"
+               placeholder="Search Blog"
                class="w-100 text-base text-gray-400 font-normal border border-gray-200 focus:outline-none focus:shadow focus:border-gray-400 rounded px-3 appearance-none leading-normal bg-white"
                @keydown.esc="results = null"
                @keydown.down="selectionMove(1)"

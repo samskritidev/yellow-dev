@@ -425,7 +425,7 @@
                         <template>
                             <div>
                                 <ClientOnly>
-                                    <h5 class="font-semibold" style="font-size: 1.38rem;">Get the latest Yellowbrick blogs</h5>
+                                    <h5 class="font-semibold" style="font-size: 1.38rem;">Get the latest Yellowbrick News</h5>
                                     <VueScriptComponent script='
                                     <!--[if lte IE 8]>
     <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
