@@ -333,7 +333,7 @@
                                     <div class="">
                                         <p class="rfs-text-base leading-tight hidden_test font-normal author-about" v-html="edge.node.authorAbout"></p>
                                         <p class="rfs-text-base leading-tight font-normal author-about" v-html="edge.node.authorInterest"></p>
-                                        <p class="author-twitter"><a class="social" target="_blank" :href="edge.node.twitterUrl"><span><img src="/uploads/twitter-author.png" /></span></a><a class="social" target="_blank" :href="edge.node.linkedinUrl"><span><img src="/uploads/linkedin-author.png" /></span></a></p>
+                                        <p class="author-twitter"><a v-if="edge.node.twitterUrl != ''" class="social" target="_blank" :href="edge.node.twitterUrl"><span><img src="/uploads/twitter-author.png" /></span></a><a class="social" v-if="edge.node.linkedinUrl != ''" target="_blank" :href="edge.node.linkedinUrl"><span><img src="/uploads/linkedin-author.png" /></span></a></p>
                                     </div>
                                     </div>
                             </div>

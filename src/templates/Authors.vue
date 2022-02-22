@@ -279,7 +279,7 @@
                     <p class="brighter-teal" v-html="$page.author.position" style="text-align: center; margin-bottom: 1.5rem; font-weight: 600;" />
                     <div class="font-normal" v-html="$page.author.authorAbout" /><br />
                     <div class="font-normal" v-html="$page.author.authorInterest" />
-                    <p class="author-twitter"><a class="social"  target="_blank" :href="$page.author.twitterUrl"><span><img src="/uploads/twitter-author.png" /></span></a><a  class="social"  target="_blank" :href="$page.author.linkedinUrl"><span><img src="/uploads/linkedin-author.png" /></span></a></p>
+                    <p class="author-twitter"><a class="social"  v-if="$page.author.twitterUrl != ''" target="_blank" :href="$page.author.twitterUrl"><span><img src="/uploads/twitter-author.png" /></span></a><a  v-if="$page.author.linkedinUrl != ''"  class="social"  target="_blank" :href="$page.author.linkedinUrl"><span><img src="/uploads/linkedin-author.png" /></span></a></p>
 
                 </div>
                         

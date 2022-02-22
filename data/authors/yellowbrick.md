@@ -21,7 +21,7 @@ authorInterest: Yellowbrick offers superior price/performance for every business
   use-case, along with the unique ability to run analytic workloads in public or
   private clouds, at the network edge, or any combination--with the choice of
   usage based pricing or predictable fixed cost subscription
-twitterUrl: https://www.linkedin.com/in/bob-rumsby-80709a23/
-linkedinUrl: https://www.linkedin.com/in/bob-rumsby-80709a23/
+twitterUrl: https://twitter.com/yellowbrickdata
+linkedinUrl: https://www.linkedin.com/company/yellowbrickdata/
 date: 2022-02-06T16:01:48.570Z
 ---

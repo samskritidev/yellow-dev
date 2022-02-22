@@ -19,7 +19,7 @@ authorInterest: >-
 
 
   <!--EndFragment-->
-twitterUrl: https://www.linkedin.com/in/bob-rumsby-80709a23/
-linkedinUrl: https://www.linkedin.com/in/bob-rumsby-80709a23/
+twitterUrl: ""
+linkedinUrl: https://www.linkedin.com/in/ncarson/
 date: 2022-02-14T11:58:52.773Z
 ---
