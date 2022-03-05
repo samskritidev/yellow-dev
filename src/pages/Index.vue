@@ -618,7 +618,7 @@
                         <div class="bg-container"></div>
                         <div class="max-w-xl w-full h-full">
                             <h4 class="leading-tight mb-0 w-full" :class="'text-black' || 'text-black'">
-                                <img class=" w-full" src="/uploads/yellowbrick-data-partners.png" style="height:240px;" />
+                               <img class=" w-full" :src="$page.home.bannerLeft.image.src" style="height:240px;" />
                             </h4>  <div class="p-3 px-5">
                                 <h5 class="leading-tight mb-0" style="text-transform:uppercase;font-weight:600" :class="'text-black' || 'text-black'">
                                     {{ $page.home.bannerLeft.eyebrow }}
@@ -635,7 +635,7 @@
                         <div class="bg-container"></div>
                         <div class="max-w-xl w-full h-full">
                             <h4 class="leading-tight mb-0 w-full" :class="'text-black' || 'text-black'">
-                                <img class=" w-full" src="/uploads/images/whats-new/AdobeStock.jpg" />
+                               <img class=" w-full" :src="$page.home.bannerRight.image.src" style="height:240px;" />
                             </h4>
                             <div class="p-3 px-5">
                                 <h5 class="leading-tight mb-0 text-black" style="text-transform:uppercase;font-weight:600">
